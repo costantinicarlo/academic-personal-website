@@ -1,0 +1,9 @@
+page-layout: article
+
+toc: true
+toc-location: right
+toc-depth: 3
+toc-title: "Contents"
+
+reference-location: margin
+citation-location: margin

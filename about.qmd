@@ -1,0 +1,135 @@
+---
+title: "About me"
+subtitle: "From field naturalist to integrative vector evolutionary ecologist"
+
+description: >-
+  Scientific trajectory, research philosophy and a short academic
+  biography spanning natural history, field ecology, mosquito biology,
+  genomics and quantitative science.
+
+page-layout: article
+
+toc: true
+toc-location: right
+toc-depth: 2
+toc-title: "On this page"
+---
+
+> **Keywords:** evolutionary ecologist · mosquito biologist · quantitative naturalist
+
+I am an **evolutionary ecologist** interested in how organisms adapt to heterogeneous and changing environments—and in what happens when those adaptations alter populations, species boundaries and interactions with other organisms.
+
+Mosquitoes, particularly African malaria vectors, have become my principal biological system. For this reason I am also mostly a **mosquito biologist**. They are remarkable organisms in which ecology, evolution, behaviour, physiology, genomics and epidemiology intersect unusually clearly.
+
+My research asks questions such as:
+
+**How do populations adapt to new environments?  
+How is adaptive variation maintained despite gene flow?  
+How do ecological differences become physiological, behavioural and genomic differences?  
+When does divergence become speciation?  
+And, for disease vectors, how do these processes ultimately alter pathogen transmission?**
+
+I began science as a **field naturalist** and ornithologist. The binoculars and mist-nets eventually gave way to mosquito traps, chromosomes, genome sequences and environmental rasters—but the underlying curiosity remained much the same: observe organisms carefully, understand the environments in which they live, and work out the processes producing the patterns we see.
+
+---
+
+## Scientific profile
+
+**Evolutionary ecologist by question.**  
+Adaptation, ecological divergence, speciation, gene flow, introgression and the evolution of vectorial traits are at the centre of my research.
+
+**Mosquito biologist by system.**  
+Most of my work concerns African malaria vectors, especially *Anopheles funestus* and the *Anopheles gambiae* complex, although my interests extend more broadly across mosquito ecology, behaviour and evolution.
+
+**Field biologist by instinct.**  
+Natural populations matter. Much of my work starts from mosquitoes in real landscapes rather than idealised laboratory populations.
+
+**Naturalist by origin.**  
+I entered science through ornithology and field observation. That background still shapes how I think about biological variation and ecological context.
+
+**Quantitative biologist by necessity.**  
+Population processes are noisy, observations are incomplete, and biological systems are hierarchical. Biostatistics, demographic modelling, Bayesian inference and causal reasoning are therefore central tools rather than optional embellishments.
+
+**Genomicist by opportunity.**  
+Whole-genome sequencing has transformed questions that I once approached through chromosomes, phenotypes and geography. Population genomics now allows me to examine barriers to gene flow, introgression, ancestry and the genomic architecture of adaptation directly.
+
+**Computational biologist by practice.**
+Modern biological questions increasingly require computation at every stage, from organizing and processing genomic data to modelling populations, integrating environmental information and building reproducible analytical workflows. I regard scientific computing, data architecture, provenance and reproducibility as components of biological inference rather than merely technical infrastructure.
+
+**Environmental data scientist by scale.**  
+Mosquitoes experience landscapes, not spreadsheets. GIS, remote sensing, climate products and other environmental datasets allow individual organisms and populations to be placed back into their ecological context.
+
+**Methodological pluralist by conviction.**  
+No particular technology defines my research. Field experiments, genomics, behavioural assays, environmental data, statistical modelling and computation are useful only insofar as they help discriminate among biological explanations.
+
+---
+
+## Organism × environment
+
+A useful shorthand for how I increasingly think about biology is:
+
+**organism × environment**
+
+The organism can be described at many interconnected levels:
+
+**genome · epigenome · transcriptome · metabolome · physiology · morphology · behaviour**
+
+The environment is equally multidimensional:
+
+**climate · hydrology · landscape · conspecifics · communities · hosts · pathogens · human activities**
+
+The interesting biology lies in the interactions between them.
+
+That is why my work increasingly crosses boundaries between evolutionary biology, ecology, genomics, behavioural science, environmental science, biostatistics and informatics. I do not regard these as separate research identities. They are different viewpoints and tools for understanding the same biological systems.
+
+---
+
+## Why mosquitoes?
+
+**Mosquitoes matter because some of them transmit devastating pathogens.**
+
+But their epidemiological importance is not the reason they are *biologically* interesting.
+
+They occupy remarkably diverse environments, evolve rapidly, display complex behavioural and physiological adaptations, hybridise across incompletely isolated taxa, carry striking chromosomal polymorphisms and respond continuously to environmental change.
+
+Their importance as disease vectors simply makes the consequences of those evolutionary processes unusually tangible.
+
+A mosquito population that changes its preferred host, colonises saline water, shifts its biting time, adapts to an urban environment or acquires adaptive genes like insecticide resistance alleles from another population is simultaneously conducting an evolutionary experiment and changing the conditions under which pathogens are transmitted.
+
+That intersection between **fundamental evolutionary ecology and consequences for human health** is where much of my research lives.
+
+---
+
+## How I approach science
+
+I am suspicious of disciplinary boundaries and of methods becoming ends in themselves.
+
+A genome is not an explanation.  
+A statistical association is not necessarily a mechanism.  
+A sophisticated model cannot rescue a poor sampling design.  
+And a large dataset is not automatically an informative one.
+
+I prefer to begin with the biological question, make the assumptions explicit, determine what observations could discriminate among competing explanations, and only then choose the appropriate methods.
+
+Sometimes that means catching mosquito larvae while plunging in muddy rice paddies.
+
+Sometimes it means analysing hundreds of genomes in front of a computer screen.
+
+Sometimes it means reconstructing environmental variation from satellite imagery.
+
+And sometimes it means spending far too long examining why a pipeline produced an unexpected VCF.
+
+All of these are simply different stages of the same process: **turning observations into biological inference.**
+
+---
+
+## Research
+
+This page is intentionally the short version.
+
+For a more detailed account of the biological questions I work on—and the experimental, quantitative and computational approaches I use to address them—see:
+
+**→ [Research Themes](research/index.qmd)**
+
+> **In one sentence:**  
+> I study how mosquitoes evolve in changing environments, using whatever combination of field biology, experiments, genomics, environmental data and quantitative inference is necessary to understand why.

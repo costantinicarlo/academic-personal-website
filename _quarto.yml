@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Carlo Costantini"
+
+  description: >-
+    Evolutionary ecology, mosquito biology, and quantitative approaches
+    to understanding organism–environment interactions.
+
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: About
+        href: about.qmd
+      - text: Research
+        href: research/index.qmd
+      - text: Publications
+        href: publications/index.qmd
+
+  search:
+    location: navbar
+    type: overlay
+
+  back-to-top-navigation: true
+
+  page-footer:
+    center: "Carlo Costantini"
+
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    toc: false
+    citations-hover: true
+    footnotes-hover: true
+    code-copy: true
+    code-overflow: wrap
+
+execute:
+  freeze: auto
+
+lang: en-GB
+
+bibliography: bibliography/references.bib

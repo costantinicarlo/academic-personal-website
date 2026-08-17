@@ -1,0 +1,41 @@
+# macOS filesystem metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Quarto local state and generated website
+/.quarto/
+/_site/
+
+# R session artefacts
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Python local environments / caches, if ever used
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Editor and temporary files
+*~
+*.swp
+*.swo
+
+# ----------------------------------------------------------------------
+# Intentionally NOT ignored:
+#
+#   *.code-workspace   project-level VS Code workspace configuration
+#   _freeze/           reproducible Quarto frozen computational results
+#   .vscode/           repository-level settings/tasks may be versioned
+# ----------------------------------------------------------------------
+
+**/*.quarto_ipynb
