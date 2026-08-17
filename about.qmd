@@ -132,4 +132,4 @@ For a more detailed account of the biological questions I work on—and the expe
 **→ [Research Themes](research/index.qmd)**
 
 > **In one sentence:**  
-> I study how mosquitoes evolve in changing environments, using whatever combination of field biology, experiments, genomics, environmental data and quantitative inference is necessary to understand why.
+> I study how mosquitoes thrive and evolve in changing environments, using whatever combination of field biology, experiments, genomics, environmental data and quantitative inference is necessary to understand why.

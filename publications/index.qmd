@@ -21,7 +21,7 @@ link-bibliography: true
 
 My publications span evolutionary ecology, mosquito biology, medical entomology, behavioural ecology, population biology and related methodological work.
 
-The list below is generated from my curated bibliographic records. External publication profiles are also available through [ORCID](https://orcid.org/0000-0003-1016-129X) and [Google Scholar](YOUR-GOOGLE-SCHOLAR-URL).
+The list below is generated from my curated bibliographic records. External publication profiles are also available through [ORCID](https://orcid.org/0000-0003-1016-129X) and [Google Scholar](https://scholar.google.com/citations?user=RLWDKbMAAAAJ).
 
 ## Publications
 

@@ -43,7 +43,7 @@ toc: false
 
 ## Nature ⇄ Mosquitoes ⇄ Data ⇄ Models ⇄ Science {.homepage-tagline}
 
-I am a **naturalist and evolutionary ecologist** with a background in medical entomology and a lifelong interest in field biology and ornithology.
+I am a **naturalist and evolutionary ecologist** with a background in **medical entomology** and a lifelong interest in field biology and ornithology.
 
 Mosquitoes are my principal biological system for investigating how organisms interact with, adapt to, and evolve in heterogeneous and changing environments. My research spans adaptation, ecological divergence and speciation, behaviour and host choice, population dynamics, community ecology, and the evolutionary processes underlying vectorial traits.
 
@@ -51,7 +51,7 @@ At the biological core of my work are **the 3Es of mosquitoes: Ecology, Ethology
 
 I approach these questions by moving iteratively between field observations, experiments, environmental measurements, omics, quantitative analysis and statistical modelling. Increasingly, this means integrating genomic and phenotypic information with environmental data across scales—from individual mosquitoes to populations, communities and landscapes.
 
-Mosquitoes are especially compelling because their ecology and evolution can directly affect pathogen transmission. Understanding why mosquito populations change their habitats, hosts, behaviour or genomes can therefore illuminate both fundamental evolutionary processes and diseases such as malaria.
+Mosquitoes are especially compelling because their ecology and evolution can directly affect pathogen transmission. Understanding why mosquito populations change their habitats, hosts, behaviour or genomes can therefore illuminate both fundamental evolutionary processes and diseases such as malaria or dengue.
 
 [**Explore my research themes →**](research/index.qmd)
 
@@ -61,7 +61,7 @@ I studied Natural Sciences at the [University of Rome *La Sapienza*](https://smf
 
 Much of my scientific career has been spent working in sub-Saharan Africa, particularly in Burkina Faso, Cameroon, Gabon and Senegal, combining field research with training, supervision and scientific partnerships.
 
-I am currently based at the [Institut Pasteur in Dakar](https://institutpasteurdakar.sn/), Senegal, where my work ranges from mosquito evolutionary ecology and genomics to environmental data science—and where I can still occasionally be found somewhere out in the field, chasing mosquitoes.
+In 2004 I joined the [French Research Institute for Sustainable Development](https://www.ird.fr), and am currently based at the [Institut Pasteur in Dakar](https://institutpasteurdakar.sn/), Senegal, where my work ranges from mosquito evolutionary ecology and genomics to environmental data science—and where I can still occasionally be found somewhere out in the field, chasing mosquitoes.
 
 [**More about me →**](about.qmd)
 
