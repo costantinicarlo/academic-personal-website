@@ -3,10 +3,9 @@ title: "Research Themes"
 subtitle: "Biological questions and approaches to scientific inference"
 
 description: >-
-  Research on mosquito evolutionary ecology, adaptation, ecological
-  divergence, speciation, behaviour, population biology and disease
-  transmission, together with the quantitative, genomic, informatic
-  and environmental approaches used to investigate them.
+  Research on mosquito evolutionary ecology, adaptation, ecological divergence, speciation, behaviour, population biology and disease transmission, together with the quantitative, genomic, informatic and environmental approaches used to investigate them.
+
+date-modified: last-modified
 ---
 
 ---
@@ -47,6 +46,8 @@ One example concerns the ability of normally freshwater mosquitoes to exploit *
 Urbanisation provides another example. Polluted artificial habitats, altered hydrology, heat, artificial light and high densities of humans and domestic animals create combinations of selective pressures that differ profoundly from those under which mosquito populations evolved.
 
 More generally, I am interested in how **global environmental change modifies the adaptive landscape experienced by disease vectors**.
+
+[**Publications on this theme →**](/publications/index.qmd#pub-adaptation){.related-publications}
 
 ---
 
@@ -111,6 +112,8 @@ to broader questions such as:
 
 These questions connect chromosomal biology with population genomics, ecological genetics and the study of speciation.
 
+[**Publications on this theme →**](/publications/index.qmd#pub-speciation){.related-publications}
+
 ---
 
 ### Evolution of behaviour and host choice {#research-behaviour}
@@ -131,6 +134,8 @@ For this reason, I am interested in decomposing apparently complex behaviours in
 
 An additional evolutionary question is whether the pronounced anthropophily of some malaria vectors represents a fixed species characteristic or an **evolutionarily labile phenotype** influenced by genotype, ecological context and the availability of alternative hosts.
 
+[**Publications on this theme →**](/publications/index.qmd#pub-behaviour){.related-publications}
+
 ---
 
 ### Biological rhythms and temporal behaviour {#research-rhythms}
@@ -144,6 +149,8 @@ This has obvious epidemiological relevance. Vector-control interventions such as
 My interest goes beyond documenting when mosquitoes bite. I am interested in understanding how endogenous biological rhythms interact with external signals such as the natural light–dark cycle, twilight, dim nocturnal illumination and artificial light at night.
 
 The broader question is therefore how **temporal environmental change can modify behavioural phenotypes**, and whether these responses represent immediate plasticity, longer-term physiological modification, or evolutionary adaptation.
+
+[**Publications on this theme →**](/publications/index.qmd#pub-rhythms){.related-publications}
 
 ---
 
@@ -176,6 +183,8 @@ For me, this makes population ecology inseparable from a second question:
 
 That question leads directly from biology to methodology.
 
+[**Publications on this theme →**](/publications/index.qmd#pub-population){.related-publications}
+
 ---
 
 ### From vector biology to disease transmission and control {#research-control}
@@ -190,11 +199,15 @@ I therefore see **fundamental and applied vector biology as complementary rathe
 
 My applied work has included mosquito repellents, insecticidal interventions, evaluation methodology and behavioural approaches to reducing mosquito–human contact. But the general principle is broader: interventions are more likely to remain effective when they are informed by an understanding of the ecological and evolutionary system on which they act.
 
+[**Publications on this theme →**](/publications/index.qmd#pub-control){.related-publications}
+
 ---
 
 ## Approaches to scientific inference {#research-methods}
 
 The biological questions above cannot generally be answered by a single method or type of data. Much of my methodological interest consequently concerns how heterogeneous observations can be combined to produce defensible biological inference.
+
+[**Publications on methods and scientific inference →**](/publications/index.qmd#pub-methods){.related-publications}
 
 ### Field ecology and experiments in natural populations
 
@@ -328,6 +341,8 @@ Years of field work in tropical Africa have also provided many opportunities for
 
 Natural history is sometimes treated as something separate from modern quantitative biology. I see it rather differently. Careful observation of organisms in their environment is often where worthwhile scientific questions begin.
 
+[**Publications on this theme →**](/publications/index.qmd#pub-natural-history){.related-publications}
+
 ---
 
 ## A common thread
@@ -348,4 +363,4 @@ And, in the particular case of disease vectors:
 
 **how do these evolutionary and ecological processes ultimately alter pathogen transmission?**
 
-Mosquitoes provide an exceptionally rich system in which to ask these questions—not because they are merely organisms that transmit disease, but because their epidemiological importance makes the consequences of their ecology and evolution extremely important.
+Mosquitoes provide an exceptionally rich system in which to ask these questions—not because they are merely organisms that transmit disease, but because their epidemiological relevance makes the consequences of their ecology and evolution extremely important.
