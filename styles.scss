@@ -156,3 +156,11 @@
   object-fit: cover;
   border-radius: 25%;
 }
+
+/* Homepage has its own visual title/identity block.
+   Keep metadata for HTML/footer purposes but suppress Quarto's
+   automatically generated document title block. */
+
+.homepage #title-block-header {
+  display: none;
+}

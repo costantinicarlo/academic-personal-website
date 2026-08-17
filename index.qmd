@@ -1,12 +1,14 @@
 ---
 pagetitle: "Carlo Costantini"
-description: >-
-  Evolutionary ecologist studying mosquitoes, adaptation, behaviour,
-  populations and environmental change through field biology,
-  genomics, environmental data and quantitative inference.
+description-meta: >-
+  Evolutionary ecologist studying mosquitoes, adaptation, behaviour, populations and environmental change through field biology, genomics, environmental data and quantitative inference.
 
 page-layout: custom
 toc: false
+
+date-modified: last-modified
+
+body-classes: homepage
 ---
 
 ::: {.grid .homepage-grid}
