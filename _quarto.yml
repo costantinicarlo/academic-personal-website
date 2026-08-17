@@ -26,7 +26,19 @@ website:
   back-to-top-navigation: true
 
   page-footer:
-    center: "Carlo Costantini"
+    left: "© 2026 Carlo Costantini"
+
+    center:
+      - text: "MIVEGEC"
+        href: https://mivegec.fr/fr/annuaire/agent?id=273
+      - text: "ORCID"
+        href: https://orcid.org/0000-0003-1016-129X
+      - icon: github
+        href: https://github.com/costantinicarlo
+
+    right: "Last edited: {{< meta date-modified >}}"
+
+    border: true
 
 format:
   html:
