@@ -92,6 +92,18 @@ of electrocuting grids to compare the odour-orientated responses of
 field</span>. <em>Medical and Veterinary Entomology</em>,
 <em>22</em>(2), 93–108.
 </div>
+<div id="ref-Takken_2006b" class="csl-entry" role="listitem">
+Takken, W., &amp; <strong>Costantini, C.</strong> (2006). <span class="nocase">The
+genetics of vector-host interactions</span> [Chapter]. In C. Boëte
+(Ed.), <em>Genetically modified mosquitoes for malaria control</em> (pp.
+137–145). Landes Bioscience.
+</div>
+<div id="ref-Takken_2006a" class="csl-entry" role="listitem">
+Takken, W., <strong>Costantini, C.</strong>, Dolo, G., Hassanali, A., Sagnon, N., &amp;
+Osir, E. (2006). <span class="nocase">Mosquito mating behaviour</span>
+[Chapter]. In <em>Bridging laboratory and field research for genetic
+control of disease vectors</em> (pp. 183–188). Springer Netherlands.
+</div>
 <div id="ref-Tirados_MVE2006a" class="csl-entry" role="listitem">
 Tirados, I., <strong>Costantini, C.</strong>, Gibson, G., &amp; Torr, S. J. (2006). <span
 class="nocase">Blood-feeding behaviour of the malarial mosquito
@@ -105,16 +117,24 @@ Parasitology</em>, <em>20</em>(6), 249–251.
 </div>
 <div id="ref-Costantini_P2002b" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, &amp; Diallo, M. (2002). Lack of evidence for
-primatophilic odour preferences of savanna populations of <em>anopheles
-gambiae</em> and other malaria vectors. <em>Parassitologia</em>,
-<em>44</em>, 52–52.
+primatophilic odour preferences of savanna populations of
+<em><span>A</span>nopheles gambiae</em> and other malaria vectors.
+<em>Parassitologia</em>, <em>44</em>, 52–52.
 </div>
 <div id="ref-Costantini_P2002c" class="csl-entry" role="listitem">
 <span class="nocase"><strong>Costantini, C.</strong>, Guelbeogo, W. M., Conte, M. P.,
 della Torre, A., Sagnon, N., Seganti, L., &amp; Coluzzi, M.</span>
-(2002). Behavioural responses of <em>anopheles gambiae</em> to
-oviposition semiochemicals from bacteria of larval breeding sites.
+(2002). Behavioural responses of <em><span>A</span>nopheles gambiae</em>
+to oviposition semiochemicals from bacteria of larval breeding sites.
 <em>Parassitologia</em>, <em>44</em>, 51–51.
+</div>
+<div id="ref-Ricci_PR2002a" class="csl-entry" role="listitem">
+Ricci, I., Santolamazza, F., <strong>Costantini, C.</strong>, &amp; Favia, G. (2002).
+Molecular characterisation and chromosomal mapping of transcripts having
+tissue-specific expression in the malaria mosquito
+<em><span>A</span>nopheles gambiae</em>: Possible involvement in visual
+or olfactory processes. <em>Parasitology Research</em>, <em>88</em>(1),
+1–8.
 </div>
 <div id="ref-Costantini_MVE2001a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, Birkett, M. A., Gibson, G., Ziesmann, J., Sagnon, N.,
@@ -127,8 +147,9 @@ components</span>. <em>Medical and Veterinary Entomology</em>,
 <div id="ref-Costantini_P2001a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, &amp; Diallo, M. (2001). <span
 class="nocase">Preliminary lack of evidence for simian odour preferences
-of savanna populations of <em>Anopheles gambiae</em> and other malaria
-vectors</span>. <em>Parassitologia</em>, <em>43</em>(4), 179–182.
+of savanna populations of <em><span>A</span>nopheles gambiae</em> and
+other malaria vectors</span>. <em>Parassitologia</em>, <em>43</em>(4),
+179–182.
 </div>
 <div id="ref-Duchemin_MVE2001a" class="csl-entry" role="listitem">
 Duchemin, J.-B., Tsy, J.-M. L. P., Rabarison, P., Roux, J., Coluzzi, M.,
@@ -141,8 +162,9 @@ Veterinary Entomology</em>, <em>15</em>(1), 50–57.
 <div id="ref-Costantini_P1999b" class="csl-entry" role="listitem">
 <span class="nocase"><strong>Costantini, C.</strong>, Sagnon, N., della Torre, A., &amp;
 Coluzzi, M.</span> (1999). <span class="nocase">Mosquito behavioural
-aspects of vector-human interactions in the <em>Anopheles gambiae</em>
-complex</span>. <em>Parassitologia</em>, <em>41</em>(1-3), 209–217.
+aspects of vector-human interactions in the <em><span>A</span>nopheles
+gambiae</em> complex</span>. <em>Parassitologia</em>, <em>41</em>(1-3),
+209–217.
 </div>
 <div id="ref-Costantini_PI1998a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong> (1998). Determinants of <em><span>A</span>nopheles</em>
@@ -172,6 +194,12 @@ Torre, A., &amp; Coluzzi, M.</span> (1997). The responses of
 for synthetic human odour. <em>Annals of Tropical Medicine and
 Parasitology</em>, <em>91</em>(Supplement No.1), S123–S124.
 </div>
+<div id="ref-Costantini_CFS1996a" class="csl-entry" role="listitem">
+<strong>Costantini, C.</strong> (1996). <span class="nocase">Introduction
+<span>III</span>: Odours for Host-Finding Mosquitoes</span> [Chapter].
+In G. R. C. Bock &amp; G. Cardew (Eds.), <em>Olfaction in mosquito–host
+interactions</em> (pp. 124–131). John Wiley &amp; Sons, Ltd.
+</div>
 <div id="ref-Costantini_P1996b" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong> (1996). Malaria vector-host interactions in <span>West
 Africa</span>. <em>Parassitologia</em>, <em>38</em>, 99.
@@ -187,9 +215,10 @@ village</span>. <em>Medical and Veterinary Entomology</em>,
 <div id="ref-Costantini_P1996a" class="csl-entry" role="listitem">
 <span class="nocase"><strong>Costantini, C.</strong>, Sagnon, N., della Torre, A., Brady,
 J., Gibson, G., &amp; Coluzzi, M.</span> (1996). Differences in the
-response to host odours between <em>anopheles arabiensis</em> and
-<em>anopheles gambiae</em> in <span>W</span>est <span>A</span>frica.
-<em>Parassitologia</em>, <em>38</em>, 100.
+response to host odours between <em><span>A</span>nopheles
+arabiensis</em> and <em><span>A</span>nopheles gambiae</em> in
+<span>W</span>est <span>A</span>frica. <em>Parassitologia</em>,
+<em>38</em>, 100.
 </div>
 </div>
 

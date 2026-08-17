@@ -11,14 +11,6 @@
 
 <div id="refs-natural-history" class="references csl-bib-body hanging-indent"
 data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-Amimi_AB2020a" class="csl-entry" role="listitem">
-Amimi, N., Dussert, S., Vaissayre, V., Ghouil, H., Doulbeau, S.,
-<strong>Costantini, C.</strong>, Ammari, Y., &amp; Joët, T. (2020). <span
-class="nocase">Variation in seed traits among <span>M</span>editerranean
-<span>O</span>aks in <span>T</span>unisia and their ecological
-significance</span>. <em>Annals of Botany</em>, <em>125</em>(6),
-891–904.
-</div>
 <div id="ref-Costantini_BABC2012a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong> (2012). <span class="nocase"><span>S</span>andwich
 <span>T</span>ern <em>Thalasseus sandvicensis</em> and
@@ -31,6 +23,24 @@ significance</span>. <em>Annals of Botany</em>, <em>125</em>(6),
 class="math inline">×</span> <span>T</span>ree <span>S</span>parrow in
 northern <span>I</span>taly. <em>British Birds</em>, <em>89</em>(10),
 457–458.
+</div>
+<div id="ref-Costantini_A1995b" class="csl-entry" role="listitem">
+<strong>Costantini, C.</strong>, &amp; Melletti, M. (1995). <span class="nocase">Picchio
+rosso maggiore – <em>Picoides major</em></span> [Chapter]. In A. Boano,
+M. Brunelli, F. Bulgarini, A. Montemaggiori, S. Sarrocco, &amp; M.
+Visentin (Eds.), <em><span class="nocase">Atlante degli Uccelli
+nidificanti nel <span>L</span>azio</span>: Alula special volume
+(1–2)</em> (pp. 84–85). Stazione Romana Osservazione e Protezione
+Uccelli.
+</div>
+<div id="ref-Melletti_A1995a" class="csl-entry" role="listitem">
+Melletti, M., &amp; <strong>Costantini, C.</strong> (1995). <span class="nocase">Picchio
+dorsobianco – <em>Picoides leucotos</em></span> [Chapter]. In A. Boano,
+M. Brunelli, F. Bulgarini, A. Montemaggiori, S. Sarrocco, &amp; M.
+Visentin (Eds.), <em><span class="nocase">Atlante degli Uccelli
+nidificanti nel <span>L</span>azio</span>: Alula special volume
+(1–2)</em> (pp. 86–87). Stazione Romana Osservazione e Protezione
+Uccelli.
 </div>
 <div id="ref-Costantini_A1993a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, Melletti, M., &amp; Papi, R. (1993). <span

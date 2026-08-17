@@ -37,6 +37,14 @@ to ions concentration determines genetic response and dominance of
 <em>Anopheles coluzzii</em> larvae in urban coastal habitats of Central
 Africa</span>. <em>Scientific Reports</em>, <em>11</em>(15781), 1–13.
 </div>
+<div id="ref-Amimi_AB2020a" class="csl-entry" role="listitem">
+Amimi, N., Dussert, S., Vaissayre, V., Ghouil, H., Doulbeau, S.,
+<strong>Costantini, C.</strong>, Ammari, Y., &amp; Joët, T. (2020). <span
+class="nocase">Variation in seed traits among <span>M</span>editerranean
+<span>O</span>aks in <span>T</span>unisia and their ecological
+significance</span>. <em>Annals of Botany</em>, <em>125</em>(6),
+891–904.
+</div>
 <div id="ref-Ould-Lemrabott_PV2020a" class="csl-entry" role="listitem">
 Ould Lemrabott, M. A., Le Goff, G., Kengne, P., Ndiaye, O., Costantini,
 C., Lekweiry, K. M., Salem, M. S. O. A., Robert, V., Basco, L., Simard,
@@ -83,15 +91,6 @@ class="nocase">Chromosome inversions and ecological plasticity in the
 main <span>A</span>frican malaria mosquitoes</span>. <em>Evolution</em>,
 <em>71</em>(3), 686–701.
 </div>
-<div id="ref-Tene-Fossog_EA2015a" class="csl-entry" role="listitem">
-Tene Fossog, B., Ayala, D., Acevedo, P., Kengne, P., Ngomo Abeso Mebuy,
-I., Makanga, B., Magnus, J., Awono-Ambene, P., Njiokou, F., Pombi, M.,
-Antonio-Nkondjio, C., Paupy, C., Besansky, N. J., &amp; <strong>Costantini, C.</strong>
-(2015). <span class="nocase">Habitat segregation and ecological
-character displacement in cryptic <span>A</span>frican malaria
-mosquitoes</span>. <em>Evolutionary Applications</em>, <em>8</em>(4),
-326–345.
-</div>
 <div id="ref-Antonio-Nkondjio_MJ2014a" class="csl-entry"
 role="listitem">
 Antonio-Nkondjio, C., Youmsi-Goupeyou, M., Kopya, E., Tene Fossog, B.,
@@ -123,15 +122,6 @@ class="nocase">Adaptation to Aridity in the Malaria Mosquito
 <em>Anopheles gambiae</em>: chromosomal Inversion Polymorphism and Body
 Size Influence Resistance to Desiccation</span>. <em>PLoS ONE</em>,
 <em>7</em>(4), e34841.
-</div>
-<div id="ref-Kamdem_P2012a" class="csl-entry" role="listitem">
-<span class="nocase">Kamdem, C., Tene Fossog, B., Simard, F., Etouna,
-J., Ndo, C., Kengne, P., Boussès, P., Etoa, F.-X., Awono-Ambene, P.,
-Fontenille, D., &amp; al., et</span>. (2012). <span
-class="nocase">Anthropogenic habitat disturbance and ecological
-divergence between incipient species of the malaria mosquito
-<em>Anopheles gambiae</em></span>. <em>PLoS ONE</em>, <em>7</em>(6),
-e39453.
 </div>
 <div id="ref-Tene-Fossog_JTM2012a" class="csl-entry" role="listitem">
 Tene Fossog, B., Kopya, E., Ndo, C., Menze-Djantio, B., <strong>Costantini, C.</strong>,
@@ -168,14 +158,6 @@ Agbor, J.-P., Awono-Ambene, P., Fontenille, D., &amp; Simard, F. (2009).
 major malaria vectors in <span>C</span>ameroon</span>. <em>Malaria
 Journal</em>, <em>8</em>, 307.
 </div>
-<div id="ref-Costantini_E2009a" class="csl-entry" role="listitem">
-<strong>Costantini, C.</strong>, Ayala, D., Guelbeogo, W. M., Pombi, M., Some, C. Y.,
-Bassolé, I. H. N., Ose, K., Fotsing, J.-M., Sagnon, N., Fontenille, D.,
-Besansky, N. J., &amp; Simard, F. (2009). <span class="nocase">Living at
-the edge: biogeographic patterns of habitat segregation conform to
-speciation by niche expansion in <em>Anopheles gambiae</em></span>.
-<em>BMC Ecology</em>, <em>9</em>, 16.
-</div>
 <div id="ref-Gray_MJ2009a" class="csl-entry" role="listitem">
 Gray, E. M., Rocca, K. A. C., <strong>Costantini, C.</strong>, &amp; Besansky, N. J.
 (2009). <span class="nocase">Inversion <span>2La</span> is associated
@@ -185,31 +167,23 @@ gambiae</em></span>. <em>Malaria Journal</em>, <em>8</em>, 215.
 <div id="ref-Rocca_MJ2009a" class="csl-entry" role="listitem">
 Rocca, K. A. C., Gray, E. M., <strong>Costantini, C.</strong>, &amp; Besansky, N. J.
 (2009). <span class="nocase"><span>2La</span> chromosomal inversion
-enhances thermal tolerance of <em>Anopheles gambiae</em> larvae</span>.
-<em>Malaria Journal</em>, <em>8</em>, 147.
-</div>
-<div id="ref-Simard_E2009a" class="csl-entry" role="listitem">
-Simard, F., Ayala, D., Kamdem, G. C., Pombi, M., Etouna, J., Ose, K.,
-Fotsing, J.-M., Fontenille, D., Besansky, N. J., &amp; <strong>Costantini, C.</strong>
-(2009). <span class="nocase">Ecological niche partitioning between
-<em>Anopheles gambiae</em> molecular forms in <span>C</span>ameroon: the
-ecological side of speciation</span>. <em>BMC Ecology</em>, <em>9</em>,
-17.
+enhances thermal tolerance of <em><span>A</span>nopheles gambiae</em>
+larvae</span>. <em>Malaria Journal</em>, <em>8</em>, 147.
 </div>
 <div id="ref-Costantini_P2002a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, Pombi, M., Palladino, C., Coluzzi, M., &amp; Sagnon, N.
-(2002). Distribution of <em>anopheles gambiae</em> taxa in relation to
-the water chemistry of larval breeding sites in an arid savanna area of
-<span>B</span>urkina <span>F</span>aso. <em>Parassitologia</em>,
-<em>44</em>, 53–53.
+(2002). Distribution of <em><span>A</span>nopheles gambiae</em> taxa in
+relation to the water chemistry of larval breeding sites in an arid
+savanna area of <span>B</span>urkina <span>F</span>aso.
+<em>Parassitologia</em>, <em>44</em>, 53–53.
 </div>
 <div id="ref-Palladino_P2002a" class="csl-entry" role="listitem">
 <span class="nocase">Palladino, C., Sagnon, N., Petrarca, V., della
 Torre, A., Coluzzi, M., &amp; <strong>Costantini, C.</strong></span> (2002). Frequencies
-of <em>anopheles gambiae</em> taxa in larval and imaginal samples of a
-sudan savanna village of <span>B</span>urkina <span>F</span>aso indicate
-inter-and intra-specific differences in adult resting behaviour.
-<em>Parassitologia</em>, <em>44</em>, 124–124.
+of <em><span>A</span>nopheles gambiae</em> taxa in larval and imaginal
+samples of a sudan savanna village of <span>B</span>urkina
+<span>F</span>aso indicate inter-and intra-specific differences in adult
+resting behaviour. <em>Parassitologia</em>, <em>44</em>, 124–124.
 </div>
 </div>
 

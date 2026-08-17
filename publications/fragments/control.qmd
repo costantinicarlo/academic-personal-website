@@ -117,10 +117,11 @@ essential oils extracted from three spontaneous plants of
 </div>
 <div id="ref-Pombi_P2003a" class="csl-entry" role="listitem">
 <span class="nocase">Pombi, M., <strong>Costantini, C.</strong>, &amp; della Torre,
-A.</span> (2003). <span class="nocase"><em>Aedes albopictus</em>
-(<span>D</span>iptera: <span>C</span>ulicidae) a <span>R</span>oma:
-analisi sperimentale di parametri rilevanti in strategie di
-controllo</span>. <em>Parassitologia</em>, <em>45</em>(2), 97–102.
+A.</span> (2003). <span class="nocase"><em><span>A</span>edes
+albopictus</em> (<span>D</span>iptera: <span>C</span>ulicidae) a
+<span>R</span>oma: analisi sperimentale di parametri rilevanti in
+strategie di controllo</span>. <em>Parassitologia</em>, <em>45</em>(2),
+97–102.
 </div>
 <div id="ref-Ascoli_RLSFN2002a" class="csl-entry" role="listitem">
 Ascoli, V., Manno, D., Guzzinati, S., Tognazzo, S., Zambon, P., Arcà,
@@ -147,7 +148,7 @@ human herpesvirus-8 infection and in the expression of
 </div>
 <div id="ref-Pombi_P2002a" class="csl-entry" role="listitem">
 <span class="nocase">Pombi, M., della Torre, A., &amp; Costantini,
-C.</span> (2002). Larval biology and control of <em>aedes
+C.</span> (2002). Larval biology and control of <em><span>A</span>edes
 albopictus</em> in a heavily infested area of <span>R</span>ome:
 Susceptibility to <span>T</span>emephos and its persistence in sewer
 drain basins. <em>Parassitologia</em>, <em>44</em>, 141–141.

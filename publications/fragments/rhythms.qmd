@@ -50,15 +50,5 @@ females of the malaria mosquito <em><span>A</span>nopheles
 coluzzii</em></span>. <em>Parasites <span>&amp;</span> Vectors</em>,
 <em>14</em>, 457.
 </div>
-<div id="ref-Sawadogo_PV2013a" class="csl-entry" role="listitem">
-Sawadogo, S. P., <strong>Costantini, C.</strong>, Pennetier, C., Diabaté, A., Gibson, G.,
-&amp; Dabiré, K. R. (2013). <span class="nocase">Differences in timing
-of mating swarms in sympatric populations of <em>Anopheles coluzzii</em>
-and <em>Anopheles gambiae s.s.</em> (formerly <em>An. gambiae</em>
-<span>M</span> and <span>S</span> molecular forms) in
-<span>B</span>urkina <span>F</span>aso, <span>W</span>est
-<span>A</span>frica</span>. <em>Parasites <span>&amp;</span>
-Vectors</em>, <em>6</em>, 275.
-</div>
 </div>
 
