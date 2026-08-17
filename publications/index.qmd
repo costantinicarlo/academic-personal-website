@@ -1,29 +1,36 @@
 ---
 title: "Publications"
-subtitle: "Scientific publications"
+subtitle: "Scientific publications by research theme"
 
 description: >-
-  Peer-reviewed articles and other scientific publications
-  in evolutionary ecology, mosquito biology, medical entomology,
-  behaviour, population biology and related fields.
+  Scientific publications grouped by the principal biological questions and methodological themes of my research.
 
 page-layout: article
-toc: false
 
-bibliography: ../bibliography/publications.bib
-csl: ../bibliography/csl/apa-cv.csl
-
-nocite: |
-  @*
-
-link-bibliography: true
+toc: true
+toc-location: right
+toc-depth: 2
+toc-title: "Research themes"
 ---
-
-My publications span evolutionary ecology, mosquito biology, medical entomology, behavioural ecology, population biology and related methodological work.
 
 The list below is generated from my curated bibliographic records. External publication profiles are also available through [ORCID](https://orcid.org/0000-0003-1016-129X) and [Google Scholar](https://scholar.google.com/citations?user=RLWDKbMAAAAJ).
 
-## Publications
+The publications are organised by **research theme** rather than chronologically. This reflects the scientific questions that connect the work across time and provides a direct bridge between the publication record and the corresponding [Research Themes](/research/index.qmd).
 
-::: {#refs}
-:::
+Within each theme, publications are ordered in reverse chronological order.
+
+{{< include /publications/fragments/adaptation.qmd >}}
+
+{{< include /publications/fragments/speciation.qmd >}}
+
+{{< include /publications/fragments/behaviour.qmd >}}
+
+{{< include /publications/fragments/rhythms.qmd >}}
+
+{{< include /publications/fragments/population.qmd >}}
+
+{{< include /publications/fragments/control.qmd >}}
+
+{{< include /publications/fragments/methods.qmd >}}
+
+{{< include /publications/fragments/natural-history.qmd >}}
