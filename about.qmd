@@ -13,13 +13,15 @@ toc: true
 toc-location: right
 toc-depth: 2
 toc-title: "On this page"
+
+date-modified: last-modified
 ---
 
 > **Keywords:** evolutionary ecologist · mosquito biologist · quantitative naturalist
 
 I am an **evolutionary ecologist** interested in how organisms adapt to heterogeneous and changing environments—and in what happens when those adaptations alter populations, species boundaries and interactions with other organisms.
 
-Mosquitoes, particularly African malaria vectors, have become my principal biological system. For this reason I am also mostly a **mosquito biologist**. They are remarkable organisms in which ecology, evolution, behaviour, physiology, genomics and epidemiology intersect unusually clearly.
+Mosquitoes, particularly African malaria vectors, have become my principal biological system. For this reason I am also and foremost a **mosquito biologist**. They are remarkable organisms in which ecology, evolution, behaviour, physiology, genomics and epidemiology intersect unusually clearly.
 
 My research asks questions such as:
 
@@ -133,3 +135,11 @@ For a more detailed account of the biological questions I work on—and the expe
 
 > **In one sentence:**  
 > I study how mosquitoes thrive and evolve in changing environments, using whatever combination of field biology, experiments, genomics, environmental data and quantitative inference is necessary to understand why.
+
+---
+
+## Institutional context
+
+My current institutional environment is [MIVEGEC](https://mivegec.fr/en), a joint research unit working on the ecology, genetics, evolution and control of infectious diseases and their vectors.
+
+My [institutional profile](https://mivegec.fr/fr/annuaire/agent?id=273) provides information on my affiliations, [responsibilities and administrative duties](https://mivegec.fr/fr/departements-scientifiques/evolution-des-systemes-vectoriels-esv/equipes-esv).
