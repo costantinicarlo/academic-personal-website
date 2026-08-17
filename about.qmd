@@ -17,7 +17,11 @@ toc-title: "On this page"
 date-modified: last-modified
 ---
 
+---
+
 > **Keywords:** evolutionary ecologist · mosquito biologist · quantitative naturalist
+
+---
 
 I am an **evolutionary ecologist** interested in how organisms adapt to heterogeneous and changing environments—and in what happens when those adaptations alter populations, species boundaries and interactions with other organisms.
 
