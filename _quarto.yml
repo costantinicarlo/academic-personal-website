@@ -8,6 +8,8 @@ website:
   description: >-
     Evolutionary ecology, mosquito biology, and quantitative approaches to understanding organism–environment interactions.
 
+  favicon: images/favicon.png
+  
   navbar:
     logo: images/avatar.png
     logo-alt: "Carlo Costantini"
