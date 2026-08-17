@@ -9,6 +9,10 @@ website:
     Evolutionary ecology, mosquito biology, and quantitative approaches to understanding organism–environment interactions.
 
   navbar:
+    logo: images/avatar.png
+    logo-alt: "Carlo Costantini"
+    logo-href: index.qmd
+
     left:
       - text: Home
         href: index.qmd

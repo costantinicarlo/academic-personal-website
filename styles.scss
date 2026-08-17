@@ -147,3 +147,12 @@
 .related-publications:hover {
   text-decoration: underline;
 }
+
+/* Navbar avatar */
+
+.navbar-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 25%;
+}
