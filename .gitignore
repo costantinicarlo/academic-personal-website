@@ -8,6 +8,9 @@
 /.quarto/
 /_site/
 
+# Standalone Quarto/Pandoc render dependencies
+/*_files/
+
 # R session artefacts
 .Rhistory
 .RData
