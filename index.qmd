@@ -59,9 +59,9 @@ Mosquitoes are especially compelling because their ecology and evolution can dir
 
 ### About
 
-I studied Natural Sciences at the [University of Rome *La Sapienza*](https://smfn.web.uniroma1.it) before completing a PhD in Biology at [Imperial College of Science, Technology and Medicine](https://www.imperial.ac.uk/life-sciences/), working as a Research Assistant at the College's [Silwood Park](https://www.imperial.ac.uk/silwood-park/) field station.
+I studied Natural Sciences at the [University of Rome *La Sapienza*](https://smfn.web.uniroma1.it) before completing a PhD in Biology at [Imperial College of Science, Technology and Medicine](https://www.imperial.ac.uk/life-sciences/), working as a Research Assistant at the College [Silwood Park](https://www.imperial.ac.uk/silwood-park/) field station.
 
-Much of my scientific career has been spent working in sub-Saharan Africa, particularly in Burkina Faso, Cameroon, Gabon and Senegal, combining field research with training, supervision and scientific partnerships.
+Much of my scientific career has been spent working in sub-Saharan Africa, particularly in Burkina Faso, Cameroon, and Senegal, combining field research with training, supervision and scientific partnerships.
 
 In 2004 I joined the [French Research Institute for Sustainable Development](https://www.ird.fr), and am currently based at the [Institut Pasteur in Dakar](https://institutpasteurdakar.sn/), Senegal, where my work ranges from mosquito evolutionary ecology and genomics to environmental data science—and where I can still occasionally be found somewhere out in the field, chasing mosquitoes.
 
