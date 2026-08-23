@@ -32,7 +32,9 @@ website:
   back-to-top-navigation: true
 
   page-footer:
-    left: "© 2026 Carlo Costantini"
+    left:
+      - text: "© 2026 Carlo Costantini · Copyright and reuse"
+        href: rights.qmd
 
     center:
       - text: "MIVEGEC"

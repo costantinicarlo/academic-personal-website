@@ -1,0 +1,100 @@
+---
+title: "Copyright and reuse"
+subtitle: "Rights and licensing information for this website"
+description: >-
+  Copyright, reuse, software-licensing and third-party rights information for the academic personal website of Carlo Costantini.
+
+page-layout: article
+
+toc: true
+toc-location: right
+toc-depth: 2
+toc-title: "On this page"
+
+date-modified: last-modified
+---
+
+## Overview
+
+Unless otherwise stated, the original text and original graphical content of this website are:
+
+**Copyright © 2026 Carlo Costantini. All rights reserved.**
+
+The website and its source repository contain several kinds of material—original scholarly content, software and configuration files, bibliographic records, generated artefacts, and third-party resources. They are not all distributed under the same terms.
+
+Nothing on this page limits quotation, citation, linking, or other uses permitted by applicable law. Permission is required for uses that go beyond those allowances unless the relevant page, file, or resource carries a separate licence.
+
+## Original website content
+
+Except where a page or individual work states otherwise, the original scholarly, biographical, research, explanatory, and editorial content authored by Carlo Costantini is all rights reserved.
+
+This includes the original prose contained in the website's Quarto source documents and in the corresponding rendered pages.
+
+No general permission is granted to reproduce, republish, distribute, translate, adapt, or create derivative versions of this content. Requests for broader reuse may be addressed to [Carlo Costantini](mailto:carlo.costantini@ird.fr).
+
+When referring to material from this website, please cite the relevant page and identify Carlo Costantini as its author.
+
+## Original images and graphical material
+
+Original photographs, illustrations, diagrams, and other graphical works are all rights reserved unless an individual caption, attribution statement, metadata record, or accompanying file specifies another licence.
+
+This notice applies only to material for which Carlo Costantini owns or controls the necessary rights. It does not claim ownership of third-party logos, trademarks, institutional material, publication figures, or externally sourced resources.
+
+## Software and website implementation
+
+The reusable software and implementation layer of the source repository is licensed separately from the website content.
+
+Except where otherwise stated, original code and configuration in the following locations are made available under the **BSD Zero Clause License (0BSD)**:
+
+* `scripts/`
+* `styles.scss`
+* `_quarto.yml`
+* `.github/workflows/`
+* `.gitignore`
+* `academic-personal-website.code-workspace`
+
+The complete scope statement and licence text are provided in the repository:
+
+* [Copyright and licensing statement](https://github.com/costantinicarlo/academic-personal-website/blob/main/LICENSE.md)
+* [BSD Zero Clause License](https://github.com/costantinicarlo/academic-personal-website/blob/main/LICENSES/0BSD.txt)
+
+Executable code embedded within a content page is covered by the software licence only when it is explicitly identified as reusable code or otherwise marked as licensed under 0BSD.
+
+## Publications and bibliographic information
+
+Publication titles, citations, abstracts, identifiers, bibliographic records, and generated publication lists may contain factual information or material associated with works created by third parties.
+
+The inclusion of a publication in this website does not relicense the publication itself. Articles, books, datasets, figures, supplementary materials, and other scholarly works remain subject to the rights and access conditions specified by their publishers, authors, repositories, or individual licences.
+
+No exclusive rights are claimed over purely factual bibliographic metadata beyond any rights lawfully held by the repository owner.
+
+## Third-party software and resources
+
+Third-party software, Citation Style Language files, fonts, icons, logos, trademarks, institutional material, and other externally sourced resources remain subject to their own copyright, licence, and trademark terms.
+
+Known third-party components and their applicable notices are documented in:
+
+* [Third-party notices](https://github.com/costantinicarlo/academic-personal-website/blob/main/THIRD_PARTY_NOTICES.md)
+
+Where a third-party resource contains its own copyright or licence notice, that notice takes precedence for the resource concerned.
+
+## Names, logos, and trademarks
+
+Names, logos, service marks, and trademarks appearing on this website are used for identification, attribution, or linking purposes. Their inclusion does not imply ownership by Carlo Costantini, nor does it grant permission for their reuse.
+
+Nothing on this website grants permission to use the names, logos, or trademarks of Carlo Costantini, IRD, MIVEGEC, Institut Pasteur de Dakar, affiliated institutions, publishers, software projects, or other organisations in a way that suggests sponsorship, affiliation, or endorsement.
+
+## Personal and institutional status
+
+This is a personal academic website. It is not an official publication platform of IRD, MIVEGEC, Institut Pasteur de Dakar, or any other institution with which Carlo Costantini is or has been affiliated.
+
+Opinions, interpretations, and descriptions presented here are those of the author unless explicitly attributed to another source.
+
+## Permission enquiries
+
+For permission to reproduce or adapt original website content or graphical material beyond uses permitted by law, contact:
+
+**Carlo Costantini**
+[carlo.costantini@ird.fr](mailto:carlo.costantini@ird.fr)
+
+Please identify the page or work concerned, the material you wish to reuse, the intended form of reuse, and whether the use is commercial or non-commercial.

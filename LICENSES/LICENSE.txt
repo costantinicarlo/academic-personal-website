@@ -1,0 +1,7 @@
+BSD Zero Clause License
+
+Copyright (C) 2026 Carlo Costantini
+
+SPDX-License-Identifier: 0BSD
+
+This repository is licensed under the BSD Zero Clause License (0BSD). The applicable license terms are the canonical terms corresponding to SPDX license identifier `0BSD`.
