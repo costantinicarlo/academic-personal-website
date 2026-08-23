@@ -412,8 +412,12 @@ The website is designed to remain:
 * **durable** — implementation and hosting technologies should be replaceable without requiring the scientific content to be rewritten;
 * **minimalist** — additional infrastructure should be introduced only when it provides a clear scientific, editorial, or maintenance benefit.
 
-## Copyright
+## Copyright and licensing
 
 Unless otherwise stated, website text and original graphical content are copyright Carlo Costantini.
 
 Third-party publications, institutional material, logos, trademarks, bibliographic metadata, and externally sourced resources remain subject to their respective rights and licences.
+
+For the public-facing summary, see [Copyright and reuse](rights.qmd).
+
+For the complete repository licensing terms, see [LICENSE.md](LICENSE.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
