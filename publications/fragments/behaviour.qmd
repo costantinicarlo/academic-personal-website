@@ -18,7 +18,8 @@ Badolo, A. (2024). <span class="nocase">Blood-feeding patterns and
 resting behaviour of <em>Aedes aegypti</em> from three Health districts
 of <span>O</span>uagadougou city, <span>B</span>urkina
 <span>F</span>aso</span>. <em>The American Journal of Tropical Medicine
-and Hygiene</em>, <em>111</em>(6), 1295–1301.
+and Hygiene</em>, <em>111</em>(6), 1295–1301. <a
+href="https://doi.org/10.4269/ajtmh.24-0240">https://doi.org/10.4269/ajtmh.24-0240</a>
 </div>
 <div id="ref-Vantaux_PCJ2021a" class="csl-entry" role="listitem">
 Vantaux, A., Yao, F., Hien, D. F., Guissou, E., Yameogo, B. K., Gouagna,
@@ -27,7 +28,8 @@ F., Mouline, K., Roche, B., Cohuet, A., Dabiré, K. R., &amp; Lefèvre, T.
 (2021). <span class="nocase">Field evidence for manipulation of mosquito
 host selection by the human malaria parasite,
 <em><span>P</span>lasmodium falciparum</em></span>. <em>Peer Community
-Journal</em>, <em>1</em>, e13.
+Journal</em>, <em>1</em>, e13. <a
+href="https://doi.org/10.24072/pcjournal.13">https://doi.org/10.24072/pcjournal.13</a>
 </div>
 <div id="ref-Makanga_EE2017a" class="csl-entry" role="listitem">
 Makanga, B., <strong>Costantini, C.</strong>, Rahola, N., Yangari, P., Rougeron, V.,
@@ -35,14 +37,16 @@ Ayala, D., Prugnolle, F., &amp; Paupy, C. (2017). <span
 class="nocase"><span>“<span>S</span>how me which parasites you carry and
 <span>I</span> will tell you what you eat,”</span> or how to infer the
 trophic behavior of hematophagous arthropods feeding on wildlife</span>.
-<em>Ecology and Evolution</em>, <em>7</em>, 7578–7584.
+<em>Ecology and Evolution</em>, <em>7</em>, 7578–7584. <a
+href="https://doi.org/10.1002/ece3.2769">https://doi.org/10.1002/ece3.2769</a>
 </div>
 <div id="ref-Nguyen_B2017a" class="csl-entry" role="listitem">
 Nguyen, P. L., Vantaux, A., Hien, D. F., Dabiré, K. R., Yameogo, B. K.,
 Gouagna, L.-C., Fontenille, D., Renaud, F., Simard, F., <strong>Costantini, C.</strong>,
 Thomas, F., Cohuet, A., &amp; Lefèvre, T. (2017). <span
 class="nocase">Can malaria parasites manipulate the odour-mediated host
-preference of their mosquito vectors?</span> <em>bioRxiv</em>.
+preference of their mosquito vectors?</span> <em>bioRxiv</em>. <a
+href="https://doi.org/10.1101/114272">https://doi.org/10.1101/114272</a>
 </div>
 <div id="ref-Nguyen_SR2017a" class="csl-entry" role="listitem">
 Nguyen, P. L., Vantaux, A., Hien, D. F., Dabiré, K. R., Yameogo, B. K.,
@@ -51,7 +55,8 @@ Thomas, F., Cohuet, A., &amp; Lefèvre, T. (2017). <span
 class="nocase">No evidence for manipulation of <em>Anopheles
 gambiae</em>, <em>An. coluzzii</em> and <em>An. arabiensis</em> host
 preference by <em>Plasmodium falciparum</em></span>. <em>Scientific
-Reports</em>, <em>7</em>(1), 9415.
+Reports</em>, <em>7</em>(1), 9415. <a
+href="https://doi.org/10.1038/s41598-017-09821-x">https://doi.org/10.1038/s41598-017-09821-x</a>
 </div>
 <div id="ref-Vantaux_B2017a" class="csl-entry" role="listitem">
 Vantaux, A., Yao, F., Hien, D. F., Guissou, E., Yameogo, B. K., Gouagna,
@@ -59,20 +64,23 @@ L.-C., Fontenille, D., Renaud, F., Simard, F., Constantini, C., Thomas,
 F., Mouline, K., Roche, B., Cohuet, A., Dabiré, K. R., &amp; Lefèvre, T.
 (2017). <span class="nocase">Field evidence for manipulation of mosquito
 host selection by the human malaria parasite, <em>Plasmodium
-falciparum</em></span>. <em>bioRxiv</em>.
+falciparum</em></span>. <em>bioRxiv</em>. <a
+href="https://doi.org/10.1101/207183">https://doi.org/10.1101/207183</a>
 </div>
 <div id="ref-Lefevre_P2010a" class="csl-entry" role="listitem">
 Lefèvre, T., Gouagna, L.-C., Dabiré, K. R., Elguero, E., Fontenille, D.,
 Renaud, F., <strong>Costantini, C.</strong>, &amp; Thomas, F. (2010). <span
 class="nocase">Beer consumption increases human attractiveness to
-malaria mosquitoes</span>. <em>PLoS ONE</em>, <em>5</em>(3), e9546.
+malaria mosquitoes</span>. <em>PLoS ONE</em>, <em>5</em>(3), e9546. <a
+href="https://doi.org/10.1371/journal.pone.0009546">https://doi.org/10.1371/journal.pone.0009546</a>
 </div>
 <div id="ref-Lefevre_TMIH2009a" class="csl-entry" role="listitem">
 Lefèvre, T., Gouagna, L.-C., Dabiré, K. R., Elguero, E., Fontenille, D.,
 <strong>Costantini, C.</strong>, &amp; Thomas, F. (2009). <span
 class="nocase">Evolutionary lability of odour-mediated host preference
 by the malaria vector <em>Anopheles gambiae</em></span>. <em>Tropical
-Medicine and International Health</em>, <em>14</em>(2), 228–236.
+Medicine and International Health</em>, <em>14</em>(2), 228–236. <a
+href="https://doi.org/10.1111/j.1365-3156.2009.02206.x">https://doi.org/10.1111/j.1365-3156.2009.02206.x</a>
 </div>
 <div id="ref-Lefevre_AJTMH2009a" class="csl-entry" role="listitem">
 Lefèvre, T., Gouagna, L.-C., Dabiré, K. R., Elguero, E., Fontenille, D.,
@@ -81,7 +89,8 @@ class="nocase">Beyond nature and nurture: <span>P</span>henotypic
 plasticity in blood-feeding behavior of <em><span>A</span>nopheles
 gambiae</em> s.s. <span class="nocase">w</span>hen humans are not
 readily accessible</span>. <em>The American Journal of Tropical Medicine
-and Hygiene</em>, <em>81</em>(6), 1023–1029.
+and Hygiene</em>, <em>81</em>(6), 1023–1029. <a
+href="https://doi.org/10.4269/ajtmh.2009.09-0124">https://doi.org/10.4269/ajtmh.2009.09-0124</a>
 </div>
 <div id="ref-Torr_MVE2008a" class="csl-entry" role="listitem">
 <span class="nocase">Torr, S. J., della Torre, A., Calzetta, M.,
@@ -90,7 +99,8 @@ class="nocase">Towards a fuller understanding of mosquito behaviour use
 of electrocuting grids to compare the odour-orientated responses of
 <em>Anopheles arabiensis</em> and <em>An. quadriannulatus</em> in the
 field</span>. <em>Medical and Veterinary Entomology</em>,
-<em>22</em>(2), 93–108.
+<em>22</em>(2), 93–108. <a
+href="https://doi.org/10.1111/j.1365-2915.2008.00723.x">https://doi.org/10.1111/j.1365-2915.2008.00723.x</a>
 </div>
 <div id="ref-Takken_2006b" class="csl-entry" role="listitem">
 Takken, W., &amp; <strong>Costantini, C.</strong> (2006). <span class="nocase">The
@@ -102,18 +112,21 @@ genetics of vector-host interactions</span> [Chapter]. In C. Boëte
 Takken, W., <strong>Costantini, C.</strong>, Dolo, G., Hassanali, A., Sagnon, N., &amp;
 Osir, E. (2006). <span class="nocase">Mosquito mating behaviour</span>
 [Chapter]. In <em>Bridging laboratory and field research for genetic
-control of disease vectors</em> (pp. 183–188). Springer Netherlands.
+control of disease vectors</em> (pp. 183–188). Springer Netherlands. <a
+href="https://doi.org/10.1007/1-4020-3799-6_17">https://doi.org/10.1007/1-4020-3799-6_17</a>
 </div>
 <div id="ref-Tirados_MVE2006a" class="csl-entry" role="listitem">
 Tirados, I., <strong>Costantini, C.</strong>, Gibson, G., &amp; Torr, S. J. (2006). <span
 class="nocase">Blood-feeding behaviour of the malarial mosquito
 <em>Anopheles arabiensis</em>: implications for vector control</span>.
-<em>Medical and Veterinary Entomology</em>, <em>20</em>(4), 425–437.
+<em>Medical and Veterinary Entomology</em>, <em>20</em>(4), 425–437. <a
+href="https://doi.org/10.1111/j.1365-2915.2006.652.x">https://doi.org/10.1111/j.1365-2915.2006.652.x</a>
 </div>
 <div id="ref-Besansky_TP2004a" class="csl-entry" role="listitem">
 Besansky, N. J., Hill, C. A., &amp; <strong>Costantini, C.</strong> (2004). No accounting
 for taste: Host preference in malaria vectors. <em>Trends in
-Parasitology</em>, <em>20</em>(6), 249–251.
+Parasitology</em>, <em>20</em>(6), 249–251. https://doi.org/<a
+href="http://dx.doi.org/10.1016/j.pt.2004.03.007">http://dx.doi.org/10.1016/j.pt.2004.03.007</a>
 </div>
 <div id="ref-Costantini_P2002b" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, &amp; Diallo, M. (2002). Lack of evidence for
@@ -134,7 +147,8 @@ Molecular characterisation and chromosomal mapping of transcripts having
 tissue-specific expression in the malaria mosquito
 <em><span>A</span>nopheles gambiae</em>: Possible involvement in visual
 or olfactory processes. <em>Parasitology Research</em>, <em>88</em>(1),
-1–8.
+1–8. <a
+href="https://doi.org/10.1007/s004360100457">https://doi.org/10.1007/s004360100457</a>
 </div>
 <div id="ref-Costantini_MVE2001a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, Birkett, M. A., Gibson, G., Ziesmann, J., Sagnon, N.,
@@ -142,7 +156,8 @@ Mohammed, H. A., Coluzzi, M., &amp; Pickett, J. A. (2001). <span
 class="nocase">Electroantennogram and behavioural responses of the
 malaria vector <em>Anopheles gambiae</em> to human-specific sweat
 components</span>. <em>Medical and Veterinary Entomology</em>,
-<em>15</em>(3), 259–266.
+<em>15</em>(3), 259–266. <a
+href="https://doi.org/10.1046/j.0269-283x.2001.00297.x">https://doi.org/10.1046/j.0269-283x.2001.00297.x</a>
 </div>
 <div id="ref-Costantini_P2001a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, &amp; Diallo, M. (2001). <span
@@ -157,7 +172,8 @@ Duchemin, J.-B., Tsy, J.-M. L. P., Rabarison, P., Roux, J., Coluzzi, M.,
 <em><span>A</span>nopheles arabiensis</em> and <em><span>A</span>n.
 <span class="nocase">g</span>ambiae</em> in <span>M</span>adagascar
 demonstrated by odour-baited entry traps</span>. <em>Medical and
-Veterinary Entomology</em>, <em>15</em>(1), 50–57.
+Veterinary Entomology</em>, <em>15</em>(1), 50–57. <a
+href="https://doi.org/10.1046/j.1365-2915.2001.00276.x">https://doi.org/10.1046/j.1365-2915.2001.00276.x</a>
 </div>
 <div id="ref-Costantini_P1999b" class="csl-entry" role="listitem">
 <span class="nocase"><strong>Costantini, C.</strong>, Sagnon, N., della Torre, A., &amp;
@@ -169,7 +185,8 @@ gambiae</em> complex</span>. <em>Parassitologia</em>, <em>41</em>(1-3),
 <div id="ref-Costantini_PI1998a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong> (1998). Determinants of <em><span>A</span>nopheles</em>
 human-biting. <em>Parasitology International</em>, <em>47</em>(Suppl.),
-19–20.
+19–20. https://doi.org/<a
+href="https://doi.org/10.1016/S1383-5769(98)80011-1">https://doi.org/10.1016/S1383-5769(98)80011-1</a>
 </div>
 <div id="ref-Costantini_AJTMH1998a" class="csl-entry" role="listitem">
 <span class="nocase"><strong>Costantini, C.</strong>, Sagnon, N., della Torre, A.,
@@ -177,7 +194,8 @@ Diallo, M., Brady, J., Gibson, G., &amp; Coluzzi, M.</span> (1998).
 <span class="nocase">Odor-mediated host preferences of <span>W</span>est
 <span>A</span>frican mosquitoes, with particular reference to malaria
 vectors</span>. <em>The American Journal of Tropical Medicine and
-Hygiene</em>, <em>58</em>(1), 56–63.
+Hygiene</em>, <em>58</em>(1), 56–63. <a
+href="https://doi.org/10.4269/ajtmh.1998.58.56">https://doi.org/10.4269/ajtmh.1998.58.56</a>
 </div>
 <div id="ref-Brady_ATMP1997a" class="csl-entry" role="listitem">
 Brady, J., <strong>Costantini, C.</strong>, Sagnon, N., Gibson, G., &amp; Coluzzi, M.
@@ -185,6 +203,8 @@ Brady, J., <strong>Costantini, C.</strong>, Sagnon, N., Gibson, G., &amp; Coluzz
 attractiveness of different men to malarial vectors in
 <span>B</span>urkina <span>F</span>aso</span>. <em>Annals of Tropical
 Medicine and Parasitology</em>, <em>91</em>(Supplement No.1), S121–S122.
+<a
+href="https://doi.org/10.1080/00034983.1997.11813252">https://doi.org/10.1080/00034983.1997.11813252</a>
 </div>
 <div id="ref-Gibson_ATMP1997a" class="csl-entry" role="listitem">
 <span class="nocase">Gibson, G., <strong>Costantini, C.</strong>, Sagnon, N., della
@@ -192,7 +212,13 @@ Torre, A., &amp; Coluzzi, M.</span> (1997). The responses of
 <em>anopheles gambiae</em>, and other mosquitoes in <span>B</span>urkina
 <span>F</span>aso, to <span>CO</span><sub>2</sub>—the start of a search
 for synthetic human odour. <em>Annals of Tropical Medicine and
-Parasitology</em>, <em>91</em>(Supplement No.1), S123–S124.
+Parasitology</em>, <em>91</em>(Supplement No.1), S123–S124. <a
+href="https://doi.org/10.1080/00034983.1997.11813253">https://doi.org/10.1080/00034983.1997.11813253</a>
+</div>
+<div id="ref-Costantini_1996c" class="csl-entry" role="listitem">
+<strong>Costantini, C.</strong> (1996). <em><span class="nocase">Behavioural Studies on
+West African Malaria Vectors in the Field</span></em> [Thesis]. Imperial
+College of Science Technology &amp; Medicine (University of London).
 </div>
 <div id="ref-Costantini_CFS1996a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong> (1996). <span class="nocase">Introduction
@@ -210,7 +236,8 @@ Torre, A., Brady, J., &amp; Coluzzi, M.</span> (1996). <span
 class="nocase">Mosquito responses to carbon dioxide in a
 <span>W</span>est <span>A</span>frican <span>S</span>udan savanna
 village</span>. <em>Medical and Veterinary Entomology</em>,
-<em>10</em>(3), 220–227.
+<em>10</em>(3), 220–227. <a
+href="https://doi.org/10.1111/j.1365-2915.1996.tb00734.x">https://doi.org/10.1111/j.1365-2915.1996.tb00734.x</a>
 </div>
 <div id="ref-Costantini_P1996a" class="csl-entry" role="listitem">
 <span class="nocase"><strong>Costantini, C.</strong>, Sagnon, N., della Torre, A., Brady,

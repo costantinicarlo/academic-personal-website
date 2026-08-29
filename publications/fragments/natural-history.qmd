@@ -16,13 +16,15 @@ data-entry-spacing="0" data-line-spacing="2" role="list">
 <span>T</span>ern <em>Thalasseus sandvicensis</em> and
 <span>R</span>oyal <span>T</span>ern <em>T maximus</em> on
 <span>B</span>ioko, <span>E</span>quatorial <span>G</span>uinea</span>.
-<em>Bulletin of the African Bird Club</em>, <em>19</em>(2), 209–210.
+<em>Bulletin of the African Bird Club</em>, <em>19</em>(2), 209–210. <a
+href="https://www.biodiversitylibrary.org/page/56221027#page/83/mode/1up">https://www.biodiversitylibrary.org/page/56221027#page/83/mode/1up</a>
 </div>
 <div id="ref-Costantini_BB1996a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong> (1996). Supposed hybrid <span>H</span>ouse <span
 class="math inline">×</span> <span>T</span>ree <span>S</span>parrow in
 northern <span>I</span>taly. <em>British Birds</em>, <em>89</em>(10),
-457–458.
+457–458. <a
+href="https://britishbirds.co.uk/content/notes-359">https://britishbirds.co.uk/content/notes-359</a>
 </div>
 <div id="ref-Costantini_A1995b" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, &amp; Melletti, M. (1995). <span class="nocase">Picchio
@@ -47,7 +49,8 @@ Uccelli.
 class="nocase">Osservazioni preliminari sulla biologia riproduttiva del
 <span>P</span>icchio dorsobianco <em>Picoides leucotos lilfordi</em> in
 <span>I</span>talia <span>C</span>entrale</span>. <em>Avocetta</em>,
-<em>17</em>(1), 81–83.
+<em>17</em>(1), 81–83. <a
+href="https://www.avocetta.org/articles/vol-17-1-bev-osservazioni-preliminari-sulla-biologia-riproduttivadel-picchio-dorso-bianco-ipicoides-leucotos-lilfordiinbsp-in-italia-centrale/">https://www.avocetta.org/articles/vol-17-1-bev-osservazioni-preliminari-sulla-biologia-riproduttivadel-picchio-dorso-bianco-ipicoides-leucotos-lilfordiinbsp-in-italia-centrale/</a>
 </div>
 <div id="ref-Costantini_RIO1992a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, &amp; Melletti, M. (1992). <span class="nocase">Il

@@ -19,7 +19,8 @@ forested areas in <span>G</span>abon (<span>C</span>entral
 <span>A</span>frica) by the <span>A</span>sian tiger mosquito
 <em><span>A</span>edes albopictus</em>: potential risks from the
 <span>O</span>ne <span>H</span>ealth perspective</span>. <em>PLoS
-Neglected Tropical Diseases</em>, <em>17</em>(8), e0011501.
+Neglected Tropical Diseases</em>, <em>17</em>(8), e0011501. <a
+href="https://doi.org/10.1371/journal.pntd.0011501">https://doi.org/10.1371/journal.pntd.0011501</a>
 </div>
 <div id="ref-Obame-Nkoghe_B2022a" class="csl-entry" role="listitem">
 Obame-Nkoghe, J., Roiz, D., Ngangue, M.-F., <strong>Costantini, C.</strong>, Rahola, N.,
@@ -27,15 +28,16 @@ Jiolle, D., Lehmann, D., Makaga, L., Ayala, D., Kengne, P., &amp; Paupy,
 C. (2022). Invasion of forested areas in <span>G</span>abon
 (<span>C</span>entral <span>A</span>frica) by the <span>A</span>sian
 tiger mosquito and the potential consequences from the <span>O</span>ne
-<span>H</span>ealth perspective. <em>bioRxiv</em>.
+<span>H</span>ealth perspective. <em>bioRxiv</em>. <a
+href="https://doi.org/10.1101/2022.08.23.504969">https://doi.org/10.1101/2022.08.23.504969</a>
 </div>
 <div id="ref-Longo-Pendy_SR2021a" class="csl-entry" role="listitem">
 Longo Pendy, N. M., Tene Fossog, B., Tawedi, R. E., Akone-Ella, O.,
-Toty, C., Rahola, N., Braun, J.-J., Berthet, N., Kengne, P., Costantini,
-C., &amp; Ayala, D. (2021). <span class="nocase">Ecological plasticity
+Toty, C., Rahola, N., Braun, J.-J., Berthet, N., Kengne, P., <strong>Costantini, C.</strong>, &amp; Ayala, D. (2021). <span class="nocase">Ecological plasticity
 to ions concentration determines genetic response and dominance of
 <em>Anopheles coluzzii</em> larvae in urban coastal habitats of Central
-Africa</span>. <em>Scientific Reports</em>, <em>11</em>(15781), 1–13.
+Africa</span>. <em>Scientific Reports</em>, <em>11</em>(15781), 1–13. <a
+href="https://doi.org/10.1038/s41598-021-94258-6">https://doi.org/10.1038/s41598-021-94258-6</a>
 </div>
 <div id="ref-Amimi_AB2020a" class="csl-entry" role="listitem">
 Amimi, N., Dussert, S., Vaissayre, V., Ghouil, H., Doulbeau, S.,
@@ -43,16 +45,18 @@ Amimi, N., Dussert, S., Vaissayre, V., Ghouil, H., Doulbeau, S.,
 class="nocase">Variation in seed traits among <span>M</span>editerranean
 <span>O</span>aks in <span>T</span>unisia and their ecological
 significance</span>. <em>Annals of Botany</em>, <em>125</em>(6),
-891–904.
+891–904. <a
+href="https://doi.org/10.1093/aob/mcz211">https://doi.org/10.1093/aob/mcz211</a>
 </div>
 <div id="ref-Ould-Lemrabott_PV2020a" class="csl-entry" role="listitem">
-Ould Lemrabott, M. A., Le Goff, G., Kengne, P., Ndiaye, O., Costantini,
-C., Lekweiry, K. M., Salem, M. S. O. A., Robert, V., Basco, L., Simard,
+Ould Lemrabott, M. A., Le Goff, G., Kengne, P., Ndiaye, O., <strong>Costantini, C.</strong>, Lekweiry, K. M., Salem, M. S. O. A., Robert, V., Basco, L., Simard,
 F., &amp; Boukhary, A. O. M. S. (2020). <span class="nocase">First
 report of <em>Anopheles</em> (<em>Cellia</em>) <em>multicolor</em>
 during a study of tolerance to salinity of <em>Anopheles arabiensis</em>
 larvae in <span>N</span>ouakchott, <span>M</span>auritania</span>.
 <em>Parasites <span>&amp;</span> Vectors</em>, <em>13</em>, 522.
+https://doi.org/<a
+href="https://doi.org/10.1186/s13071-020-04400-y">https://doi.org/10.1186/s13071-020-04400-y</a>
 </div>
 <div id="ref-Ayala_EA2019a" class="csl-entry" role="listitem">
 Ayala, D., Akone-Ella, O., Rahola, N., Kengne, P., Ngangue, M.-F.,
@@ -61,35 +65,38 @@ Prugnolle, F., Roche, B., Duron, O., &amp; Paupy, C. (2019). <span
 class="nocase">Natural <em>Wolbachia</em> infections are common in the
 major malaria vectors in <span>C</span>entral
 <span>A</span>frica</span>. <em>Evolutionary Applications</em>,
-<em>12</em>(8), 1583–1594.
+<em>12</em>(8), 1583–1594. <a
+href="https://doi.org/10.1111/eva.12804">https://doi.org/10.1111/eva.12804</a>
 </div>
 <div id="ref-Ayala_ME2019a" class="csl-entry" role="listitem">
-Ayala, D., Zhang, S., Chateau, M., Fouet, C., Morlais, I., Costantini,
-C., Hahn, M. W., &amp; Besansky, N. J. (2019). <span
+Ayala, D., Zhang, S., Chateau, M., Fouet, C., Morlais, I., <strong>Costantini, C.</strong>, Hahn, M. W., &amp; Besansky, N. J. (2019). <span
 class="nocase">Association mapping desiccation resistance within
 chromosomal inversions in the <span>A</span>frican malaria vector
 <em>Anopheles gambiae</em></span>. <em>Molecular Ecology</em>,
-<em>28</em>(6), 1333–1342.
+<em>28</em>(6), 1333–1342. <a
+href="https://doi.org/10.1111/mec.14880">https://doi.org/10.1111/mec.14880</a>
 </div>
 <div id="ref-Kengne_E2019a" class="csl-entry" role="listitem">
 Kengne, P., Charmantier, G., Blondeau-Bidet, E., <strong>Costantini, C.</strong>, &amp;
 Ayala, D. (2019). <span class="nocase">Tolerance of disease-vector
 mosquitoes to brackish water and their osmoregulatory ability</span>.
-<em>Ecosphere</em>, <em>10</em>(10), e02783.
+<em>Ecosphere</em>, <em>10</em>(10), e02783. <a
+href="https://doi.org/10.1002/ecs2.2783">https://doi.org/10.1002/ecs2.2783</a>
 </div>
 <div id="ref-Ayala_B2018a" class="csl-entry" role="listitem">
 Ayala, D., Akone-Ella, O., Rahola, N., Kengne, P., Ngangue, M.-F.,
 Mezeme, F., Makanga, B. K., <strong>Costantini, C.</strong>, Simard, F., Prugnolle, F.,
 Roche, B., Duron, O., &amp; Paupy, C. (2018). <span
 class="nocase">Natural <em>Wolbachia</em> infections are common in the
-major malaria vectors in Central Africa</span>. <em>bioRxiv</em>.
+major malaria vectors in Central Africa</span>. <em>bioRxiv</em>. <a
+href="https://doi.org/10.1101/343715">https://doi.org/10.1101/343715</a>
 </div>
 <div id="ref-Ayala_E2017a" class="csl-entry" role="listitem">
-Ayala, D., Acevedo, P., Pombi, M., Dia, I., Boccolini, D., Costantini,
-C., Simard, F., &amp; Fontenille, D. (2017). <span
+Ayala, D., Acevedo, P., Pombi, M., Dia, I., Boccolini, D., <strong>Costantini, C.</strong>, Simard, F., &amp; Fontenille, D. (2017). <span
 class="nocase">Chromosome inversions and ecological plasticity in the
 main <span>A</span>frican malaria mosquitoes</span>. <em>Evolution</em>,
-<em>71</em>(3), 686–701.
+<em>71</em>(3), 686–701. <a
+href="https://doi.org/10.1111/evo.13176">https://doi.org/10.1111/evo.13176</a>
 </div>
 <div id="ref-Antonio-Nkondjio_MJ2014a" class="csl-entry"
 role="listitem">
@@ -99,7 +106,8 @@ class="nocase">Exposure to disinfectants (soap or hydrogen peroxide)
 increases tolerance to permethrin in <em>Anopheles gambiae</em>
 populations from the city of <span>Y</span>aound<span
 class="nocase">é</span>, <span>C</span>ameroon</span>. <em>Malaria
-Journal</em>, <em>13</em>, 296.
+Journal</em>, <em>13</em>, 296. <a
+href="https://doi.org/10.1186/1475-2875-13-296">https://doi.org/10.1186/1475-2875-13-296</a>
 </div>
 <div id="ref-Tene-Fossog_E2013a" class="csl-entry" role="listitem">
 Tene Fossog, B., Antonio-Nkondjio, C., Kengne, P., Njiokou, F.,
@@ -107,21 +115,24 @@ Besansky, N. J., &amp; <strong>Costantini, C.</strong> (2013). <span
 class="nocase">Physiological correlates of ecological divergence along
 an urbanization gradient: differential tolerance to ammonia among
 molecular forms of the malaria mosquito <em>Anopheles
-gambiae</em></span>. <em>BMC Ecology</em>, <em>13</em>, 1.
+gambiae</em></span>. <em>BMC Ecology</em>, <em>13</em>, 1. <a
+href="https://doi.org/10.1186/1472-6785-13-1">https://doi.org/10.1186/1472-6785-13-1</a>
 </div>
 <div id="ref-Cheng_G2012a" class="csl-entry" role="listitem">
 Cheng, C., White, B. J., Kamdem, G. C., Mockaitis, K., <strong>Costantini, C.</strong>,
 Hahn, M. W., &amp; Besansky, N. J. (2012). <span
 class="nocase">Ecological genomics of <em>Anopheles gambiae</em> along a
 latitudinal cline: A population-resequencing approach</span>.
-<em>Genetics</em>, <em>190</em>(4), 1417–1432.
+<em>Genetics</em>, <em>190</em>(4), 1417–1432. <a
+href="https://doi.org/10.1534/genetics.111.137794">https://doi.org/10.1534/genetics.111.137794</a>
 </div>
 <div id="ref-Fouet_P2012a" class="csl-entry" role="listitem">
 Fouet, C., Gray, E., Besansky, N. J., &amp; <strong>Costantini, C.</strong> (2012). <span
 class="nocase">Adaptation to Aridity in the Malaria Mosquito
 <em>Anopheles gambiae</em>: chromosomal Inversion Polymorphism and Body
 Size Influence Resistance to Desiccation</span>. <em>PLoS ONE</em>,
-<em>7</em>(4), e34841.
+<em>7</em>(4), e34841. <a
+href="https://doi.org/10.1371/journal.pone.0034841">https://doi.org/10.1371/journal.pone.0034841</a>
 </div>
 <div id="ref-Tene-Fossog_JTM2012a" class="csl-entry" role="listitem">
 Tene Fossog, B., Kopya, E., Ndo, C., Menze-Djantio, B., <strong>Costantini, C.</strong>,
@@ -130,7 +141,8 @@ class="nocase">Water Quality and <em>Anopheles gambiae</em> Larval
 Tolerance to Pyrethroids in the Cities of <span>D</span>ouala and
 <span>Y</span>aound<span class="nocase">é</span>
 (<span>C</span>ameroon)</span>. <em>Journal of Tropical Medicine</em>,
-<em>2012</em>(4), 1–10.
+<em>2012</em>(4), 1–10. <a
+href="https://doi.org/10.1155/2012/429817">https://doi.org/10.1155/2012/429817</a>
 </div>
 <div id="ref-Antonio-Nkondjio_MJ2011a" class="csl-entry"
 role="listitem">
@@ -140,7 +152,8 @@ S. Z., Awono-Ambene, P., <strong>Costantini, C.</strong>, Wondji, C. S., &amp; R
 distribution and insecticide resistance in the cities of
 <span>D</span>ouala and <span>Y</span>aound<span class="nocase">é</span>
 (<span>C</span>ameroon): influence of urban agriculture and
-pollution</span>. <em>Malaria Journal</em>, <em>10</em>, 154.
+pollution</span>. <em>Malaria Journal</em>, <em>10</em>, 154. <a
+href="https://doi.org/10.1186/1475-2875-10-154">https://doi.org/10.1186/1475-2875-10-154</a>
 </div>
 <div id="ref-Antonio-Nkondjio_AT2009a" class="csl-entry"
 role="listitem">
@@ -149,26 +162,30 @@ Fontenille, D., &amp; Simard, F. (2009). <span
 class="nocase">Distribution and larval habitat characterization of
 <em>Anopheles moucheti</em>, <em>Anopheles nili</em>, and other malaria
 vectors in river networks of southern <span>C</span>ameroon</span>.
-<em>Acta Tropica</em>, <em>112</em>(3), 270–276.
+<em>Acta Tropica</em>, <em>112</em>(3), 270–276. <a
+href="https://doi.org/10.1016/j.actatropica.2009.08.009">https://doi.org/10.1016/j.actatropica.2009.08.009</a>
 </div>
 <div id="ref-Ayala_MJ2009a" class="csl-entry" role="listitem">
 Ayala, D., <strong>Costantini, C.</strong>, Ose, K., Kamdem, G. C., Antonio-Nkondjio, C.,
 Agbor, J.-P., Awono-Ambene, P., Fontenille, D., &amp; Simard, F. (2009).
 <span class="nocase">Habitat suitability and ecological niche profile of
 major malaria vectors in <span>C</span>ameroon</span>. <em>Malaria
-Journal</em>, <em>8</em>, 307.
+Journal</em>, <em>8</em>, 307. <a
+href="https://doi.org/10.1186/1475-2875-8-307">https://doi.org/10.1186/1475-2875-8-307</a>
 </div>
 <div id="ref-Gray_MJ2009a" class="csl-entry" role="listitem">
 Gray, E. M., Rocca, K. A. C., <strong>Costantini, C.</strong>, &amp; Besansky, N. J.
 (2009). <span class="nocase">Inversion <span>2La</span> is associated
 with enhanced desiccation resistance in <em>Anopheles
-gambiae</em></span>. <em>Malaria Journal</em>, <em>8</em>, 215.
+gambiae</em></span>. <em>Malaria Journal</em>, <em>8</em>, 215. <a
+href="https://doi.org/10.1186/1475-2875-8-215">https://doi.org/10.1186/1475-2875-8-215</a>
 </div>
 <div id="ref-Rocca_MJ2009a" class="csl-entry" role="listitem">
 Rocca, K. A. C., Gray, E. M., <strong>Costantini, C.</strong>, &amp; Besansky, N. J.
 (2009). <span class="nocase"><span>2La</span> chromosomal inversion
 enhances thermal tolerance of <em><span>A</span>nopheles gambiae</em>
-larvae</span>. <em>Malaria Journal</em>, <em>8</em>, 147.
+larvae</span>. <em>Malaria Journal</em>, <em>8</em>, 147. <a
+href="https://doi.org/10.1186/1475-2875-8-147">https://doi.org/10.1186/1475-2875-8-147</a>
 </div>
 <div id="ref-Costantini_P2002a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, Pombi, M., Palladino, C., Coluzzi, M., &amp; Sagnon, N.
@@ -184,6 +201,13 @@ of <em><span>A</span>nopheles gambiae</em> taxa in larval and imaginal
 samples of a sudan savanna village of <span>B</span>urkina
 <span>F</span>aso indicate inter-and intra-specific differences in adult
 resting behaviour. <em>Parassitologia</em>, <em>44</em>, 124–124.
+</div>
+<div id="ref-Costantini_1992a" class="csl-entry" role="listitem">
+<strong>Costantini, C.</strong> (1992). <em><span class="nocase">Variabilit<span
+class="nocase">à</span> Cromosomica ed Adattamenti Ecologici nel
+Complesso <em>Anopheles gambiae</em> (Diptera: Culicidae)</span></em>
+[Thesis]. <span>Universit<span>à</span> degli Studi di Roma ’La
+Sapienza’</span>.
 </div>
 </div>
 

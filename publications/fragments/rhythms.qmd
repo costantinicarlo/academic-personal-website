@@ -20,7 +20,8 @@ biting of malaria mosquitoes in the <span>Central African
 Republic</span> indicates residual transmission may be <span>“out of
 control”</span></span>. <em>Proceedings of the National Academy of
 Sciences of the United States of America</em>, <em>119</em>(21),
-e2104282119.
+e2104282119. <a
+href="https://doi.org/10.1073/pnas.2104282119">https://doi.org/10.1073/pnas.2104282119</a>
 </div>
 <div id="ref-Sangbakembi-Ngounou_FEE2022a" class="csl-entry"
 role="listitem">
@@ -31,7 +32,8 @@ class="nocase">Temporal and biting dynamics of the chromosomal inversion
 gambiae</em> and <em><span>A</span>nopheles coluzzii</em> in
 <span>B</span>angui, <span>C</span>entral <span>A</span>frican
 <span>R</span>epublic</span>. <em>Frontiers in Ecology and
-Evolution</em>, <em>10</em>, 986925.
+Evolution</em>, <em>10</em>, 986925. <a
+href="https://doi.org/10.3389/fevo.2022.986925">https://doi.org/10.3389/fevo.2022.986925</a>
 </div>
 <div id="ref-Sangbakembi-Ngounou_A2022a" class="csl-entry"
 role="listitem">
@@ -40,7 +42,8 @@ Sangbakembi-Ngounou, C., Ngoagouni, C., Akone-Ella, O., Kengne, P.,
 dynamics of the malaria vectors <em><span>A</span>nopheles gambiae</em>
 and <em><span>A</span>nopheles coluzzii</em> harboring the
 <span>2La</span> inversion in <span>B</span>angui, <span>C</span>entral
-<span>A</span>frican <span>R</span>epublic. <em>Authorea</em>.
+<span>A</span>frican <span>R</span>epublic. <em>Authorea</em>. <a
+href="https://doi.org/10.22541/au.165367085.58812317/v1">https://doi.org/10.22541/au.165367085.58812317/v1</a>
 </div>
 <div id="ref-Traore_PV2021a" class="csl-entry" role="listitem">
 Traoré, A. S., Porciani, A., Moiroux, N., Dabiré, K. R., Simard, F.,
@@ -48,7 +51,8 @@ Traoré, A. S., Porciani, A., Moiroux, N., Dabiré, K. R., Simard, F.,
 of insemination and blood-feeding on locomotor activity of wild-derived
 females of the malaria mosquito <em><span>A</span>nopheles
 coluzzii</em></span>. <em>Parasites <span>&amp;</span> Vectors</em>,
-<em>14</em>, 457.
+<em>14</em>, 457. <a
+href="https://doi.org/10.1186/s13071-021-04967-0">https://doi.org/10.1186/s13071-021-04967-0</a>
 </div>
 </div>
 

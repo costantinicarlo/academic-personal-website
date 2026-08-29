@@ -17,13 +17,15 @@ J., Kern, A. D., Fontaine, M. C., &amp; Besansky, N. J. (2023). <span
 class="nocase">Standing genetic variation and chromosome differences
 drove rapid ecotype formation in a major malaria mosquito</span>.
 <em>Proceedings of the National Academy of Sciences of the United States
-of America</em>, <em>120</em>(11), e2219835120.
+of America</em>, <em>120</em>(11), e2219835120. <a
+href="https://doi.org/10.1073/pnas.2219835120">https://doi.org/10.1073/pnas.2219835120</a>
 </div>
 <div id="ref-Small_B2022a" class="csl-entry" role="listitem">
 Small, S. T., <strong>Costantini, C.</strong>, Sagnon, N., Guelbeogo, W. M., Emrich, S.
 J., Kern, A. D., Fontaine, M. C., &amp; Besansky, N. J. (2022). Standing
 genetic variation and chromosome differences drove rapid ecotype
-formation in a major malaria vector. <em>bioRxiv</em>.
+formation in a major malaria vector. <em>bioRxiv</em>. <a
+href="https://doi.org/10.1101/2022.11.21.517335">https://doi.org/10.1101/2022.11.21.517335</a>
 </div>
 <div id="ref-Clarkson_GR2020a" class="csl-entry" role="listitem">
 <span class="nocase">Clarkson, C. S., Miles, A., Harding, N. J., Lucas,
@@ -35,14 +37,16 @@ class="nocase">Genome variation and population structure among 1142
 mosquitoes of the <span>A</span>frican malaria vector species
 <em><span>A</span>nopheles gambiae</em> and <em><span>A</span>nopheles
 coluzzii</em></span>. <em>Genome Research</em>, <em>30</em>(10),
-1533–1546.
+1533–1546. <a
+href="https://doi.org/10.1101/gr.262790.120">https://doi.org/10.1101/gr.262790.120</a>
 </div>
 <div id="ref-Barron_SR2019a" class="csl-entry" role="listitem">
 Barrón, M. G., Paupy, C., Rahola, N., Akone-Ella, O., Ngangue, M.-F.,
 Wilson-Bahun, T. A., Pombi, M., Kengne, P., <strong>Costantini, C.</strong>, Simard, F.,
 Gonzalez, J., &amp; Ayala, D. (2019). <span class="nocase">A new species
 in the major malaria vector complex sheds light on reticulated species
-evolution</span>. <em>Scientific Reports</em>, <em>9</em>, 14753.
+evolution</span>. <em>Scientific Reports</em>, <em>9</em>, 14753. <a
+href="https://doi.org/10.1038/s41598-019-49065-5">https://doi.org/10.1038/s41598-019-49065-5</a>
 </div>
 <div id="ref-Barron_B2018a" class="csl-entry" role="listitem">
 Barrón, M. G., Paupy, C., Rahola, N., Akone-Ella, O., Ngangue, M.-F.,
@@ -50,7 +54,8 @@ Wilson-Bahun, T. A., Pombi, M., Kengne, P., <strong>Costantini, C.</strong>, Sim
 Gonzalez, J., &amp; Ayala, D. (2018). <span class="nocase">A new species
 in the <em>Anopheles gambiae</em> complex reveals new evolutionary
 relationships between vector and non-vector species</span>.
-<em>bioRxiv</em>.
+<em>bioRxiv</em>. <a
+href="https://doi.org/10.1101/460667">https://doi.org/10.1101/460667</a>
 </div>
 <div id="ref-Miles_N2017a" class="csl-entry" role="listitem">
 <span class="nocase">Miles, A., Harding, N. J., Botta, G., Clarkson, C.,
@@ -59,7 +64,8 @@ I., Pearson, R., Bergey, C., Fontaine, M., Troco, A., Diabaté, A.,
 <strong>Costantini, C.</strong>, Rohatgi, K., Elissa, N., Coulibaly, M. B., …
 Kwiatkowski, D.</span> (2017). <span class="nocase">Natural diversity of
 the malaria vector <em><span>A</span>nopheles gambiae</em></span>.
-<em>Nature</em>, <em>552</em>, 96–100.
+<em>Nature</em>, <em>552</em>, 96–100. <a
+href="https://doi.org/10.1101/096289">https://doi.org/10.1101/096289</a>
 </div>
 <div id="ref-Pombi_EA2017a" class="csl-entry" role="listitem">
 <span class="nocase">Pombi, M., Kengne, P., Gimonneau, G., Tene Fossog,
@@ -69,7 +75,8 @@ Antonio-Nkondjio, C., Dabiré, K. R., della Torre, A., Simard, F., &amp;
 <strong>Costantini, C.</strong></span> (2017). <span class="nocase">Dissecting functional
 components of reproductive isolation among closely related sympatric
 species of the <em>Anopheles gambiae</em> complex</span>.
-<em>Evolutionary Applications</em>, <em>10</em>(10), 1102–1120.
+<em>Evolutionary Applications</em>, <em>10</em>(10), 1102–1120. <a
+href="https://doi.org/10.1111/eva.12517">https://doi.org/10.1111/eva.12517</a>
 </div>
 <div id="ref-Miles_B2016a" class="csl-entry" role="listitem">
 <span class="nocase">Miles, A., Harding, N. J., Botta, G., Clarkson, C.,
@@ -77,7 +84,8 @@ Antao, T., Kozak, K., Schrider, D., Kern, A., Redmond, S. N., Sharakhov,
 I., Pearson, R., Bergey, C., Fontaine, M., Troco, A., Diabaté, A.,
 <strong>Costantini, C.</strong>, Rohatgi, K., Elissa, N., Coulibaly, M. B., …
 Kwiatkowski, D.</span> (2016). Natural diversity of the malaria vector
-<em>anopheles gambiae</em>. <em>bioRxiv</em>.
+<em>anopheles gambiae</em>. <em>bioRxiv</em>. <a
+href="https://doi.org/10.1101/096289">https://doi.org/10.1101/096289</a>
 </div>
 <div id="ref-Neafsey_S2015a" class="csl-entry" role="listitem">
 Neafsey, D. E., Waterhouse, R. M., Abai, M. R., Aganezov, S. S.,
@@ -86,7 +94,8 @@ Artemov, G., Assour, L. A., Basseri, H., Berlin, A., Birren, B. W.,
 Blandin, S. A., Brockman, A. I., Burkot, T. R., Burt, A., Chan, C. S., …
 Besansky, N. J. (2015). Highly evolvable malaria vectors:
 <span>The</span> genomes of 16 <span><em>Anopheles</em></span>
-mosquitoes. <em>Science</em>, <em>347</em>(6217), 1258522.
+mosquitoes. <em>Science</em>, <em>347</em>(6217), 1258522. <a
+href="https://doi.org/10.1126/science.1258522">https://doi.org/10.1126/science.1258522</a>
 </div>
 <div id="ref-Tene-Fossog_EA2015a" class="csl-entry" role="listitem">
 Tene Fossog, B., Ayala, D., Acevedo, P., Kengne, P., Ngomo Abeso Mebuy,
@@ -95,7 +104,8 @@ Antonio-Nkondjio, C., Paupy, C., Besansky, N. J., &amp; <strong>Costantini, C.</
 (2015). <span class="nocase">Habitat segregation and ecological
 character displacement in cryptic <span>A</span>frican malaria
 mosquitoes</span>. <em>Evolutionary Applications</em>, <em>8</em>(4),
-326–345.
+326–345. <a
+href="https://doi.org/10.1111/eva.12242">https://doi.org/10.1111/eva.12242</a>
 </div>
 <div id="ref-Cassone_ME2014a" class="csl-entry" role="listitem">
 Cassone, B. J., Kamdem, G. C., Cheng, C., Tan, J. C., Hahn, M. W.,
@@ -104,7 +114,8 @@ expression divergence between malaria vector sibling species
 <em>Anopheles gambiae</em> and <em>An. coluzzii</em> from rural and
 urban <span>Y</span>aound<span class="nocase">é</span>
 <span>C</span>ameroon</span>. <em>Molecular Ecology</em>,
-<em>23</em>(9), 2242–2259.
+<em>23</em>(9), 2242–2259. <a
+href="https://doi.org/10.1111/mec.12733">https://doi.org/10.1111/mec.12733</a>
 </div>
 <div id="ref-Dabire_MJ2014a" class="csl-entry" role="listitem">
 Dabiré, K. R., Sawadogo, S. P., Diabaté, A., Toé, H. K., Kengne, P.,
@@ -112,14 +123,16 @@ Ouari, A., <strong>Costantini, C.</strong>, Gouagna, L.-C., Pennetier, C., Simar
 Baldet, T., Lehmann, T., &amp; Gibson, G. (2014). <span
 class="nocase">Mechanisms of reproductive isolation between incipient
 species in the <em>Anopheles gambiae</em> species complex</span>.
-<em>Malaria Journal</em>, <em>13</em>(Suppl 1), O4.
+<em>Malaria Journal</em>, <em>13</em>(Suppl 1), O4. <a
+href="https://doi.org/10.1186/1475-2875-13-S1-O4">https://doi.org/10.1186/1475-2875-13-S1-O4</a>
 </div>
 <div id="ref-Guelbeogo_MJ2014a" class="csl-entry" role="listitem">
 Guelbeogo, W. M., Sagnon, N., Liu, F., Besansky, N. J., &amp;
 <strong>Costantini, C.</strong> (2014). <span class="nocase">Behavioural divergence of
 sympatric <em>Anopheles funestus</em> populations in
 <span>B</span>urkina <span>F</span>aso</span>. <em>Malaria Journal</em>,
-<em>13</em>, 65.
+<em>13</em>, 65. <a
+href="https://doi.org/10.1186/1475-2875-13-65">https://doi.org/10.1186/1475-2875-13-65</a>
 </div>
 <div id="ref-Sawadogo_AT2014a" class="csl-entry" role="listitem">
 Sawadogo, S. P., Namountougou, M., Toé, H. K., Rouamba, J., Maı̈ga, H.,
@@ -133,7 +146,8 @@ areas of sympatry, <span>B</span>urkina <span>F</span>aso
 R. S. Lees, D. D. Chadee, &amp; J. R. L. Gilles (Eds.), <em><span
 class="nocase">Biology and behaviour of male mosquitoes in relation to
 new approaches to control disease transmitting mosquitoes</span></em>
-(Vol. 132, pp. S42–S52). Elsevier B.V.
+(Vol. 132, pp. S42–S52). Elsevier B.V. <a
+href="https://doi.org/10.1016/j.actatropica.2013.12.011">https://doi.org/10.1016/j.actatropica.2013.12.011</a>
 </div>
 <div id="ref-Dabire_MVE2013a" class="csl-entry" role="listitem">
 Dabiré, K. R., Sawadogo, S. P., Diabaté, A., Toé, H. K., Kengne, P.,
@@ -143,7 +157,8 @@ mating in mixed swarms of the mosquito <em>Anopheles gambiae</em> s.s.
 <span>M</span> and <span>S</span> molecular forms, in
 <span>B</span>urkina <span>F</span>aso, <span>W</span>est
 <span>A</span>frica</span>. <em>Medical and Veterinary Entomology</em>,
-<em>27</em>(3), 298–312.
+<em>27</em>(3), 298–312. <a
+href="https://doi.org/10.1111/j.1365-2915.2012.01049.x">https://doi.org/10.1111/j.1365-2915.2012.01049.x</a>
 </div>
 <div id="ref-Sawadogo_PV2013a" class="csl-entry" role="listitem">
 Sawadogo, S. P., <strong>Costantini, C.</strong>, Pennetier, C., Diabaté, A., Gibson, G.,
@@ -153,7 +168,8 @@ and <em>Anopheles gambiae s.s.</em> (formerly <em>An. gambiae</em>
 <span>M</span> and <span>S</span> molecular forms) in
 <span>B</span>urkina <span>F</span>aso, <span>W</span>est
 <span>A</span>frica</span>. <em>Parasites <span>&amp;</span>
-Vectors</em>, <em>6</em>, 275.
+Vectors</em>, <em>6</em>, 275. <a
+href="https://doi.org/10.1186/1756-3305-6-275">https://doi.org/10.1186/1756-3305-6-275</a>
 </div>
 <div id="ref-Deitz_ME2012a" class="csl-entry" role="listitem">
 <span class="nocase">Deitz, K. C., Athrey, G., Reddy, M. R., Overgaard,
@@ -161,7 +177,8 @@ H. J., Matias, A., Jawara, M., della Torre, A., Petrarca, V., Pinto, J.,
 E Kiszewski, A., Kengne, P., <strong>Costantini, C.</strong>, Caccone, A., &amp; Slotman,
 M. A.</span> (2012). <span class="nocase">Genetic isolation within the
 malaria mosquito <em>Anopheles melas</em></span>. <em>Molecular
-Ecology</em>, <em>21</em>(18), 4498–4513.
+Ecology</em>, <em>21</em>(18), 4498–4513. <a
+href="https://doi.org/10.1111/j.1365-294X.2012.05724.x">https://doi.org/10.1111/j.1365-294X.2012.05724.x</a>
 </div>
 <div id="ref-Kamdem_P2012a" class="csl-entry" role="listitem">
 <span class="nocase">Kamdem, C., Tene Fossog, B., Simard, F., Etouna,
@@ -170,7 +187,8 @@ Fontenille, D., &amp; al., et</span>. (2012). <span
 class="nocase">Anthropogenic habitat disturbance and ecological
 divergence between incipient species of the malaria mosquito
 <em>Anopheles gambiae</em></span>. <em>PLoS ONE</em>, <em>7</em>(6),
-e39453.
+e39453. <a
+href="https://doi.org/10.1371/journal.pone.0039453">https://doi.org/10.1371/journal.pone.0039453</a>
 </div>
 <div id="ref-Reidenbach_GBE2012a" class="csl-entry" role="listitem">
 Reidenbach, K. R., Neafsey, D. E., <strong>Costantini, C.</strong>, Sagnon, N., Simard,
@@ -179,7 +197,8 @@ F., Ragland, G. J., Egan, S. P., Feder, J. L., Muskavitch, M. A. T.,
 Differentiation between Ecologically Differentiated <span>M</span> and
 <span>S</span> Forms of <em><span>A</span>nopheles gambiae</em> in
 <span>W</span>est and <span>C</span>entral <span>A</span>frica</span>.
-<em>Genome Biology and Evolution</em>, <em>4</em>(12), 1202–1212.
+<em>Genome Biology and Evolution</em>, <em>4</em>(12), 1202–1212. <a
+href="https://doi.org/10.1093/gbe/evs095">https://doi.org/10.1093/gbe/evs095</a>
 </div>
 <div id="ref-White_PNASUSA2011a" class="csl-entry" role="listitem">
 White, B. J., Lawniczak, M. K. N., Cheng, C., Coulibaly, M. B., Wilson,
@@ -188,7 +207,8 @@ M. D., Sagnon, N., <strong>Costantini, C.</strong>, Simard, F., Christophides, G
 between incipient species of <em>Anopheles gambiae</em> increases
 resistance to <em>Plasmodium</em></span>. <em>Proceedings of the
 National Academy of Sciences of the United States of America</em>,
-<em>108</em>(1), 244–249.
+<em>108</em>(1), 244–249. <a
+href="https://doi.org/10.1073/pnas.1013648108">https://doi.org/10.1073/pnas.1013648108</a>
 </div>
 <div id="ref-Lobo_MJ2010a" class="csl-entry" role="listitem">
 Lobo, N. F., Sangaré, D. M., Regier, A. A., Reidenbach, K. R., Bretz, D.
@@ -196,7 +216,8 @@ A., Sharakhova, M. V., Emrich, S. J., Traoré, S. F., <strong>Costantini, C.</st
 Besansky, N. J., &amp; Collins, F. H. (2010). <span
 class="nocase">Breakpoint structure of the <em>Anopheles gambiae</em>
 <span>2Rb</span> chromosomal inversion</span>. <em>Malaria Journal</em>,
-<em>9</em>, 293.
+<em>9</em>, 293. <a
+href="https://doi.org/10.1186/1475-2875-9-293">https://doi.org/10.1186/1475-2875-9-293</a>
 </div>
 <div id="ref-Neafsey_S2010a" class="csl-entry" role="listitem">
 Neafsey, D. E., Lawniczak, M. K. N., Park, D. J., Redmond, S. N.,
@@ -206,13 +227,16 @@ Kafatos, F. C., Besansky, N. J., Christophides, G. K., &amp; Muskavitch,
 M. A. T. (2010). <span class="nocase"><span>SNP</span> Genotyping
 Defines Complex Gene-Flow Boundaries Among <span>A</span>frican Malaria
 Vector Mosquitoes</span>. <em>Science</em>, <em>330</em>(6003), 514–517.
+<a
+href="https://doi.org/10.1126/science.1193036">https://doi.org/10.1126/science.1193036</a>
 </div>
 <div id="ref-White_ME2010a" class="csl-entry" role="listitem">
 White, B. J., Cheng, C., Simard, F., <strong>Costantini, C.</strong>, &amp; Besansky, N.
 J. (2010). <span class="nocase">Genetic association of physically
 unlinked islands of genomic divergence in incipient species of
 <em>Anopheles gambiae</em></span>. <em>Molecular Ecology</em>,
-<em>19</em>(5), 925–939.
+<em>19</em>(5), 925–939. <a
+href="https://doi.org/10.1111/j.1365-294X.2010.04531.x">https://doi.org/10.1111/j.1365-294X.2010.04531.x</a>
 </div>
 <div id="ref-Costantini_E2009a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, Ayala, D., Guelbeogo, W. M., Pombi, M., Some, C. Y.,
@@ -220,14 +244,16 @@ Bassolé, I. H. N., Ose, K., Fotsing, J.-M., Sagnon, N., Fontenille, D.,
 Besansky, N. J., &amp; Simard, F. (2009). <span class="nocase">Living at
 the edge: biogeographic patterns of habitat segregation conform to
 speciation by niche expansion in <em>Anopheles gambiae</em></span>.
-<em>BMC Ecology</em>, <em>9</em>, 16.
+<em>BMC Ecology</em>, <em>9</em>, 16. <a
+href="https://doi.org/10.1186/1472-6785-9-16">https://doi.org/10.1186/1472-6785-9-16</a>
 </div>
 <div id="ref-Guelbeogo_MJ2009a" class="csl-entry" role="listitem">
 Guelbeogo, W. M., Sagnon, N., Grushko, O., Yameogo, M. A., Boccolini,
 D., Besansky, N. J., &amp; <strong>Costantini, C.</strong> (2009). <span
 class="nocase">Seasonal distribution of <em>Anopheles funestus</em>
 chromosomal forms from <span>B</span>urkina <span>F</span>aso</span>.
-<em>Malaria Journal</em>, <em>8</em>, 239.
+<em>Malaria Journal</em>, <em>8</em>, 239. <a
+href="https://doi.org/10.1186/1475-2875-8-239">https://doi.org/10.1186/1475-2875-8-239</a>
 </div>
 <div id="ref-Simard_E2009a" class="csl-entry" role="listitem">
 Simard, F., Ayala, D., Kamdem, G. C., Pombi, M., Etouna, J., Ose, K.,
@@ -235,14 +261,16 @@ Fotsing, J.-M., Fontenille, D., Besansky, N. J., &amp; <strong>Costantini, C.</s
 (2009). <span class="nocase">Ecological niche partitioning between
 <em>Anopheles gambiae</em> molecular forms in <span>C</span>ameroon: the
 ecological side of speciation</span>. <em>BMC Ecology</em>, <em>9</em>,
-17.
+17. <a
+href="https://doi.org/10.1186/1472-6785-9-17">https://doi.org/10.1186/1472-6785-9-17</a>
 </div>
 <div id="ref-Cassone_ME2008a" class="csl-entry" role="listitem">
 Cassone, B. J., Mouline, K., Hahn, M. W., White, B. J., Pombi, M.,
 Simard, F., <strong>Costantini, C.</strong>, &amp; Besansky, N. J. (2008). <span
 class="nocase">Differential gene expression in incipient species of
 <em>Anopheles gambiae</em></span>. <em>Molecular Ecology</em>,
-<em>17</em>(10), 2491–2504.
+<em>17</em>(10), 2491–2504. <a
+href="https://doi.org/10.1111/j.1365-294X.2008.03774.x">https://doi.org/10.1111/j.1365-294X.2008.03774.x</a>
 </div>
 <div id="ref-Pombi_EB2008a" class="csl-entry" role="listitem">
 <span class="nocase">Pombi, M., Caputo, B., Simard, F., Deco, M. A. di,
@@ -251,7 +279,8 @@ Petrarca, V.</span> (2008). <span class="nocase">Chromosomal plasticity
 and evolutionary potential in the malaria vector <em>Anopheles
 gambiae</em> sensu stricto: insights from three decades of rare
 paracentric inversions</span>. <em>BMC Evolutionary Biology</em>,
-<em>8</em>, 309.
+<em>8</em>, 309. <a
+href="https://doi.org/10.1186/1471-2148-8-309">https://doi.org/10.1186/1471-2148-8-309</a>
 </div>
 <div id="ref-Caputo_IBMB2007a" class="csl-entry" role="listitem">
 <span class="nocase">Caputo, B., Dani, F. R., Horne, G. L., Sagnon, N.,
@@ -262,7 +291,8 @@ sympatric and allopatric field populations of <em>Anopheles gambiae
 s.s.</em> molecular forms and <em>An. arabiensis</em> from
 <span>B</span>urkina <span>F</span>aso (<span>W</span>est
 <span>A</span>frica)</span>. <em>Insect Biochemistry and Molecular
-Biology</em>, <em>37</em>(4), 389–398.
+Biology</em>, <em>37</em>(4), 389–398. <a
+href="https://doi.org/10.1016/j.ibmb.2007.01.002">https://doi.org/10.1016/j.ibmb.2007.01.002</a>
 </div>
 <div id="ref-Michel_G2006a" class="csl-entry" role="listitem">
 Michel, A. P., Grushko, O., Guelbeogo, W. M., Lobo, N. F., Sagnon, N.,
@@ -270,14 +300,15 @@ Michel, A. P., Grushko, O., Guelbeogo, W. M., Lobo, N. F., Sagnon, N.,
 class="nocase">Divergence with gene flow in <em>Anopheles funestus</em>
 from the Sudan Savanna of <span>B</span>urkina <span>F</span>aso,
 <span>W</span>est <span>A</span>frica.</span> <em>Genetics</em>,
-<em>173</em>(3), 1389–1395.
+<em>173</em>(3), 1389–1395. <a
+href="https://doi.org/10.1534/genetics.106.059667">https://doi.org/10.1534/genetics.106.059667</a>
 </div>
 <div id="ref-Barnes_IMB2005a" class="csl-entry" role="listitem">
-Barnes, M. J., Lobo, N. F., Coulibaly, M. B., Sagnon, N., Costantini,
-C., &amp; Besansky, N. J. (2005). <span class="nocase"><span>SINE</span>
+Barnes, M. J., Lobo, N. F., Coulibaly, M. B., Sagnon, N., <strong>Costantini, C.</strong>, &amp; Besansky, N. J. (2005). <span class="nocase"><span>SINE</span>
 insertion polymorphism on the <span>X</span> chromosome differentiates
 <em>Anopheles gambiae</em> molecular forms</span>. <em>Insect Molecular
-Biology</em>, <em>14</em>(4), 353–363.
+Biology</em>, <em>14</em>(4), 353–363. <a
+href="https://doi.org/10.1111/j.1365-2583.2005.00566.x">https://doi.org/10.1111/j.1365-2583.2005.00566.x</a>
 </div>
 <div id="ref-Boccolini_AJTMH2005a" class="csl-entry" role="listitem">
 Boccolini, D., Carrara, G. C., Dia, I., Fortes, F., Cani, P. J., &amp;
@@ -285,7 +316,8 @@ Boccolini, D., Carrara, G. C., Dia, I., Fortes, F., Cani, P. J., &amp;
 of <em>Anopheles funestus</em> from <span>L</span>uanda and
 <span>H</span>uambo <span>P</span>rovinces, western and central
 <span>A</span>ngola.</span> <em>The American Journal of Tropical
-Medicine and Hygiene</em>, <em>73</em>(6), 1071–1076.
+Medicine and Hygiene</em>, <em>73</em>(6), 1071–1076. <a
+href="https://doi.org/10.4269/ajtmh.2005.73.1071">https://doi.org/10.4269/ajtmh.2005.73.1071</a>
 </div>
 <div id="ref-Guelbeogo_MVE2005a" class="csl-entry" role="listitem">
 Guelbeogo, W. M., Grushko, O., Boccolini, D., Ouédraogo, A. P.,
@@ -293,7 +325,8 @@ Besansky, N. J., Sagnon, N., &amp; <strong>Costantini, C.</strong> (2005). <span
 class="nocase">Chromosomal evidence of incipient speciation in the
 <span>A</span>frotropical malaria mosquito <em>Anopheles
 funestus</em></span>. <em>Medical and Veterinary Entomology</em>,
-<em>19</em>(4), 458–469.
+<em>19</em>(4), 458–469. <a
+href="https://doi.org/10.1111/j.1365-2915.2005.00595.x">https://doi.org/10.1111/j.1365-2915.2005.00595.x</a>
 </div>
 <div id="ref-Michel_IMB2005a" class="csl-entry" role="listitem">
 Michel, A. P., Guelbeogo, W. M., Grushko, O., Schemerhorn, B. J., Kern,
@@ -301,7 +334,8 @@ M. K., Willard, M. B., Sagnon, N., <strong>Costantini, C.</strong>, &amp; Besans
 (2005). <span class="nocase">Molecular differentiation between
 chromosomally defined incipient species of <em>Anopheles
 funestus</em></span>. <em>Insect Molecular Biology</em>, <em>14</em>(4),
-375–387.
+375–387. <a
+href="https://doi.org/10.1111/j.1365-2583.2005.00568.x">https://doi.org/10.1111/j.1365-2583.2005.00568.x</a>
 </div>
 <div id="ref-Michel_ME2005a" class="csl-entry" role="listitem">
 Michel, A. P., Ingrasci, M. J., Schemerhorn, B. J., Kern, M., Le Goff,
@@ -309,7 +343,8 @@ G., Coetzee, M., Elissa, N., Fontenille, D., Vulule, J., Lehmann, T.,
 Sagnon, N., <strong>Costantini, C.</strong>, &amp; Besansky, N. J. (2005). <span
 class="nocase">Rangewide population genetic structure of the
 <span>A</span>frican malaria vector <em>Anopheles funestus</em></span>.
-<em>Molecular Ecology</em>, <em>14</em>, 4235–4248.
+<em>Molecular Ecology</em>, <em>14</em>, 4235–4248. <a
+href="https://doi.org/10.1111/j.1365-294X.2005.02754.x">https://doi.org/10.1111/j.1365-294X.2005.02754.x</a>
 </div>
 <div id="ref-Stump_PNASUSA2005a" class="csl-entry" role="listitem">
 Stump, A. D., Fitzpatrick, M. C., Lobo, N. F., Traoré, S. F., Sagnon,
@@ -317,13 +352,15 @@ N., <strong>Costantini, C.</strong>, Collins, F. H., &amp; Besansky, N. J. (2005
 class="nocase">Centromere-proximal differentiation and speciation in
 <em>Anopheles gambiae</em>.</span> <em>Proceedings of the National
 Academy of Sciences of the United States of America</em>,
-<em>102</em>(44), 15930–15935.
+<em>102</em>(44), 15930–15935. <a
+href="https://doi.org/10.1073/pnas.0508161102">https://doi.org/10.1073/pnas.0508161102</a>
 </div>
 <div id="ref-Stump_G2005a" class="csl-entry" role="listitem">
 Stump, A. D., Shoener, J. A., <strong>Costantini, C.</strong>, Sagnon, N., &amp;
 Besansky, N. J. (2005). <span class="nocase">Sex-Linked Differentiation
 between Incipient Species of <em>Anopheles gambiae</em></span>.
-<em>Genetics</em>, <em>169</em>(3), 1509–1519.
+<em>Genetics</em>, <em>169</em>(3), 1509–1519. <a
+href="https://doi.org/10.1534/genetics.104.035303">https://doi.org/10.1534/genetics.104.035303</a>
 </div>
 <div id="ref-Boccolini_P2002a" class="csl-entry" role="listitem">
 Boccolini, D., Carrara, G. C., Cani, P. J., &amp; <strong>Costantini, C.</strong> (2002).
@@ -336,7 +373,8 @@ polymorphism in a peri-urban site of <span>W</span>estern
 Caccone, A., Petrarca, V., Powell, J. R., &amp; Coluzzi, M.</span>
 (2002). <span class="nocase">Speciation within <em>Anopheles
 gambiae</em>–the glass is half full</span>. <em>Science</em>,
-<em>298</em>(5591), 115–117.
+<em>298</em>(5591), 115–117. <a
+href="https://doi.org/10.1126/science.1078170">https://doi.org/10.1126/science.1078170</a>
 </div>
 <div id="ref-Sharakhov_S2002a" class="csl-entry" role="listitem">
 Sharakhov, I. V., Serazin, A. C., Grushko, O. G., Dana, A., Lobo, N.,
@@ -344,7 +382,8 @@ Hillenmeyer, M. E., Westerman, R., Romero-Severson, J., <strong>Costantini, C.</
 Sagnon, N., Collins, F. H., &amp; Besansky, N. J. (2002). <span
 class="nocase">Inversions and gene order shuffling in <em>Anopheles
 gambiae</em> and <em>A funestus</em></span>. <em>Science</em>,
-<em>298</em>(5591), 182–185.
+<em>298</em>(5591), 182–185. <a
+href="https://doi.org/10.1126/science.1076803">https://doi.org/10.1126/science.1076803</a>
 </div>
 <div id="ref-Dia_P2000a" class="csl-entry" role="listitem">
 Dia, I., Boccolini, D., Antonio-Nkondjio, C., <strong>Costantini, C.</strong>, &amp;
@@ -358,6 +397,8 @@ Dia, I., Lochouarn, L., Boccolini, D., <strong>Costantini, C.</strong>, &amp; Fo
 D. (2000). <span class="nocase">Spatial and temporal variations of the
 chromosomal inversion polymorphism of <em>Anopheles funestus</em> in
 <span>S</span>enegal</span>. <em>Parasite</em>, <em>7</em>(3), 179–184.
+<a
+href="https://doi.org/10.1051/parasite/2000073179">https://doi.org/10.1051/parasite/2000073179</a>
 </div>
 <div id="ref-Hackett_IMB2000a" class="csl-entry" role="listitem">
 Hackett, B. J., Gimnig, J., Guelbeogo, W. M., <strong>Costantini, C.</strong>, Koekemoer,
@@ -365,7 +406,8 @@ L. L., Coetzee, M., Collins, F. H., &amp; Besansky, N. J. (2000). <span
 class="nocase">Ribosomal <span>DNA</span> internal transcribed spacer
 (<span>ITS2</span>) sequences differentiate <em>Anopheles funestus</em>
 and <em>An. rivulorum</em>, and uncover a cryptic taxon</span>.
-<em>Insect Molecular Biology</em>, <em>9</em>(4), 369–374.
+<em>Insect Molecular Biology</em>, <em>9</em>(4), 369–374. <a
+href="https://doi.org/10.1046/j.1365-2583.2000.00198.x">https://doi.org/10.1046/j.1365-2583.2000.00198.x</a>
 </div>
 <div id="ref-Costantini_P1999a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, Sagnon, N., Sanogo, E., Coluzzi, M., &amp; Boccolini, D.
