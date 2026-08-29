@@ -63,3 +63,4 @@ execute:
 lang: en-GB
 
 bibliography: bibliography/references.bib
+csl: bibliography/csl/apa.csl

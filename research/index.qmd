@@ -1,16 +1,16 @@
 ---
-title: "Research Themes"
+title: "Research themes"
 subtitle: "Biological questions and approaches to scientific inference"
 
 description: >-
-  Research on mosquito evolutionary ecology, adaptation, ecological divergence, speciation, behaviour, population biology and disease transmission, together with the quantitative, genomic, informatic and environmental approaches used to investigate them.
+  Research on mosquito evolutionary ecology, adaptation, ecological divergence, speciation, behaviour, population biology and disease transmission, together with the quantitative, genomic, computational and environmental approaches used to investigate them.
 
 date-modified: last-modified
 ---
 
 ---
 
-My scientific interests are broadly situated at the intersection of **evolution, ecology, and the biology of disease vectors**. I primarily focus on mosquitoes, particularly African malaria vectors of the _Anopheles gambiae_ complex, to investigate these questions. My initial exposure to vector biology came from my first academic mentor, Prof. **Mario Coluzzi**, whose research utilised the remarkable chromosomal polymorphism found in African anopheline mosquitoes to study adaptation and speciation. This approach has continued to be a significant intellectual influence throughout my scientific career. Mosquitoes are fascinating evolutionary subjects because the traits that contribute to their ecological success are the same ones that make them important disease vectors. For instance, adaptations to climate, aquatic environments, vertebrate hosts, or human-altered landscapes can influence their geographical range, population dynamics, and interactions with humans. Consequently, evolutionary changes can have direct epidemiological impacts. My research is guided mainly by **biological questions**, rather than by specific technologies or analytical fields. However, addressing these questions increasingly necessitates the integration of field ecology, experimental studies, environmental data, quantitative inference, and diverse molecular and phenotypic datasets.
+My research lies at the intersection of **evolution, ecology, and the biology of disease vectors**. I use mosquitoes—particularly African malaria vectors of the *Anopheles gambiae* complex and *Anopheles funestus* group—as a study system for these questions. I was introduced to vector biology by my first academic mentor, Professor [Mario Coluzzi](https://it.wikipedia.org/wiki/Caio_Mario_Coluzzi_Bartoccioni) [@Powell_MJ2014a], whose research used the remarkable chromosomal polymorphisms of African anopheline mosquitoes to investigate adaptation and speciation. His legacy has remained an important intellectual influence throughout my scientific career. Mosquitoes are compelling evolutionary study systems because the traits that underpin their ecological success also make them important disease vectors. Adaptations to climate, aquatic environments, vertebrate hosts, and human-modified landscapes can alter mosquito distributions, population dynamics, and interactions with humans, with direct epidemiological consequences. My research is guided primarily by biological questions rather than particular technologies or analytical disciplines. Addressing those questions increasingly requires the integration of field ecology, experiments, environmental data, quantitative inference, and diverse molecular and phenotypic datasets.
 
 ---
 
@@ -18,7 +18,7 @@ My scientific interests are broadly situated at the intersection of **evolution,
 
 ### Adaptation to heterogeneous and changing environments {#research-adaptation}
 
-A central question guiding my research is **how mosquito populations adapt to diverse environmental conditions**. While insecticide resistance is the most well-documented instance of rapid adaptation in disease vectors, mosquitoes face many other selective forces. Survival and reproduction can be influenced by factors such as temperature, rainfall, aridity, water chemistry, salinity, pollution, land use, and artificial lighting, among others. Human activities are simultaneously creating new environments and transforming existing ones. I am especially interested in cases where populations colonise ecological conditions that were previously marginal or uninhabitable. This expansion into new niches prompts several interconnected questions. Are the observed differences rooted in genetics, environmental induction, or a combination of both? What characteristics enable individuals to survive and reproduce in the new environment? What fitness costs or trade-offs accompany adaptation? Does adaptation lead to ecological divergence from nearby populations? Does this resulting divergence impact geographical distribution, population dynamics, or disease-carrying capabilities? For instance, consider the capacity of those mosquitoes that are found in freshwater to thrive also in brackish aquatic habitats. This presents a biological challenge spanning landscape genetics to the osmoregulatory physiology of mosquito larvae. Tolerance to salinity is significant not just as a physiological trait, but because it can dictate the environments a population can inhabit, and consequently, where disease-vector populations can persist. Urbanisation offers another compelling example. Polluted artificial habitats, altered water flow, heat, artificial light, and high concentrations of humans and domestic animals create a suite of selective pressures that diverge from those under which mosquito populations evolved in the past. More generally, I am interested in understanding how **global environmental change reshapes the adaptive landscape encountered by disease vectors**.
+A central question guiding my research is **how mosquito populations adapt to diverse environmental conditions**. While insecticide resistance is one of the best-documented examples of rapid adaptation in disease vectors, mosquitoes face many other selective forces. Survival and reproduction can be influenced by factors such as temperature, rainfall, aridity, water chemistry, salinity, pollution, land use, and artificial lighting. Human activities simultaneously create new environments and transform existing ones. I am especially interested in cases where populations colonise habitats that were previously marginal or uninhabitable. This expansion into new niches prompts several interconnected questions. Are the observed differences genetic, environmentally induced, or both? What characteristics enable individuals to survive and reproduce in the new environment? What fitness costs or trade-offs accompany adaptation? Does adaptation lead to ecological divergence from nearby populations? Does the resulting divergence affect geographical distribution, population dynamics, or pathogens-carrying capabilities? Consider, for example, the ability of mosquito populations normally associated with freshwater to thrive in brackish aquatic habitats. This problem spans scales from landscape genetics to the osmoregulatory physiology of mosquito larvae. Salinity tolerance matters not only as a physiological trait; it can determine which environments a population can inhabit and therefore where vector populations can persist. Urbanisation offers another compelling example. Polluted artificial habitats, altered water flow, heat, artificial light, and high concentrations of humans and domestic animals create a suite of selective pressures that differ from those under which mosquito populations evolved. More generally, I am interested in understanding how **global environmental change reshapes the adaptive landscape encountered by disease vectors**.
 
 [**Publications on this theme →**](/publications/index.qmd#pub-adaptation){.related-publications}
 
@@ -36,17 +36,17 @@ When different populations face contrasting environments, adaptation becomes esp
 - Introgression and adaptive introgression
 - The spectrum of divergence from locally adapted populations to distinct species
 
-Rather than viewing species as isolated branches on an evolutionary tree, I’m increasingly focused on the **reticulate evolutionary history** that results from genetic exchange between incompletely isolated populations. Introgression is particularly significant because gene flow isn’t solely an obstacle to divergence; it can also supply beneficial genetic variations that enable populations to colonise new habitats or develop novel traits.
+Rather than viewing species as isolated branches on an evolutionary tree, I’m increasingly focused on the **reticulate evolutionary history** that results from genetic exchange between incompletely isolated populations. Introgression is particularly significant because gene flow isn’t solely an obstacle to divergence; it can also supply beneficial genetic variants that enable populations to colonise new habitats or evolve novel traits.
 
 ---
 
 #### Genomic architecture of adaptation
 
-Evolution hinges on heritable variation, yet how this variation is organised within a genome significantly impacts its evolutionary trajectory. This is precisely where **chromosomal inversions** have repeatedly surfaced in my research. Paracentric inversions are common in African anopheline mosquitoes and have consistently correlated with environmental gradients, geographical distribution, and ecological divergence. By suppressing recombination between different chromosomal arrangements, inversions can safeguard combinations of locally beneficial alleles, even in the face of gene flow across the rest of the genome. Today we can bridge the gap between classic cytogenetic observations, which first sparked interest in this area, and modern population genomics. The inquiry has broadened from:
+Evolution depends on heritable variation, and the way that variation is organised within genomes strongly shapes evolutionary trajectories. This is why **chromosomal inversions** have recurred throughout my research. Paracentric inversions are common in anopheline mosquitoes and have consistently been associated with environmental gradients, geographical distribution, and ecological divergence. By suppressing recombination between different chromosomal arrangements, inversions can safeguard combinations of locally beneficial alleles, even in the face of gene flow across the rest of the genome. Today, we can bridge the gap between classic cytogenetic observations, which first sparked interest in this area, and modern population genomics. The questions have broadened from:
 
 > _What ecological factors maintain chromosomal inversion polymorphisms?_
 
-to more encompassing questions such as:
+to more encompassing ones such as:
 
 > _How is adaptive genetic variation distributed throughout the genome?_
 > _Where are the barriers to gene flow situated?_
@@ -61,7 +61,7 @@ These inquiries link chromosomal biology with population genomics, ecological ge
 
 ### Evolution of behaviour and host choice {#research-behaviour}
 
-Behaviour is the interface through which an organism engages with its environment. A significant aspect of my research focuses on mosquito **host selection**, specifically the strong link between humans and some of the major African malaria vectors. For human malaria parasites or dengue arboviruses, mosquito feeding behaviour is more than just an accident of natural history. Whether mosquitoes repeatedly feed on humans or distribute their blood meals across various vertebrate species has significant implications for parasite transmission. Therefore, my research delves into the mechanisms behind host selection and its evolutionary adaptability. Olfaction is crucial, as mosquitoes react to complex blends of volatile compounds emitted by potential hosts. However, pinpointing a chemical linked to mosquito behaviour isn’t enough. The key question is **how that cue functions within the behavioural sequence**. A volatile compound might trigger flight, orient movement, facilitate close-range approach, start landing, or influence host acceptance. Broad terms like “attractant” and “repellent” can obscure these mechanistic differences. Consequently, one aim is to dissect complex behaviours into their functional components and understand how sensory information influences each one. An additional evolutionary inquiry is whether the marked preference for humans in some malaria vectors is a permanent species trait or an **evolutionarily labile phenotype** shaped by genes, ecological circumstances, and the availability of other hosts.
+Behaviour is the interface through which an organism engages with its environment. A major strand of my research concerns mosquito **host choice** and **host selection**, specifically the strong link between humans and some of the major African malaria vectors. Host choice and host selection are not merely details of natural history: for human malaria parasites and dengue viruses, they are major determinants of transmission. Whether mosquitoes feed repeatedly on humans or across a range of vertebrate hosts has major implications for pathogen transmission. Therefore, my research investigates the mechanisms of host selection underlying host choice and its evolutionary adaptability. Olfaction is crucial, as mosquitoes react to complex blends of volatile compounds emitted by potential hosts. However, identifying a chemical associated with mosquito behaviour isn’t enough. The key question is **how that cue functions within the behavioural sequence**. A volatile compound might trigger flight, orient movement, facilitate close-range approach, initiate landing, or influence host acceptance. Broad terms like “attractant” and “repellent” can obscure these mechanistic differences. Consequently, one aim is to dissect complex behaviours into their functional components and understand how sensory information influences each one. A further evolutionary question is whether the marked preference for humans shown by some malaria vectors is a fixed species-level trait or an **evolutionarily labile phenotype** shaped by genes, ecological conditions, and host availability.
 
 [**Publications on this theme →**](/publications/index.qmd#pub-behaviour){.related-publications}
 
@@ -69,7 +69,7 @@ Behaviour is the interface through which an organism engages with its environmen
 
 ### Biological rhythms and temporal behaviour {#research-rhythms}
 
-The environment changes not only across space but also over **time**. Many crucial mosquito behaviours, such as flying, mating, blood feeding, and egg-laying, exhibit distinct daily patterns. The temporal organisation of behaviour adds another layer to the ecological niche, which has clear implications for epidemiology. Disease control strategies like insecticide-treated bed nets indirectly leverage the overlap between human sleep patterns and the primarily nocturnal activity of many malaria-carrying mosquitoes. Any mosquito activity outside this timeframe can thus contribute significantly to ongoing transmission. My research aims to do more than just record when mosquitoes bite. I’m keen to understand how internal biological rhythms interact with external cues like the natural light-dark cycle, twilight, dim light, and artificial light at night. The overarching question, therefore, is how **temporal environmental shifts can alter overt behaviours**, and whether these changes are because of plasticity, gradual physiological adjustments, or evolutionary changes.
+The environment changes not only across space but also over **time**. Many crucial mosquito behaviours, such as flying, mating, blood feeding, and egg-laying, exhibit distinct daily patterns. The temporal organisation of behaviour adds another dimension to the ecological niche and has clear epidemiological implications. Interventions such as insecticide-treated bed nets derive much of their effectiveness from the overlap between human sleep patterns and the primarily nocturnal activity of many malaria vectors. Any mosquito activity outside this time window can thus contribute significantly to ongoing transmission. My research aims to go beyond recording when mosquitoes bite. I’m keen to understand how internal biological rhythms interact with external cues such as the natural light-dark cycle, twilight, dim light, and artificial light at night. The overarching question, therefore, is how **temporal environmental shifts can alter overt behaviours**, and whether these changes arise through immediate plasticity, physiological acclimation, or evolutionary change.
 
 [**Publications on this theme →**](/publications/index.qmd#pub-rhythms){.related-publications}
 
@@ -77,14 +77,14 @@ The environment changes not only across space but also over **time**. Many cruci
 
 ### Population ecology and demography {#research-population}
 
-Evolution ultimately hinges on variations in survival and reproduction among individuals. Similarly, epidemiological transmission relies on demographic factors like mosquito density, lifespan, and movement. Therefore, comprehending natural mosquito populations necessitates estimating key quantities such as:
+Evolution ultimately hinges on variation in survival and reproduction among individuals. Pathogen transmission likewise depends on demographic factors like mosquito density, lifespan, and movement. Therefore, understanding natural mosquito populations requires estimates of key quantities such as:
 
 * Population density
 * Dispersal and migration patterns
 * Reproductive activity
 * The spatial and temporal distribution of individuals
 
-Estimating these parameters proves deceptively challenging. Mosquito populations are huge, highly dynamic, and spatially uneven, while individual insects are small, mobile, and difficult to track consistently. Individuals detected by sampling methods offer only an incomplete picture of the underlying population. For me, this underscores an inseparable link between population ecology and the crucial question: **what insights can our field observations genuinely provide about the population processes that created them?** This inquiry bridges the gap between biological understanding and methodological approaches.
+Estimating these parameters proves deceptively challenging. Mosquito populations are large, highly dynamic, and spatially uneven, while individual insects are small, mobile, and difficult to track consistently. Individuals detected by sampling methods offer only an incomplete picture of the underlying population. For me, this underscores an inseparable link between population ecology and the crucial question: **what insights can our field observations genuinely provide about the population processes that generated those observations?** This question links population ecology directly to methods of observation and inference.
 
 [**Publications on this theme →**](/publications/index.qmd#pub-population){.related-publications}
 
@@ -92,7 +92,7 @@ Estimating these parameters proves deceptively challenging. Mosquito populations
 
 ### From vector biology to disease transmission and control {#research-control}
 
-My primary interests are in fundamental biology, but vector biology is unique because even minor ecological or evolutionary shifts can significantly impact disease pathogens' transmission. Factors like lifespan, population size, how often they bite, which hosts they prefer, when they are active, and how far they spread directly influence **vectorial capacity**. Therefore, figuring out why mosquitoes bite humans, live in salt water, infest urban areas, alter their biting times, develop insecticide resistance, or swap genes with other populations is both an evolutionary puzzle and a public health concern. For this reason, I view **fundamental and applied vector biology as interconnected, not opposing, fields**. Some of my work has involved developing mosquito repellents, insecticide strategies, evaluation methods, and behavioural techniques to minimise mosquito-human interaction. More broadly, the core idea is that any interventions will likely be more successful long-term if they are grounded in a solid understanding of the ecological and evolutionary systems they aim to manipulate.
+My primary interests are in fundamental biology, but vector biology is distinctive because even minor ecological or evolutionary shifts can substantially affect pathogen transmission. Factors like lifespan, population size, how often vectors bite, which hosts they prefer, when they are active, and how far they disperse directly influence **[vectorial capacity](https://carlo-costantini.shinyapps.io/Vectorial_Capacity)**. Understanding why mosquitoes feed on humans, tolerate saline habitats, colonise urban environments, shift their biting times, evolve insecticide resistance, or exchange genes through introgression is both an evolutionary problem and a public-health concern. For this reason, I view **fundamental and applied vector biology as interconnected, not opposing, fields**. Some of my work has involved assessing mosquito repellents, insecticide strategies, evaluation methods, and behavioural techniques to minimise mosquito-human interaction. More broadly, the core idea is that interventions will likely be more successful in the long term if they are grounded in a solid understanding of the ecological and evolutionary systems they aim to manipulate.
 
 [**Publications on this theme →**](/publications/index.qmd#pub-control){.related-publications}
 
@@ -100,72 +100,69 @@ My primary interests are in fundamental biology, but vector biology is unique be
 
 ## Approaches to scientific inference {#research-methods}
 
-Biological questions rarely have simple answers that can be found using just one method or data type. Therefore, a significant part of my methodological focus is on how to integrate diverse observations to draw sound biological conclusions.
+Biological questions rarely have simple answers that can be found using just one method or data type. A central methodological concern is therefore how to integrate diverse observations into sound biological inference.
 
 [**Publications on methods and scientific inference →**](/publications/index.qmd#pub-methods){.related-publications} 
 
 ### Field ecology and experiments in natural populations
 
-I’ve consistently prioritised studying organisms in their natural environments. While laboratory experiments offer control, they inherently simplify ecological complexity and reduce genetic diversity. Field studies, conversely, expose organisms to the authentic interplay of environmental variability, competitors, hosts, predators, and population structures that have shaped their phenotypes over time. My work has involved developing and refining methods for studying natural mosquito populations, including:
+I’ve consistently prioritised studying organisms in their natural environments. Laboratory experiments offer control but often simplify ecological complexity and may represent only a subset of natural genetic diversity. By contrast, field studies expose organisms to the full interplay of environmental variability, competitors, hosts, predators, and population structures that have shaped their phenotypes over time. My work has involved developing and refining methods for studying natural mosquito populations, including:
 
-- Sampling techniques for mosquitoes;
-- Mark-release-recapture experiments;
-- Estimating population density, survival rates, and dispersal patterns;
-- Behavioural choice experiments;
-- Semi-field experiments;
-- Comparative ecological studies of natural populations;
-- Experimental designs aimed at distinguishing environmental influences from inherent phenotypic variations.
+- Sampling techniques for mosquitoes
+- Mark-release-recapture experiments
+- Estimating population density, survival rates, and dispersal patterns
+- Behavioural choice experiments
+- Semi-field experiments
+- DNA tools for genotyping and phenotyping natural populations
+- Comparative ecological studies of natural populations
+- Experimental designs that distinguish environmental effects from intrinsic phenotypic differences
 
-It’s crucial to remember that field methods are not passive observation tools. Every trap, sampling strategy, or experimental setup inherently favours certain individuals over others. Therefore, understanding these **observation processes and sampling biases** is integral to making valid inferences.
+It’s crucial to remember that field methods are not passive observation tools. Every trap, sampling strategy, or experimental setup inherently favours certain observations over others. Therefore, understanding these **observation processes and sampling biases** is integral to making valid inferences.
 
 ---
 
 ### Biostatistics, modelling and causal inference
 
-Quantitative inference has always been central to my research, given the inherent noisiness, heterogeneity, and incompleteness of biological observations. My work spans classical and modern biostatistical methods, from multivariate analyses and generalised linear models to hierarchical models for ecological and demographic data. Recently, I’m especially attracted to **Bayesian inference**, particularly for scenarios involving uncertainty propagation across biological system levels or when observations stem from imperfect detection and sampling. A related fascination lies in differentiating between **prediction, association, and causation**. While large biological datasets facilitate the discovery of statistical associations, they don’t inherently clarify the underlying reasons. Consequently, I view causal reasoning, explicit articulation of competing biological hypotheses, and rigorous study design as increasingly vital complements to statistical modelling. My goal isn’t just to develop more complex models, but to find out **which biological assertions the existing evidence can genuinely substantiate**.
+Quantitative inference has always been central to my research because biological observations are noisy, heterogeneous, and incomplete. My work spans classical and modern biostatistical methods, from multivariate analyses and generalised linear models to hierarchical models for ecological and demographic data. I am particularly interested in **Bayesian inference**, especially when uncertainty must be propagated across levels of a biological system or observations are affected by imperfect detection and sampling. A related concern is distinguishing **prediction, association, and causation**. Large biological datasets facilitate the discovery of statistical associations, but they do not by themselves reveal the underlying causal processes. I therefore regard causal reasoning, explicit competing hypotheses, and rigorous study design as essential complements to statistical modelling. My goal is not simply to build more complex models, but to determine **which biological claims the available evidence can genuinely support**.
 
 ---
 
 ### Omics and population genomics
 
-Modern sequencing provides an entirely different view of the evolutionary processes that were once inferred principally from phenotype, geography and cytogenetics. My current interests extend across **omics**, broadly understood as high-dimensional measurements of the organism:
+Modern sequencing provides an entirely different view of the evolutionary processes that were once inferred principally from phenotypes, geographical patterns and cytogenetic observations. My current interests extend across **omics**, broadly understood as high-dimensional measurements of the organism:
 
-- genomics;
-- population genomics;
-- transcriptomics;
-- epigenomics;
-- metabolomics;
-- and phenomics, encompassing morphology, physiology and behaviour.
+- genomics
+- population genomics
+- transcriptomics
+- epigenomics
+- metabolomics
+- and phenomics, encompassing morphology, physiology and behaviour
 
-Whole-genome sequence data make it possible to study population structure, barriers to gene flow, introgression, ancestry, chromosomal inversions and candidate regions involved in adaptation at unprecedented resolution.
+Whole-genome sequencing data make it possible to study population structure, barriers to gene flow, introgression, ancestry, chromosomal inversions and candidate regions involved in adaptation at unprecedented resolution.
 
-But omics data are most informative when connected with information about the **individual organism from which they were obtained**. Genome sequences acquire biological meaning when associated with phenotype, behaviour, population history and environment. This is why I am particularly interested in study designs in which molecular data are not treated as an endpoint, but as another layer of evidence within an ecological and evolutionary analysis.
+But omics data are most informative when connected with information about the **individual organism from which they were obtained**. Genome sequences acquire biological meaning when linked to the phenotypes and behaviour of the individuals from which they were obtained, and to the history and environment of their populations. This is why I am particularly interested in study designs in which molecular data are not treated as an endpoint, but as another layer of evidence within an ecological and evolutionary analysis.
 
 ---
 
 ### Bioinformatics and scientific computing
 
-As large-scale molecular, environmental, and ecological data become more prevalent, biological inference is increasingly reliant on computational methods. Consequently, I have a deep methodological interest in **bioinformatics, data science, and scientific software**. This includes developing reproducible workflows for tasks such as sequence processing, variant discovery, population genomic analysis, and integrating diverse datasets. Reproducibility extends beyond statistical analysis itself, encompassing the organisation and preservation of raw data, metadata, reference resources, software environments, and the lineage of analyses. Therefore, I consider data architecture, workflow automation, version control, and reproducible computational environments to be integral components of the scientific method, rather than simply aspects of information technology. A computational analysis should not only reveal the results obtained, but also precisely document the specific observations, reference resources, transformations, software, and analytical decisions that led to those results.
+As large-scale molecular, environmental, and ecological data become more prevalent, biological inference increasingly relies on computational methods. Consequently, I have a strong methodological interest in **bioinformatics, data science, and scientific software**. This includes developing reproducible workflows for tasks such as sequence processing, variant discovery, population genomic analysis, and the integration of diverse datasets. Reproducibility extends beyond statistical analysis itself, encompassing the organisation and preservation of raw data, metadata, reference resources, software environments, and the provenance of analyses. Therefore, I consider data architecture, workflow automation, version control, and reproducible computational environments to be integral components of the scientific method, rather than simply aspects of information technology. A computational analysis should not only report its results but also document the observations, reference resources, transformations, software, and analytical decisions from which those results arose.
 
 ---
 
 ### Environmental data science
 
-To understand adaptation, we must first describe the environments to which organisms are adapting. Today, we have environmental data at scales that were inconceivable when many foundational ecological studies were conducted. Technologies like remote sensing, geographical information systems, climate data, digital elevation models, land-cover datasets, hydrological information, and increasingly granular observations of human activities offer the chance to recreate the ecological context experienced by biological populations. My primary focus isn’t on environmental science as a standalone field, but rather on leveraging it to link **organisms with their surroundings**. This can involve environmental factors such as climate, hydrology, salinity, land cover, vegetation, farming methods, urban development, human and livestock presence, artificial light, and the spatial arrangement of aquatic habitats. Therefore, GIS and remote sensing serve as a crucial link between data collected on individual mosquitoes and ecological processes that unfold across entire landscapes.
+To understand adaptation, we must first describe the environments to which organisms are adapting. Today, we have environmental data at scales that were inconceivable when many foundational ecological studies were conducted. Remote sensing, geographical information systems, climate products, digital elevation models, land-cover datasets, hydrological information, and increasingly detailed observations of human activity make it possible to reconstruct or characterise the ecological context experienced by biological populations. My primary focus isn’t on environmental science as a standalone field, but rather on using it to link **organisms with their surroundings**. This requires characterising factors such as climate, hydrology, salinity, land cover, vegetation, farming methods, urban development, human and livestock presence, artificial light, and the spatial arrangement of aquatic habitats. Therefore, GIS and remote sensing serve as a crucial link between data collected on individual mosquitoes and ecological processes that unfold across entire landscapes.
 
 ---
 
 ### Integrating organism and environment
 
-The methodological direction that interests me most is ultimately **integration**.
+The methodological direction that interests me most is **integration**.
 
 An organism can be described simultaneously by its genome, transcriptome, physiology, morphology and behaviour. Its environment includes not only temperature, rainfall or land cover, but also individuals of its own species, interacting species, hosts, competitors, predators, pathogens and microbial associates. The distinction between these layers is analytically convenient but biologically artificial.
 
-The longer-term objective is therefore to connect information across scales:
-
-**genome → phenotype → individual → population → community → landscape → epidemiological consequence**
-
-while preserving the uncertainties and causal assumptions involved in moving from one level to another. This requires biology, statistics, informatics and environmental science to interact rather than operate as independent disciplines. For me, these technologies and analytical approaches are not research objectives in themselves. They are instruments for answering the biological questions described above.
+The longer-term objective is therefore to connect information across scales--**genome → phenotype → individual → population → community → landscape → epidemiological consequence**--while preserving the uncertainties and causal assumptions involved in moving from one level to another. This requires biology, statistics, scientific computing, and environmental science to interact rather than operate as independent disciplines. For me, these technologies and analytical approaches are not research objectives in themselves. They are instruments for answering the biological questions described above.
 
 ---
 
@@ -173,7 +170,7 @@ while preserving the uncertainties and causal assumptions involved in moving fro
 
 ### Ornithology
 
-My entry into science preceded my work on mosquitoes and arose from an early fascination with vertebrate natural history, particularly **birds**. Although ornithology is no longer one of my principal research programmes, it remains part of my scientific background and an enduring personal interest. I have contributed observations and publications on both Western Palearctic and Afrotropical birds, including studies of the biology and distribution of the White-backed Woodpecker in the central Italian Apennines. Years of field work in tropical Africa have also provided many opportunities for opportunistic observations of the Afrotropical avifauna.
+I entered science through an early fascination with vertebrate natural history, particularly **birds**. Although ornithology is no longer one of my principal research programmes, it remains part of my scientific background and an enduring personal interest. I have contributed observations and publications on both Western Palearctic and Afrotropical birds, including studies of the biology and distribution of the White-backed Woodpecker in the central Italian Apennines. Years of fieldwork in tropical Africa have also yielded numerous opportunistic observations of [Afrotropical birds](https://www.africanbirdclub.org/afbid/search/browse/birder/588).
 
 Natural history is sometimes treated as something separate from modern quantitative biology. I see it rather differently. Careful observation of organisms in their environment is often where worthwhile scientific questions begin.
 
@@ -183,13 +180,13 @@ Natural history is sometimes treated as something separate from modern quantitat
 
 ## A common thread
 
-The subjects and technologies involved in my research have changed considerably over time: chromosomes have been complemented by genomes, field notebooks by large environmental datasets, conventional statistical models by hierarchical Bayesian approaches, and individual datasets by increasingly integrated computational systems.
+The subjects and technologies involved in my research have changed considerably over time: cytogenetic analyses have been complemented by whole-genome data, field notebooks by large environmental datasets, conventional statistical models by hierarchical Bayesian approaches, and isolated datasets by increasingly integrated computational systems.
 
 The underlying questions, however, have changed much less.
 **How do organisms respond to heterogeneous and changing environments?**
 **How does adaptive variation arise and persist despite gene flow?**
-**How do ecological differences become genetic, physiological and behavioural differences?**
+**How are ecological differences translated into genetic, physiological and behavioural divergence?**
 **How do those differences alter populations, species boundaries and interactions with other organisms?**
-And, in the particular case of disease vectors: **how do these evolutionary and ecological processes ultimately alter pathogen transmission?**
+For disease vectors in particular, **how do these evolutionary and ecological processes ultimately alter pathogen transmission?**
 
-Mosquitoes provide an exceptionally rich system in which to ask these questions—not because they are just organisms that transmit disease, but because their epidemiological relevance makes the consequences of their ecology and evolution extremely important.
+Mosquitoes provide an exceptionally rich system in which to ask these questions---not simply because they transmit pathogens, but because their epidemiological relevance makes the consequences of their ecology and evolution especially consequential.
