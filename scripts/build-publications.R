@@ -385,23 +385,24 @@ yaml_quote <- function(x) {
 
 highlight_author <- function(html) {
 
-  # CSL styles can represent the same author in several ways.
-  # These substitutions are deliberately literal rather than regex-based.
+  # Pandoc may wrap the generated HTML between the surname and initials.
+  # Match arbitrary whitespace so highlighting is independent of line wrapping.
+  # The substitutions are ordered from most specific to least specific forms.
 
-  replacements <- c(
-    "Costantini, C." = "<strong>Costantini, C.</strong>",
-    "Costantini, Carlo" = "<strong>Costantini, Carlo</strong>",
-    "C. Costantini" = "<strong>C. Costantini</strong>",
-    "Carlo Costantini" = "<strong>Carlo Costantini</strong>"
+  patterns <- c(
+    "Costantini,\\s*Carlo" = "<strong>Costantini, Carlo</strong>",
+    "Costantini,\\s*C\\." = "<strong>Costantini, C.</strong>",
+    "Carlo\\s+Costantini" = "<strong>Carlo Costantini</strong>",
+    "C\\.\\s+Costantini" = "<strong>C. Costantini</strong>"
   )
 
-  for (pattern in names(replacements)) {
+  for (pattern in names(patterns)) {
 
     html <- gsub(
       pattern,
-      replacements[[pattern]],
+      patterns[[pattern]],
       html,
-      fixed = TRUE
+      perl = TRUE
     )
   }
 
