@@ -42,3 +42,6 @@ __pycache__/
 # ----------------------------------------------------------------------
 
 **/*.quarto_ipynb
+
+# Staging area for untracked files
+untracked/
