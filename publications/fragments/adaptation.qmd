@@ -54,8 +54,7 @@ F., &amp; Boukhary, A. O. M. S. (2020). <span class="nocase">First
 report of <em>Anopheles</em> (<em>Cellia</em>) <em>multicolor</em>
 during a study of tolerance to salinity of <em>Anopheles arabiensis</em>
 larvae in <span>N</span>ouakchott, <span>M</span>auritania</span>.
-<em>Parasites <span>&amp;</span> Vectors</em>, <em>13</em>, 522.
-https://doi.org/<a
+<em>Parasites <span>&amp;</span> Vectors</em>, <em>13</em>, 522. <a
 href="https://doi.org/10.1186/s13071-020-04400-y">https://doi.org/10.1186/s13071-020-04400-y</a>
 </div>
 <div id="ref-Ayala_EA2019a" class="csl-entry" role="listitem">

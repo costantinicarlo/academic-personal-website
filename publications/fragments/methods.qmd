@@ -105,7 +105,7 @@ Documentation–OCEAC</em>, <em>35</em>(2), 59–62.
 <div id="ref-Costantini_PT2000a" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, &amp; Besansky, N. J. (2000). <span
 class="nocase">Molecular entomology in <span>A</span>frica</span>.
-<em>Parasitology Today</em>, <em>16</em>(1), 6–7. https://doi.org/<a
+<em>Parasitology Today</em>, <em>16</em>(1), 6–7. <a
 href="https://doi.org/10.1016/S0169-4758(99)01579-3">https://doi.org/10.1016/S0169-4758(99)01579-3</a>
 </div>
 <div id="ref-Sinkins_ME2000a" class="csl-entry" role="listitem">
@@ -113,7 +113,7 @@ Sinkins, S. P., Hackett, B. J., <strong>Costantini, C.</strong>, Vulule, J. M., 
 Y., Collins, F. H., &amp; Besansky, N. J. (2000). <span
 class="nocase">Isolation of polymorphic microsatellite loci from the
 malaria vector <em>Anopheles funestus</em></span>. <em>Molecular
-Ecology</em>, <em>9</em>(4), 490–492. https://doi.org/<a
+Ecology</em>, <em>9</em>(4), 490–492. <a
 href="https://doi.org/10.1046/j.1365-294x.2000.00871-2.x">https://doi.org/10.1046/j.1365-294x.2000.00871-2.x</a>
 </div>
 <div id="ref-Costantini_BER1998a" class="csl-entry" role="listitem">

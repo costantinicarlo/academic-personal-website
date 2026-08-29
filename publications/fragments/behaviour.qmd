@@ -125,8 +125,8 @@ href="https://doi.org/10.1111/j.1365-2915.2006.652.x">https://doi.org/10.1111/j.
 <div id="ref-Besansky_TP2004a" class="csl-entry" role="listitem">
 Besansky, N. J., Hill, C. A., &amp; <strong>Costantini, C.</strong> (2004). No accounting
 for taste: Host preference in malaria vectors. <em>Trends in
-Parasitology</em>, <em>20</em>(6), 249–251. https://doi.org/<a
-href="http://dx.doi.org/10.1016/j.pt.2004.03.007">http://dx.doi.org/10.1016/j.pt.2004.03.007</a>
+Parasitology</em>, <em>20</em>(6), 249–251. <a
+href="https://doi.org/10.1016/j.pt.2004.03.007">https://doi.org/10.1016/j.pt.2004.03.007</a>
 </div>
 <div id="ref-Costantini_P2002b" class="csl-entry" role="listitem">
 <strong>Costantini, C.</strong>, &amp; Diallo, M. (2002). Lack of evidence for
