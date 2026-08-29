@@ -17,7 +17,7 @@ body-classes: homepage
 
 ::: {.homepage-profile-inner}
 
-![](images/Anopheles_gambiae.png){.homepage-mosquito fig-alt="Mosquito illustration"}
+![](images/Anopheles_gambiae.webp){.homepage-mosquito fig-alt="Mosquito illustration"}
 
 # Carlo Costantini, PhD {.homepage-name}
 
