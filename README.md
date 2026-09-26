@@ -26,9 +26,13 @@ The principal sections are:
 * **Home** — concise scientific introduction and site navigation;
 * **About** — scientific profile, perspective, and intellectual trajectory;
 * **Research** — detailed presentation of biological questions and methodological approaches;
-* **Publications** — scientific publications organised by research theme.
+* **Projects** — research programmes and collaborations, linking to their outputs;
+* **Publications** — scientific publications organised by research theme;
+* **Resources** — reusable data, software, teaching material, and research tools;
+* **Notes** — shorter reflections and working ideas, including field and laboratory notes;
+* **Gallery** — research and natural-history visuals.
 
-Additional sections, including a detailed curriculum, projects, teaching, software, data resources, and longer-form notes, may be added progressively.
+Projects, Resources, Notes, and Gallery currently have draft landing pages. Quarto preview shows these drafts for editing, but a normal render omits them from navigation and search. To activate a section once it has publication-ready material, edit its `index.qmd`, remove `draft: true` from its front matter, and run `quarto render`. Keep unfinished individual pages marked `draft: true` until they are ready. Draft mode controls publication, not access to source files in this public repository.
 
 The **Research** and **Publications** sections are intentionally cross-linked in both directions. Research themes provide the conceptual structure, while the corresponding publication sections provide the associated scientific record.
 
