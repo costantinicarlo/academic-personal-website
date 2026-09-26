@@ -22,8 +22,19 @@ website:
         href: about.qmd
       - text: Research
         href: research/index.qmd
+      - text: Projects
+        href: projects/index.qmd
       - text: Publications
         href: publications/index.qmd
+      - text: Resources
+        href: resources/index.qmd
+      - text: Notes
+        href: notes/index.qmd
+      - text: Gallery
+        href: gallery/index.qmd
+
+  # Draft landing pages stay out of published navigation and search.
+  draft-mode: gone
 
   search:
     location: navbar

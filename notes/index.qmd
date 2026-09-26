@@ -1,0 +1,6 @@
+---
+title: "Notes"
+draft: true
+---
+
+Working ideas, field and laboratory notes, and shorter reflections.
