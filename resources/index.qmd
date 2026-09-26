@@ -1,6 +1,44 @@
 ---
 title: "Resources"
-draft: true
+subtitle: "Software, teaching material, presentations, tutorials and other reusable scholarly resources."
+
+description: "The collection grows as new resources become available, while those already listed may evolve through further development. Only material suitable for public release is presented here."
+
+draft: false
+
+date-modified: last-modified
 ---
 
-Reusable data, software, teaching material, and research tools.
+## Software
+
+- **Panpreposterous** — Build manuscript PDFs from Markdown using a containerised Pandoc/LaTeX toolkit.\
+  [Repository and documentation](https://github.com/costantinicarlo/panpreposterous) · [Latest release](https://github.com/costantinicarlo/panpreposterous/releases/latest)
+
+- **NCBI BioProject Archiver** — Archive reproducible BioProject metadata snapshots and download verified, lossless SRA data, with manifests and optional FASTQ conversion.\
+  [Repository and documentation](https://github.com/costantinicarlo/ncbi-bioproject-archiver) · [Latest release](https://github.com/costantinicarlo/ncbi-bioproject-archiver/releases/latest)
+
+- **ENA Project Archiver** — Archive ENA raw sequencing data and metadata with a reproducible, provenance-preserving CLI and resumable, verified downloads.\
+  [Repository and documentation](https://github.com/costantinicarlo/ena-project-archiver) · [Latest release](https://github.com/costantinicarlo/ena-project-archiver/releases/latest)
+
+- **NCBI Nuccore Archiver** — Archive immutable NCBI Nucleotide/nuccore record snapshots and reproducible collections.\
+  [Repository and documentation](https://github.com/costantinicarlo/ncbi-nuccore-archiver) · [Latest release](https://github.com/costantinicarlo/ncbi-nuccore-archiver/releases/latest)
+
+- **Fieldnote Academic** — Minimalist slide theme for Obsidian Slides Extended and Reveal.js, supporting scientific talks, teaching, figures, code, acknowledgements, and clickable DOI references.\
+  [Repository and documentation](https://github.com/costantinicarlo/fieldnote-academic-slides-extended) · [Latest release](https://github.com/costantinicarlo/fieldnote-academic-slides-extended/releases/latest)
+
+- **Fieldnote Gallery** — Minimalist photographic gallery theme for Obsidian Slides Extended and Reveal.js, with horizontal contact sheets, full-screen photography, academic captions, and scientific hotspots.\
+  [Repository and documentation](https://github.com/costantinicarlo/fieldnote-gallery-slides-extended) · [Latest release](https://github.com/costantinicarlo/fieldnote-gallery-slides-extended/releases/latest)
+
+## Educational Material
+
+- **Panpreposterous workshop** — Introductory workshop slides for Panpreposterous v1.4.3.\
+  [View slides in English](https://costantinicarlo.github.io/panpreposterous-workshop/docs_EN/v1.4.3/) · [Voir les diapositives en français](https://costantinicarlo.github.io/panpreposterous-workshop/docs_FR/v1.4.3/){lang=fr}
+
+- **Vectorial Capacity** — Explore classical malaria vectorial capacity, mosquito bionomics, and Ross–Macdonald transmission thresholds in an interactive R Shiny application.\
+  [Launch interactive explorer](https://carlo-costantini.shinyapps.io/Vectorial_Capacity/) · [Source code and documentation](https://github.com/costantinicarlo/vectorial-capacity)
+
+
+## Research Tools
+
+- **Data protocols** — Contracts and R utilities for reproducible scientific data curation: validate XLSX/ODS workbooks, preserve provenance, standardise coordinates, and resolve place names with OpenStreetMap.\
+  [Repository and documentation](https://github.com/costantinicarlo/data-protocols)
