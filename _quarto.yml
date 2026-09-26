@@ -13,7 +13,7 @@ website:
   navbar:
     logo: images/avatar.png
     logo-alt: "Carlo Costantini"
-    logo-href: index.qmd
+    # Use Quarto's default homepage link for both the logo and site title.
 
     left:
       - text: Home
