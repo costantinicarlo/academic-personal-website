@@ -2,7 +2,7 @@
 title: "Resources"
 subtitle: "Software, teaching material, presentations, tutorials and other reusable scholarly resources."
 
-description: "The collection grows as new resources become available, while those already listed may evolve through further development. Only material suitable for public release is presented here."
+description: "Open resources for mosquito research, quantitative vector biology and reproducible scientific workflows, with links to software, documentation, teaching tools and interactive applications. The collection grows as new resources become available, while those already listed may evolve through further development."
 
 draft: false
 
@@ -29,7 +29,7 @@ date-modified: last-modified
 - **Fieldnote Gallery** — Minimalist photographic gallery theme for Obsidian Slides Extended and Reveal.js, with horizontal contact sheets, full-screen photography, academic captions, and scientific hotspots.\
   [Repository and documentation](https://github.com/costantinicarlo/fieldnote-gallery-slides-extended) · [Latest release](https://github.com/costantinicarlo/fieldnote-gallery-slides-extended/releases/latest)
 
-## Educational Material
+## Educational materials
 
 - **Panpreposterous workshop** — Introductory workshop slides for Panpreposterous v1.4.3.\
   [View slides in English](https://costantinicarlo.github.io/panpreposterous-workshop/docs_EN/v1.4.3/) · [Voir les diapositives en français](https://costantinicarlo.github.io/panpreposterous-workshop/docs_FR/v1.4.3/){lang=fr}
@@ -38,7 +38,7 @@ date-modified: last-modified
   [Launch interactive explorer](https://carlo-costantini.shinyapps.io/Vectorial_Capacity/) · [Source code and documentation](https://github.com/costantinicarlo/vectorial-capacity)
 
 
-## Research Tools
+## Research tools
 
 - **Data protocols** — Contracts and R utilities for reproducible scientific data curation: validate XLSX/ODS workbooks, preserve provenance, standardise coordinates, and resolve place names with OpenStreetMap.\
   [Repository and documentation](https://github.com/costantinicarlo/data-protocols)
