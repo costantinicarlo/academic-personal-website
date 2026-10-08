@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="assets/css/fieldnote-academic-upstream.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/vs2015.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+    <link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+    <link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+    <link rel="stylesheet" href="assets/css/colliders-entomology.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="title-slide drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Colliders in medical entomology
+
+How selective sampling due to bed-net use can create an apparent effect of an environmental covariable
+
+A fictional field study with simulated data <!-- .element: class="subtitle" -->
+
+**Carlo Costantini • 24 Sept. 2026** <!-- .element: class="byline" -->
+
+<img src="assets/storyline/splashscreen.png" alt="" style="object-fit: scale-down">
+ <!-- .element: class="title-decoration" -->
+
+ [![118](assets/licensing/cc-by.svg)](https://creativecommons.org/licenses/by/4.0/) <!-- .element: class="corner-logo" -->
+
+
+
+
+
+<div class="title-footer" style="position: absolute; left: 4%; top: 90%; height: 7%; width: 32%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+[![UMR MIVEGEC](assets/institutions/mivegec.png)](https://mivegec.fr/) [![IRD](assets/institutions/ird.png)](https://www.ird.fr/) [![CNRS](assets/institutions/cnrs.png)](https://www.cnrs.fr/) [![Université de Montpellier](assets/institutions/universite-montpellier.png)](https://www.umontpellier.fr/)
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>This tutorial separates the ecological process from the observation process. The source scenario is <code>source/colliders_medical_entomology.md</code>. The assumed absence of a temperature effect is a teaching device, not a conclusion about real mosquito ecology or climate change.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## About this presentation
+
+> [!warning] _Nota Bene_
+> - The study, results, and institutional responses in the cartoons are fictional.
+> - The illustrations do not depict actual policies or actions by the named institutions.
+</div>
+
+<aside class="notes"><p>Introduce this framing before the cartoons. The final disclaimer returns to and expands these limits.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## The research question
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_01.png" alt="Researchers discuss temperature and mosquito biting" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Does higher air temperature increase the number of mosquitoes attacking a host?
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Against a background of concern about climate change and mosquito-borne diseases, researchers investigate nightly temperature and mosquito pressure. Here, mosquito pressure means the number of mosquitoes attempting to bite a host, not the number of successful bites.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## The study objective
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_02.png" alt="Researchers plan a study of temperature and mosquito pressure" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+The researchers aim to estimate the causal effect of nightly temperature on mosquito pressure.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+Pressure = per host abundance of attacking mosquitoes attempting to bite, not the number of successful bites.
+</div>
+
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Their intended question concerns an ecological effect. A regression of available counts on temperature will not automatically answer that question. <strong>Potential implications for transmission motivate the study but are not measured directly.</strong></p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## The researchers’ hypothesis
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEQKV1tHbG9iYWwgd2FybWluZ10gLS0+fGluY3JlYXNlfCBBW0FpciB0ZW1wZXJhdHVyZV0KQVtBaXIgdGVtcGVyYXR1cmVdIC0tPnxpbmNyZWFzZXwgQltNb3NxdWl0byBwcmVzc3VyZV0KQiAtLT58aW5jcmVhc2V8IENbVHJhbnNtaXNzaW9uIHJpc2tdCmBgYA==ECODDECNEF
+
+This is the proposed causal pathway, not an established result.
+</div>
+
+<aside class="notes"><p>Mosquito pressure, trapped mosquito counts, and transmission risk are distinct quantities. This simplified hypothesis omits other determinants of transmission. The simulation below concerns pressure and recorded counts; it does not simulate infections.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Bed nets as sampling devices
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_03.png" alt="Mosquitoes enter a worn bed net through openings" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Worn, non-impregnated nets trap some mosquitoes. The researchers assume these counts reflect mosquito pressure.
+
+> [!danger]
+> Implications for transmission motivate the study but are not measured directly.
+
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+The scientists could not afford *active* sampling devices due to research grant budgetary constraints.
+</div>
+
+
+
+</div>
+</div>
+
+<aside class="notes"><p>The researchers choose passive sampling with existing bed nets under budget constraints. Mosquitoes can enter through holes, slits, or untucked openings and remain inside until morning. Proportionality between trapped counts and attacking mosquitoes is an assumption of the fictional measurement model, not a validated measure of transmission risk. The simulation assumes each attacker independently enters a used net with a constant probability <code>bed_net_entry_rate</code>, remains inside, and is counted the next morning.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Who enters the sample?
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_04.png" alt="Field workers collect mosquitoes from nets used overnight" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Only houses where someone slept under a bed net the previous night are sampled.
+
+> [!evidence]
+> Owning a net does not make a house eligible.
+
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Each morning the team asks about actual net use, independently of ownership. <strong>Owning a net does not make a house eligible.</strong> No count is recorded for a house where the net was unused.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Recording nightly temperature
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_05.png" alt="Researchers retrieve temperature measurements during morning visits" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+The team pairs each mosquito count with the previous night’s temperature measurements.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Temperature probes are installed in the surveyed villages. The morning visit retrieves both mosquito counts and the previous night’s temperature records. <strong>The simulation later simplifies the field design to independent house-night records</strong>; it does not model repeated visits or village clustering.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## The observed association
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_06.png" alt="Researchers plot mosquito counts against air temperature" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Among sampled houses, hotter nights are associated with higher mosquito counts.
+
+> [!evidence]
+> The fitted association describes the selected data.
+
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>The researchers regress the recorded count on temperature. The fitted association describes the selected data. They interpret it as a causal effect without investigating how households entered the sample.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Interpreting the result
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_07.png" alt="Researchers present their conclusions to health officials" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+The researchers interpret the association as a temperature effect and report greater transmission risk.
+
+> [!danger]
+> Two inferences need scrutiny:
+> 1. from selected counts to a causal effect on mosquito pressure.
+> 2. from mosquito pressure to transmission risk.
+
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>In this fictional story, health officials issue guidance based on that interpretation. Two inferences need scrutiny: from selected counts to a causal effect on mosquito pressure, and from mosquito pressure to transmission risk. No infections were measured.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Acting on the interpretation
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_08.png" alt="Cartoon institutions direct funding toward cooling interventions" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+In the fictional story, institutions act on the researchers’ causal interpretation.
+
+> [!note]
+> The cartoon exaggerates the policy consequences of unexamined inferences.
+
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p><strong>The cartoon exaggerates the policy consequences of an unexamined inference.</strong> The named institutions and logos are illustrative references; the scene does not report actual WHO guidance or funding decisions. Ask the audience what evidence is missing before moving to the sampling mechanism.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## The question and the sampling rule
+</div>
+
+
+</div>
+
+<div class="fn-column" style="position: absolute; left: 4%; top: 19%; height: 67%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Target:** the effect of temperature on mosquito pressure across house-nights.
+
+What is the ecological process underlying the data?
+</div>
+
+
+</div>
+
+<div class="fn-column" style="position: absolute; left: 53%; top: 19%; height: 67%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Available data:** morning counts from houses where a net was used.
+
+What determines whether residents use a net?
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>This consolidates the study question and observation rule. A house-night is one house on one night. The simulation has 6,000 independent records, rather than a longitudinal or clustered sampling design. Pause for audience suggestions before revealing the two behavioural causes.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## The assumed ecological process
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKQVtBaXIgdGVtcGVyYXR1cmVdCkJbTW9zcXVpdG8gcHJlc3N1cmVdCmBgYA==ECODDECNEF
+
+For this scenario, temperature and mosquito pressure are generated independently.
+
+The true temperature effect is zero by construction. <!-- .element: class="lead" -->
+</div>
+
+<aside class="notes"><p><strong>Independence is an explicit simulation assumption</strong>. A missing direct arrow alone would not establish independence in a larger graph with common causes or indirect paths. Here the two variables have independent generating processes. A finite simulated dataset can still have a small nonzero estimated slope.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Heat discourages net use
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_09.png" alt="A family leaves its bed net unused on an uncomfortable hot night" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+On hotter nights, discomfort makes residents less likely to sleep under a net.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>This cartoon introduces the negative temperature effect on net use assumed in the scenario. It illustrates a behavioural mechanism, not an estimated temperature threshold. Follow with the single-arrow causal diagram.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Temperature affects net use
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKQVtBaXIgdGVtcGVyYXR1cmVdIC0tPnxyZWR1Y2VzIHByb2JhYmlsaXR5fCBDW0JlZC1uZXQgdXNlXQpgYGA=ECODDECNEF
+
+Higher temperature makes net use less likely in this scenario.
+</div>
+
+<aside class="notes"><p>The arrow denotes a causal effect on the probability of using a net. It does not mean that nobody uses a net on hot nights.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Mosquito nuisance encourages net use
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_10.png" alt="A family moves under a bed net when mosquitoes become unbearable" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+When mosquito nuisance is high, residents are more likely to use a net—even on a hot night.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>The cartoon introduces the positive effect of mosquito pressure on net use. Distinguish pressure from successful bites: a net may prevent bites, while attacking mosquitoes still create the nuisance that prompts its use.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Mosquito pressure affects net use
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKQltNb3NxdWl0byBwcmVzc3VyZV0gLS0+fGluY3JlYXNlcyBwcm9iYWJpbGl0eXwgQ1tCZWQtbmV0IHVzZV0KYGBgECODDECNEF
+
+More nuisance makes net use more likely in this scenario.
+</div>
+
+<aside class="notes"><p><strong>The toy model treats pressure as preceding the decision and does not model behavioural feedback through the night.</strong></p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Bed-net use is a collider
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKQVtBaXIgdGVtcGVyYXR1cmVdIC0tPnxyZWR1Y2VzIHByb2JhYmlsaXR5fCBDW0JlZC1uZXQgdXNlXQpCW01vc3F1aXRvIHByZXNzdXJlXSAtLT58aW5jcmVhc2VzIHByb2JhYmlsaXR5fCBDCnN0eWxlIEMgZmlsbDojZTJmMGVkLHN0cm9rZTojMGI2YjYzLHN0cm9rZS13aWR0aDozcHgsY29sb3I6IzE4MjEyYQpgYGA=ECODDECNEF
+
+A **collider** is a variable where two arrows meet head-to-head.
+</div>
+
+<aside class="notes"><p>Temperature and mosquito pressure act in opposite directions on the same behavioural decision. Their effects on that decision do not imply a causal effect of temperature on mosquito pressure. Both variables cause bed-net use. Merely having a collider in the graph does not create the association: selection on it, or on a descendant, opens this path. Reference: <a href="https://www.dagitty.net/learn/dsep/">https://www.dagitty.net/learn/dsep/</a></p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Sampling selects net users
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKQVtBaXIgdGVtcGVyYXR1cmVdIC0tPnxyZWR1Y2VzIHByb2JhYmlsaXR5fCBDW0JlZC1uZXQgdXNlXQpCW01vc3F1aXRvIHByZXNzdXJlXSAtLT58aW5jcmVhc2VzIHByb2JhYmlsaXR5fCBDCkMgLS0+IERbSG91c2Ugc2FtcGxlZCA9IHllc10Kc3R5bGUgQyBmaWxsOiNlMmYwZWQsc3Ryb2tlOiMwYjZiNjMsc3Ryb2tlLXdpZHRoOjJweCxjb2xvcjojMTgyMTJhCnN0eWxlIEQgZmlsbDojZmZmMGQ2LHN0cm9rZTojOWE2MzFiLHN0cm9rZS13aWR0aDo0cHgsY29sb3I6IzE4MjEyYQpgYGA=ECODDECNEF
+
+Selecting sampled houses conditions on a **descendant of the collider**.
+
+Here, a house is sampled if and only if its net was used.
+</div>
+
+<aside class="notes"><p>The highlighted node identifies the restriction defining the dataset. In the simulation, <code>house_sampled</code> equals <code>bednet_used</code> exactly, so selecting sampled houses is equivalent to selecting net users. More generally, conditioning on a collider’s descendant can also open the path. Reference: <a href="https://www.dagitty.net/learn/dsep/">https://www.dagitty.net/learn/dsep/</a></p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Counts and observation availability
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKQVtBaXIgdGVtcGVyYXR1cmVdIC0tPnxyZWR1Y2VzIHByb2JhYmlsaXR5fCBDW0JlZC1uZXQgdXNlXQpCW01vc3F1aXRvIHByZXNzdXJlXSAtLT58aW5jcmVhc2VzIHByb2JhYmlsaXR5fCBDCkMgLS0+IERbSG91c2Ugc2FtcGxlZCA9IHllc10KQiAtLT58ZXhwZWN0ZWQgbWFnbml0dWRlfCBFW1JlY29yZGVkIG1vc3F1aXRvIGNvdW50XQpEIC0uLT58YXZhaWxhYmxlIG9ubHkgaWYgc2FtcGxlZHwgRQpzdHlsZSBEIGZpbGw6I2ZmZjBkNixzdHJva2U6IzlhNjMxYixzdHJva2Utd2lkdGg6NHB4LGNvbG9yOiMxODIxMmEKYGBgECODDECNEF
+
+The dashed arrow denotes availability, not an ecological effect. <!-- .element: class="source" -->
+
+**No sample means a missing count—not zero mosquitoes.**
+</div>
+
+<aside class="notes"><p>This combines the ecological and observation processes. The diagram is an explanatory observation schematic: the dashed availability link must not be interpreted as an ordinary ecological causal arrow. <strong>A potential count could be defined for every record, but the count is recorded only for selected houses.</strong> Under the toy measurement model, mosquito pressure determines its expected magnitude.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#e2f0ed" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="takeaway-slide" -->
+
+VERBAL EXPLANATION <!-- .element: class="eyebrow" -->
+
+## Selecting net users creates an association
+
+- On hot nights, houses with low mosquito nuisance are less likely to enter the sample.
+- Houses with high nuisance are more likely to remain represented despite the heat.
+- ***Among net users*, hotter nights can therefore *appear* to have more mosquitoes.**
+
+In what follows we assess these explanations quantitatively.
+</div>
+
+<aside class="notes"><p><strong>This is collider selection bias.</strong> The example shows an association emerging after selection, rather than a reversal of a substantive population association. <strong>Its positive direction follows from the particular behavioural model; collider bias does not always have this sign.</strong> Ask the audience to predict the population and selected-sample patterns before showing the results.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#132927" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="section-slide" -->
+
+# Simulating the world
+</div>
+
+<aside class="notes"><p>Live demonstration sequence: ask for predictions; show the ecological and behavioural assumptions; reveal population results before selected-sample results; then change one behavioural parameter and rerun in a separate working copy if desired. Keep the ecological process fixed when investigating selection.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## The data-generating mechanism
+
+We simulate 6,000 *independent* house-nights.
+
+1. Generate temperature and mosquito pressure independently.
+2. Generate net use from temperature and mosquito nuisance.
+3. Sample only records where a net was used.
+4. Sample mosquito net entrants with a binomial model and entry probability.
+
+**The true temperature effect on pressure is exactly zero.**
+</div>
+
+<aside class="notes"><p>The R objects call these records houses. <strong>This simple model represents one night per simulated house, without repeated measurements or village effects.</strong> Its chosen coefficients are illustrative, not estimates from field data.</p>
+</aside></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## R script: the ecological process
+
+FENCEDCODEr:1:YGBgcgpzZXQuc2VlZCgyMDI2MDkyMikgICMgZm9yIHJlcHJvZHVjaWJpbGl0eQpuIDwtIDYwMDBMICAgICAgICAgICMgTm8uIG9mIGluZGVwZW5kZW50IHNhbXBsZXMKCmFpcl90ZW1wZXJhdHVyZV9jIDwtIHJub3JtKG4sIG1lYW4gPSAyNywgc2QgPSAyLjgpCgojIFBvaXNzb24tbG9nbm9ybWFsIG1peHR1cmUKdHJ1ZV9hdHRhY2tpbmdfbW9zcXVpdG9lcyA8LSBycG9pcyhuLCAgICAjIG9uZSBQb2lzc29uIGNvdW50IHBlciBob3VzZS1uaWdodAogIGxhbWJkYSA9IGV4cChybm9ybShuLCBsb2coMjgpLCAwLjY1KSkgICMgbG9nbm9ybWFsIGV4cGVjdGVkIGNvdW50cyBhY3Jvc3MgaG91c2UtbmlnaHRzCikKYGBgECODDECNEF
+
+Mosquito pressure is generated independently of temperature.
+</div>
+
+<aside class="notes"><p><strong>The varying Poisson mean permits heterogeneity in pressure between houses;</strong> 28 is the <strong>median</strong> of lambda, not its mean; 0.65 is the standard deviation of log(lambda). Temperature is not part of its generating equation. These excerpts follow <code>R/01_simulate.R</code>; the following slides use these generated vectors directly.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## The simulated population on its original scales
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-wide-causal-area" style="position: absolute; left: 4%; top: 18%; height: 62%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig00_population_distributions.png" alt="The simulated population on its original scales" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 83%; height: 12%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Temperature is approximately symmetric; mosquito pressure has a long right tail.**
+
+All 6,000 house-nights before selection. Linear axes; bin widths: 1 °C and 10 mosquitoes.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>These histograms show the two vectors generated on the parent slide, before standardisation, selection or capture. Both axes are linear and the complete observed ranges are retained. Bar heights are frequencies, not probability densities; the different bin widths and units mean heights should not be compared directly across panels. Temperature follows a normal generating distribution. Attackers follow a Poisson–lognormal mixture: each house-night has its own lognormally distributed Poisson mean, creating a right-skewed count distribution. The mixture is neither a single Poisson distribution nor a lognormal distribution of counts. The median of lambda is 28, while its mean is 28 * exp(0.65^2 / 2). Marginal histograms do not establish independence; that comes from the generating model, and the subsequent scatterplot examines the realised association. Descend from the code slide to inspect these distributions, then return to the main sequence for standardisation. To reproduce interactively, use hist(air_temperature_c) and hist(true_attacking_mosquitoes); <code>R/03_make_plots.R</code> specifies the displayed bin boundaries.</p>
+</aside></script></section></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Standardise predictors for the behavioural model
+
+FENCEDCODEr:1:YGBgcgp0eiA8LSBhcy5udW1lcmljKHNjYWxlKGFpcl90ZW1wZXJhdHVyZV9jKSkKbXogPC0gYXMubnVtZXJpYyhzY2FsZSh0cnVlX2F0dGFja2luZ19tb3NxdWl0b2VzKSkKYGBgECODDECNEF
+
+- **Common units:** mean 0 and standard deviation 1.
+- **Comparable changes:** each coefficient describes a one-SD increase.
+- **Meaningful baseline:** the regression intercept refers to average temperature and pressure.
+</div>
+
+<aside class="notes"><p>Standardisation subtracts the mean and divides by the sample standard deviation: <code>z = (x - mean(x)) / sd(x)</code>. We use <code>tz</code> for standardised temperature and <code>mz</code> for standardised mosquito pressure throughout the model, analysis, and plotting scripts. <strong>In the following logistic model, -1.25 is the change in log odds of net use for a one-SD temperature increase, holding mosquito pressure fixed; +1.75 is the corresponding change for pressure.</strong> The intercept -1 is the log odds at both predictors&#39; means. <strong>Scaling can also improve numerical conditioning when predictors have disparate scales, but it is not required for logistic regression.</strong> It does not make skewed counts normal, remove confounding, or fix selection bias. Run the code slides in order: this step scales the vectors generated on the preceding ecological-process slide. No pre-computed dataset is required.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Check linear association before selection
+
+FENCEDCODEr:1:YGBgcgp6X2xpbWl0cyA8LSByYW5nZShwcmV0dHkocmFuZ2UoYyh0eiwgbXopKSkpCnBhcihwdHkgPSAicyIpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBzcXVhcmUgcGxvdHRpbmcgcmVnaW9uCnBsb3QodHosIG16LCB4bGltID0gel9saW1pdHMsIHlsaW0gPSB6X2xpbWl0cywKICAgICBhc3AgPSAxLCB4YXhzID0gImkiLCB5YXhzID0gImkiKQoKY29yLnRlc3QodHosIG16LCBtZXRob2QgPSAicGVhcnNvbiIpCmBgYA==ECODDECNEF
+
+Use the standardised variables from the previous slide.
+
+Pearson correlation is unchanged by standardisation.
+</div>
+
+<aside class="notes"><p>The variables are independent by construction, because their generating processes share no inputs or causal links. A scatterplot and correlation test check the realised sample for linear association; they do not establish independence. Use a square plotting region so the shared limits and asp = 1 give identical axis ranges and equal physical spacing per SD. Standardisation is optional for Pearson correlation: r, its test statistic, confidence interval, and p-value are unchanged. The following diagnostic uses all 6,000 generated records, before any restriction to net users.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Before selection: near-zero linear association
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig05_population_correlation.png" alt="Population scatterplots in original and standardised units; both show the same near-zero linear association" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Pearson test** · *n* = 6,000
+
+| Statistic           |             Value |
+| ------------------- | ----------------: |
+| *r*                 |            0.0125 |
+| 95% CI              | -0.0128 to 0.0378 |
+| *t* (df = 5,998)    |            0.9698 |
+| Two-sided *p*-value |            0.3322 |
+
+No evidence of linear association; this does **not prove independence**.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>The orange lines are least-squares fits. The standardised panel uses identical limits, tick marks, and unit spacing on both axes, covering the full range of tz and mz without clipping. Standardisation preserves Pearson correlation; the appearance changes when we give the axes a common scale. The null hypothesis is zero population Pearson correlation; the alternative is nonzero correlation. The standard Pearson t test and Fisher-z confidence interval rely on distributional assumptions for exact or approximate inference. Mosquito counts here are skewed and discrete, so treat these conventional outputs as a large-sample diagnostic, not an exact independence test. A nonsignificant p-value does not establish a null effect. Independence is known from the simulation design, not inferred from this p-value. Full R output is saved in data/population_correlation_test.txt; machine-readable statistics are in data/population_correlation.csv. R/run_all.R regenerates both the output and figure.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## R script: the behavioural filter
+
+FENCEDCODEr:1:YGBgcgojIGF2ZXJhZ2UgdGVtcGVyYXR1cmUgYW5kIHByZXNzdXJlOiB0eiA9IDAsIG16ID0gMApiYXNlbGluZV9sb2dpdCA8LSAtMQpwbG9naXMoYmFzZWxpbmVfbG9naXQpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIGJhc2VsaW5lIG5ldC11c2UgcHJvYmFiaWxpdHk6IDAuMjY5Cgpsb2dpdF9wX25ldCAgICAgIDwtIGJhc2VsaW5lX2xvZ2l0IC0gMS4yNSAqIHR6ICsgMS43NSAqIG16ICAjIGxpbmVhciBwcmVkaWN0b3Igb2YgcHJvYi4gb2YgbmV0IHVzZQpwcm9iX2JlZG5ldF91c2VkIDwtIHBsb2dpcyhsb2dpdF9wX25ldCkgICAgICAgICAgICAgICAgICAgICAjIHByb2IuIG9mIG5ldCB1c2UKYmVkbmV0X3VzZWQgICAgICA8LSByYmlub20obiwgMSwgcHJvYl9iZWRuZXRfdXNlZCkgICAgICAgICAgIyBhY3R1YWwgbmV0IHVzZQpob3VzZV9zYW1wbGVkICAgIDwtIGJlZG5ldF91c2VkICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIGhvdXNlIHNhbXBsZWQgd2hlcmUgbmV0cyB1c2VkCmBgYA==ECODDECNEF
+
+At average temperature and mosquito pressure (`tz = mz = 0`), **−1 is the logit of net-use probability**, corresponding to **26.9% net use**.
+
+Heat reduces net use (`-1.25 * tz`); mosquito nuisance increases it (`+1.75 * mz`).
+
+Actual bed net *use* for each house-night is drawn from a binomial process.
+</div>
+
+<aside class="notes"><p>The variables <code>tz</code> and <code>mz</code> are standardised temperature and pressure. When both are zero, the predictor equals the intercept, $-1 = log(p / (1 - p))$. The inverse-logit gives $p = plogis(-1) = 0.269$. <strong>This is the conditional probability at both predictors’ means, not the average probability across all houses;</strong> the inverse-logit is nonlinear. The coefficients describe <strong>changes in log odds for one-SD predictor increases,</strong> holding the other predictor fixed. <code>rbinom</code> draws actual net use, not net ownership or allocation. The final line implements the sampling rule exactly.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## R script: the recorded counts
+
+FENCEDCODEr:1:YGBgcgpiZWRfbmV0X2VudHJ5X3JhdGUgPC0gMC43ICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgY29uc3RhbnQgcHJvYi4gb2YgbmV0IGVudHJ5CgojIGluaXRpYWxpc2UgY291bnQgcmVjb3JkcyB2ZWN0b3IKbW9zcXVpdG9lc19jb3VudGVkX2luc2lkZV9uZXQgPC0gcmVwKE5BX2ludGVnZXJfLCBuKSAjIHVuc2FtcGxlZCBob3VzZS1uaWdodHMgcmV0dXJuIE5BLCBub3QgemVybwoKc2FtcGxlZCA8LSBob3VzZV9zYW1wbGVkID09IDEgICAgICAgICAgICAgICAgICAgICAgICAjIGlkZW50aWZ5IGNvdW50IHJlY29yZHMKc2FtcGxlX3NpemUgPC0gc3VtKHNhbXBsZWQpICAgICAgICAgICAgICAgICAgICAgICAgICAjIE5vLiBvZiBob3VzZS1uaWdodHMgc2FtcGxlZAoKIyBuZXQgZW50cnkgYmlub21pYWwgb2JzZXJ2YXRpb25hbCBwcm9jZXNzCm1vc3F1aXRvZXNfY291bnRlZF9pbnNpZGVfbmV0W3NhbXBsZWRdIDwtIHJiaW5vbSgKICBuID0gc2FtcGxlX3NpemUsCiAgc2l6ZSA9IHRydWVfYXR0YWNraW5nX21vc3F1aXRvZXNbc2FtcGxlZF0sCiAgcHJvYiA9IGJlZF9uZXRfZW50cnlfcmF0ZQopCmBgYA==ECODDECNEF
+
+Each attacker has a **70% chance of entering**. Unsampled records remain **NA**.
+</div>
+
+<aside class="notes"><p>This is the measurement rule in <code>R/01_simulate.R</code>. Conditional on $N$ attackers, the count is <code>Binomial(N, p)</code>, with <code>p = bed_net_entry_rate = 0.7</code>: mean <code>Np</code> and variance <code>Np(1-p)</code>. Zero attackers imply zero captures, and captures cannot exceed attackers. The probability is illustrative and constant across houses and temperatures. We assume independent entry and that every entrant remains inside and is counted. This adds capture variation relative to perfect counting, not necessarily more variance than the previous Poisson measurement model.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## The behavioural filter
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig02_selection_surface.png" alt="Probability of bed-net use across temperature and mosquito pressure" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+At higher temperatures, greater mosquito nuisance is needed to maintain the same probability of net use.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p><strong>Read the surface as the probability of entering the sample,</strong> because net use and sampling coincide. Ask which part of the population is least likely to be observed.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#132927" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="section-slide" -->
+
+# Expected and observed results
+
+What slopes do you expect before and after selection?
+</div>
+
+<aside class="notes"><p>Pause for predictions. The generating effect is zero, but finite-sample estimates need not be exactly zero. If demonstrating live, show the population plot first and the sampled plot second.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="figure-slide plot-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Before and after selection
+
+<img src="figures/en/fig01_population_vs_sample.png" alt="Full population and selected bed-net sample, showing different temperature associations" style="object-fit: scale-down">
+
+
+Log-scaled y-axes; tick labels show mosquito counts. Left: near-zero association. Right: positive association after selection. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>The panels change both selection and the measurement being plotted. Both y-axes use the same logarithmic scale, with ticks labelled in original mosquito counts. The single zero population count cannot appear on a log axis and is omitted only from the display. The least-squares fits still include all records and use original, untransformed counts; they can appear curved on the log display. The next comparison separates selection and measurement using true attackers in the selected sample as an intermediate step.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Three comparisons separate selection from net entry
+
+| Analysis | Records | Slope: mosquitoes per °C |
+|---|---:|---:|
+| All houses: true attackers | 6,000 | +0.117 |
+| Sampled houses: true attackers | 1,987 | +3.501 |
+| Sampled houses: recorded counts | 1,987 | +2.489 |
+
+Selection creates the positive association. Partial net entry reduces the expected count slope to 70% of the selected-attacker slope.
+</div>
+
+<aside class="notes"><p>Slopes use the generated temperature and count vectors at full precision and are displayed to three decimals. They are descriptive linear associations, not causal effects inferred from the sample. The true-attacker analyses are available because this is a simulation; actual field investigators would not observe that latent quantity for all houses.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## R script: the three regressions
+
+FENCEDCODEr:1:YGBgcgojIFVzZSB0aGUgdmVjdG9ycyBhbmQgc2FtcGxpbmcgaW5kaWNhdG9yIGdlbmVyYXRlZCBhYm92ZQpmaXRfZnVsbCAgICAgICAgPC0gbG0odHJ1ZV9hdHRhY2tpbmdfbW9zcXVpdG9lcyB+IGFpcl90ZW1wZXJhdHVyZV9jKQoKZml0X3NhbXBsZV90cnVlIDwtIGxtKHRydWVfYXR0YWNraW5nX21vc3F1aXRvZXMgfiBhaXJfdGVtcGVyYXR1cmVfYywgc3Vic2V0ID0gc2FtcGxlZCkKCmZpdF9vYnNlcnZlZCAgICA8LSBsbShtb3NxdWl0b2VzX2NvdW50ZWRfaW5zaWRlX25ldCB+IGFpcl90ZW1wZXJhdHVyZV9jLCBzdWJzZXQgPSBzYW1wbGVkKQpgYGA=ECODDECNEF
+
+The middle model isolates selection before partial net entry.
+
+Linear regression is used to summarise the association transparently; changing to a GLM count regression would not by itself remove selection bias.
+</div>
+
+<aside class="notes"><p>These are the three models in <code>R/02_analyse.R</code>. Linear regression is used here to summarise the association transparently; <strong>changing to a count regression would not by itself remove selection bias.</strong> The population model is an oracle comparison available in a simulation.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## The association appears at selection
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig03_coefficient_comparison.png" alt="Temperature slopes for all houses, sampled true attackers, and sampled recorded counts" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Selection creates a positive attacker slope. Partial net entry reduces the recorded-count slope while preserving the association.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Read the chart from top to bottom: all true attackers, selected true attackers, selected net counts. Bars show 95% confidence intervals. The first comparison isolates selection; the second introduces binomial net entry. With constant entry probability $p$, the expected count slope conditional on the selected attackers and temperatures is $p$ times their slope. The realised count slope fluctuates around that expectation. The plotted slopes are on their original count scales.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Association and causal interpretation
+</div>
+
+
+</div>
+
+<div class="fn-column" style="position: absolute; left: 4%; top: 19%; height: 67%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+A regression can describe the observed sample *accurately* and still *fail* to answer the ecological question.
+</div>
+
+
+</div>
+
+<div class="fn-column" style="position: absolute; left: 53%; top: 19%; height: 67%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Here, understanding **how records entered the dataset** is essential to interpreting the temperature slope.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+The linear regression is naïve but honest; association emerges due to collider selection bias. <!-- .element: class="lead" -->
+</div>
+
+<aside class="notes"><p>The problem arises before model fitting. Adding net use as a covariate cannot recover the missing comparison within a sample in which everyone used a net. This tutorial does not claim that all selection problems have a simple statistical correction.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#132927" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="questions-slide" -->
+
+# DISCUSSION
+</div>
+
+<aside class="notes"><p>Invite participants to identify the exposure, the outcome or its causes, the selection decision, and its behavioural or logistical determinants. Sketch the proposed arrows before suggesting adjustments.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Questions to investigate
+
+| Question | Change to explore |
+|---|---|
+| 1. What if everyone used a net? | Force net use for every house |
+| 2. What if heat no longer affected net use? | Set the temperature coefficient to zero |
+| 3. What if nuisance no longer affected net use? | Set the mosquito-pressure coefficient to zero |
+| 4. What if baseline net use changed? | Vary `baseline_logit` |
+| 5. What if more mosquitoes entered the net? | Vary `bed_net_entry_rate` |
+| 6. What if temperature affected mosquito pressure? | Add a direct ecological effect |
+
+Predict first; change one assumption at a time.
+
+> [!note]
+> An intervention forcing universal use [Q1] differs from increasing the net-use intercept [Q4].
+</div>
+
+<aside class="notes"><p>Move down for answers, then right for the next question. Question 1 compares a fixed population with regenerated populations; questions 2–6 use only the second approach. Question 6 pairs observation regimes separately at each ecological effect. For questions 2–5, each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+</aside></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 1. What if everyone used a net?
+
+Under this simulation’s assumptions, what would happen to the temperature slope if every house used a net and was sampled?  <!-- .element: class="lead" -->
+
+Pause and predict before revealing the answer.
+</div>
+
+<aside class="notes"><p>Keep the ecological and measurement models fixed. <strong>Universal use here is an imposed intervention on the toy model, not merely an increase in the net-use intercept</strong> and not a prediction of the real effects of universal bed-net coverage.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 1. Answer: universal use removes selection
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-causal-figure" style="position: absolute; left: 4%; top: 20%; height: 54%; width: 49%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig06_discussion_universal.png" alt="Count slope across discussion scenarios, with simulation ranges" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-area" style="position: absolute; left: 56%; top: 20%; height: 54%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKVFtBaXIgdGVtcGVyYXR1cmVdCk1bTW9zcXVpdG8gcHJlc3N1cmVdClVbTmV0IHVzZSBmaXhlZCA9IDFdIC0tPiBTW0FsbCBob3VzZXMgc2FtcGxlZF0Kc3R5bGUgVSBmaWxsOiNlMmYwZWQsc3Ryb2tlOiMwYjZiNjMsc3Ryb2tlLXdpZHRoOjNweApzdHlsZSBTIGZpbGw6I2UyZjBlZCxzdHJva2U6IzBiNmI2MyxzdHJva2Utd2lkdGg6M3B4CmBgYA==ECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 79%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Both arrows into net use are removed:** everyone is sampled. **The slope returns close to zero** for this fixed population.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>The diagram is the intervened graph: forcing U = 1 removes both incoming causal arrows, T → U and M → U. Sampling equals use and is now constant for everyone, so no selective restriction opens a path between T and M. The disconnected temperature and pressure nodes preserve the assumed ecological independence. The graph focuses on the selection mechanism; the unchanged pressure-to-capture measurement model is omitted for readability. Universal use removes the selection rule. Because this experiment holds one finite ecological population fixed, its expected count slope is 0.7 times that population’s small realised attacker slope, about 0.082, rather than exactly zero. <strong>The displayed simulation range need not contain zero; it reflects capture randomness conditional on this fixed population, not repeated ecological populations.</strong> Points are means and bars are the central 95% of 200 observation/capture replicates; they are not confidence intervals or hypothesis tests. This first comparison holds the ecological population fixed; the next slide regenerates it. <code>R/04_discussion.R</code> regenerates the baseline, simulations, summaries, and figures without reading pre-computed data.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 1. Same intervention, two ways to repeat it
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig06b_universal_replication.png" alt="1. Same intervention, two ways to repeat it" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Fixed population:** capture variability around +0.082.
+
+**New population:** ecological and capture variability, mean ≈ 0.
+
+Chance covariance varies between populations.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>The approaches answer different questions. With one fixed population, <code>E(count slope | T, N) = 0.7 × attacker slope ≈ 0.082</code>; the range is approximately [0.056, 0.103]. With fresh populations, the simulated mean is ≈ 0 and the range is [−0.143, 0.164]. Mechanisms and parameters stay the same; their realisations change. These independent replicates represent new studies under the model; they do not explicitly model spatial or temporal autocorrelation. Neither percentile range is a confidence interval for the ecological effect.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 1. Reproduce and inspect the answer
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKc3Vic2V0KGRpc2N1c3Npb25fc3VtbWFyeSwgc2NlbmFyaW8gPT0gInVuaXZlcnNhbCIpCmBgYA==ECODDECNEF
+
+| Scenario         | Mean *n* | Mean slope |
+| ---------------- | -------: | ---------: |
+| Fixed: baseline | 1,960 | +2.490 |
+| Fixed: universal | 6,000 | +0.081 |
+| New: baseline | 1,964 | +2.415 |
+| New: universal | 6,000 | +0.006 |
+
+200 replicates per design; slopes in mosquitoes per °C. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>The code displays both universal-coverage designs. The fixed population isolates observation/capture variability; regenerated populations also include ecological variability. Tables come from the same reproducible run.</p>
+</aside></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 2. What if heat no longer affected net use?
+
+Set the temperature coefficient from **−1.25 to 0**, keeping nuisance and baseline net use unchanged.
+
+Would hotter nights still select houses with greater mosquito pressure?  <!-- .element: class="lead" -->
+
+Predict the count–temperature slope, then rerun the observation process.
+</div>
+
+<aside class="notes"><p>Replace the temperature term in <code>logit_p_net</code> with <code>0 * tz</code>, leaving <code>baseline_logit = -1</code> and the nuisance coefficient at 1.75. Regenerate <code>prob_bednet_used</code>, <code>bednet_used</code>, <code>house_sampled</code>, <code>sampled</code>, and recorded counts using a new population at each replicate. Temperature no longer causes selection, so this collider path is removed. Under the independent ecological model and constant entry probability, the count–temperature association is zero in the population selected by this rule; finite simulations fluctuate around that expectation. <strong>The sample can still overrepresent high-pressure houses.</strong> Compare sample composition as well as the slope.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 2. Answer: removing heat closes the path
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-causal-figure" style="position: absolute; left: 4%; top: 20%; height: 54%; width: 49%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig07_discussion_no_heat.png" alt="Count slope across discussion scenarios, with simulation ranges" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-area" style="position: absolute; left: 56%; top: 20%; height: 54%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKVFtBaXIgdGVtcGVyYXR1cmVdCk1bTW9zcXVpdG8gcHJlc3N1cmVdIC0tPnxpbmNyZWFzZXMgdXNlfCBVW0JlZC1uZXQgdXNlXQpVIC0tPiBTW1NlbGVjdGVkOiBzYW1wbGVkID0geWVzXQpzdHlsZSBTIGZpbGw6I2ZmZjBkNixzdHJva2U6IzlhNjMxYixzdHJva2Utd2lkdGg6M3B4CmBgYA==ECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 79%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Temperature → net use is removed:** selection no longer connects temperature to pressure. 
+
+High-pressure houses remain overrepresented.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Compare with the baseline collider T → U ← M → (mosquito counts), with U determining sampling. Here T → U is absent because its coefficient is zero. The highlighted sampling node still denotes selection, but no path links temperature to mosquito pressure through U. <strong>M → U remains, so selection still favours high-pressure houses.</strong> The graph focuses on the selection mechanism; the unchanged pressure-to-capture measurement model is omitted for readability. Temperature and mosquito pressure are independent in the generating model. Selection based only on pressure does not induce their dependence in that model. Mean attackers among selected houses rise from about 51.9 to 55.8; absence of this bias does not imply a representative sample. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 2. Reproduce and inspect the answer
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkgICAjIHJlZHJhd3Mgd2l0aG91dCByZXNldHRpbmcgdGhlIHNlZWQKb2JzZXJ2ZV9kaXNjdXNzaW9uKHRlbXBlcmF0dXJlX2NvZWYgPSAwLCBwb3B1bGF0aW9uID0gZCkKYGBgECODDECNEF
+
+| Scenario       | Mean *n* | Mean slope |
+| -------------- | -------: | ---------: |
+| Baseline | 1,964 | +2.415 |
+| No heat effect | 1,787 | +0.026 |
+
+200 new populations; scenarios paired within each replicate. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>The table comes from the reproducible <code>R/04_discussion.R run</code>; subsequent commands illustrate an additional realisation whose values can differ. <code>generate_discussion_population()</code> redraws temperatures, attackers, standardised variables <code>tz</code> and <code>mz</code>, and baseline selection without resetting the seed. Reuse <code>d</code> to compare scenarios within a replicate. Exported results identify design and replicate. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+</aside></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 3. What if nuisance no longer affected net use?
+
+Set the mosquito-pressure coefficient from **+1.75 to 0**, keeping temperature and baseline net use unchanged.
+
+Would selection for cooler nights alone create a temperature–mosquito association?  <!-- .element: class="lead" -->
+
+Predict the slope and the sampled temperature distribution.
+</div>
+
+<aside class="notes"><p>Replace the nuisance term in <code>logit_p_net</code> with <code>0 * mz</code>, leaving <code>baseline_logit = -1</code> and the temperature coefficient at -1.25. Regenerate the observation process on each newly generated ecological population. Selection now depends on temperature but not mosquito pressure. Given independent generating processes and a constant capture probability, this removes the collider mechanism. <strong>Cooler nights remain overrepresented</strong>, but the expected count–temperature association is zero. Sampling a narrower temperature range may alter precision. A selected sample need not represent all temperatures to lack bias from this particular collider path.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 3. Answer: cooler nights, little association
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-causal-figure" style="position: absolute; left: 4%; top: 20%; height: 54%; width: 49%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig08_discussion_no_nuisance.png" alt="Count slope across discussion scenarios, with simulation ranges" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-area" style="position: absolute; left: 56%; top: 20%; height: 54%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKTVtNb3NxdWl0byBwcmVzc3VyZV0KVFtBaXIgdGVtcGVyYXR1cmVdIC0tPnxyZWR1Y2VzIHVzZXwgVVtCZWQtbmV0IHVzZV0KVSAtLT4gU1tTZWxlY3RlZDogc2FtcGxlZCA9IHllc10Kc3R5bGUgUyBmaWxsOiNmZmYwZDYsc3Ryb2tlOiM5YTYzMWIsc3Ryb2tlLXdpZHRoOjNweApgYGA=ECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 79%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Pressure → net use is removed:** selection no longer connects pressure to temperature. Cooler nights remain overrepresented.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Compare with the baseline collider T → U ← M, with U determining sampling. Here M → U is absent because its coefficient is zero. The highlighted sampling node still denotes selection, but U is no longer a collider on a T–M path. T → U remains, so cooler nights are still more likely to be sampled. The graph focuses on the selection mechanism; the unchanged pressure-to-capture measurement model is omitted for readability. Mean selected temperature is about 25.13 °C versus 27.00 °C in the population. The expected association is zero, although selection changes temperature coverage and precision. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 3. Reproduce and inspect the answer
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkgICAjIHJlZHJhd3Mgd2l0aG91dCByZXNldHRpbmcgdGhlIHNlZWQKb2JzZXJ2ZV9kaXNjdXNzaW9uKG51aXNhbmNlX2NvZWYgPSAwLCBwb3B1bGF0aW9uID0gZCkKYGBgECODDECNEF
+
+| Scenario           | Mean *n* | Mean slope |
+| ------------------ | -------: | ---------: |
+| Baseline | 1,964 | +2.415 |
+| No nuisance effect | 1,897 | +0.010 |
+
+200 new populations; scenarios paired within each replicate. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>The table comes from the reproducible <code>R/04_discussion.R</code> run; subsequent commands illustrate an additional realisation whose values can differ. <code>generate_discussion_population()</code> redraws temperatures, attackers, standardised variables <code>tz</code> and <code>mz</code>, and baseline selection without resetting the seed. Reuse <code>d</code> to compare scenarios within a replicate. Exported results identify design and replicate. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+</aside></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 4. What if baseline net use changed?
+
+Compare `baseline_logit` values **−10, −5, −4, −3, −2, −1, 0, and +1**.
+
+At average temperature and pressure: **0.00454% at −10**, **0.67% at −5**, **26.9% at −1**, **50% at 0**, and **73.1% at +1**.
+
+> [!question]
+> How do sample size, composition, and the temperature slope change?
+</div>
+
+<aside class="notes"><p>Keep the temperature and nuisance coefficients at -1.25 and +1.75, respectively, and keep <code>bed_net_entry_rate</code> at 0.7. Regenerate net use and capture for each intercept on the same population within a replicate; generate a fresh population for the next replicate. The stated probabilities are conditional on <code>tz = mz = 0</code>, not population-wide sampling fractions. <strong>Raising the intercept increases each house&#39;s net-use probability but also changes which houses are represented; it does not merely increase sample size.</strong> Both parents still influence selection, so changing <strong>the intercept does not remove the collider path.</strong> As net use approaches universal coverage the selected population approaches the full population, but do not promise a monotonic slope change in individual simulations or over every intercept range.</p>
+<p>The default is now −1 (26.9% at mean predictors). The sweep has unit steps from −5 to +1, plus the extreme case −10.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 4. Answer: fewer houses, more variable slopes
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-wide-causal-area" style="position: absolute; left: 4%; top: 18%; height: 62%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig09_discussion_intercept.png" alt="Count slope across discussion scenarios, with simulation ranges" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 83%; height: 12%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**At −10: about 22 houses; mean slope +5.801, 95% range [−0.219, 13.857].**
+
+6 of 200 slopes are negative; all remain estimable. The mean does not turn downward over the tested values.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>The eight intercepts share one population within each replicate. The default is −1; the grid contains −10 followed by integers −5 through +1. Bars are central 95% Monte Carlo percentile ranges, not confidence intervals. At −10: 14–32 houses (mean 21.88), about 181 attackers per selected house, and 6 negative slopes out of 200. Mean coverage is 0.365%, versus 0.00454% at average predictors. At −5 the smallest sample contains 235 houses; all 200 slopes are estimable at every intercept. High pressure still encourages use. The mean slope remains monotonic over tested values, without a general guarantee. No points between −10 and −5 were simulated. Results have been regenerated after changing the default to −1; Q4’s dedicated seed causes small differences between its baseline and the other questions’ baseline.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 4. Reproduce and inspect the answer
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKZCA8LSBnZW5lcmF0ZV9kaXNjdXNzaW9uX3BvcHVsYXRpb24oKQpvYnNlcnZlX2Rpc2N1c3Npb24oYmFzZWxpbmVfbG9naXQgPSAtMTAsIHBvcHVsYXRpb24gPSBkKQpgYGA=ECODDECNEF
+
+| Intercept | Mean *n* | Mean attackers | Mean slope |
+| --------- | -------: | -------------: | ---------: |
+| -10       |       22 |          181.1 |     +5.801 |
+| -5        |      268 |           94.6 |     +4.495 |
+| -4        |      459 |           80.8 |     +4.010 |
+| -3        |      774 |           69.4 |     +3.469 |
+| -2        |    1,266 |           59.7 |     +2.918 |
+| -1        |    1,964 |           52.0 |     +2.384 |
+| 0         |    2,842 |           45.9 |     +1.816 |
+| 1         |    3,774 |           41.6 |     +1.299 |
+
+200 new populations; scenarios paired within each replicate. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>The table comes from data/intercept_summary.csv; data/intercept_replicates.csv retains all 1,600 results, including any missing slopes. valid_slopes and empty_samples explicitly report estimability problems. This eight-value experiment uses a separate seed, preserving other questions. Its −1 baseline therefore differs slightly from other tables through Monte Carlo variation. The code illustrates one additional realisation rather than reproducing the means.</p>
+</aside></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 5. What if more mosquitoes entered the net?
+
+1. Compare `bed_net_entry_rate` values **0.1, 0.3, 0.7, and 0.9**.
+2. Within each replicate, use the same selected houses for all entry rates.
+3. Generate a new population and selection for the next replicate.
+
+> [!question]
+> Does a steeper slope mean a stronger ecological temperature effect?
+</div>
+
+<aside class="notes"><p>Conditional on each selected sample, the expected count slope is p times its attacker slope. Increasing p changes count scale and variability; a raw slope is not a standardised measure of association. The supplementary notes exercise keeps one population fixed; this figure regenerates populations. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 5. Answer: higher entry increases the count slope
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig10_discussion_entry.png" alt="Count slope across discussion scenarios, with simulation ranges" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Same selected houses within each replicate.**
+
+New population between replicates.
+
+Expected count slope = entry probability × selected-attacker slope.
+
+**The ecological effect is still zero.**
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+As `bed_net_entry_rate` approaches zero, the expected recorded-count slope approaches zero. At exactly zero, all recorded counts—and their fitted linear slope—are zero, so captures provide no information about the underlying attacking-mosquito–temperature relationship.
+</div>
+
+
+
+</div>
+</div>
+
+<aside class="notes"><p>The expected slope is $p$ times the selected-attacker slope within each replicate. Baseline and entry = 0.7 share selected houses but draw independent captures; their means are therefore close, rather than identical. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 5. Reproduce and inspect the answer
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkgICAjIHJlZHJhd3Mgd2l0aG91dCByZXNldHRpbmcgdGhlIHNlZWQKb2JzZXJ2ZV9kaXNjdXNzaW9uKGVudHJ5X3JhdGUgPSAwLjksIGZpeGVkX3NhbXBsZSA9IFRSVUUsIHBvcHVsYXRpb24gPSBkKQpgYGA=ECODDECNEF
+
+| Scenario | Mean *n* | Mean slope |
+| -------- | -------: | ---------: |
+| 0.1 | 1,964 | +0.343 |
+| 0.3 | 1,964 | +1.034 |
+| 0.7 | 1,964 | +2.413 |
+| 0.9 | 1,964 | +3.106 |
+
+200 new populations; scenarios paired within each replicate. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>The table comes from the reproducible <code>R/04_discussion.R</code> run; subsequent commands illustrate an additional realisation whose values can differ. <code>generate_discussion_population()</code> redraws temperatures, attackers, standardised variables <code>tz</code> and <code>mz</code>, and baseline selection without resetting the seed. Reuse <code>d</code> to compare scenarios within a replicate. Exported results identify design and replicate. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+</aside></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 6. What if temperature affected mosquito pressure?
+
+Introduce a **direct causal effect** $\\beta$ of temperature on attacking mosquitoes, while retaining both influences on net use.
+
+> [!question]
+> Does sampling net users recover, amplify, or attenuate the ecological relationship?
+
+Explore a **negative, zero, then positive** effect.
+</div>
+
+<aside class="notes"><p>This question changes the causal model. Dependence could also arise from shared environmental causes; here we explicitly choose T → M. Earlier questions retain their independence assumption. Net use changes neither attacker abundance nor entry probability in this toy model; it determines whether counts are available.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Temperature effect on pressure
+
+FENCEDCODEr:1:YGBgcgp0ZW1wZXJhdHVyZV9lZmZlY3QgPC0gMC4zICAjIGJldGEKbiA8LSA2MDAwTAphaXJfdGVtcGVyYXR1cmVfYyA8LSBybm9ybShuLCBtZWFuID0gMjcsIHNkID0gMi44KQpsb2dfcHJlc3N1cmUgPC0gcm5vcm0obiwgbWVhbiA9IGxvZygyOCksIHNkID0gMC42NSkgKwogIHRlbXBlcmF0dXJlX2VmZmVjdCAqIChhaXJfdGVtcGVyYXR1cmVfYyAtIDI3KSAvIDIuOAp0cnVlX2F0dGFja2luZ19tb3NxdWl0b2VzIDwtIHJwb2lzKG4sIGxhbWJkYSA9IGV4cChsb2dfcHJlc3N1cmUpKQpgYGA=ECODDECNEF
+
+$N\\mid T,Z \\sim \\operatorname{Poisson}(\\lambda)$, so $E[N\\mid T,Z]=\\lambda$.
+
+$\\log(\\lambda)=\\log(28)+\\beta(T-27)/2.8+Z$, $Z\\sim N(0,0.65^2)$, $Z\\perp T$.
+
+Here, $T$ is temperature in °C; 27 and 2.8 are the **generating** mean and SD.
+
+$e^\\beta$ multiplies expected abundance per 2.8 °C increase; $\\beta=0.3$ gives **×1.35**.
+</div>
+
+<aside class="notes"><p>$N$ denotes attacking mosquitoes and $\lambda$ their conditional expected count. $N | T,Z$ follows a Poisson distribution; $E[N | T,Z] = \lambda$ is an expectation, not a Poisson-distributed draw. The code independently generates temperature and a normal term with mean $log(28)$ and SD 0.65, equivalent to $log(28) + Z$. $Z$ represents residual heterogeneity across house-nights and is independent of $T$. <code>temperature_effect</code> is $\beta$. Centring and scaling use the fixed parameters 27 and 2.8, not the realised sample mean and SD. The multiplier $exp(\beta)$ holds at fixed $Z$ and after averaging over its independent distribution. The marginal mean conditional on $T$ is $28 &#42; exp(\beta &#42; (T - 27) / 2.8 + 0.65^2 / 2)$; 28 is therefore not the mean attacker count at 27 °C. This code reproduces the ecological part of <code>generate_ecological_population()</code> in <code>R/lib/ecological_effect_compute.R</code>. It does not reset the seed; this illustration need not reproduce the seeded figures. After regenerating attackers, recompute <code>tz</code> and <code>mz</code> from the new vectors before applying the behavioural model; the complete generator does this automatically. Within the assumed causal model, $\beta$ describes a change in log expected abundance, not the fitted linear count slope.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 6. Answer: two paths contribute
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-causal-figure" style="position: absolute; left: 4%; top: 20%; height: 54%; width: 49%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig11_ecological_selection.png" alt="6. Answer: two paths contribute" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-area" style="position: absolute; left: 56%; top: 20%; height: 54%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKVFtBaXIgdGVtcGVyYXR1cmVdIC0tPiBNW01vc3F1aXRvIHByZXNzdXJlXQpUIC0tPnxyZWR1Y2VzIHVzZXwgVVtCZWQtbmV0IHVzZV0KTSAtLT58aW5jcmVhc2VzIHVzZXwgVQpVIC0tPiBTW1NlbGVjdGVkOiBzYW1wbGVkID0geWVzXQpzdHlsZSBTIGZpbGw6I2ZmZjBkNixzdHJva2U6IzlhNjMxYixzdHJva2Utd2lkdGg6M3B4CmBgYA==ECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 79%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**An ecological path now exists: T → M.**
+
+Selection also opens the collider path T → U ← M. The observed relationship reflects both processes.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>One example with temperature_effect = 0.3: each 2.8 °C increase multiplies expected abundance by exp(0.3), about 1.35. Both panels share the population, capture draws, and axis limits. Selection reveals a subset of the same potential counts. The vertical axis displays log(1 + count), with original counts as ticks, including zeros. Curves are linear regressions on raw counts, transformed only for display; negative predictions are omitted. They are descriptive fits, not the exponential generating model. The graph focuses on selection; the unchanged capture model is omitted.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 6. Vary the ecological effect
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/en/fig12_ecological_sweep.png" alt="6. Vary the ecological effect" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Compare with universal coverage at the same ecological effect.**
+
+At −0.15, the sign reverses; at +0.30, the positive slope is amplified.
+
+The generating coefficient and count slope have different units.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>For each effect, 200 independent populations of 6,000 house-nights are generated. Within a replicate, universal coverage and net users share the same captures, with entry probability 0.7. Bars are central 95% Monte Carlo percentile ranges, not confidence intervals. The vertical line at zero marks the original ecological model. Lines between effect values guide the eye. The ecological coefficient acts on log expected abundance per 2.8 °C; the fitted slope describes mosquitoes per °C. Their numerical difference is therefore not a bias measure. Compare the two count slopes instead. mz is recomputed in every population: nuisance sensitivity is held constant per standard deviation, not per mosquito. Changing the ecological effect also changes marginal pressure; the ecological intercept holds expected abundance at 27 °C constant, not its marginal mean.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 6. Reproduce and compare the slopes
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZWNvbG9naWNhbF9wb3B1bGF0aW9uKHRlbXBlcmF0dXJlX2VmZmVjdCA9IDAuMykKZWNvbG9naWNhbF9zbG9wZXMoZCkKc3Vic2V0KGVjb2xvZ2ljYWxfc3VtbWFyeSwgdGVtcGVyYXR1cmVfZWZmZWN0ICVpbiUgYygtMC4xNSwgMCwgMC4zKSkKYGBgECODDECNEF
+
+| Effect | Universal | Net users | Difference |
+|---|---:|---:|---:|
+| -0.15 | -1.300 | +0.724 | +2.024 |
+| +0.00 | +0.008 | +2.398 | +2.390 |
+| +0.30 | +2.711 | +5.697 | +2.987 |
+
+200 populations per effect; slopes in mosquitoes per °C. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>R/04_discussion.R generates all results without pre-computed data. generate_ecological_population() uses log_pressure = rnorm(n, log(28), 0.65) + temperature_effect * (air_temperature_c - 27) / 2.8, followed by Poisson counts and the existing net-use model. tz and mz retain their names and are recalculated. The first output illustrates an additional realisation; the table summarises the 200 seeded replicates. Difference = selected slope − universal slope within the same replicate. Results are exported to data/ecological_replicates.csv and data/ecological_summary.csv. A negative universal slope and positive selected slope illustrate reversal; the selected regression alone cannot establish a new causal effect.</p>
+</aside></script></section></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#132927" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="questions-slide" -->
+
+# CONCLUSIONS
+</div>
+
+<aside class="notes"><p>Final take-home message, study design, and model improvements.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#e2f0ed" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="takeaway-slide" -->
+
+TAKE-HOME MESSAGE <!-- .element: class="eyebrow" -->
+## Distinguish the ecological and observational processes
+
+1. Specify the ecological question and its causal assumptions.
+2. Map the process that determines which observations are available.
+3. Check whether selection depends on both exposure and outcome causes.
+
+> [!danger]
+> A sample of net users does not automatically represent all houses.
+</div>
+
+<aside class="notes"><p>Connect these messages to the participants’ fieldwork examples. Colliders are properties of paths in a causal graph; an association alone cannot identify the selection mechanism.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#e2f0ed" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="takeaway-slide" -->
+
+Designing a more informative study <!-- .element: class="eyebrow" -->
+## How could we measure mosquito pressure independently of residents’ decisions to use nets?
+
+1. Consider sampling house-nights irrespective of net use, with a measurement method that works in both groups.
+2. Record net use and the reasons observations are missing.
+
+> [!evidence] Evidence
+> Observing net use helps diagnose selection but does not, by itself, identify the missing mosquito counts or guarantee an unbiased causal estimate.
+</div>
+
+<aside class="notes"><p>The design goal is to break the dependence of observation on the behavioural collider. Ask participants to propose and assess an appropriate entomological measurement method; this deck does not validate a specific device.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="disclaimer-dag-slide drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Toy models: seasonal confounding
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKU1tTZWFzb25dIC0tPiBUW0FpciB0ZW1wZXJhdHVyZV0KUyAtLT4gTVtNb3NxdWl0byBwcmVzc3VyZV0Kc3R5bGUgUyBmaWxsOiNmZmYwZDYsc3Ryb2tlOiM5YTYzMWIsc3Ryb2tlLXdpZHRoOjNweApgYGA=ECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**A shared cause can create an association.**
+
+Season may affect both temperature and mosquito pressure, even without a direct temperature effect.
+
+This pathway is omitted from the previous toy models.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+A realistic study must investigate seasonal pathways alongside selection.
+</div>
+
+
+
+</div>
+</div>
+
+<aside class="notes"><p>The toy models isolate selected mechanisms; <strong>they are not complete causal accounts of mosquito ecology or observation.</strong> Season represents seasonal processes that may jointly influence air temperature and mosquito pressure. This common-cause pathway can produce a population association even without a direct temperature effect on pressure. Temperature may also affect mosquito behaviour and the probability of entering a net, as discussed in the next slide. If entry probability varies with temperature, recorded counts can depend on temperature even under universal coverage and without a temperature effect on attacking abundance. Universal coverage removes the net-use selection mechanism in the toy model; it does not remove seasonal confounding or temperature-dependent capture. A realistic analysis should specify relevant seasonal processes and time scales, investigate capture efficiency across temperatures, and assess these pathways using field knowledge, calibration data, and sensitivity analyses. Question 6 adds a direct ecological effect but still omits these two pathways. None of the simulation results establishes whether these omitted effects are present or how large they are in the field.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="disclaimer-dag-slide drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Toy models: temperature-dependent capture
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKVFtBaXIgdGVtcGVyYXR1cmVdIC0tPiBQW05ldC1lbnRyeSBwcm9iYWJpbGl0eV0KUCAtLT4gQ1tSZWNvcmRlZCBjb3VudHNdCk1bTW9zcXVpdG8gcHJlc3N1cmVdIC0tPiBDCnN0eWxlIFAgZmlsbDojZmZmMGQ2LHN0cm9rZTojOWE2MzFiLHN0cm9rZS13aWR0aDozcHgKYGBgECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Counts reflect abundance and capture.**
+
+Temperature may change `bed_net_entry_rate`, even if attacking abundance stays constant.
+
+Universal coverage does not remove this pathway.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+An association in recorded counts need not be an ecological temperature effect.
+</div>
+
+
+
+</div>
+</div>
+
+<aside class="notes"><p>The highlighted entry probability is a measurement mechanism. Mosquito pressure also determines recorded counts, so both causes are shown. This diagram isolates the omitted capture pathway; it does not replace the net-use selection graph or assert that all other paths are absent. All scenarios, including question 6, hold entry probability constant within a scenario. A realistic study should investigate temperature-dependent capture alongside seasonal confounding and selection. Universal coverage alone resolves neither omitted pathway.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## An expanded causal model to investigate
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-wide-causal-area" style="position: absolute; left: 4%; top: 18%; height: 62%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKWltTZWFzb25dIC0tPiBUW0FpciB0ZW1wZXJhdHVyZV0KWiAtLT4gTVtNb3NxdWl0byBwcmVzc3VyZV0KVCAtLT58ZWNvbG9naWNhbCBlZmZlY3Q/fCBNClQgLS0+fHJlZHVjZXMgdXNlfCBVW0JlZC1uZXQgdXNlXQpNIC0tPnxpbmNyZWFzZXMgdXNlfCBVClUgLS0+IFNbU2VsZWN0ZWQ6IHNhbXBsZWQgPSB5ZXNdClQgLS0+IFBbTmV0LWVudHJ5IHByb2JhYmlsaXR5XQpNIC0tPiBDW1JlY29yZGVkIG1vc3F1aXRvIGNvdW50XQpQIC0tPiBDClMgLS4tPnxhdmFpbGFibGUgb25seSBpZiBzYW1wbGVkfCBDCnN0eWxlIFogZmlsbDojZmZmMGQ2LHN0cm9rZTojOWE2MzFiLHN0cm9rZS13aWR0aDozcHgKc3R5bGUgUCBmaWxsOiNmZmYwZDYsc3Ryb2tlOiM5YTYzMWIsc3Ryb2tlLXdpZHRoOjNweApzdHlsZSBTIGZpbGw6I2UyZjBlZCxzdHJva2U6IzBiNmI2MyxzdHJva2Utd2lkdGg6M3B4CmBgYA==ECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 83%; height: 12%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Ecology, seasonal confounding, selection, and capture all matter.**
+
+The dashed link denotes observation availability; proposed causal effects require investigation.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>This combines the mechanisms explored separately in the presentation. Season is a common cause of temperature and mosquito pressure. The T → M arrow represents the direct ecological effect to investigate; its presence and magnitude are not established here, and the zero-effect model omits it. T → U ← M remains the behavioural collider, with sampling determined by net use. Temperature also affects entry probability, while both pressure and entry determine potential captured counts. The dashed sampling-to-count link denotes whether a count is recorded; it is an observation-availability link, not an ecological effect on abundance or a claim that missing counts equal zero. The highlighted sampling node marks the restriction defining the available dataset. This is an expanded causal and observation schematic, not a claim that every relevant pathway has been included. It still omits possible feedback, other environmental causes, and heterogeneity in measurement. The seasonal and entry pathways are proposed extensions, not additions already fitted or simulated by the existing scripts. Discuss which arrows field knowledge supports and which data could identify their effects. <strong>Universal sampling alone would not resolve seasonal confounding or temperature-dependent capture.</strong></p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Disclaimer
+
+> [!warning] _Nota Bene_
+> - This fictional study and its simulated results illustrate selection bias.
+> - They do not establish the presence or absence of real effects of temperature or climate change on mosquito-borne transmission.
+> - Named institutions appear in illustrative cartoons. The depicted policies, statements, and funding decisions are fictional and imply no endorsement.
+</div>
+
+<aside class="notes"><p>The ecological independence assumption serves only to isolate the observation mechanism. This presentation makes no assessment of the scientific evidence underlying actual WHO policies or funding decisions. Climate and environmental questions require evidence appropriate to the ecological processes and populations under study.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#132927" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="questions-slide" -->
+
+# Homework
+
+What part of your own mosquito-fieldwork pipeline could select observations according to both exposure and mosquito pressure? <!-- .element: class="subtitle" -->
+</div>
+
+<aside class="notes"><p>Ask participants to come up with their own examples at the next meeting.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="references-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Selected references
+</div>
+
+
+</div>
+
+<div class="fn-reference-area" style="position: absolute; left: 4%; top: 18%; height: 72%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+1. Lindsay SW, Schellenberg JRMA, Zeiler HA, Daly, RJ, Salum, FM, Wilkins, HA Exposure of Gambian children to *Anopheles gambiae* malaria vectors in an irrigated rice production area. *Medical and Veterinary Entomology* **9**, 50–58 (1995). <a href="https://doi.org/10.1111/j.1365-2915.1995.tb00116.x" target="_blank" rel="noopener noreferrer">10.1111/j.1365-2915.1995.tb00116.x</a> **Mosquito survey using the bed net method**
+2. Pulford J, Hetzel MW, Bryant M, Siba PM, Mueller I. Reported reasons for not using a mosquito net when one is available: a review of the published literature. _Malaria Journal_ **10**, 83 (2011). <a href="https://doi.org/10.1186/1475-2875-10-83" target="_blank" rel="noopener noreferrer">10.1186/1475-2875-10-83</a> **Heat reported as one reason for decreased bed net use**
+3. Moiroux N, Boussari O, Djénontin A, Damien G, Cottrell G, Henry M-C, *et al.* Dry season determinants of malaria disease and net use in Benin, West Africa. _PLoS One_ **7**, e30558 (2012). <a href="https://doi.org/10.1371/journal.pone.0030558" target="_blank" rel="noopener noreferrer">10.1371/journal.pone.0030558</a> **Increased bed net use with greater mosquito nuisance**
+4. Briët, OJT, Yukich, JO, Pfeiffer, C _et al._ The effect of small solar powered ‘Bͻkͻͻ’ net fans on mosquito net use: results from a randomized controlled cross-over trial in southern Ghana. _Malaria Journal_ **16**, 12 (2017). <a href="https://doi.org/10.1186/s12936-016-1654-2" target="_blank" rel="noopener noreferrer">10.1186/s12936-016-1654-2</a> **Bed net usage in more confortable thermic conditions**
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+Studies investigating some factors discussed in this presentation.
+</div>
+
+
+
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+    <script src="plugin/chalkboard/plugin.js"></script>
+    <script src="plugin/reveal-pointer/pointer.js"></script>
+
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+                RevealPointer,
+                RevealChalkboard,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                    {
+                        icon: '<i class="fa fa-pen-square"></i>',
+                        title: 'Toggle chalkboard (B)',
+                        action: 'RevealChalkboard.toggleChalkboard();'
+                    },
+                    {
+                        icon: '<i class="fa fa-pen"></i>',
+                        title: 'Toggle notes canvas (C)',
+                        action: 'RevealChalkboard.toggleNotesCanvas();'
+                    },
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":"c/t","center":false,"transition":"fade","transitionSpeed":"fast","width":1280,"height":720,"margin":0.055,"mermaid":true}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>

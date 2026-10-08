@@ -31,6 +31,9 @@ date-modified: last-modified
 
 ## Educational materials
 
+- **Colliders in medical entomology** — A bilingual tutorial on collider bias, using a fictional field study and a reproducible R simulation to explore how sampling only bed-net users can create a misleading association between temperature and mosquito abundance.\
+  [Open tutorial and slides](colliders-entomology-tutorial/index.html) · [Source code and documentation](https://github.com/costantinicarlo/colliders-entomology-tutorial)
+
 - **Panpreposterous workshop** — Introductory workshop slides for Panpreposterous v1.4.3.\
   [View slides in English](https://costantinicarlo.github.io/panpreposterous-workshop/docs_EN/v1.4.3/) · [Voir les diapositives en français](https://costantinicarlo.github.io/panpreposterous-workshop/docs_FR/v1.4.3/){lang=fr}
 
