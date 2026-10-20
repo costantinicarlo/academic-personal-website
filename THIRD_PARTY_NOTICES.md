@@ -31,7 +31,11 @@ Creative Commons Attribution 4.0 International, as recorded in the bundle's
 `LICENSE` file and linked from its hub and slides.
 
 The bundled Fieldnote Academic theme retains its MIT licence notice in
-`assets/fieldnote-academic/LICENSE`. Reveal.js, Slides Extended plugins, fonts and
-other bundled support files retain their respective licences and notices.
+`assets/fieldnote-academic/LICENSE`. Each exported deck includes the tutorial's
+`THIRD_PARTY_NOTICES.md` and a `LICENSES/` directory with the retained licence texts
+for the tutorial, Fieldnote, Slides Extended, Reveal.js and bundled dependencies.
+These files accompany the presentations in the published website. Reveal.js,
+Slides Extended plugins, fonts and other support files retain their respective
+licences and notices.
 Institutional logos remain subject to their owners' rights. The website's default
 content licence does not replace these terms.

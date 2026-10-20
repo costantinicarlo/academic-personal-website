@@ -125,7 +125,8 @@ A fictional field study with simulated data <!-- .element: class="subtitle" -->
 </div>
 </div>
 
-<aside class="notes"><p>This tutorial separates the ecological process from the observation process. The source scenario is <code>source/colliders_medical_entomology.md</code>. The assumed absence of a temperature effect is a teaching device, not a conclusion about real mosquito ecology or climate change.</p>
+<aside class="notes"><p>This tutorial separates the ecological process from the observation process. The source scenario is <code>source/colliders_medical_entomology.md</code>.</p>
+<p>The assumed absence of a temperature effect is a teaching device, not a conclusion about real mosquito ecology or climate change.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -185,7 +186,8 @@ Does higher air temperature increase the number of mosquitoes attacking a host?
 </div>
 </div>
 
-<aside class="notes"><p>Against a background of concern about climate change and mosquito-borne diseases, researchers investigate nightly temperature and mosquito pressure. Here, mosquito pressure means the number of mosquitoes attempting to bite a host, not the number of successful bites.</p>
+<aside class="notes"><p>Against a background of concern about climate change and mosquito-borne diseases, researchers investigate nightly temperature and mosquito pressure.</p>
+<p>Here, mosquito pressure means the number of mosquitoes attempting to bite a host, not the number of successful bites.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -251,7 +253,7 @@ FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250
 This is the proposed causal pathway, not an established result.
 </div>
 
-<aside class="notes"><p>Mosquito pressure, trapped mosquito counts, and transmission risk are distinct quantities. This simplified hypothesis omits other determinants of transmission. The simulation below concerns pressure and recorded counts; it does not simulate infections.</p>
+<aside class="notes"><p>Mosquito pressure, trapped mosquito counts, and transmission risk are distinct quantities. <strong>This simplified hypothesis omits other determinants of transmission.</strong> The simulation below concerns pressure and recorded counts; it does not simulate infections.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -306,7 +308,9 @@ The scientists could not afford *active* sampling devices due to research grant 
 </div>
 </div>
 
-<aside class="notes"><p>The researchers choose passive sampling with existing bed nets under budget constraints. Mosquitoes can enter through holes, slits, or untucked openings and remain inside until morning. Proportionality between trapped counts and attacking mosquitoes is an assumption of the fictional measurement model, not a validated measure of transmission risk. The simulation assumes each attacker independently enters a used net with a constant probability <code>bed_net_entry_rate</code>, remains inside, and is counted the next morning.</p>
+<aside class="notes"><p>The researchers choose passive sampling with existing bed nets under budget constraints. Mosquitoes can enter through holes, slits, or untucked openings and remain inside until morning.</p>
+<p>Proportionality between trapped counts and attacking mosquitoes is an assumption of the fictional measurement model, not a validated measure of transmission risk.</p>
+<p>The simulation assumes each attacker independently enters a used net with a constant probability <code>bed_net_entry_rate</code>, remains inside, and is counted the next morning.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -341,7 +345,7 @@ The scientists could not afford *active* sampling devices due to research grant 
 
 Only houses where someone slept under a bed net the previous night are sampled.
 
-> [!evidence]
+> [!warning]
 > Owning a net does not make a house eligible.
 
 </div>
@@ -355,7 +359,7 @@ Only houses where someone slept under a bed net the previous night are sampled.
 </div>
 </div>
 
-<aside class="notes"><p>Each morning the team asks about actual net use, independently of ownership. <strong>Owning a net does not make a house eligible.</strong> No count is recorded for a house where the net was unused.</p>
+<aside class="notes"><p>Each morning the team asks about actual net use, independently of ownership. <strong>No count is recorded for a house where the net was unused.</strong></p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -400,7 +404,8 @@ The team pairs each mosquito count with the previous night’s temperature measu
 </div>
 </div>
 
-<aside class="notes"><p>Temperature probes are installed in the surveyed villages. The morning visit retrieves both mosquito counts and the previous night’s temperature records. <strong>The simulation later simplifies the field design to independent house-night records</strong>; it does not model repeated visits or village clustering.</p>
+<aside class="notes"><p>Temperature probes are installed in the surveyed villages. The morning visit retrieves both mosquito counts and the previous night’s temperature records.</p>
+<p><strong>The simulation later simplifies the field design to independent house-night records</strong>; it does not model repeated visits or village clustering.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -500,7 +505,8 @@ The researchers interpret the association as a temperature effect and report gre
 </div>
 </div>
 
-<aside class="notes"><p>In this fictional story, health officials issue guidance based on that interpretation. Two inferences need scrutiny: from selected counts to a causal effect on mosquito pressure, and from mosquito pressure to transmission risk. No infections were measured.</p>
+<aside class="notes"><p>In this fictional story, health officials issue guidance based on that interpretation.</p>
+<p>No infections were measured.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -549,7 +555,8 @@ In the fictional story, institutions act on the researchers’ causal interpreta
 </div>
 </div>
 
-<aside class="notes"><p><strong>The cartoon exaggerates the policy consequences of an unexamined inference.</strong> The named institutions and logos are illustrative references; the scene does not report actual WHO guidance or funding decisions. Ask the audience what evidence is missing before moving to the sampling mechanism.</p>
+<aside class="notes"><p>The named institutions and logos are illustrative references; the scene does not report actual WHO guidance or funding decisions.</p>
+<p>Ask the audience what evidence is missing before moving to the sampling mechanism.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -573,7 +580,7 @@ In the fictional story, institutions act on the researchers’ causal interpreta
 
 **Target:** the effect of temperature on mosquito pressure across house-nights.
 
-What is the ecological process underlying the data?
+*What is the ecological process underlying the data?*
 </div>
 
 
@@ -585,7 +592,7 @@ What is the ecological process underlying the data?
 
 **Available data:** morning counts from houses where a net was used.
 
-What determines whether residents use a net?
+*What determines whether residents use a net?*
 </div>
 
 
@@ -597,7 +604,8 @@ What determines whether residents use a net?
 </div>
 </div>
 
-<aside class="notes"><p>This consolidates the study question and observation rule. A house-night is one house on one night. The simulation has 6,000 independent records, rather than a longitudinal or clustered sampling design. Pause for audience suggestions before revealing the two behavioural causes.</p>
+<aside class="notes"><p>This consolidates the study question and observation rule. A house-night is one house on one night. The simulation has 6,000 independent records, rather than a longitudinal or clustered sampling design.</p>
+<p>Pause for audience suggestions before revealing the two behavioural causes.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -609,12 +617,13 @@ What determines whether residents use a net?
 
 FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKQVtBaXIgdGVtcGVyYXR1cmVdCkJbTW9zcXVpdG8gcHJlc3N1cmVdCmBgYA==ECODDECNEF
 
-For this scenario, temperature and mosquito pressure are generated independently.
+For this scenario, temperature and mosquito pressure are generated **independently**.
 
 The true temperature effect is zero by construction. <!-- .element: class="lead" -->
 </div>
 
-<aside class="notes"><p><strong>Independence is an explicit simulation assumption</strong>. A missing direct arrow alone would not establish independence in a larger graph with common causes or indirect paths. Here the two variables have independent generating processes. A finite simulated dataset can still have a small nonzero estimated slope.</p>
+<aside class="notes"><p>Independence is an explicit simulation assumption. <strong>A missing direct arrow alone would not establish independence in a larger graph with common causes or indirect paths.</strong> Here the two variables have independent generating processes.</p>
+<p>A finite simulated dataset can still have a small nonzero estimated slope.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -659,7 +668,8 @@ On hotter nights, discomfort makes residents less likely to sleep under a net.
 </div>
 </div>
 
-<aside class="notes"><p>This cartoon introduces the negative temperature effect on net use assumed in the scenario. It illustrates a behavioural mechanism, not an estimated temperature threshold. Follow with the single-arrow causal diagram.</p>
+<aside class="notes"><p>This cartoon introduces the negative temperature effect on net use assumed in the scenario. It illustrates a behavioural mechanism, not an estimated temperature threshold.</p>
+<p>Follow with the single-arrow causal diagram.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -749,7 +759,8 @@ FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250
 A **collider** is a variable where two arrows meet head-to-head.
 </div>
 
-<aside class="notes"><p>Temperature and mosquito pressure act in opposite directions on the same behavioural decision. Their effects on that decision do not imply a causal effect of temperature on mosquito pressure. Both variables cause bed-net use. Merely having a collider in the graph does not create the association: selection on it, or on a descendant, opens this path. Reference: <a href="https://www.dagitty.net/learn/dsep/">https://www.dagitty.net/learn/dsep/</a></p>
+<aside class="notes"><p>Temperature and mosquito pressure act in opposite directions on the same behavioural decision. Their effects on that decision do not imply a causal effect of temperature on mosquito pressure. Both variables cause bed-net use. <strong>Merely having a collider in the graph does not create the association: selection on it, or on a descendant, opens this path.</strong></p>
+<p><em>Reference</em>: <a href="https://www.dagitty.net/learn/dsep/">https://www.dagitty.net/learn/dsep/</a></p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -766,7 +777,8 @@ Selecting sampled houses conditions on a **descendant of the collider**.
 Here, a house is sampled if and only if its net was used.
 </div>
 
-<aside class="notes"><p>The highlighted node identifies the restriction defining the dataset. In the simulation, <code>house_sampled</code> equals <code>bednet_used</code> exactly, so selecting sampled houses is equivalent to selecting net users. More generally, conditioning on a collider’s descendant can also open the path. Reference: <a href="https://www.dagitty.net/learn/dsep/">https://www.dagitty.net/learn/dsep/</a></p>
+<aside class="notes"><p>The highlighted node identifies the restriction defining the dataset. In the simulation, <code>house_sampled</code> equals <code>bednet_used</code> exactly, so selecting sampled houses is equivalent to selecting net users. More generally, <strong>conditioning on a collider’s descendant can also open the path</strong>.</p>
+<p><em>Reference</em>: <a href="https://www.dagitty.net/learn/dsep/">https://www.dagitty.net/learn/dsep/</a></p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -783,7 +795,10 @@ The dashed arrow denotes availability, not an ecological effect. <!-- .element: 
 **No sample means a missing count—not zero mosquitoes.**
 </div>
 
-<aside class="notes"><p>This combines the ecological and observation processes. The diagram is an explanatory observation schematic: the dashed availability link must not be interpreted as an ordinary ecological causal arrow. <strong>A potential count could be defined for every record, but the count is recorded only for selected houses.</strong> Under the toy measurement model, mosquito pressure determines its expected magnitude.</p>
+<aside class="notes"><p>This combines the ecological and observation processes.</p>
+<p>The diagram is an explanatory observation schematic: the dashed availability link must not be interpreted as an ordinary ecological causal arrow.</p>
+<p><strong>A potential count could be defined for every record, but the count is recorded only for selected houses.</strong></p>
+<p>Under the toy measurement model, mosquito pressure determines its expected magnitude.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -804,7 +819,10 @@ VERBAL EXPLANATION <!-- .element: class="eyebrow" -->
 In what follows we assess these explanations quantitatively.
 </div>
 
-<aside class="notes"><p><strong>This is collider selection bias.</strong> The example shows an association emerging after selection, rather than a reversal of a substantive population association. <strong>Its positive direction follows from the particular behavioural model; collider bias does not always have this sign.</strong> Ask the audience to predict the population and selected-sample patterns before showing the results.</p>
+<aside class="notes"><p><strong>This is collider selection bias.</strong></p>
+<p>The example shows an association emerging after selection, rather than a reversal of a substantive population association.</p>
+<p><strong>Its positive direction follows from the particular behavioural model; collider bias does not always have this sign.</strong></p>
+<p>Ask the audience to predict the population and selected-sample patterns before showing the results.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -837,7 +855,8 @@ We simulate 6,000 *independent* house-nights.
 **The true temperature effect on pressure is exactly zero.**
 </div>
 
-<aside class="notes"><p>The R objects call these records houses. <strong>This simple model represents one night per simulated house, without repeated measurements or village effects.</strong> Its chosen coefficients are illustrative, not estimates from field data.</p>
+<aside class="notes"><p>The R objects call these records <code>houses</code>.</p>
+<p><strong>This simple model represents one night per simulated house, without repeated measurements or village effects.</strong> Its chosen coefficients are illustrative, not estimates from field data.</p>
 </aside></script></section><section ><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -849,10 +868,11 @@ We simulate 6,000 *independent* house-nights.
 
 FENCEDCODEr:1:YGBgcgpzZXQuc2VlZCgyMDI2MDkyMikgICMgZm9yIHJlcHJvZHVjaWJpbGl0eQpuIDwtIDYwMDBMICAgICAgICAgICMgTm8uIG9mIGluZGVwZW5kZW50IHNhbXBsZXMKCmFpcl90ZW1wZXJhdHVyZV9jIDwtIHJub3JtKG4sIG1lYW4gPSAyNywgc2QgPSAyLjgpCgojIFBvaXNzb24tbG9nbm9ybWFsIG1peHR1cmUKdHJ1ZV9hdHRhY2tpbmdfbW9zcXVpdG9lcyA8LSBycG9pcyhuLCAgICAjIG9uZSBQb2lzc29uIGNvdW50IHBlciBob3VzZS1uaWdodAogIGxhbWJkYSA9IGV4cChybm9ybShuLCBsb2coMjgpLCAwLjY1KSkgICMgbG9nbm9ybWFsIGV4cGVjdGVkIGNvdW50cyBhY3Jvc3MgaG91c2UtbmlnaHRzCikKYGBgECODDECNEF
 
-Mosquito pressure is generated independently of temperature.
+Mosquito pressure is generated independently of temperature. <!-- .element: class="lead" -->
 </div>
 
-<aside class="notes"><p><strong>The varying Poisson mean permits heterogeneity in pressure between houses;</strong> 28 is the <strong>median</strong> of lambda, not its mean; 0.65 is the standard deviation of log(lambda). Temperature is not part of its generating equation. These excerpts follow <code>R/01_simulate.R</code>; the following slides use these generated vectors directly.</p>
+<aside class="notes"><p><strong>The varying Poisson mean permits heterogeneity in pressure between houses;</strong> 28 is the <strong>median</strong> of lambda, not its mean; 0.65 is the standard deviation of log(lambda). Temperature is not part of its generating equation.</p>
+<p>These excerpts follow <code>R/01_simulate.R</code>; the following slides use these generated vectors directly.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -887,14 +907,17 @@ Mosquito pressure is generated independently of temperature.
 
 **Temperature is approximately symmetric; mosquito pressure has a long right tail.**
 
-All 6,000 house-nights before selection. Linear axes; bin widths: 1 °C and 10 mosquitoes.
+All 6,000 house-nights before selection. Linear axes; bin widths: 1 °C and 10 mosquitoes. <!-- .element: class="caption" -->
 </div>
 
 
 </div>
 </div>
 
-<aside class="notes"><p>These histograms show the two vectors generated on the parent slide, before standardisation, selection or capture. Both axes are linear and the complete observed ranges are retained. Bar heights are frequencies, not probability densities; the different bin widths and units mean heights should not be compared directly across panels. Temperature follows a normal generating distribution. Attackers follow a Poisson–lognormal mixture: each house-night has its own lognormally distributed Poisson mean, creating a right-skewed count distribution. The mixture is neither a single Poisson distribution nor a lognormal distribution of counts. The median of lambda is 28, while its mean is 28 * exp(0.65^2 / 2). Marginal histograms do not establish independence; that comes from the generating model, and the subsequent scatterplot examines the realised association. Descend from the code slide to inspect these distributions, then return to the main sequence for standardisation. To reproduce interactively, use hist(air_temperature_c) and hist(true_attacking_mosquitoes); <code>R/03_make_plots.R</code> specifies the displayed bin boundaries.</p>
+<aside class="notes"><p>These histograms show the two vectors generated on the parent slide, before standardisation, selection or capture. Both axes are linear and the complete observed ranges are retained. Bar heights are frequencies, not probability densities; the different bin widths and units mean heights should not be compared directly across panels.</p>
+<p>Temperature follows a normal generating distribution. Attackers follow a Poisson–lognormal mixture: each house-night has its own lognormally distributed Poisson mean, creating a right-skewed count distribution. The mixture is neither a single Poisson distribution nor a lognormal distribution of counts. The median of $\lambda$ is 28, while its mean is $28 \cdot e^{(0.65^2 / 2)}$.</p>
+<p>Marginal histograms do not establish independence; that comes from the generating model, and the subsequent scatterplot examines the realised association.</p>
+<p>Descend from the code slide to inspect these distributions, then return to the main sequence for standardisation. To reproduce interactively, use <code>hist(air_temperature_c)</code> and <code>hist(true_attacking_mosquitoes)</code>; <code>R/03_make_plots.R</code> specifies the displayed bin boundaries.</p>
 </aside></script></section></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -904,14 +927,18 @@ All 6,000 house-nights before selection. Linear axes; bin widths: 1 °C and 10 m
 
 ## Standardise predictors for the behavioural model
 
-FENCEDCODEr:1:YGBgcgp0eiA8LSBhcy5udW1lcmljKHNjYWxlKGFpcl90ZW1wZXJhdHVyZV9jKSkKbXogPC0gYXMubnVtZXJpYyhzY2FsZSh0cnVlX2F0dGFja2luZ19tb3NxdWl0b2VzKSkKYGBgECODDECNEF
+FENCEDCODEr:1:YGBgcgp0eiA8LSBhcy5udW1lcmljKHNjYWxlKGFpcl90ZW1wZXJhdHVyZV9jKSkKCm16IDwtIGFzLm51bWVyaWMoc2NhbGUodHJ1ZV9hdHRhY2tpbmdfbW9zcXVpdG9lcykpCmBgYA==ECODDECNEF
 
 - **Common units:** mean 0 and standard deviation 1.
 - **Comparable changes:** each coefficient describes a one-SD increase.
 - **Meaningful baseline:** the regression intercept refers to average temperature and pressure.
 </div>
 
-<aside class="notes"><p>Standardisation subtracts the mean and divides by the sample standard deviation: <code>z = (x - mean(x)) / sd(x)</code>. We use <code>tz</code> for standardised temperature and <code>mz</code> for standardised mosquito pressure throughout the model, analysis, and plotting scripts. <strong>In the following logistic model, -1.25 is the change in log odds of net use for a one-SD temperature increase, holding mosquito pressure fixed; +1.75 is the corresponding change for pressure.</strong> The intercept -1 is the log odds at both predictors&#39; means. <strong>Scaling can also improve numerical conditioning when predictors have disparate scales, but it is not required for logistic regression.</strong> It does not make skewed counts normal, remove confounding, or fix selection bias. Run the code slides in order: this step scales the vectors generated on the preceding ecological-process slide. No pre-computed dataset is required.</p>
+<aside class="notes"><p>Standardisation subtracts the mean and divides by the sample standard deviation: <code>z = (x - mean(x)) / sd(x)</code>. We use <code>tz</code> for standardised temperature and <code>mz</code> for standardised mosquito pressure throughout the model, analysis, and plotting scripts.</p>
+<p>In the following logistic model, <strong>-1.25 is the change in log odds of net use for a one-SD temperature increase, holding mosquito pressure fixed</strong>; +1.75 is the corresponding change for pressure.</p>
+<p>The intercept -1 is the log odds at both predictors&#39; means.</p>
+<p><strong>Scaling can also improve numerical conditioning when predictors have disparate scales, but it is not required for logistic regression.</strong> It does not make skewed counts normal, remove confounding, or fix selection bias.</p>
+<p>Run the code slides in order: this step scales the vectors generated on the preceding ecological-process slide. No pre-computed dataset is required.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -921,14 +948,17 @@ FENCEDCODEr:1:YGBgcgp0eiA8LSBhcy5udW1lcmljKHNjYWxlKGFpcl90ZW1wZXJhdHVyZV9jKSkKbX
 
 ## Check linear association before selection
 
-FENCEDCODEr:1:YGBgcgp6X2xpbWl0cyA8LSByYW5nZShwcmV0dHkocmFuZ2UoYyh0eiwgbXopKSkpCnBhcihwdHkgPSAicyIpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBzcXVhcmUgcGxvdHRpbmcgcmVnaW9uCnBsb3QodHosIG16LCB4bGltID0gel9saW1pdHMsIHlsaW0gPSB6X2xpbWl0cywKICAgICBhc3AgPSAxLCB4YXhzID0gImkiLCB5YXhzID0gImkiKQoKY29yLnRlc3QodHosIG16LCBtZXRob2QgPSAicGVhcnNvbiIpCmBgYA==ECODDECNEF
+FENCEDCODEr:1:YGBgcgp6X2xpbWl0cyA8LSByYW5nZShwcmV0dHkocmFuZ2UoYyh0eiwgbXopKSkpCnBhcihwdHkgPSAicyIpICAjIHNxdWFyZSBwbG90dGluZyByZWdpb24KCnBsb3QodHosIG16LCB4bGltID0gel9saW1pdHMsIHlsaW0gPSB6X2xpbWl0cywKICAgICBhc3AgPSAxLCB4YXhzID0gImkiLCB5YXhzID0gImkiKQoKY29yLnRlc3QodHosIG16LCBtZXRob2QgPSAicGVhcnNvbiIpCmBgYA==ECODDECNEF
 
 Use the standardised variables from the previous slide.
 
-Pearson correlation is unchanged by standardisation.
+Pearson correlation is unchanged by standardisation.  <!-- .element: class="lead" -->
 </div>
 
-<aside class="notes"><p>The variables are independent by construction, because their generating processes share no inputs or causal links. A scatterplot and correlation test check the realised sample for linear association; they do not establish independence. Use a square plotting region so the shared limits and asp = 1 give identical axis ranges and equal physical spacing per SD. Standardisation is optional for Pearson correlation: r, its test statistic, confidence interval, and p-value are unchanged. The following diagnostic uses all 6,000 generated records, before any restriction to net users.</p>
+<aside class="notes"><p>The variables are independent by construction, because their generating processes share no inputs or causal links.</p>
+<p>A scatterplot and correlation test check the realised sample for linear association; they do not establish independence.</p>
+<p>Use a square plotting region so the shared limits and asp = 1 give identical axis ranges and equal physical spacing per SD. Standardisation is optional for Pearson correlation: $r$, its test statistic, confidence interval, and p-value are unchanged.</p>
+<p>The following diagnostic uses all 6,000 generated records, before any restriction to net users.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -982,7 +1012,10 @@ No evidence of linear association; this does **not prove independence**.
 </div>
 </div>
 
-<aside class="notes"><p>The orange lines are least-squares fits. The standardised panel uses identical limits, tick marks, and unit spacing on both axes, covering the full range of tz and mz without clipping. Standardisation preserves Pearson correlation; the appearance changes when we give the axes a common scale. The null hypothesis is zero population Pearson correlation; the alternative is nonzero correlation. The standard Pearson t test and Fisher-z confidence interval rely on distributional assumptions for exact or approximate inference. Mosquito counts here are skewed and discrete, so treat these conventional outputs as a large-sample diagnostic, not an exact independence test. A nonsignificant p-value does not establish a null effect. Independence is known from the simulation design, not inferred from this p-value. Full R output is saved in data/population_correlation_test.txt; machine-readable statistics are in data/population_correlation.csv. R/run_all.R regenerates both the output and figure.</p>
+<aside class="notes"><p>The orange lines are least-squares fits. The standardised panel uses identical limits, tick marks, and unit spacing on both axes, covering the full range of <code>tz</code> and <code>mz</code> without clipping. Standardisation preserves Pearson correlation; the appearance changes when we give the axes a common scale. The null hypothesis is zero population Pearson correlation; the alternative is nonzero correlation.</p>
+<p>The standard Pearson <em>t</em> test and Fisher-z confidence interval rely on distributional assumptions for exact or approximate inference. <strong>Mosquito counts here are skewed and discrete, so treat these conventional outputs as a large-sample diagnostic, not an exact independence test.</strong></p>
+<p>A nonsignificant p-value does not establish a null effect. <strong>Independence is known from the simulation design, not inferred from this p-value.</strong></p>
+<p>Full R output is saved in <code>data/population_correlation_test.txt</code>; machine-readable statistics are in <code>data/population_correlation.csv</code>. <code>R/run_all.R</code> regenerates both the output and figure.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -992,7 +1025,7 @@ No evidence of linear association; this does **not prove independence**.
 
 ## R script: the behavioural filter
 
-FENCEDCODEr:1:YGBgcgojIGF2ZXJhZ2UgdGVtcGVyYXR1cmUgYW5kIHByZXNzdXJlOiB0eiA9IDAsIG16ID0gMApiYXNlbGluZV9sb2dpdCA8LSAtMQpwbG9naXMoYmFzZWxpbmVfbG9naXQpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIGJhc2VsaW5lIG5ldC11c2UgcHJvYmFiaWxpdHk6IDAuMjY5Cgpsb2dpdF9wX25ldCAgICAgIDwtIGJhc2VsaW5lX2xvZ2l0IC0gMS4yNSAqIHR6ICsgMS43NSAqIG16ICAjIGxpbmVhciBwcmVkaWN0b3Igb2YgcHJvYi4gb2YgbmV0IHVzZQpwcm9iX2JlZG5ldF91c2VkIDwtIHBsb2dpcyhsb2dpdF9wX25ldCkgICAgICAgICAgICAgICAgICAgICAjIHByb2IuIG9mIG5ldCB1c2UKYmVkbmV0X3VzZWQgICAgICA8LSByYmlub20obiwgMSwgcHJvYl9iZWRuZXRfdXNlZCkgICAgICAgICAgIyBhY3R1YWwgbmV0IHVzZQpob3VzZV9zYW1wbGVkICAgIDwtIGJlZG5ldF91c2VkICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIGhvdXNlIHNhbXBsZWQgd2hlcmUgbmV0cyB1c2VkCmBgYA==ECODDECNEF
+FENCEDCODEr:1:YGBgcgojIGF2ZXJhZ2UgdGVtcGVyYXR1cmUgYW5kIHByZXNzdXJlOiB0eiA9IDAsIG16ID0gMApiYXNlbGluZV9sb2dpdCA8LSAtMQoKcGxvZ2lzKGJhc2VsaW5lX2xvZ2l0KSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBiYXNlbGluZSBuZXQtdXNlIHByb2JhYmlsaXR5OiAwLjI2OQoKbG9naXRfcF9uZXQgICAgICA8LSBiYXNlbGluZV9sb2dpdCAtIDEuMjUgKiB0eiArIDEuNzUgKiBteiAgIyBsaW5lYXIgcHJlZGljdG9yIG9mIHByb2IuIG9mIG5ldCB1c2UKCnByb2JfYmVkbmV0X3VzZWQgPC0gcGxvZ2lzKGxvZ2l0X3BfbmV0KSAgICAgICAgICAgICAgICAgICAgICMgcHJvYi4gb2YgbmV0IHVzZQoKYmVkbmV0X3VzZWQgICAgICA8LSByYmlub20obiwgMSwgcHJvYl9iZWRuZXRfdXNlZCkgICAgICAgICAgIyBhY3R1YWwgbmV0IHVzZQoKaG91c2Vfc2FtcGxlZCAgICA8LSBiZWRuZXRfdXNlZCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBob3VzZSBzYW1wbGVkIHdoZXJlIG5ldHMgdXNlZApgYGA=ECODDECNEF
 
 At average temperature and mosquito pressure (`tz = mz = 0`), **−1 is the logit of net-use probability**, corresponding to **26.9% net use**.
 
@@ -1001,7 +1034,9 @@ Heat reduces net use (`-1.25 * tz`); mosquito nuisance increases it (`+1.75 * mz
 Actual bed net *use* for each house-night is drawn from a binomial process.
 </div>
 
-<aside class="notes"><p>The variables <code>tz</code> and <code>mz</code> are standardised temperature and pressure. When both are zero, the predictor equals the intercept, $-1 = log(p / (1 - p))$. The inverse-logit gives $p = plogis(-1) = 0.269$. <strong>This is the conditional probability at both predictors’ means, not the average probability across all houses;</strong> the inverse-logit is nonlinear. The coefficients describe <strong>changes in log odds for one-SD predictor increases,</strong> holding the other predictor fixed. <code>rbinom</code> draws actual net use, not net ownership or allocation. The final line implements the sampling rule exactly.</p>
+<aside class="notes"><p>The variables <code>tz</code> and <code>mz</code> are standardised temperature and pressure. When both are zero, the predictor equals the intercept, $-1 = log(p / (1 - p))$. The inverse-logit gives $p = plogis(-1) = 0.269$. <strong>This is the conditional probability at both predictors’ means, not the average probability across all houses;</strong> the inverse-logit is nonlinear.</p>
+<p>The coefficients describe <strong>changes in log odds for one-SD predictor increases,</strong> holding the other predictor fixed. <code>rbinom</code> draws actual net use, not net ownership or allocation.</p>
+<p>The final line implements the sampling rule exactly.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1016,7 +1051,9 @@ FENCEDCODEr:1:YGBgcgpiZWRfbmV0X2VudHJ5X3JhdGUgPC0gMC43ICAgICAgICAgICAgICAgICAgIC
 Each attacker has a **70% chance of entering**. Unsampled records remain **NA**.
 </div>
 
-<aside class="notes"><p>This is the measurement rule in <code>R/01_simulate.R</code>. Conditional on $N$ attackers, the count is <code>Binomial(N, p)</code>, with <code>p = bed_net_entry_rate = 0.7</code>: mean <code>Np</code> and variance <code>Np(1-p)</code>. Zero attackers imply zero captures, and captures cannot exceed attackers. The probability is illustrative and constant across houses and temperatures. We assume independent entry and that every entrant remains inside and is counted. This adds capture variation relative to perfect counting, not necessarily more variance than the previous Poisson measurement model.</p>
+<aside class="notes"><p>This is the measurement rule in <code>R/01_simulate.R</code>.</p>
+<p>Conditional on $N$ attackers, the count is <code>Binomial(N, p)</code>, with <code>p = bed_net_entry_rate = 0.7</code>: mean <code>Np</code> and variance <code>Np(1-p)</code>. Zero attackers imply zero captures, and captures cannot exceed attackers. <strong>The probability is illustrative and constant across houses and temperatures.</strong></p>
+<p>We assume independent entry and that every entrant remains inside and is counted. This adds capture variation relative to perfect counting, not necessarily more variance than the previous Poisson measurement model.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1028,7 +1065,7 @@ Each attacker has a **70% chance of entering**. Unsampled records remain **NA**.
 
 <div class="block">
 
-## The behavioural filter
+## The behavioural/sampling filter
 </div>
 
 
@@ -1061,7 +1098,8 @@ At higher temperatures, greater mosquito nuisance is needed to maintain the same
 </div>
 </div>
 
-<aside class="notes"><p><strong>Read the surface as the probability of entering the sample,</strong> because net use and sampling coincide. Ask which part of the population is least likely to be observed.</p>
+<aside class="notes"><p><strong>Read the surface as the probability of entering the sample,</strong> because net use and sampling coincide.</p>
+<p>Ask which part of the population is least likely to be observed.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1076,7 +1114,9 @@ At higher temperatures, greater mosquito nuisance is needed to maintain the same
 What slopes do you expect before and after selection?
 </div>
 
-<aside class="notes"><p>Pause for predictions. The generating effect is zero, but finite-sample estimates need not be exactly zero. If demonstrating live, show the population plot first and the sampled plot second.</p>
+<aside class="notes"><p>Pause for predictions.</p>
+<p>The generating effect is zero, but finite-sample estimates need not be exactly zero.</p>
+<p>If demonstrating live, show the population plot first and the sampled plot second.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1090,9 +1130,15 @@ What slopes do you expect before and after selection?
 
 
 Log-scaled y-axes; tick labels show mosquito counts. Left: near-zero association. Right: positive association after selection. <!-- .element: class="caption" -->
+
+On the left, the *population*: **near-zero** association.
+
+On the right, the *sample*: **positive** association, after selection
 </div>
 
-<aside class="notes"><p>The panels change both selection and the measurement being plotted. Both y-axes use the same logarithmic scale, with ticks labelled in original mosquito counts. The single zero population count cannot appear on a log axis and is omitted only from the display. The least-squares fits still include all records and use original, untransformed counts; they can appear curved on the log display. The next comparison separates selection and measurement using true attackers in the selected sample as an intermediate step.</p>
+<aside class="notes"><p>The panels change both selection and the measurement being plotted.</p>
+<p>Both y-axes use the same logarithmic scale, with ticks labelled in original mosquito counts. The single zero population count cannot appear on a log axis and is omitted only from the display. The least-squares fits still include all records and use original, untransformed counts; they can appear curved on the log display.</p>
+<p>The next comparison separates selection and measurement using true attackers in the selected sample as an intermediate step.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1102,16 +1148,19 @@ Log-scaled y-axes; tick labels show mosquito counts. Left: near-zero association
 
 ## Three comparisons separate selection from net entry
 
-| Analysis | Records | Slope: mosquitoes per °C |
-|---|---:|---:|
-| All houses: true attackers | 6,000 | +0.117 |
-| Sampled houses: true attackers | 1,987 | +3.501 |
-| Sampled houses: recorded counts | 1,987 | +2.489 |
+| Analysis                        | Records | Slope: mosquitoes per °C  |  
+| ------------------------------- | ------: | ------------------------: |  
+| All houses: true attackers      |   6,000 |                    +0.117 |  
+| Sampled houses: true attackers  |   1,987 |                    +3.501 |  
+| Sampled houses: recorded counts |   1,987 |                    +2.489 |  
 
-Selection creates the positive association. Partial net entry reduces the expected count slope to 70% of the selected-attacker slope.
+Selection creates the positive association. <!-- .element: class="lead" -->
+
+Partial net entry reduces the expected count slope to 70% of the selected-attacker slope.
 </div>
 
-<aside class="notes"><p>Slopes use the generated temperature and count vectors at full precision and are displayed to three decimals. They are descriptive linear associations, not causal effects inferred from the sample. The true-attacker analyses are available because this is a simulation; actual field investigators would not observe that latent quantity for all houses.</p>
+<aside class="notes"><p>Slopes use the generated temperature and count vectors at full precision and are displayed to three decimals. They are <em>descriptive</em> linear associations, not causal effects inferred from the sample.</p>
+<p><strong>The true-attacker analyses are available because this is a simulation; actual field investigators would not observe that latent quantity for all houses.</strong></p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1125,10 +1174,11 @@ FENCEDCODEr:1:YGBgcgojIFVzZSB0aGUgdmVjdG9ycyBhbmQgc2FtcGxpbmcgaW5kaWNhdG9yIGdlbm
 
 The middle model isolates selection before partial net entry.
 
-Linear regression is used to summarise the association transparently; changing to a GLM count regression would not by itself remove selection bias.
+*Linear* regression is used to summarise the association transparently; changing to a GLM count regression would not by itself remove selection bias. <!-- .element: class="source" -->
 </div>
 
-<aside class="notes"><p>These are the three models in <code>R/02_analyse.R</code>. Linear regression is used here to summarise the association transparently; <strong>changing to a count regression would not by itself remove selection bias.</strong> The population model is an oracle comparison available in a simulation.</p>
+<aside class="notes"><p>These are the three models in <code>R/02_analyse.R</code>.</p>
+<p>The population model is an oracle comparison available in a simulation.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1161,7 +1211,9 @@ Linear regression is used to summarise the association transparently; changing t
 
 <div class="block">
 
-Selection creates a positive attacker slope. Partial net entry reduces the recorded-count slope while preserving the association.
+Selection creates a positive attacker slope.
+
+Partial net entry reduces the recorded-count slope while preserving the association.
 </div>
 
 
@@ -1173,7 +1225,11 @@ Selection creates a positive attacker slope. Partial net entry reduces the recor
 </div>
 </div>
 
-<aside class="notes"><p>Read the chart from top to bottom: all true attackers, selected true attackers, selected net counts. Bars show 95% confidence intervals. The first comparison isolates selection; the second introduces binomial net entry. With constant entry probability $p$, the expected count slope conditional on the selected attackers and temperatures is $p$ times their slope. The realised count slope fluctuates around that expectation. The plotted slopes are on their original count scales.</p>
+<aside class="notes"><p>Read the chart from top to bottom: all true attackers, selected true attackers, selected net counts. Bars show 95% confidence intervals.</p>
+<p><strong>The first comparison isolates selection; the second introduces binomial net entry.</strong></p>
+<p>With constant entry probability $p$, the expected count slope conditional on the selected attackers and temperatures is $p$ times their slope.</p>
+<p>The realised count slope fluctuates around that expectation.</p>
+<p><strong>The plotted slopes are on their original count scales.</strong></p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1195,7 +1251,7 @@ Selection creates a positive attacker slope. Partial net entry reduces the recor
 
 <div class="block">
 
-A regression can describe the observed sample *accurately* and still *fail* to answer the ecological question.
+A regression can describe the observed sample **accurately** and still **fail** to answer the ecological question.
 </div>
 
 
@@ -1224,11 +1280,12 @@ Here, understanding **how records entered the dataset** is essential to interpre
 
 
 
-
+<br>
 The linear regression is naïve but honest; association emerges due to collider selection bias. <!-- .element: class="lead" -->
 </div>
 
-<aside class="notes"><p>The problem arises before model fitting. Adding net use as a covariate cannot recover the missing comparison within a sample in which everyone used a net. This tutorial does not claim that all selection problems have a simple statistical correction.</p>
+<aside class="notes"><p><strong>The problem arises before model fitting.</strong> Adding net use as a covariate cannot recover the missing comparison within a sample in which everyone used a net.</p>
+<p>This tutorial does not claim that all selection problems have a simple statistical correction.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1241,7 +1298,8 @@ The linear regression is naïve but honest; association emerges due to collider 
 # DISCUSSION
 </div>
 
-<aside class="notes"><p>Invite participants to identify the exposure, the outcome or its causes, the selection decision, and its behavioural or logistical determinants. Sketch the proposed arrows before suggesting adjustments.</p>
+<aside class="notes"><p>Invite participants to identify the exposure, the outcome or its causes, the selection decision, and its behavioural or logistical determinants.</p>
+<p>Sketch the proposed arrows before suggesting adjustments.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1251,14 +1309,14 @@ The linear regression is naïve but honest; association emerges due to collider 
 
 ## Questions to investigate
 
-| Question | Change to explore |
-|---|---|
-| 1. What if everyone used a net? | Force net use for every house |
-| 2. What if heat no longer affected net use? | Set the temperature coefficient to zero |
-| 3. What if nuisance no longer affected net use? | Set the mosquito-pressure coefficient to zero |
-| 4. What if baseline net use changed? | Vary `baseline_logit` |
-| 5. What if more mosquitoes entered the net? | Vary `bed_net_entry_rate` |
-| 6. What if temperature affected mosquito pressure? | Add a direct ecological effect |
+| Question                                           | Change to explore                             |  
+| -------------------------------------------------- | --------------------------------------------- |  
+| 1. What if everyone used a net?                    | Force net use for every house                 |  
+| 2. What if heat no longer affected net use?        | Set the temperature coefficient to zero       |  
+| 3. What if nuisance no longer affected net use?    | Set the mosquito-pressure coefficient to zero |  
+| 4. What if baseline net use changed?               | Vary `baseline_logit`                         |  
+| 5. What if more mosquitoes entered the net?        | Vary `bed_net_entry_rate`                     |  
+| 6. What if temperature affected mosquito pressure? | Add a direct ecological effect                |  
 
 Predict first; change one assumption at a time.
 
@@ -1266,7 +1324,12 @@ Predict first; change one assumption at a time.
 > An intervention forcing universal use [Q1] differs from increasing the net-use intercept [Q4].
 </div>
 
-<aside class="notes"><p>Move down for answers, then right for the next question. Question 1 compares a fixed population with regenerated populations; questions 2–6 use only the second approach. Question 6 pairs observation regimes separately at each ecological effect. For questions 2–5, each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+<aside class="notes"><p>Move down for answers, then right for the next question.</p>
+<p>Question 1 compares a fixed population with regenerated populations; questions 2–6 use only the second approach.</p>
+<p>Question 6 pairs observation regimes separately at each ecological effect.</p>
+<p>For questions 2–5, each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population.</p>
+<p>Entry-rate variants retain that replicate’s baseline selected houses.</p>
+<p><strong>Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</strong></p>
 </aside></script></section><section ><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1281,7 +1344,8 @@ Under this simulation’s assumptions, what would happen to the temperature slop
 Pause and predict before revealing the answer.
 </div>
 
-<aside class="notes"><p>Keep the ecological and measurement models fixed. <strong>Universal use here is an imposed intervention on the toy model, not merely an increase in the net-use intercept</strong> and not a prediction of the real effects of universal bed-net coverage.</p>
+<aside class="notes"><p>Keep the ecological and measurement models fixed.</p>
+<p><strong>Universal use here is an imposed intervention on the toy model, not merely an increase in the net-use intercept</strong> and not a prediction of the real effects of universal bed-net coverage.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1324,14 +1388,22 @@ FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250
 
 <div class="block">
 
-**Both arrows into net use are removed:** everyone is sampled. **The slope returns close to zero** for this fixed population.
+**Both arrows into net use are removed:** everyone is sampled.
+
+**The slope returns close to zero** for this fixed population.
 </div>
 
 
 </div>
 </div>
 
-<aside class="notes"><p>The diagram is the intervened graph: forcing U = 1 removes both incoming causal arrows, T → U and M → U. Sampling equals use and is now constant for everyone, so no selective restriction opens a path between T and M. The disconnected temperature and pressure nodes preserve the assumed ecological independence. The graph focuses on the selection mechanism; the unchanged pressure-to-capture measurement model is omitted for readability. Universal use removes the selection rule. Because this experiment holds one finite ecological population fixed, its expected count slope is 0.7 times that population’s small realised attacker slope, about 0.082, rather than exactly zero. <strong>The displayed simulation range need not contain zero; it reflects capture randomness conditional on this fixed population, not repeated ecological populations.</strong> Points are means and bars are the central 95% of 200 observation/capture replicates; they are not confidence intervals or hypothesis tests. This first comparison holds the ecological population fixed; the next slide regenerates it. <code>R/04_discussion.R</code> regenerates the baseline, simulations, summaries, and figures without reading pre-computed data.</p>
+<aside class="notes"><p>The diagram is the intervened graph: forcing U = 1 removes both incoming causal arrows, T → U and M → U. Sampling equals use and is now constant for everyone, so <strong>no selective restriction opens a path between T and M.</strong></p>
+<p>The disconnected temperature and pressure nodes preserve the assumed ecological independence.</p>
+<p>The graph focuses on the selection mechanism; <strong>the unchanged pressure-to-capture measurement model is omitted for readability.</strong></p>
+<p><strong>Universal use removes the selection rule.</strong></p>
+<p>Because this experiment holds one finite ecological population fixed, its expected count slope is 0.7 times that population’s small realised attacker slope, about 0.082, rather than exactly zero. <strong>The displayed simulation range need not contain zero; it reflects capture randomness conditional on this fixed population, not repeated ecological populations.</strong></p>
+<p>Points are means and bars are the central 95% of 200 observation/capture replicates; they are not confidence intervals or hypothesis tests.</p>
+<p>This first comparison holds the ecological population fixed; the next slide regenerates it. <code>R/04_discussion.R</code> regenerates the baseline, simulations, summaries, and figures without reading pre-computed data.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1364,11 +1436,11 @@ FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250
 
 <div class="block">
 
-**Fixed population:** capture variability around +0.082.
+*Fixed population:* capture variability around +0.082.
 
-**New population:** ecological and capture variability, mean ≈ 0.
+*New population:* ecological and capture variability, mean ≈ 0.
 
-Chance covariance varies between populations.
+**Chance covariance varies between populations.**
 </div>
 
 
@@ -1380,7 +1452,12 @@ Chance covariance varies between populations.
 </div>
 </div>
 
-<aside class="notes"><p>The approaches answer different questions. With one fixed population, <code>E(count slope | T, N) = 0.7 × attacker slope ≈ 0.082</code>; the range is approximately [0.056, 0.103]. With fresh populations, the simulated mean is ≈ 0 and the range is [−0.143, 0.164]. Mechanisms and parameters stay the same; their realisations change. These independent replicates represent new studies under the model; they do not explicitly model spatial or temporal autocorrelation. Neither percentile range is a confidence interval for the ecological effect.</p>
+<aside class="notes"><p><strong>The approaches answer different questions.</strong></p>
+<p>With one <strong>fixed</strong> population, <code>E(count slope | T, N) = 0.7 × attacker slope ≈ 0.082</code>; the range is approximately [0.056, 0.103].</p>
+<p>With <strong>fresh</strong> populations, the simulated mean is ≈ 0 and the range is [−0.143, 0.164].</p>
+<p>Mechanisms and parameters stay the same; their realisations change.</p>
+<p>These independent replicates represent new studies under the model; <strong>they do not explicitly model spatial or temporal autocorrelation.</strong></p>
+<p>Neither percentile range is a confidence interval for the ecological effect.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1390,19 +1467,21 @@ Chance covariance varies between populations.
 
 ## 1. Reproduce and inspect the answer
 
-FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKc3Vic2V0KGRpc2N1c3Npb25fc3VtbWFyeSwgc2NlbmFyaW8gPT0gInVuaXZlcnNhbCIpCmBgYA==ECODDECNEF
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCnN1YnNldChkaXNjdXNzaW9uX3N1bW1hcnksIHNjZW5hcmlvID09ICJ1bml2ZXJzYWwiKQpgYGA=ECODDECNEF
 
-| Scenario         | Mean *n* | Mean slope |
-| ---------------- | -------: | ---------: |
-| Fixed: baseline | 1,960 | +2.490 |
-| Fixed: universal | 6,000 | +0.081 |
-| New: baseline | 1,964 | +2.415 |
-| New: universal | 6,000 | +0.006 |
+| Scenario         | Mean *n* | Mean slope |  
+| ---------------- | -------: | ---------: |  
+| Fixed: baseline  |    1,960 |     +2.490 |  
+| Fixed: universal |    6,000 |     +0.081 |  
+| New: baseline    |    1,964 |     +2.415 |  
+| New: universal   |    6,000 |     +0.006 |  
 
 200 replicates per design; slopes in mosquitoes per °C. <!-- .element: class="caption" -->
 </div>
 
-<aside class="notes"><p>The code displays both universal-coverage designs. The fixed population isolates observation/capture variability; regenerated populations also include ecological variability. Tables come from the same reproducible run.</p>
+<aside class="notes"><p>The code displays both universal-coverage designs.</p>
+<p><strong>The fixed population isolates observation/capture variability; regenerated populations also include ecological variability.</strong></p>
+<p>Tables come from the same reproducible run.</p>
 </aside></script></section></section><section ><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1419,7 +1498,10 @@ Would hotter nights still select houses with greater mosquito pressure?  <!-- .e
 Predict the count–temperature slope, then rerun the observation process.
 </div>
 
-<aside class="notes"><p>Replace the temperature term in <code>logit_p_net</code> with <code>0 * tz</code>, leaving <code>baseline_logit = -1</code> and the nuisance coefficient at 1.75. Regenerate <code>prob_bednet_used</code>, <code>bednet_used</code>, <code>house_sampled</code>, <code>sampled</code>, and recorded counts using a new population at each replicate. Temperature no longer causes selection, so this collider path is removed. Under the independent ecological model and constant entry probability, the count–temperature association is zero in the population selected by this rule; finite simulations fluctuate around that expectation. <strong>The sample can still overrepresent high-pressure houses.</strong> Compare sample composition as well as the slope.</p>
+<aside class="notes"><p>Replace the temperature term in <code>logit_p_net</code> with <code>0 * tz</code>, leaving <code>baseline_logit = -1</code> and the nuisance coefficient at 1.75. Regenerate <code>prob_bednet_used</code>, <code>bednet_used</code>, <code>house_sampled</code>, <code>sampled</code>, and recorded counts using a new population at each replicate.</p>
+<p><strong>Temperature no longer causes selection, so this collider path is removed.</strong> Under the independent ecological model and constant entry probability, the count–temperature association is zero in the population selected by this rule; finite simulations fluctuate around that expectation.</p>
+<p><strong>The sample can still overrepresent high-pressure houses.</strong></p>
+<p>Compare sample composition as well as the slope.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1462,16 +1544,23 @@ FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250
 
 <div class="block">
 
-**Temperature → net use is removed:** selection no longer connects temperature to pressure. 
+**Temperature → net use is removed:** selection no longer connects temperature to pressure.
 
-High-pressure houses remain overrepresented.
+High-pressure houses remain *overrepresented*.
 </div>
 
 
 </div>
 </div>
 
-<aside class="notes"><p>Compare with the baseline collider T → U ← M → (mosquito counts), with U determining sampling. Here T → U is absent because its coefficient is zero. The highlighted sampling node still denotes selection, but no path links temperature to mosquito pressure through U. <strong>M → U remains, so selection still favours high-pressure houses.</strong> The graph focuses on the selection mechanism; the unchanged pressure-to-capture measurement model is omitted for readability. Temperature and mosquito pressure are independent in the generating model. Selection based only on pressure does not induce their dependence in that model. Mean attackers among selected houses rise from about 51.9 to 55.8; absence of this bias does not imply a representative sample. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+<aside class="notes"><p>Compare with the baseline collider T → U ← M → (mosquito counts), with U determining sampling. Here T → U is absent because its coefficient is zero.</p>
+<p>The highlighted sampling node still denotes selection, but no path links temperature to mosquito pressure through U.</p>
+<p><strong>M → U remains, so selection still favours high-pressure houses.</strong></p>
+<p>The graph focuses on the selection mechanism; <strong>the unchanged pressure-to-capture measurement model is omitted for readability.</strong></p>
+<p>Temperature and mosquito pressure are independent in the generating model. Selection based only on pressure does not induce their dependence in that model.</p>
+<p><strong>Mean attackers among selected houses rise from about 51.9 to 55.8;</strong> absence of this bias does not imply a representative sample.</p>
+<p>Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses.</p>
+<p>Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1481,17 +1570,21 @@ High-pressure houses remain overrepresented.
 
 ## 2. Reproduce and inspect the answer
 
-FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkgICAjIHJlZHJhd3Mgd2l0aG91dCByZXNldHRpbmcgdGhlIHNlZWQKb2JzZXJ2ZV9kaXNjdXNzaW9uKHRlbXBlcmF0dXJlX2NvZWYgPSAwLCBwb3B1bGF0aW9uID0gZCkKYGBgECODDECNEF
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkgICAjIHJlZHJhd3Mgd2l0aG91dCByZXNldHRpbmcgdGhlIHNlZWQKCm9ic2VydmVfZGlzY3Vzc2lvbih0ZW1wZXJhdHVyZV9jb2VmID0gMCwgcG9wdWxhdGlvbiA9IGQpCmBgYA==ECODDECNEF
 
 | Scenario       | Mean *n* | Mean slope |
 | -------------- | -------: | ---------: |
-| Baseline | 1,964 | +2.415 |
-| No heat effect | 1,787 | +0.026 |
+| Baseline       |    1,964 |     +2.415 |
+| No heat effect |    1,787 |     +0.026 |
+
 
 200 new populations; scenarios paired within each replicate. <!-- .element: class="caption" -->
 </div>
 
-<aside class="notes"><p>The table comes from the reproducible <code>R/04_discussion.R run</code>; subsequent commands illustrate an additional realisation whose values can differ. <code>generate_discussion_population()</code> redraws temperatures, attackers, standardised variables <code>tz</code> and <code>mz</code>, and baseline selection without resetting the seed. Reuse <code>d</code> to compare scenarios within a replicate. Exported results identify design and replicate. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+<aside class="notes"><p>The table comes from the reproducible <code>R/04_discussion.R</code> run; subsequent commands illustrate an additional realisation whose values can differ. <code>generate_discussion_population()</code> redraws temperatures, attackers, standardised variables <code>tz</code> and <code>mz</code>, and baseline selection without resetting the seed.</p>
+<p>Reuse <code>d</code> to compare scenarios within a replicate. Exported results identify design and replicate.</p>
+<p>Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses.</p>
+<p>Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
 </aside></script></section></section><section ><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1508,7 +1601,10 @@ Would selection for cooler nights alone create a temperature–mosquito associat
 Predict the slope and the sampled temperature distribution.
 </div>
 
-<aside class="notes"><p>Replace the nuisance term in <code>logit_p_net</code> with <code>0 * mz</code>, leaving <code>baseline_logit = -1</code> and the temperature coefficient at -1.25. Regenerate the observation process on each newly generated ecological population. Selection now depends on temperature but not mosquito pressure. Given independent generating processes and a constant capture probability, this removes the collider mechanism. <strong>Cooler nights remain overrepresented</strong>, but the expected count–temperature association is zero. Sampling a narrower temperature range may alter precision. A selected sample need not represent all temperatures to lack bias from this particular collider path.</p>
+<aside class="notes"><p>Replace the nuisance term in <code>logit_p_net</code> with <code>0 * mz</code>, leaving <code>baseline_logit = -1</code> and the temperature coefficient at -1.25. Regenerate the observation process on each newly generated ecological population.</p>
+<p><strong>Selection now depends on temperature but not mosquito pressure.</strong> Given independent generating processes and a constant capture probability, <strong>this removes the collider mechanism.</strong></p>
+<p><strong>Cooler nights remain overrepresented</strong>, but <strong>the expected count–temperature association is zero.</strong></p>
+<p>Sampling a narrower temperature range may alter precision. A selected sample need not represent all temperatures to lack bias from this particular collider path.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1551,14 +1647,21 @@ FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250
 
 <div class="block">
 
-**Pressure → net use is removed:** selection no longer connects pressure to temperature. Cooler nights remain overrepresented.
+**Pressure → net use is removed:** selection no longer connects pressure to temperature.
+
+Cooler nights remain *overrepresented*.
 </div>
 
 
 </div>
 </div>
 
-<aside class="notes"><p>Compare with the baseline collider T → U ← M, with U determining sampling. Here M → U is absent because its coefficient is zero. The highlighted sampling node still denotes selection, but U is no longer a collider on a T–M path. T → U remains, so cooler nights are still more likely to be sampled. The graph focuses on the selection mechanism; the unchanged pressure-to-capture measurement model is omitted for readability. Mean selected temperature is about 25.13 °C versus 27.00 °C in the population. The expected association is zero, although selection changes temperature coverage and precision. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+<aside class="notes"><p>Compare with the baseline collider T → U ← M, with U determining sampling. Here M → U is absent because its coefficient is zero.</p>
+<p>The highlighted sampling node still denotes selection, but U is no longer a collider on a T–M path. T → U remains, so cooler nights are still more likely to be sampled.</p>
+<p>The graph focuses on the selection mechanism; <strong>the unchanged pressure-to-capture measurement model is omitted for readability.</strong></p>
+<p><strong>Mean selected temperature is about 25.13 °C versus 27.00 °C in the population. The expected association is zero, although selection changes temperature coverage and precision.</strong></p>
+<p>Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses.</p>
+<p>Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1568,17 +1671,20 @@ FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250
 
 ## 3. Reproduce and inspect the answer
 
-FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkgICAjIHJlZHJhd3Mgd2l0aG91dCByZXNldHRpbmcgdGhlIHNlZWQKb2JzZXJ2ZV9kaXNjdXNzaW9uKG51aXNhbmNlX2NvZWYgPSAwLCBwb3B1bGF0aW9uID0gZCkKYGBgECODDECNEF
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkgICAjIHJlZHJhd3Mgd2l0aG91dCByZXNldHRpbmcgdGhlIHNlZWQKCm9ic2VydmVfZGlzY3Vzc2lvbihudWlzYW5jZV9jb2VmID0gMCwgcG9wdWxhdGlvbiA9IGQpCmBgYA==ECODDECNEF
 
-| Scenario           | Mean *n* | Mean slope |
-| ------------------ | -------: | ---------: |
-| Baseline | 1,964 | +2.415 |
-| No nuisance effect | 1,897 | +0.010 |
+| Scenario           | Mean *n* | Mean slope |  
+| ------------------ | -------: | ---------: |  
+| Baseline           |    1,964 |     +2.415 |  
+| No nuisance effect |    1,897 |     +0.010 |  
 
 200 new populations; scenarios paired within each replicate. <!-- .element: class="caption" -->
 </div>
 
-<aside class="notes"><p>The table comes from the reproducible <code>R/04_discussion.R</code> run; subsequent commands illustrate an additional realisation whose values can differ. <code>generate_discussion_population()</code> redraws temperatures, attackers, standardised variables <code>tz</code> and <code>mz</code>, and baseline selection without resetting the seed. Reuse <code>d</code> to compare scenarios within a replicate. Exported results identify design and replicate. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+<aside class="notes"><p>The table comes from the reproducible <code>R/04_discussion.R</code> run; subsequent commands illustrate an additional realisation whose values can differ. <code>generate_discussion_population()</code> redraws temperatures, attackers, standardised variables <code>tz</code> and <code>mz</code>, and baseline selection without resetting the seed.</p>
+<p>Reuse <code>d</code> to compare scenarios within a replicate. Exported results identify design and replicate.</p>
+<p>Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses.</p>
+<p>Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
 </aside></script></section></section><section ><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1596,8 +1702,12 @@ At average temperature and pressure: **0.00454% at −10**, **0.67% at −5**, *
 > How do sample size, composition, and the temperature slope change?
 </div>
 
-<aside class="notes"><p>Keep the temperature and nuisance coefficients at -1.25 and +1.75, respectively, and keep <code>bed_net_entry_rate</code> at 0.7. Regenerate net use and capture for each intercept on the same population within a replicate; generate a fresh population for the next replicate. The stated probabilities are conditional on <code>tz = mz = 0</code>, not population-wide sampling fractions. <strong>Raising the intercept increases each house&#39;s net-use probability but also changes which houses are represented; it does not merely increase sample size.</strong> Both parents still influence selection, so changing <strong>the intercept does not remove the collider path.</strong> As net use approaches universal coverage the selected population approaches the full population, but do not promise a monotonic slope change in individual simulations or over every intercept range.</p>
-<p>The default is now −1 (26.9% at mean predictors). The sweep has unit steps from −5 to +1, plus the extreme case −10.</p>
+<aside class="notes"><p>Keep the temperature and nuisance coefficients at -1.25 and +1.75, respectively, and keep <code>bed_net_entry_rate</code> at 0.7.</p>
+<p>Regenerate net use and capture for each intercept on the same population within a replicate; generate a fresh population for the next replicate.</p>
+<p>The stated probabilities are conditional on <code>tz = mz = 0</code>, not population-wide sampling fractions.</p>
+<p><strong>Raising the intercept increases each house&#39;s net-use probability but also changes which houses are represented; it does not merely increase sample size.</strong></p>
+<p>Both parents still influence selection, so changing <strong>the intercept does not remove the collider path.</strong></p>
+<p>As net use approaches universal coverage the selected population approaches the full population, but do not promise a monotonic slope change in individual simulations or over every intercept range.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1639,7 +1749,11 @@ At average temperature and pressure: **0.00454% at −10**, **0.67% at −5**, *
 </div>
 </div>
 
-<aside class="notes"><p>The eight intercepts share one population within each replicate. The default is −1; the grid contains −10 followed by integers −5 through +1. Bars are central 95% Monte Carlo percentile ranges, not confidence intervals. At −10: 14–32 houses (mean 21.88), about 181 attackers per selected house, and 6 negative slopes out of 200. Mean coverage is 0.365%, versus 0.00454% at average predictors. At −5 the smallest sample contains 235 houses; all 200 slopes are estimable at every intercept. High pressure still encourages use. The mean slope remains monotonic over tested values, without a general guarantee. No points between −10 and −5 were simulated. Results have been regenerated after changing the default to −1; Q4’s dedicated seed causes small differences between its baseline and the other questions’ baseline.</p>
+<aside class="notes"><p>The eight intercepts share one population within each replicate. The default is −1; the grid contains −10 followed by integers −5 through +1. Bars are central 95% Monte Carlo percentile ranges, not confidence intervals.</p>
+<p>At −10: 14–32 houses (mean 21.88), about 181 attackers per selected house, and 6 negative slopes out of 200. Mean coverage is 0.365%, versus 0.00454% at average predictors.</p>
+<p>At −5 the smallest sample contains 235 houses; all 200 slopes are estimable at every intercept. High pressure still encourages use.</p>
+<p>The mean slope remains monotonic over tested values, without a general guarantee. No points between −10 and −5 were simulated.</p>
+<p>Results have been regenerated after changing the default to −1; Q4’s dedicated seed causes small differences between its baseline and the other questions’ baseline.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1649,7 +1763,7 @@ At average temperature and pressure: **0.00454% at −10**, **0.67% at −5**, *
 
 ## 4. Reproduce and inspect the answer
 
-FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKZCA8LSBnZW5lcmF0ZV9kaXNjdXNzaW9uX3BvcHVsYXRpb24oKQpvYnNlcnZlX2Rpc2N1c3Npb24oYmFzZWxpbmVfbG9naXQgPSAtMTAsIHBvcHVsYXRpb24gPSBkKQpgYGA=ECODDECNEF
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkKCm9ic2VydmVfZGlzY3Vzc2lvbihiYXNlbGluZV9sb2dpdCA9IC0xMCwgcG9wdWxhdGlvbiA9IGQpCmBgYA==ECODDECNEF
 
 | Intercept | Mean *n* | Mean attackers | Mean slope |
 | --------- | -------: | -------------: | ---------: |
@@ -1665,7 +1779,42 @@ FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKZCA8LSBnZW5lcmF0ZV9kaX
 200 new populations; scenarios paired within each replicate. <!-- .element: class="caption" -->
 </div>
 
-<aside class="notes"><p>The table comes from data/intercept_summary.csv; data/intercept_replicates.csv retains all 1,600 results, including any missing slopes. valid_slopes and empty_samples explicitly report estimability problems. This eight-value experiment uses a separate seed, preserving other questions. Its −1 baseline therefore differs slightly from other tables through Monte Carlo variation. The code illustrates one additional realisation rather than reproducing the means.</p>
+<aside class="notes"><p>The table comes from <code>data/intercept_summary.csv</code>; <code>data/intercept_replicates.csv</code> retains all 1,600 results, including any missing slopes. <code>valid_slopes</code> and <code>empty_samples</code> explicitly report estimability problems.</p>
+<p>This eight-value experiment uses a separate seed, preserving other questions. Its −1 baseline therefore differs slightly from other tables through Monte Carlo variation.</p>
+<p>The code illustrates one additional realisation rather than reproducing the means.</p>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 4. Lower baseline use makes inclusion more unequal
+
+At average temperature ($T\_z=0$), compare average pressure ($M\_z=0$) with very high pressure ($M\_z=4$).
+
+$$ \\Pr(U = 1 \\mid T\_z, M\_z) = \\operatorname{logit}^{-1} (\\alpha - 1.25T\_z + 1.75M\_z) \\\\ p\_0=\\operatorname{logit}^{-1}(\\alpha), \\qquad p\_4=\\operatorname{logit}^{-1}(\\alpha+7) $$
+
+| $\\alpha$ | Net use at $M\_z=0$ ($p\_0$) | Net use at $M\_z=4$ ($p\_4$) | Relative increase |
+|---------:|---------------------------:|---------------------------:|------------------:|
+| −1       | 26.89%                     | 99.75%.                    | **+271%**         |
+| −5       | 0.669%                     | 88.08%                     | **+13,060%**      |
+| −10      | 0.00454%                   | 4.743%                     | **+104,367%**     |
+
+Relative increase = $100(p\_4-p\_0)/p\_0$.
+Calculated probabilities at fixed temperature, not simulation averages.
+<!-- .element: class="caption" -->
+
+> [!evidence]
+> Lower baseline use reduces inclusion in both groups, but increases the relative sampling advantage of high-pressure house-nights.
+</div>
+
+<aside class="notes"><p>Read the table in two directions. Down each probability column, lowering alpha makes net use less likely at either pressure level. Across each row, high pressure makes net use more likely. The final column shows that this relative advantage grows sharply as alpha falls.</p>
+<p>The relative increase is $100 × (p_4 − p_0) / p_0$, not the difference between two percentages expressed in percentage points. An increase of 271% means a probability 3.71 times as large, not 2.71 times. The corresponding probability ratios are approximately 3.71, 131.60, and 1,044.67. Calculate these from unrounded probabilities.</p>
+<p>The nuisance coefficient remains 1.75 throughout. A four-SD pressure increase therefore multiplies the odds of net use by <code>exp(7)</code> in every row. However, a constant odds ratio does not imply a constant probability ratio. When use is already likely, probabilities approach their ceiling of one; when baseline use is very low, high pressure can confer a much larger relative advantage in inclusion.</p>
+<p>These two pressure levels illustrate the mechanism; they are not the only levels present in the population. Actual sample composition also depends on how many house-nights occur at each pressure and temperature. The simulation averages over that complete distribution.</p>
+<p><strong>A smaller random sample would not systematically have higher mean pressure. Here, mean pressure increases because the reduction in sampling is selective, not merely because fewer records remain.</strong></p>
+<p><strong>The ecological population remains the same.</strong></p>
 </aside></script></section></section><section ><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1683,7 +1832,10 @@ FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKZCA8LSBnZW5lcmF0ZV9kaX
 > Does a steeper slope mean a stronger ecological temperature effect?
 </div>
 
-<aside class="notes"><p>Conditional on each selected sample, the expected count slope is p times its attacker slope. Increasing p changes count scale and variability; a raw slope is not a standardised measure of association. The supplementary notes exercise keeps one population fixed; this figure regenerates populations. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+<aside class="notes"><p>Conditional on each selected sample, the expected count slope is $p$ times its attacker slope.</p>
+<p><strong>Increasing $p$ changes count scale and variability; a raw slope is not a standardised measure of association.</strong></p>
+<p>The supplementary notes exercise keeps one population fixed; this figure regenerates populations. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses.</p>
+<p>Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1716,13 +1868,11 @@ FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKZCA8LSBnZW5lcmF0ZV9kaX
 
 <div class="block">
 
-**Same selected houses within each replicate.**
+Same selected houses within each replicate. New population between replicates.
 
-New population between replicates.
+**Expected count slope = entry probability × selected-attacker slope.**
 
-Expected count slope = entry probability × selected-attacker slope.
-
-**The ecological effect is still zero.**
+The ecological effect is still zero.
 </div>
 
 
@@ -1740,7 +1890,9 @@ As `bed_net_entry_rate` approaches zero, the expected recorded-count slope appro
 </div>
 </div>
 
-<aside class="notes"><p>The expected slope is $p$ times the selected-attacker slope within each replicate. Baseline and entry = 0.7 share selected houses but draw independent captures; their means are therefore close, rather than identical. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+<aside class="notes"><p>The expected slope is $p$ times the selected-attacker slope within each replicate. Baseline and entry = 0.7 share selected houses but draw independent captures; their means are therefore close, rather than identical.</p>
+<p>Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses.</p>
+<p>Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1750,19 +1902,22 @@ As `bed_net_entry_rate` approaches zero, the expected recorded-count slope appro
 
 ## 5. Reproduce and inspect the answer
 
-FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkgICAjIHJlZHJhd3Mgd2l0aG91dCByZXNldHRpbmcgdGhlIHNlZWQKb2JzZXJ2ZV9kaXNjdXNzaW9uKGVudHJ5X3JhdGUgPSAwLjksIGZpeGVkX3NhbXBsZSA9IFRSVUUsIHBvcHVsYXRpb24gPSBkKQpgYGA=ECODDECNEF
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkgICAjIHJlZHJhd3Mgd2l0aG91dCByZXNldHRpbmcgdGhlIHNlZWQKCm9ic2VydmVfZGlzY3Vzc2lvbihlbnRyeV9yYXRlID0gMC45LCBmaXhlZF9zYW1wbGUgPSBUUlVFLCBwb3B1bGF0aW9uID0gZCkKYGBgECODDECNEF
 
-| Scenario | Mean *n* | Mean slope |
-| -------- | -------: | ---------: |
-| 0.1 | 1,964 | +0.343 |
-| 0.3 | 1,964 | +1.034 |
-| 0.7 | 1,964 | +2.413 |
-| 0.9 | 1,964 | +3.106 |
+| Scenario | Mean *n* | Mean slope |  
+| -------- | -------: | ---------: |  
+| 0.1      |    1,964 |     +0.343 |  
+| 0.3      |    1,964 |     +1.034 |  
+| 0.7      |    1,964 |     +2.413 |  
+| 0.9      |    1,964 |     +3.106 |  
 
 200 new populations; scenarios paired within each replicate. <!-- .element: class="caption" -->
 </div>
 
-<aside class="notes"><p>The table comes from the reproducible <code>R/04_discussion.R</code> run; subsequent commands illustrate an additional realisation whose values can differ. <code>generate_discussion_population()</code> redraws temperatures, attackers, standardised variables <code>tz</code> and <code>mz</code>, and baseline selection without resetting the seed. Reuse <code>d</code> to compare scenarios within a replicate. Exported results identify design and replicate. Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses. Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
+<aside class="notes"><p>The table comes from the reproducible <code>R/04_discussion.R</code> run; subsequent commands illustrate an additional realisation whose values can differ. <code>generate_discussion_population()</code> redraws temperatures, attackers, standardised variables <code>tz</code> and <code>mz</code>, and baseline selection without resetting the seed.</p>
+<p>Reuse <code>d</code> to compare scenarios within a replicate. Exported results identify design and replicate.</p>
+<p>Each replicate generates a new population of 6,000 house-nights, then applies all scenarios to that same population. Entry-rate variants retain that replicate’s baseline selected houses.</p>
+<p>Points are means; bars are central 95% Monte Carlo percentile ranges across 200 replicates, not confidence intervals.</p>
 </aside></script></section></section><section ><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1780,7 +1935,9 @@ Introduce a **direct causal effect** $\\beta$ of temperature on attacking mosqui
 Explore a **negative, zero, then positive** effect.
 </div>
 
-<aside class="notes"><p>This question changes the causal model. Dependence could also arise from shared environmental causes; here we explicitly choose T → M. Earlier questions retain their independence assumption. Net use changes neither attacker abundance nor entry probability in this toy model; it determines whether counts are available.</p>
+<aside class="notes"><p>This question changes the causal model.</p>
+<p>Dependence could also arise from shared environmental causes; here we explicitly choose T → M.</p>
+<p>Net use changes neither attacker abundance nor entry probability in this toy model; it determines whether counts are available.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1790,18 +1947,26 @@ Explore a **negative, zero, then positive** effect.
 
 ## Temperature effect on pressure
 
-FENCEDCODEr:1:YGBgcgp0ZW1wZXJhdHVyZV9lZmZlY3QgPC0gMC4zICAjIGJldGEKbiA8LSA2MDAwTAphaXJfdGVtcGVyYXR1cmVfYyA8LSBybm9ybShuLCBtZWFuID0gMjcsIHNkID0gMi44KQpsb2dfcHJlc3N1cmUgPC0gcm5vcm0obiwgbWVhbiA9IGxvZygyOCksIHNkID0gMC42NSkgKwogIHRlbXBlcmF0dXJlX2VmZmVjdCAqIChhaXJfdGVtcGVyYXR1cmVfYyAtIDI3KSAvIDIuOAp0cnVlX2F0dGFja2luZ19tb3NxdWl0b2VzIDwtIHJwb2lzKG4sIGxhbWJkYSA9IGV4cChsb2dfcHJlc3N1cmUpKQpgYGA=ECODDECNEF
+FENCEDCODEr:1:YGBgcgp0ZW1wZXJhdHVyZV9lZmZlY3QgPC0gMC4zICAjIGJldGEKCm4gPC0gNjAwMEwKCmFpcl90ZW1wZXJhdHVyZV9jIDwtIHJub3JtKG4sIG1lYW4gPSAyNywgc2QgPSAyLjgpCnR6IDwtIGFzLm51bWVyaWMoc2NhbGUoYWlyX3RlbXBlcmF0dXJlX2MpKSAgIyBzdGFuZGFyZGlzZWQgdGVtcGVyYXR1cmUgKGFzIGJlZm9yZSkKClogPC0gcm5vcm0obiwgbWVhbiA9IDAsIHNkID0gMC42NSkgICMgcmFuZG9tIGVmZmVjdHMgaW4gaG91c2UtbmlnaHQgbG9nIGV4cGVjdGVkIHByZXNzdXJlCmxvZ19wcmVzc3VyZSA8LSBsb2coMjgpICsgdGVtcGVyYXR1cmVfZWZmZWN0ICogdHogKyBaICAjIHRlbXBlcmF0dXJlLWRlcGVuZGVudCBsb2cobGFtYmRhKQoKdHJ1ZV9hdHRhY2tpbmdfbW9zcXVpdG9lcyA8LSBycG9pcyhuLCBsYW1iZGEgPSBleHAobG9nX3ByZXNzdXJlKSkgICMgcmVhbGlzZWQgaG91c2UtbmlnaHQgcHJlc3N1cmUKbXogPC0gYXMubnVtZXJpYyhzY2FsZSh0cnVlX2F0dGFja2luZ19tb3NxdWl0b2VzKSkgICMgc3RhbmRhcmRpc2VkIHJlYWxpc2VkIHByZXNzdXJlCgpwcm9iX2JlZG5ldF91c2VkIDwtIHBsb2dpcygtMSAtIDEuMjUgKiB0eiArIDEuNzUgKiBteikgICMgcHJvYmFiaWxpdHkgb2YgbmV0IHVzZQpgYGA=ECODDECNEF
 
-$N\\mid T,Z \\sim \\operatorname{Poisson}(\\lambda)$, so $E[N\\mid T,Z]=\\lambda$.
+$N\\mid T\_z,Z \\sim \\operatorname{Poisson}(\\lambda)$, so $E[N\\mid T\_z,Z]=\\lambda$.
 
-$\\log(\\lambda)=\\log(28)+\\beta(T-27)/2.8+Z$, $Z\\sim N(0,0.65^2)$, $Z\\perp T$.
+$\\log(\\lambda)=\\log(28)+\\beta T\_z+Z$, $Z\\sim\\mathcal{N}(0,0.65^2)$, $Z\\perp T\_z$.
 
-Here, $T$ is temperature in °C; 27 and 2.8 are the **generating** mean and SD.
+$Z$: house-night heterogeneity in log expected pressure, independent of temperature.
 
-$e^\\beta$ multiplies expected abundance per 2.8 °C increase; $\\beta=0.3$ gives **×1.35**.
+A one-SD increase in temperature—one unit of `tz`—multiplies expected mosquito pressure by $e^\\beta$; $\\beta=0.3$ gives approximately **×1.35, or a 35% increase**.
 </div>
 
-<aside class="notes"><p>$N$ denotes attacking mosquitoes and $\lambda$ their conditional expected count. $N | T,Z$ follows a Poisson distribution; $E[N | T,Z] = \lambda$ is an expectation, not a Poisson-distributed draw. The code independently generates temperature and a normal term with mean $log(28)$ and SD 0.65, equivalent to $log(28) + Z$. $Z$ represents residual heterogeneity across house-nights and is independent of $T$. <code>temperature_effect</code> is $\beta$. Centring and scaling use the fixed parameters 27 and 2.8, not the realised sample mean and SD. The multiplier $exp(\beta)$ holds at fixed $Z$ and after averaging over its independent distribution. The marginal mean conditional on $T$ is $28 &#42; exp(\beta &#42; (T - 27) / 2.8 + 0.65^2 / 2)$; 28 is therefore not the mean attacker count at 27 °C. This code reproduces the ecological part of <code>generate_ecological_population()</code> in <code>R/lib/ecological_effect_compute.R</code>. It does not reset the seed; this illustration need not reproduce the seeded figures. After regenerating attackers, recompute <code>tz</code> and <code>mz</code> from the new vectors before applying the behavioural model; the complete generator does this automatically. Within the assumed causal model, $\beta$ describes a change in log expected abundance, not the fitted linear count slope.</p>
+<aside class="notes"><p>This slide adds a direct ecological effect of temperature while retaining the behavioural filter introduced earlier. Follow the generating sequence: generate temperature; standardise it; generate expected mosquito pressure from temperature and independent house-night heterogeneity; draw the actual number of attackers; standardise those counts; then calculate the probability of net use.</p>
+<p>$N$ is the actual number of attacking mosquitoes in a house-night. $\lambda$ is its conditional expected value, given standardised temperature and the house-night effect $Z$. The Poisson draw generates an integer count around that expectation; the realised count need not equal $\lambda$.</p>
+<p><strong>$Z$ is a random house-night effect on log expected mosquito pressure, not a standardised score.</strong> The code draws one value per house-night from a normal distribution with mean zero and standard deviation 0.65. <strong>It represents ecological heterogeneity not explained by temperature.</strong> Positive values increase expected pressure and negative values decrease it. In this toy model, these effects are generated independently of temperature. This is an assumption, not a claim that all unmeasured influences on mosquito pressure would be independent of temperature in a real study.</p>
+<p>The equation can also be read as $\lambda=28\times e^{\beta T_z}\times e^Z$. Temperature and house-night heterogeneity act additively on log expected pressure and multiplicatively on expected pressure. The normal draw introduces differences in expected pressure among house-nights, while the subsequent Poisson draw introduces variation in actual attacker counts around those expectations. These are ecological components of the simulation, not the later process of mosquito entry into a net.</p>
+<p><strong>Interpret $\beta$ on the correct response scale.</strong> A one-standard-deviation increase in temperature corresponds to a one-unit increase in <code>tz</code>. Holding $Z$ fixed, it multiplies expected attacker count by $e^\beta$. With $\beta=0.3$, the multiplier is approximately 1.35: a 35% increase in expected mosquito pressure. It is not an increase of 1.35 standard deviations in <code>mz</code>, nor a guarantee that two individual house-nights differ by exactly 35%.</p>
+<p>The same multiplier holds after averaging over the independent distribution of $Z$: $E[N\mid T_z]=28\exp(\beta T_z+0.65^2/2)$. At average temperature, the expected count is therefore approximately 34.6, not 28. The value 28 is the conditional expectation when both $T_z=0$ and $Z=0$; it is also the median of the distribution of $\lambda$ at $T_z=0$, not necessarily the median of the realised mosquito counts.</p>
+<p><code>mz</code> is calculated only after generating the attacker counts. It expresses those counts in standard-deviation units for the behavioural filter; it does not change the response scale of the ecological model. The same temperature variable now enters two different processes: $\beta$ changes log expected mosquito pressure, whereas −1.25 changes the log odds of net use. Their coefficients are not directly comparable because their response scales differ.</p>
+<p>The final line computes net-use probabilities only. Actual net use, selection, and captured counts are generated in subsequent steps. Standardisation uses the complete generated population before selection and is not recalculated within the selected sample.</p>
+<p><strong>The teaching question is whether selective observation recovers or distorts an ecological relationship that now genuinely exists in the simulated world.</strong> The ecological coefficient $\beta$ is not the fitted linear count–temperature slope shown in the subsequent comparisons.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1853,7 +2018,9 @@ Selection also opens the collider path T → U ← M. The observed relationship 
 </div>
 </div>
 
-<aside class="notes"><p>One example with temperature_effect = 0.3: each 2.8 °C increase multiplies expected abundance by exp(0.3), about 1.35. Both panels share the population, capture draws, and axis limits. Selection reveals a subset of the same potential counts. The vertical axis displays log(1 + count), with original counts as ticks, including zeros. Curves are linear regressions on raw counts, transformed only for display; negative predictions are omitted. They are descriptive fits, not the exponential generating model. The graph focuses on selection; the unchanged capture model is omitted.</p>
+<aside class="notes"><p>One example with temperature_effect = 0.3: each one-SD temperature increase in the complete generated population multiplies expected abundance by exp(0.3), about 1.35.</p>
+<p>Both panels share the population, capture draws, and axis limits. Selection reveals a subset of the same potential counts. The vertical axis displays log(1 + count), with original counts as ticks, including zeros.</p>
+<p>Curves are linear regressions on raw counts, transformed only for display; negative predictions are omitted. They are descriptive fits, not the exponential generating model. The graph focuses on selection; the unchanged capture model is omitted.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1902,7 +2069,11 @@ The generating coefficient and count slope have different units.
 </div>
 </div>
 
-<aside class="notes"><p>For each effect, 200 independent populations of 6,000 house-nights are generated. Within a replicate, universal coverage and net users share the same captures, with entry probability 0.7. Bars are central 95% Monte Carlo percentile ranges, not confidence intervals. The vertical line at zero marks the original ecological model. Lines between effect values guide the eye. The ecological coefficient acts on log expected abundance per 2.8 °C; the fitted slope describes mosquitoes per °C. Their numerical difference is therefore not a bias measure. Compare the two count slopes instead. mz is recomputed in every population: nuisance sensitivity is held constant per standard deviation, not per mosquito. Changing the ecological effect also changes marginal pressure; the ecological intercept holds expected abundance at 27 °C constant, not its marginal mean.</p>
+<aside class="notes"><p>For each effect, 200 independent populations of 6,000 house-nights are generated. Within a replicate, universal coverage and net users share the same captures, with entry probability 0.7. Bars are central 95% Monte Carlo percentile ranges, not confidence intervals.</p>
+<p>The vertical line at zero marks the original ecological model.</p>
+<p>The ecological coefficient $\beta$ acts on log expected abundance per temperature SD in the complete generated population; the fitted slope describes mosquitoes per °C. Their numerical difference is therefore not a bias measure. Compare the two count slopes instead.</p>
+<p><code>tz</code> and <code>mz</code> are recomputed in every complete population before selection: <strong>temperature and nuisance sensitivity are held constant per realised standard deviation, not per degree or mosquito.</strong></p>
+<p>Changing the ecological effect also changes marginal pressure; the ecological intercept holds expected abundance at <code>tz = 0</code>, the generated population&#39;s mean temperature, constant, not its marginal mean.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1912,18 +2083,22 @@ The generating coefficient and count slope have different units.
 
 ## 6. Reproduce and compare the slopes
 
-FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZWNvbG9naWNhbF9wb3B1bGF0aW9uKHRlbXBlcmF0dXJlX2VmZmVjdCA9IDAuMykKZWNvbG9naWNhbF9zbG9wZXMoZCkKc3Vic2V0KGVjb2xvZ2ljYWxfc3VtbWFyeSwgdGVtcGVyYXR1cmVfZWZmZWN0ICVpbiUgYygtMC4xNSwgMCwgMC4zKSkKYGBgECODDECNEF
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZWNvbG9naWNhbF9wb3B1bGF0aW9uKHRlbXBlcmF0dXJlX2VmZmVjdCA9IDAuMykKCmVjb2xvZ2ljYWxfc2xvcGVzKGQpCgpzdWJzZXQoZWNvbG9naWNhbF9zdW1tYXJ5LCB0ZW1wZXJhdHVyZV9lZmZlY3QgJWluJSBjKC0wLjE1LCAwLCAwLjMpKQpgYGA=ECODDECNEF
 
-| Effect | Universal | Net users | Difference |
-|---|---:|---:|---:|
-| -0.15 | -1.300 | +0.724 | +2.024 |
-| +0.00 | +0.008 | +2.398 | +2.390 |
-| +0.30 | +2.711 | +5.697 | +2.987 |
+| Effect | Universal | Net users | Difference |  
+| ------ | --------: | --------: | ---------: |  
+| -0.15  |    -1.307 |    +0.703 |     +2.009 |  
+| +0.00  |    +0.006 |    +2.398 |     +2.392 |  
+| +0.30  |    +2.717 |    +5.716 |     +2.999 |  
 
 200 populations per effect; slopes in mosquitoes per °C. <!-- .element: class="caption" -->
 </div>
 
-<aside class="notes"><p>R/04_discussion.R generates all results without pre-computed data. generate_ecological_population() uses log_pressure = rnorm(n, log(28), 0.65) + temperature_effect * (air_temperature_c - 27) / 2.8, followed by Poisson counts and the existing net-use model. tz and mz retain their names and are recalculated. The first output illustrates an additional realisation; the table summarises the 200 seeded replicates. Difference = selected slope − universal slope within the same replicate. Results are exported to data/ecological_replicates.csv and data/ecological_summary.csv. A negative universal slope and positive selected slope illustrate reversal; the selected regression alone cannot establish a new causal effect.</p>
+<aside class="notes"><p><code>R/04_discussion.R</code> generates all results without pre-computed data. <code>generate_ecological_population()</code> calculates <code>tz = as.numeric(scale(air_temperature_c))</code>, draws <code>Z = rnorm(n, 0, 0.65)</code>, and uses <code>log_pressure = log(28) + temperature_effect * tz + Z</code>, followed by Poisson counts and the existing net-use model. <code>mz</code> is calculated from the realised attackers before selection.</p>
+<p>The first output illustrates an additional realisation; the table summarises the 200 seeded replicates.</p>
+<p>Difference = selected slope − universal slope within the same replicate.</p>
+<p>Results are exported to <code>data/ecological_replicates.csv</code> and <code>data/ecological_summary.csv</code>. The replicate file also contains <code>expected_universal</code>, the expected universal OLS count slope conditional on that population&#39;s temperatures, integrated over ecological heterogeneity and capture.</p>
+<p>A negative universal slope and positive selected slope illustrate reversal; the selected regression alone cannot establish a new causal effect.</p>
 </aside></script></section></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1953,11 +2128,12 @@ TAKE-HOME MESSAGE <!-- .element: class="eyebrow" -->
 2. Map the process that determines which observations are available.
 3. Check whether selection depends on both exposure and outcome causes.
 
-> [!danger]
+> [!warning]
 > A sample of net users does not automatically represent all houses.
 </div>
 
-<aside class="notes"><p>Connect these messages to the participants’ fieldwork examples. Colliders are properties of paths in a causal graph; an association alone cannot identify the selection mechanism.</p>
+<aside class="notes"><p>Connect these messages to the participants’ fieldwork examples.</p>
+<p>Colliders are properties of paths in a causal graph; an association alone cannot identify the selection mechanism.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1973,11 +2149,12 @@ Designing a more informative study <!-- .element: class="eyebrow" -->
 1. Consider sampling house-nights irrespective of net use, with a measurement method that works in both groups.
 2. Record net use and the reasons observations are missing.
 
-> [!evidence] Evidence
+> [!evidence]
 > Observing net use helps diagnose selection but does not, by itself, identify the missing mosquito counts or guarantee an unbiased causal estimate.
 </div>
 
-<aside class="notes"><p>The design goal is to break the dependence of observation on the behavioural collider. Ask participants to propose and assess an appropriate entomological measurement method; this deck does not validate a specific device.</p>
+<aside class="notes"><p>The design goal is to break the dependence of observation on the behavioural collider.</p>
+<p>Ask participants to propose and assess an appropriate entomological measurement method; this deck does not validate a specific device.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -1989,7 +2166,7 @@ Designing a more informative study <!-- .element: class="eyebrow" -->
 
 <div class="block">
 
-## Toy models: seasonal confounding
+## Model improvements: seasonal confounding
 </div>
 
 
@@ -2031,7 +2208,12 @@ A realistic study must investigate seasonal pathways alongside selection.
 </div>
 </div>
 
-<aside class="notes"><p>The toy models isolate selected mechanisms; <strong>they are not complete causal accounts of mosquito ecology or observation.</strong> Season represents seasonal processes that may jointly influence air temperature and mosquito pressure. This common-cause pathway can produce a population association even without a direct temperature effect on pressure. Temperature may also affect mosquito behaviour and the probability of entering a net, as discussed in the next slide. If entry probability varies with temperature, recorded counts can depend on temperature even under universal coverage and without a temperature effect on attacking abundance. Universal coverage removes the net-use selection mechanism in the toy model; it does not remove seasonal confounding or temperature-dependent capture. A realistic analysis should specify relevant seasonal processes and time scales, investigate capture efficiency across temperatures, and assess these pathways using field knowledge, calibration data, and sensitivity analyses. Question 6 adds a direct ecological effect but still omits these two pathways. None of the simulation results establishes whether these omitted effects are present or how large they are in the field.</p>
+<aside class="notes"><p>The toy models isolate selected mechanisms; <strong>they are not complete causal accounts of mosquito ecology or observation.</strong></p>
+<p><strong>Season represents seasonal processes that may jointly influence air temperature and mosquito pressure. This common-cause pathway can produce a population association even without a direct temperature effect on pressure.</strong></p>
+<p><strong>Temperature may also affect mosquito behaviour and the probability of entering a net</strong>, as discussed in the next slide. If entry probability varies with temperature, recorded counts can depend on temperature even under universal coverage and without a temperature effect on attacking abundance.</p>
+<p><strong>Universal coverage removes the net-use selection mechanism in the toy model; it does not remove seasonal confounding or temperature-dependent capture.</strong></p>
+<p>A realistic analysis should specify relevant seasonal processes and time scales, investigate capture efficiency across temperatures, and assess these pathways using field knowledge, calibration data, and sensitivity analyses. Question 6 adds a direct ecological effect but still omits these two pathways.</p>
+<p>None of the simulation results establishes whether these omitted effects are present or how large they are in the field.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -2043,7 +2225,7 @@ A realistic study must investigate seasonal pathways alongside selection.
 
 <div class="block">
 
-## Toy models: temperature-dependent capture
+## Model improvements: temperature-dependent capture
 </div>
 
 
@@ -2085,7 +2267,9 @@ An association in recorded counts need not be an ecological temperature effect.
 </div>
 </div>
 
-<aside class="notes"><p>The highlighted entry probability is a measurement mechanism. Mosquito pressure also determines recorded counts, so both causes are shown. This diagram isolates the omitted capture pathway; it does not replace the net-use selection graph or assert that all other paths are absent. All scenarios, including question 6, hold entry probability constant within a scenario. A realistic study should investigate temperature-dependent capture alongside seasonal confounding and selection. Universal coverage alone resolves neither omitted pathway.</p>
+<aside class="notes"><p>The highlighted entry probability is a measurement mechanism. Mosquito pressure also determines recorded counts, so both causes are shown. This diagram isolates the omitted capture pathway; it does not replace the net-use selection graph or assert that all other paths are absent.</p>
+<p>All scenarios, including question 6, hold entry probability constant within a scenario. A realistic study should investigate temperature-dependent capture alongside seasonal confounding and selection.</p>
+<p>Universal coverage alone resolves neither omitted pathway.</p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
@@ -2126,7 +2310,14 @@ The dashed link denotes observation availability; proposed causal effects requir
 </div>
 </div>
 
-<aside class="notes"><p>This combines the mechanisms explored separately in the presentation. Season is a common cause of temperature and mosquito pressure. The T → M arrow represents the direct ecological effect to investigate; its presence and magnitude are not established here, and the zero-effect model omits it. T → U ← M remains the behavioural collider, with sampling determined by net use. Temperature also affects entry probability, while both pressure and entry determine potential captured counts. The dashed sampling-to-count link denotes whether a count is recorded; it is an observation-availability link, not an ecological effect on abundance or a claim that missing counts equal zero. The highlighted sampling node marks the restriction defining the available dataset. This is an expanded causal and observation schematic, not a claim that every relevant pathway has been included. It still omits possible feedback, other environmental causes, and heterogeneity in measurement. The seasonal and entry pathways are proposed extensions, not additions already fitted or simulated by the existing scripts. Discuss which arrows field knowledge supports and which data could identify their effects. <strong>Universal sampling alone would not resolve seasonal confounding or temperature-dependent capture.</strong></p>
+<aside class="notes"><p>This combines the mechanisms explored separately in the presentation.</p>
+<p>Season is a common cause of temperature and mosquito pressure.</p>
+<p>The T → M arrow represents the direct ecological effect to investigate; its presence and magnitude are not established here, and the zero-effect model omits it.</p>
+<p>T → U ← M remains the behavioural collider, with sampling determined by net use.</p>
+<p>Temperature also affects entry probability, while both pressure and entry determine potential captured counts.</p>
+<p>The dashed sampling-to-count link denotes whether a count is recorded; it is an observation-availability link, not an ecological effect on abundance or a claim that missing counts equal zero. The highlighted sampling node marks the restriction defining the available dataset.</p>
+<p><strong>This is an expanded causal and observation schematic, not a claim that every relevant pathway has been included.</strong> It still omits possible feedback, other environmental causes, and heterogeneity in measurement. The seasonal and entry pathways are proposed extensions, not additions already fitted or simulated by the existing scripts.</p>
+<p>Discuss which arrows field knowledge supports and which data could identify their effects. <strong>Universal sampling alone would not resolve seasonal confounding or temperature-dependent capture.</strong></p>
 </aside></script></section><section data-separator="?
 ---?
 " data-separator-vertical="?
