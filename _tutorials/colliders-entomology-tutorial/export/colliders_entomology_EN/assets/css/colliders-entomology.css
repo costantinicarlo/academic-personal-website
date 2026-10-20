@@ -1,0 +1,157 @@
+/* Deck-specific sizing; loaded after the unmodified Fieldnote Academic theme. */
+.reveal .title-slide .title-decoration {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 380px;
+  max-width: 31%;
+  height: auto;
+  margin: 0;
+  border-radius: var(--fn-radius);
+  opacity: 0.92;
+  filter: brightness(1.12);
+  pointer-events: none;
+}
+
+/* Reserve a text column so the decoration cannot overlap the title. */
+.reveal .title-slide > h1,
+.reveal .title-slide > p:not(:has(.title-decoration)) {
+  max-width: 64%;
+}
+
+/* Scale the SVG viewport, keeping Mermaid's viewBox aspect ratio intact.
+   Node labels are measured SVG text (htmlLabels:false in each diagram). */
+.reveal .dag-slide .mermaid {
+  width: 100%;
+  height: 390px;
+  margin: 0.25em auto;
+}
+.reveal .dag-slide .mermaid > svg,
+.reveal .fn-causal-area .mermaid > svg {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0;
+}
+.reveal .dag-slide p { margin: .45em 0; }
+.reveal .plot-slide img { max-height: 410px; margin: 0; }
+.reveal .plot-slide .caption { font-size: 22px; }
+
+/* Markdown images sit inside paragraphs in the supplied figure-focus grid. */
+.reveal .fn-figure-area p { width: 100%; margin: 0; }
+.reveal .fn-figure-area img {
+  width: auto;
+  max-width: 100%;
+  max-height: 440px;
+  object-fit: contain;
+  margin: 0;
+}
+.reveal .fn-interpretation { font-size: 0.8em; }
+
+/* Paired result and causal diagram on the first three discussion answers. */
+.reveal .fn-causal-area { text-align: center; }
+.reveal .fn-causal-figure img { max-height: 365px; }
+.reveal .fn-causal-area .mermaid {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.reveal .fn-causal-conclusion {
+  font-size: 0.8em;
+  line-height: 1.3;
+  border-top: 2px solid var(--fn-accent);
+  padding-top: 0.4em;
+}
+
+/* Figure-focus disclaimers: fill the figure grid without resizing nested SVGs. */
+.reveal .disclaimer-dag-slide .fn-figure-area .mermaid {
+  width: 100%;
+  height: 420px;
+  margin: 0;
+}
+.reveal .disclaimer-dag-slide .fn-figure-area .mermaid > svg {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Expanded final causal model uses the full slide width. */
+.reveal .fn-wide-causal-area .mermaid {
+  width: 100%;
+  height: 420px;
+  margin: 0;
+}
+.reveal .fn-wide-causal-area .mermaid > svg {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Explicit template container: unaffected by image-paragraph/alt rewriting.
+   Use the same accent colour as the title's left border. */
+.reveal .title-slide .title-footer {
+  box-sizing: border-box;
+  background: var(--fn-accent, #0b6b63) !important;
+  border-radius: 4px;
+  padding: 8px 12px !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+.reveal .title-slide .title-footer p {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 12px;
+  width: 100%;
+  height: 32px;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+}
+.reveal .title-slide .title-footer a {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 64px;
+  width: 64px !important;
+  height: 32px !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
+}
+.reveal .title-slide .title-footer img {
+  display: block !important;
+  position: static !important;
+  transform: none !important;
+  width: auto !important;
+  height: 32px !important;
+  max-width: 90px !important;
+  max-height: 32px !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+}
+/* Clip transparent margins, keeping the visible artwork inside each badge. */
+.reveal .title-slide .title-footer a:nth-of-type(2) {
+  flex-basis: 90px;
+  width: 90px !important;
+}
+.reveal .title-slide .title-footer a:nth-of-type(2) img {
+  flex: none;
+  width: 98.54px !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+.reveal .title-slide .title-footer a:nth-of-type(4) img {
+  flex: none;
+  height: 45.57px !important;
+  max-height: none !important;
+}

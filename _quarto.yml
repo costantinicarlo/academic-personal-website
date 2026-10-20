@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: _site
+  # Preserve the tutorial's native HTML, CSS and scripts after Quarto processing.
+  post-render:
+    - python3 scripts/publish-colliders-tutorial.py
 
 website:
   title: "Carlo Costantini"

@@ -20,3 +20,22 @@ Each icon should be accompanied by its source, applicable copyright or licence i
 ## Other third-party material
 
 Publication titles, bibliographic records, institutional names, logos, trademarks and externally sourced resources remain subject to their respective rights and terms.
+
+## Colliders in medical entomology tutorial
+
+`_tutorials/colliders-entomology-tutorial/` contains the tutorial hub and complete
+English and French browser presentations from
+[Colliders in medical entomology](https://github.com/costantinicarlo/colliders-entomology-tutorial).
+The original teaching material is by Carlo Costantini and is licensed under
+Creative Commons Attribution 4.0 International, as recorded in the bundle's
+`LICENSE` file and linked from its hub and slides.
+
+The bundled Fieldnote Academic theme retains its MIT licence notice in
+`assets/fieldnote-academic/LICENSE`. Each exported deck includes the tutorial's
+`THIRD_PARTY_NOTICES.md` and a `LICENSES/` directory with the retained licence texts
+for the tutorial, Fieldnote, Slides Extended, Reveal.js and bundled dependencies.
+These files accompany the presentations in the published website. Reveal.js,
+Slides Extended plugins, fonts and other support files retain their respective
+licences and notices.
+Institutional logos remain subject to their owners' rights. The website's default
+content licence does not replace these terms.
