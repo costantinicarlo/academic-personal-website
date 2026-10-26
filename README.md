@@ -84,6 +84,25 @@ _site/
 
 The `_site/` directory is build output and is not part of the authoritative website source.
 
+## Educational slide tutorials
+
+The Resources page links to the **Colliders in medical entomology** tutorial hub,
+which offers English and French Slides Extended presentations and the source
+repository. The complete browser-ready bundle is versioned under
+`_tutorials/colliders-entomology-tutorial/` so a fresh website checkout can publish
+both decks without Obsidian or a separate tutorial checkout.
+
+The Quarto post-render script `scripts/publish-colliders-tutorial.py` copies this
+bundle unchanged into `resources/colliders-entomology-tutorial/` within the
+configured publication output directory. This runs after Quarto's resource
+processing, preserving the exported HTML, CSS, images and Reveal.js support files.
+The existing GitHub Pages workflow uploads the resulting `_site/` directory.
+
+Python 3 is required for this post-render step; no Python packages are needed.
+See [_tutorials/README.md](_tutorials/README.md) for provenance, licences and refresh
+instructions. Edit the tutorial in its source repository and re-export both
+languages before updating the bundled presentations.
+
 ## Publications data pipeline
 
 The Publications page is generated from curated bibliographic metadata rather than maintained manually.

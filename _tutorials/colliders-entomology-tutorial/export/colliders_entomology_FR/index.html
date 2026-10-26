@@ -1,0 +1,2808 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="assets/css/fieldnote-academic-upstream.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/vs2015.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+    <link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+    <link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+    <link rel="stylesheet" href="assets/css/colliders-entomology.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="title-slide drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Collisionneurs en entomologie médicale
+
+Comment un échantillonnage sélectif dû à l’utilisation des moustiquaires peut créer un effet apparent d’une variable environnementale
+
+Une étude de terrain fictive avec des données simulées <!-- .element: class="subtitle" -->
+
+**Carlo Costantini • 24 sept. 2026** <!-- .element: class="byline" -->
+
+<img src="assets/storyline/splashscreen.png" alt="" style="object-fit: scale-down" class="title-decoration">
+
+
+[![118](assets/licensing/cc-by.svg)](https://creativecommons.org/licenses/by/4.0/deed.fr) <!-- .element: class="corner-logo" -->
+
+
+
+
+
+<div class="title-footer" style="position: absolute; left: 4%; top: 90%; height: 7%; width: 32%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+[![UMR MIVEGEC](assets/institutions/mivegec.png)](https://mivegec.fr/) [![IRD](assets/institutions/ird.png)](https://www.ird.fr/) [![CNRS](assets/institutions/cnrs.png)](https://www.cnrs.fr/) [![Université de Montpellier](assets/institutions/universite-montpellier.png)](https://www.umontpellier.fr/)
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Ce tutoriel distingue le processus écologique du processus d’observation. Le scénario source est <code>source/colliders_medical_entomology.md</code>.</p>
+<p>L’absence supposée d’effet de la température est un dispositif pédagogique, et non une conclusion sur l’écologie réelle des moustiques ou le changement climatique.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## À propos de cette présentation
+
+> [!warning] _Nota Bene_
+> - L’étude, les résultats et les réactions institutionnelles représentés dans les dessins sont fictifs.
+> - Les illustrations ne représentent aucune politique ni action réelle des institutions citées.
+</div>
+
+<aside class="notes"><p>Présenter ce cadre avant les dessins. L’avertissement final reprend et développe ces limites.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## La question de recherche
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_01.png" alt="Des chercheurs discutent de la température et des attaques de moustiques" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Une température de l’air plus élevée augmente-t-elle le nombre de moustiques attaquant un hôte ?
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Dans un contexte de préoccupations concernant le changement climatique et les maladies vectorielles, des chercheurs étudient la température nocturne et la pression des moustiques.</p>
+<p>Cette pression désigne ici le nombre de moustiques tentant de piquer un hôte, et non le nombre de piqûres réussies.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## L’objectif de l’étude
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_02.png" alt="Des chercheurs préparent une étude sur la température et la pression des moustiques" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Les chercheurs souhaitent estimer l’effet causal de la température nocturne sur la pression des moustiques.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+Pression = abondance par hôte des moustiques attaquants tentant de piquer, et non le nombre de piqûres réussies.
+</div>
+
+
+
+</div>
+</div>
+
+<aside class="notes"><p>La question visée concerne un effet écologique. Une régression des comptages disponibles sur la température n’y répond pas automatiquement. <strong>Les conséquences possibles pour la transmission motivent l’étude, mais ne sont pas mesurées directement.</strong></p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## L’hypothèse des chercheurs
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEQKV1tSw6ljaGF1ZmZlbWVudCBjbGltYXRpcXVlXSAtLT58YXVnbWVudGV8IEFbVGVtcMOpcmF0dXJlIGRlIGzigJlhaXJdCkFbVGVtcMOpcmF0dXJlIGRlIGzigJlhaXJdIC0tPnxhdWdtZW50ZXwgQltQcmVzc2lvbiBkZXMgbW91c3RpcXVlc10KQiAtLT58YXVnbWVudGV8IENbUmlzcXVlIGRlIHRyYW5zbWlzc2lvbl0KYGBgECODDECNEF
+
+Il s’agit du chemin causal proposé, et non d’un résultat établi.
+</div>
+
+<aside class="notes"><p>La pression des moustiques, les comptages dans les pièges et le risque de transmission sont des quantités distinctes. <strong>Cette hypothèse simplifiée omet d’autres déterminants de la transmission.</strong> La simulation porte sur la pression et les comptages ; elle ne simule pas les infections.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Les moustiquaires comme pièges
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_03.png" alt="Des moustiques entrent dans une moustiquaire usée par ses ouvertures" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Les moustiquaires usées et non imprégnées piègent certains moustiques. Les chercheurs supposent que ces comptages reflètent la pression des moustiques.
+
+> [!danger]
+> Les conséquences pour la transmission motivent l’étude, mais ne sont pas mesurées directement.
+
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+Faute de budget, les scientifiques n’ont pas pu s’offrir des dispositifs d’échantillonnage *proactif*.
+</div>
+
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Sous contrainte budgétaire, les chercheurs choisissent un échantillonnage passif avec les moustiquaires existantes. Les moustiques peuvent entrer par des trous, des fentes ou d&#39;autres ouvertures et rester à l’intérieur jusqu’au matin.</p>
+<p>La proportionnalité entre comptages et attaquants est une hypothèse du modèle fictif de mesure, pas une mesure validée du risque de transmission.</p>
+<p>Chaque attaquant entre indépendamment dans une moustiquaire utilisée avec la probabilité <code>bed_net_entry_rate</code>, y reste et est compté le lendemain matin.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Qui entre dans l’échantillon ?
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_04.png" alt="Des agents collectent les moustiques dans les moustiquaires utilisées la nuit" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Seules les maisons où quelqu’un a dormi sous une moustiquaire la nuit précédente sont échantillonnées.
+
+> [!warning]
+> Posséder une moustiquaire ne rend pas la maison éligible.
+
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Chaque matin, l’équipe interroge les habitants sur l’utilisation effective, indépendamment de la possession d’une moustiquaire. <strong>Aucun comptage n’est enregistré lorsqu’elle n’a pas été utilisée.</strong></p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Mesurer la température nocturne
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_05.png" alt="Les chercheurs relèvent les températures lors des visites matinales" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+L’équipe associe chaque comptage aux mesures de température de la nuit précédente.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Des sondes de température sont installées dans les villages étudiés. La visite matinale permet de recueillir les comptages et les températures de la nuit précédente.</p>
+<p>La simulation simplifie ensuite le dispositif en observations maison-nuit indépendantes ; <strong>elle ne modélise ni les visites répétées ni le regroupement par village</strong>.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## L’association observée
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_06.png" alt="Les chercheurs représentent les comptages en fonction de la température" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Dans les maisons échantillonnées, les nuits plus chaudes sont associées à des comptages plus élevés.
+
+> [!evidence]
+> L’association ajustée décrit les données sélectionnées.
+
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Les chercheurs régressent les comptages sur la température. L’association ajustée décrit les données sélectionnées. Ils l’interprètent comme un effet causal sans examiner comment les maisons sont entrées dans l’échantillon.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Interpréter le résultat
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_07.png" alt="Les chercheurs présentent leurs conclusions aux responsables sanitaires" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Les chercheurs interprètent l’association comme un effet de la température et concluent à un risque accru de transmission.
+
+> [!danger]
+> Deux inférences à examiner :
+> 1. les comptages vers un effet causal sur la pression des moustiques.
+> 2. la pression des moustiques vers le risque de transmission.
+
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Dans ce récit fictif, les responsables sanitaires diffusent des recommandations fondées sur cette interprétation.</p>
+<p>Aucune infection a été mesurée.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Agir sur cette interprétation
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_08.png" alt="Des institutions fictives financent des interventions de refroidissement" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Dans ce récit fictif, les institutions agissent sur la base de l’interprétation causale des chercheurs.
+
+> [!note]
+> Le dessin exagère les conséquences politiques d’inférences non examinées.
+
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Les institutions et logos sont des références illustratives ; la scène ne rapporte aucune recommandation réelle de l’OMS ni décision réelle de financement.</p>
+<p>Demander quelles preuves manquent avant de présenter le mécanisme d’échantillonnage.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## La question et la règle d’échantillonnage
+</div>
+
+
+</div>
+
+<div class="fn-column" style="position: absolute; left: 4%; top: 19%; height: 67%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Cible :** l’effet de la température sur la pression des moustiques parmi les maisons-nuits.
+
+*Quel est le processus écologique sous-jacent aux données ?*
+</div>
+
+
+</div>
+
+<div class="fn-column" style="position: absolute; left: 53%; top: 19%; height: 67%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Données disponibles :** les comptages matinaux dans les maisons où une moustiquaire a été utilisée.
+
+*Processus d'observation : qu’est-ce qui détermine l’utilisation d’une moustiquaire ?*
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Cette diapositive réunit la question de recherche et la règle d’observation. Une maison-nuit correspond à une maison pendant une nuit. La simulation contient 6 000 observations indépendantes, sans plan longitudinal ni échantillonnage en grappes.</p>
+<p>Recueillir les propositions du public avant de révéler les deux causes comportementales.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Le processus écologique supposé
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKQVtUZW1ww6lyYXR1cmUgZGUgbOKAmWFpcl0KQltQcmVzc2lvbiBkZXMgbW91c3RpcXVlc10KYGBgECODDECNEF
+
+Dans cet exemple, la température et la pression des moustiques sont générées **indépendamment**.
+
+L’effet réel de la température est nul par construction. <!-- .element: class="lead" -->
+</div>
+
+<aside class="notes"><p>L’indépendance est une hypothèse explicite de simulation. <strong>L’absence de flèche directe ne suffirait pas à l’établir dans un graphe plus large comportant des causes communes ou des chemins indirects.</strong> Ici, les processus de génération sont indépendants.</p>
+<p>Un jeu de données simulé fini peut néanmoins présenter une petite pente estimée non nulle.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## La chaleur décourage l’utilisation
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_09.png" alt="Une famille n’utilise pas sa moustiquaire lors d’une nuit trop chaude" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Lors des nuits chaudes, l’inconfort réduit la probabilité de dormir sous une moustiquaire.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Ce dessin introduit l’effet négatif supposé de la température sur l’utilisation. Il illustre un mécanisme comportemental, pas un seuil de température estimé.</p>
+<p>Poursuivre avec le diagramme causal à une flèche.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## La température agit sur l’utilisation
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKQVtUZW1ww6lyYXR1cmUgZGUgbOKAmWFpcl0gLS0+fHLDqWR1aXQgbGEgcHJvYmFiaWxpdMOpfCBDW1V0aWxpc2F0aW9uIGRlIGxhIG1vdXN0aXF1YWlyZV0KYGBgECODDECNEF
+
+Dans ce scénario, une température plus élevée réduit la probabilité d’utiliser une moustiquaire.
+</div>
+
+<aside class="notes"><p>La flèche représente un effet causal sur la probabilité d’utilisation. Elle ne signifie pas que personne n’utilise de moustiquaire lors des nuits chaudes.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## La nuisance encourage l’utilisation
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="assets/storyline/storyline_10.png" alt="Une famille se réfugie sous la moustiquaire lorsque les moustiques deviennent insupportables" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Une forte nuisance incite les habitants à utiliser une moustiquaire, même par une nuit chaude.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Le dessin introduit l’effet positif de la pression sur l’utilisation. Distinguer pression et piqûres réussies : une moustiquaire peut éviter les piqûres, alors que les attaquants créent la nuisance qui incite à l’utiliser.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## La pression agit sur l’utilisation
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKQltQcmVzc2lvbiBkZXMgbW91c3RpcXVlc10gLS0+fGF1Z21lbnRlIGxhIHByb2JhYmlsaXTDqXwgQ1tVdGlsaXNhdGlvbiBkZSBsYSBtb3VzdGlxdWFpcmVdCmBgYA==ECODDECNEF
+
+Dans ce scénario, davantage de nuisance favorise l’utilisation de la moustiquaire.
+</div>
+
+<aside class="notes"><p><strong>Le modèle simplifié place la pression avant la décision et ne représente pas les rétroactions comportementales durant la nuit.</strong></p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## L’utilisation est un collisionneur
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKQVtUZW1ww6lyYXR1cmUgZGUgbOKAmWFpcl0gLS0+fHLDqWR1aXQgbGEgcHJvYmFiaWxpdMOpfCBDW1V0aWxpc2F0aW9uIGRlIGxhIG1vdXN0aXF1YWlyZV0KQltQcmVzc2lvbiBkZXMgbW91c3RpcXVlc10gLS0+fGF1Z21lbnRlIGxhIHByb2JhYmlsaXTDqXwgQwpzdHlsZSBDIGZpbGw6I2UyZjBlZCxzdHJva2U6IzBiNmI2MyxzdHJva2Utd2lkdGg6M3B4LGNvbG9yOiMxODIxMmEKYGBgECODDECNEF
+
+Un **collisionneur** est une variable vers laquelle convergent deux flèches.
+</div>
+
+<aside class="notes"><p>La température et la pression agissent en sens opposés sur la même décision comportementale. Leurs effets sur cette décision n’impliquent pas un effet causal de la température sur la pression. Les deux variables causent l’utilisation. <strong>La seule présence d’un collisionneur dans le graphe ne crée pas l’association : la sélection sur ce nœud, ou sur l’un de ses descendants, ouvre le chemin.</strong></p>
+<p><em>Référence</em> : <a href="https://www.dagitty.net/learn/dsep/">https://www.dagitty.net/learn/dsep/</a></p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## L’échantillonnage sélectionne les utilisateurs
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKQVtUZW1ww6lyYXR1cmUgZGUgbOKAmWFpcl0gLS0+fHLDqWR1aXQgbGEgcHJvYmFiaWxpdMOpfCBDW1V0aWxpc2F0aW9uIGRlIGxhIG1vdXN0aXF1YWlyZV0KQltQcmVzc2lvbiBkZXMgbW91c3RpcXVlc10gLS0+fGF1Z21lbnRlIGxhIHByb2JhYmlsaXTDqXwgQwpDIC0tPiBEW01haXNvbiDDqWNoYW50aWxsb25uw6llID0gb3VpXQpzdHlsZSBDIGZpbGw6I2UyZjBlZCxzdHJva2U6IzBiNmI2MyxzdHJva2Utd2lkdGg6MnB4LGNvbG9yOiMxODIxMmEKc3R5bGUgRCBmaWxsOiNmZmYwZDYsc3Ryb2tlOiM5YTYzMWIsc3Ryb2tlLXdpZHRoOjRweCxjb2xvcjojMTgyMTJhCmBgYA==ECODDECNEF
+
+Sélectionner les maisons échantillonnées revient à conditionner sur un **descendant du collisionneur**.
+
+Ici, une maison est échantillonnée si et seulement si sa moustiquaire a été utilisée.
+</div>
+
+<aside class="notes"><p>Le nœud mis en évidence indique la restriction qui définit le jeu de données. Dans la simulation, <code>house_sampled</code> est exactement égal à <code>bednet_used</code> : sélectionner les maisons échantillonnées revient donc à sélectionner les utilisateurs. Plus généralement, <strong>conditionner sur un descendant du collisionneur peut aussi ouvrir le chemin</strong>.</p>
+<p><em>Référence</em> : <a href="https://www.dagitty.net/learn/dsep/">https://www.dagitty.net/learn/dsep/</a></p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="dag-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Comptages et disponibilité des observations
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKQVtUZW1ww6lyYXR1cmUgZGUgbOKAmWFpcl0gLS0+fHLDqWR1aXQgbGEgcHJvYmFiaWxpdMOpfCBDW1V0aWxpc2F0aW9uIGRlIGxhIG1vdXN0aXF1YWlyZV0KQltQcmVzc2lvbiBkZXMgbW91c3RpcXVlc10gLS0+fGF1Z21lbnRlIGxhIHByb2JhYmlsaXTDqXwgQwpDIC0tPiBEW01haXNvbiDDqWNoYW50aWxsb25uw6llID0gb3VpXQpCIC0tPnxlc3DDqXJhbmNlfCBFW0NvbXB0YWdlIG9ic2VydsOpXQpEIC0uLT58ZGlzcG9uaWJsZSBzaSDDqWNoYW50aWxsb25uw6llfCBFCnN0eWxlIEQgZmlsbDojZmZmMGQ2LHN0cm9rZTojOWE2MzFiLHN0cm9rZS13aWR0aDo0cHgsY29sb3I6IzE4MjEyYQpgYGA=ECODDECNEF
+
+La flèche en pointillés indique la disponibilité, et non un effet écologique. <!-- .element: class="source" -->
+
+**Pas d’échantillonnage signifie un comptage manquant, pas zéro moustique.**
+</div>
+
+<aside class="notes"><p>Ce schéma réunit processus écologique et observation.</p>
+<p>Le lien pointillé de disponibilité ne doit pas être interprété comme une flèche causale écologique ordinaire.</p>
+<p><strong>Un comptage potentiel pourrait être défini pour chaque observation, mais il n’est enregistré que pour les maisons sélectionnées.</strong></p>
+<p>Dans le modèle simplifié, la pression détermine son espérance.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#e2f0ed" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="takeaway-slide" -->
+
+EXPLICATION VERBALE <!-- .element: class="eyebrow" -->
+
+## Sélectionner les utilisateurs crée une association
+
+- Par nuit chaude, les maisons où la nuisance est faible ont moins de chances d’entrer dans l’échantillon.
+- Celles où la nuisance est forte restent plus souvent représentées malgré la chaleur.
+- ***Chez les utilisateurs de moustiquaires*, les nuits chaudes peuvent donc *sembler* compter davantage de moustiques.**
+
+Nous évaluons ensuite ces explications quantitativement.
+</div>
+
+<aside class="notes"><p><strong>Il s’agit d’un biais de sélection sur un collisionneur.</strong></p>
+<p>L’exemple montre une association qui apparaît après sélection, plutôt qu’une inversion d’une association substantielle préexistante.</p>
+<p><strong>Son signe positif découle du modèle comportemental choisi ; un biais de collisionneur n’a pas toujours ce signe.</strong></p>
+<p>Faire prédire les tendances dans la population et l’échantillon avant de montrer les résultats.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#132927" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="section-slide" -->
+
+# Simuler le monde
+</div>
+
+<aside class="notes"><p>Déroulement d’une démonstration : demander des prédictions ; montrer les hypothèses écologiques et comportementales ; présenter la population avant l’échantillon ; puis modifier un paramètre comportemental et relancer, si souhaité dans une copie de travail distincte. Garder le processus écologique fixe pour étudier la sélection.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Le mécanisme de génération des données
+
+Nous simulons 6 000 maisons-nuits *indépendantes*.
+
+1. Générer indépendamment la température et la pression des moustiques.
+2. Générer l’utilisation des moustiquaires selon la température et la nuisance.
+3. Échantillonner uniquement les maisons où la moustiquaire est utilisée.
+4. Simuler les entrées dans la moustiquaire par une loi binomiale de probabilité.
+
+**L’effet réel de la température sur la pression est exactement nul.**
+</div>
+
+<aside class="notes"><p>Les objets R nomment ces observations <code>houses</code>.</p>
+<p><strong>Le modèle représente une nuit par maison simulée, sans mesures répétées ni effets de village</strong>. Les coefficients sont illustratifs et ne sont pas estimés sur le terrain.</p>
+</aside></script></section><section ><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Script R : le processus écologique
+
+FENCEDCODEr:1:YGBgcgpzZXQuc2VlZCgyMDI2MDkyMikgICMgcmVwcm9kdWN0aWJpbGl0w6kKbiA8LSA2MDAwTCAgICAgICAgICAjIG5iIGTigJnDqWNoYW50aWxsb25zIGluZMOpcGVuZGFudHMKCmFpcl90ZW1wZXJhdHVyZV9jIDwtIHJub3JtKG4sIG1lYW4gPSAyNywgc2QgPSAyLjgpCgojIG3DqWxhbmdlIFBvaXNzb24tbG9nbm9ybWFsCnRydWVfYXR0YWNraW5nX21vc3F1aXRvZXMgPC0gcnBvaXMobiwgICAgIyB1biBjb21wdGFnZSBkZSBQb2lzc29uIHBhciBtYWlzb24tbnVpdAogIGxhbWJkYSA9IGV4cChybm9ybShuLCBsb2coMjgpLCAwLjY1KSkgICMgZXNww6lyYW5jZXMgbG9nbm9ybWFsZXMgZW50cmUgbWFpc29ucy1udWl0cwopCmBgYA==ECODDECNEF
+
+La pression des moustiques est générée indépendamment de la température. <!-- .element: class="lead" -->
+</div>
+
+<aside class="notes"><p><strong>La moyenne variable de la loi de Poisson autorise une hétérogénéité de pression entre maisons ;</strong> 28 est la <strong>médiane</strong> de $\lambda$, pas sa moyenne ; 0,65 est l’écart-type de $log(\lambda)$. La température n’intervient pas dans son équation de génération.</p>
+<p>Ces extraits suivent <code>R/01_simulate.R</code> ; les diapositives suivantes utilisent directement les vecteurs générés.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## La population simulée sur ses échelles originales
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-wide-causal-area" style="position: absolute; left: 4%; top: 18%; height: 62%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig00_population_distributions.png" alt="La population simulée sur ses échelles originales" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 83%; height: 12%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Température presque symétrique ; pression avec une longue queue à droite.**
+
+Les 6 000 maisons-nuits avant sélection. Axes linéaires ; classes de 1 °C et 10 moustiques. <!-- .element: class="caption" -->
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Ces histogrammes montrent les deux vecteurs générés sur la diapositive parente, avant standardisation, sélection ou capture. Les deux axes sont linéaires et toute l’étendue observée est conservée. La hauteur des barres représente des effectifs, pas des densités ; les unités et largeurs de classes différentes ne permettent pas de comparer directement les hauteurs entre panneaux.</p>
+<p>La température suit une loi normale. Les attaquants suivent un mélange Poisson–lognormal : chaque maison-nuit possède sa propre moyenne de Poisson, distribuée selon une loi lognormale, produisant une distribution asymétrique à droite. Ce mélange n’est ni une loi de Poisson unique ni une loi lognormale des comptages. La médiane de $\lambda$ vaut 28 ; sa moyenne vaut $28 \cdot e^{(0.65^2 / 2)}$.</p>
+<p>Ces distributions marginales ne prouvent pas l’indépendance : celle-ci découle du modèle générateur ; le nuage de points suivant examine l’association réalisée.</p>
+<p>Descendre depuis le code pour voir les distributions, puis reprendre la séquence principale pour la standardisation. Pour reproduire les histogrammes interactivement, utiliser <code>hist(air_temperature_c)</code> et <code>hist(true_attacking_mosquitoes)</code> ; <code>R/03_make_plots.R</code> précise les limites de classes affichées.</p>
+</aside></script></section></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Standardiser pour le modèle comportemental
+
+FENCEDCODEr:1:YGBgcgp0eiA8LSBhcy5udW1lcmljKHNjYWxlKGFpcl90ZW1wZXJhdHVyZV9jKSkKCm16IDwtIGFzLm51bWVyaWMoc2NhbGUodHJ1ZV9hdHRhY2tpbmdfbW9zcXVpdG9lcykpCmBgYA==ECODDECNEF
+
+- **Unités communes :** moyenne 0 et écart-type 1.
+- **Variations comparables :** chaque coefficient décrit une hausse d’un écart-type.
+- **Référence interprétable :** la constante correspond à une température et une pression moyennes.
+</div>
+
+<aside class="notes"><p>Standardiser consiste à soustraire la moyenne et à diviser par l’écart-type de l’échantillon : <code>z = (x - mean(x)) / sd(x)</code>. Les noms <code>tz</code> et <code>mz</code> désignent respectivement température et pression standardisées dans tous les scripts.</p>
+<p>Dans le modèle logistique suivant, <strong>−1,25 est la variation du logit de la probabilité d’utilisation pour une hausse d’un écart-type de température, à pression constante</strong> ; +1,75 est la variation correspondante pour la pression.</p>
+<p>La constante −1 est le logit de la probabilité d’utilisation lorsque la température et la pression sont à leur moyenne.</p>
+<p><strong>La standardisation peut améliorer le conditionnement numérique lorsque les échelles diffèrent, mais n’est pas obligatoire pour une régression logistique.</strong> Elle ne rend pas les comptages asymétriques normaux, ne supprime pas la confusion et ne corrige pas la sélection.</p>
+<p>Exécuter les diapositives de code dans l’ordre : cette étape transforme les vecteurs générés précédemment. Aucun jeu de données pré-calculé n’est nécessaire.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Vérifier l’association avant sélection
+
+FENCEDCODEr:1:YGBgcgp6X2xpbWl0cyA8LSByYW5nZShwcmV0dHkocmFuZ2UoYyh0eiwgbXopKSkpCnBhcihwdHkgPSAicyIpICAjIHpvbmUgZGUgdHJhY8OpIGNhcnLDqWUKCnBsb3QodHosIG16LCB4bGltID0gel9saW1pdHMsIHlsaW0gPSB6X2xpbWl0cywKICAgICBhc3AgPSAxLCB4YXhzID0gImkiLCB5YXhzID0gImkiKQoKY29yLnRlc3QodHosIG16LCBtZXRob2QgPSAicGVhcnNvbiIpCmBgYA==ECODDECNEF
+
+Utiliser les variables standardisées de la diapositive précédente.
+
+La standardisation ne change pas la corrélation de Pearson. <!-- .element: class="lead" -->
+</div>
+
+<aside class="notes"><p>Les variables sont indépendantes par construction : leurs processus de génération ne partagent ni entrées ni liens causaux.</p>
+<p>Le nuage de points et le test recherchent une association linéaire dans la réalisation simulée ; ils ne prouvent pas l’indépendance.</p>
+<p>Une zone carrée, des limites communes et <code>asp = 1</code> assurent la même étendue et le même espacement physique par écart-type sur les deux axes. La standardisation est facultative pour Pearson : $r$, la statistique du test, l’intervalle de confiance et la valeur $p$ restent inchangés.</p>
+<p>Le diagnostic porte sur les 6 000 observations générées, avant toute restriction aux utilisateurs.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Avant sélection : une association quasi nulle
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig05_population_correlation.png" alt="Nuages de points dans les unités d’origine et standardisées, avec la même association linéaire quasi nulle" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Test de Pearson** · *n* = 6000
+
+| Statistique      |           Valeur |
+| ---------------- | ---------------: |
+| *r*              |           0,0125 |
+| IC à 95 %        | −0,0128 à 0,0378 |
+| *t* (ddl = 5998) |           0,9698 |
+| *p* bilatérale   |           0,3322 |
+
+Pas d’association linéaire mise en évidence ; **cela ne prouve pas l’indépendance**.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Les lignes orange sont des ajustements par moindres carrés. Le panneau standardisé utilise les mêmes limites, graduations et espacements sur les deux axes, sans tronquer <code>tz</code> ni <code>mz</code>. La standardisation conserve la corrélation ; l’apparence change lorsque les axes partagent une échelle commune. L’hypothèse nulle est une corrélation de Pearson nulle dans la population ; l’alternative est une corrélation non nulle.</p>
+<p>Le test $t$ et l’intervalle fondé sur la transformation $z$ de Fisher reposent sur des hypothèses de distribution pour une inférence exacte ou approchée. <strong>Les comptages sont ici discrets et asymétriques : considérer ces résultats comme un diagnostic sur grand échantillon, pas comme un test exact d’indépendance.</strong></p>
+<p>Une valeur $p$ non significative n’établit pas un effet nul. <strong>L’indépendance est connue par le plan de simulation.</strong></p>
+<p>La sortie R complète est dans <code>data/population_correlation_test.txt</code> et les statistiques dans <code>data/population_correlation.csv</code>. <code>R/run_all.R</code> régénère les sorties ; <code>R/05_make_french_plots.R</code> produit les figures françaises.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Script R : le filtre comportemental
+
+FENCEDCODEr:1:YGBgcgojIHRlbXDDqXJhdHVyZSBldCBwcmVzc2lvbiBtb3llbm5lcyA6IHR6ID0gMCwgbXogPSAwCmJhc2VsaW5lX2xvZ2l0IDwtIC0xCgpwbG9naXMoYmFzZWxpbmVfbG9naXQpICAjIHByb2JhYmlsaXTDqSBk4oCZdXRpbGlzYXRpb24gZGUgcsOpZsOpcmVuY2UgOiAwLjI2OQoKbG9naXRfcF9uZXQgICAgICA8LSBiYXNlbGluZV9sb2dpdCAtIDEuMjUgKiB0eiArIDEuNzUgKiBteiAgIyBwcsOpZGljdGV1ciBsaW7DqWFpcmUgZHUgbG9naXQKCnByb2JfYmVkbmV0X3VzZWQgPC0gcGxvZ2lzKGxvZ2l0X3BfbmV0KSAgIyBwcm9iYWJpbGl0w6kgZOKAmXV0aWxpc2F0aW9uCgpiZWRuZXRfdXNlZCAgICAgIDwtIHJiaW5vbShuLCAxLCBwcm9iX2JlZG5ldF91c2VkKSAgIyB1dGlsaXNhdGlvbiBlZmZlY3RpdmUKCmhvdXNlX3NhbXBsZWQgICAgPC0gYmVkbmV0X3VzZWQgICMgbWFpc29uIMOpY2hhbnRpbGxvbm7DqWUgc2kgdXRpbGlzYXRpb24KYGBgECODDECNEF
+
+À température et pression moyennes (`tz = mz = 0`), **−1 est le logit de la probabilité d’utilisation**, soit **26,9 % d’utilisation**.
+
+La chaleur réduit l’utilisation (`-1.25 * tz`) ; la nuisance l’augmente (`+1.75 * mz`).
+
+L’*utilisation* effective pour chaque maison-nuit est tirée d’un processus binomial.
+</div>
+
+<aside class="notes"><p><code>tz</code> et <code>mz</code> sont la température et la pression standardisées. Lorsqu’elles valent zéro, le prédicteur égale la constante : <code>-1 = log(p / (1 - p))</code>. L’inverse du logit donne <code>p = plogis(-1) = 0.2689</code>. <strong>Il s’agit de la probabilité conditionnelle aux moyennes des deux variables indépendantes, pas de la probabilité moyenne parmi les maisons</strong> : l’inverse du logit est non linéaire.</p>
+<p>Les coefficients donnent la variation du logit de la probabilité d’utilisation pour une hausse d’un écart-type, l’autre variable indépendante étant fixée. <strong><code>rbinom</code> simule l’utilisation effective, pas la possession ni l’attribution d’une moustiquaire.</strong></p>
+<p>La dernière ligne applique exactement la règle d’échantillonnage.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Script R : les comptages observés
+
+FENCEDCODEr:1:YGBgcgpiZWRfbmV0X2VudHJ5X3JhdGUgPC0gMC43ICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgcHJvYmFiaWxpdMOpIGTigJllbnRyw6llIGNvbnN0YW50ZQoKIyBpbml0aWFsaXNlciBsZSB2ZWN0ZXVyIGRlcyBjb21wdGFnZXMKbW9zcXVpdG9lc19jb3VudGVkX2luc2lkZV9uZXQgPC0gcmVwKE5BX2ludGVnZXJfLCBuKSAjIG5vbiDDqWNoYW50aWxsb25uw6llcyA6IE5BLCBwYXMgesOpcm8KCnNhbXBsZWQgPC0gaG91c2Vfc2FtcGxlZCA9PSAxICAgICAgICAgICAgICAgICAgICAgICAgIyBpZGVudGlmaWVyIGxlcyBjb21wdGFnZXMKc2FtcGxlX3NpemUgPC0gc3VtKHNhbXBsZWQpICAgICAgICAgICAgICAgICAgICAgICAgICAjIG5iIGRlIG1haXNvbnMtbnVpdHMgw6ljaGFudGlsbG9ubsOpZXMKCiMgcHJvY2Vzc3VzIGJpbm9taWFsIGTigJllbnRyw6llIGRhbnMgbGEgbW91c3RpcXVhaXJlCm1vc3F1aXRvZXNfY291bnRlZF9pbnNpZGVfbmV0W3NhbXBsZWRdIDwtIHJiaW5vbSgKICBuID0gc2FtcGxlX3NpemUsCiAgc2l6ZSA9IHRydWVfYXR0YWNraW5nX21vc3F1aXRvZXNbc2FtcGxlZF0sCiAgcHJvYiA9IGJlZF9uZXRfZW50cnlfcmF0ZQopCmBgYA==ECODDECNEF
+
+Chaque moustique attaquant a **70 % de chances d’entrer** à l'intérieur de la moustiquaire.
+
+Les observations non échantillonnées restent **NA**.
+</div>
+
+<aside class="notes"><p>C’est la règle de mesure de <code>R/01_simulate.R</code>.</p>
+<p>Conditionnellement à $N$ attaquants, le comptage suit $\text{Binomiale}(N, p)$, avec <code>p = bed_net_entry_rate = 0.7</code> : espérance $Np$ et variance $Np(1-p)$. Zéro attaquant implique zéro capture, et les captures ne dépassent jamais les attaquants. <strong>La probabilité est illustrative et constante entre maisons et températures.</strong></p>
+<p>Les entrées sont indépendantes et chaque entrant reste à l’intérieur et est compté. Cela ajoute une variabilité par rapport à un comptage parfait, mais pas nécessairement davantage de variance que l’ancien modèle de mesure de Poisson.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Le filtre comportemental d'utilisation/échantillonnage
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig02_selection_surface.png" alt="Probabilité d’utilisation selon la température et la pression des moustiques" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+À température plus élevée, il faut davantage de nuisance pour maintenir la même probabilité d’utilisation.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Lire la surface comme la <strong>probabilité d’entrer dans l’échantillon</strong>, car utilisation et échantillonnage coïncident.</p>
+<p>Demander quelle partie de la population a le moins de chances d’être observée.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#132927" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="section-slide" -->
+
+# Résultats attendus et observés
+
+Quelles pentes attendez-vous avant et après sélection ?
+</div>
+
+<aside class="notes"><p>Faire une pause pour les prédictions.</p>
+<p>L’effet générateur est nul, mais les estimations sur un échantillon fini ne le sont pas nécessairement exactement.</p>
+<p>En démonstration, présenter d’abord la population puis l’échantillon.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="figure-slide plot-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Avant et après sélection
+
+<img src="figures/fr/fig01_population_vs_sample.png" alt="Population complète et échantillon des utilisateurs, avec des associations différentes à la température" style="object-fit: scale-down">
+
+
+Ordonnées logarithmiques, graduées en nombres de moustiques. <!-- .element: class="caption" -->
+
+À gauche, *population* : association quasi **nulle**.
+
+À droite, *échantillon* : association **positive** après sélection.
+</div>
+
+<aside class="notes"><p>Les panneaux changent à la fois la sélection et la mesure représentée.</p>
+<p>Les ordonnées partagent la même échelle logarithmique, avec des graduations en nombres de moustiques. L’unique comptage nul de la population est omis seulement de l’affichage, car zéro ne peut figurer sur cet axe. Les ajustements incluent toutes les observations et utilisent les comptages non transformés ; ils peuvent donc paraître courbes sur l’échelle logarithmique.</p>
+<p>La comparaison suivante distingue sélection et mesure en utilisant les attaquants réels dans l’échantillon comme étape intermédiaire.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Distinguer sélection et entrée dans la moustiquaire
+
+| Analyse                                     | Observations | Pente : moustiques par °C  |  
+| ------------------------------------------- | -----------: | -------------------------: |  
+| Toutes les maisons : attaquants réels       |        6 000 |                     +0,117 |  
+| Maisons sélectionnées : attaquants réels    |        1 987 |                     +3,501 |  
+| Maisons sélectionnées : comptages           |        1 987 |                     +2,489 |  
+
+La sélection crée l’association positive. <!-- .element: class="lead" -->
+
+L’entrée partielle ramène la pente attendue des comptages à 70 % de celle des attaquants sélectionnés.
+</div>
+
+<aside class="notes"><p>Les pentes utilisent les vecteurs générés à pleine précision et sont affichées avec trois décimales. Ce sont des associations linéaires <em>descriptives</em>, pas des effets causaux inférés de l’échantillon.</p>
+<p><strong>L’analyse des attaquants réels est possible grâce à la simulation ; sur le terrain, cette quantité latente ne serait pas observée pour toutes les maisons.</strong></p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Script R : les trois régressions
+
+FENCEDCODEr:1:YGBgcgojIFV0aWxpc2VyIGxlcyB2ZWN0ZXVycyBldCBs4oCZaW5kaWNhdGV1ciBnw6luw6lyw6lzIHByw6ljw6lkZW1tZW50CmZpdF9mdWxsICAgICAgICA8LSBsbSh0cnVlX2F0dGFja2luZ19tb3NxdWl0b2VzICAgICB+IGFpcl90ZW1wZXJhdHVyZV9jKQoKZml0X3NhbXBsZV90cnVlIDwtIGxtKHRydWVfYXR0YWNraW5nX21vc3F1aXRvZXMgICAgIH4gYWlyX3RlbXBlcmF0dXJlX2MsIHN1YnNldCA9IHNhbXBsZWQpCgpmaXRfb2JzZXJ2ZWQgICAgPC0gbG0obW9zcXVpdG9lc19jb3VudGVkX2luc2lkZV9uZXQgfiBhaXJfdGVtcGVyYXR1cmVfYywgc3Vic2V0ID0gc2FtcGxlZCkKYGBgECODDECNEF
+
+Le modèle intermédiaire isole la sélection avant l’entrée partielle.
+
+La régression *linéaire* résume l’association de manière transparente ; passer à une régression de comptage (GLM) ne supprimerait pas, à lui seul, le biais de sélection. <!-- .element: class="source" -->
+</div>
+
+<aside class="notes"><p>Ce sont les trois modèles de <code>R/02_analyse.R</code>.</p>
+<p>Le modèle de population est une comparaison de référence accessible grâce à la simulation.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## L’association apparaît lors de la sélection
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig03_coefficient_comparison.png" alt="Pentes pour tous les attaquants, les attaquants sélectionnés et les comptages sélectionnés" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+La sélection crée une pente positive chez les attaquants.
+
+L’entrée partielle réduit la pente des comptages, tout en préservant l’association.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Lire de haut en bas : tous les attaquants réels, les attaquants sélectionnés, puis les comptages sélectionnés. Les barres sont des intervalles de confiance à 95 %.</p>
+<p><strong>La première comparaison isole la sélection ; la seconde introduit l’entrée binomiale.</strong></p>
+<p>Avec une probabilité constante $p$, l’espérance de la pente des comptages, conditionnelle aux attaquants et températures sélectionnés, vaut $p$ fois leur pente.</p>
+<p>La pente réalisée fluctue autour de cette espérance.</p>
+<p><strong>Les pentes sont dans les unités de comptage d’origine.</strong></p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Association et interprétation causale
+</div>
+
+
+</div>
+
+<div class="fn-column" style="position: absolute; left: 4%; top: 19%; height: 67%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Une régression peut décrire **correctement** l’échantillon observé **sans répondre** à la question écologique.
+</div>
+
+
+</div>
+
+<div class="fn-column" style="position: absolute; left: 53%; top: 19%; height: 67%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Comprendre **comment les observations sont entrées dans le jeu de données** est ici essentiel pour interpréter la pente.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<br>
+La régression linéaire est naïve mais honnête ; l’association naît du biais de sélection sur un collisionneur. <!-- .element: class="lead" -->
+</div>
+
+<aside class="notes"><p><strong>Le problème précède l’ajustement du modèle.</strong> Ajouter l’utilisation comme variable indépendante ne rétablit pas la comparaison manquante dans un échantillon où tout le monde utilise une moustiquaire.</p>
+<p>Ce tutoriel ne prétend pas que tout problème de sélection possède une correction statistique simple.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#132927" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="questions-slide" -->
+
+# DISCUSSION
+</div>
+
+<aside class="notes"><p>Inviter les participants à identifier l’exposition, le résultat ou ses causes, la décision de sélection et ses déterminants comportementaux ou logistiques.</p>
+<p>Dessiner les flèches avant de proposer des ajustements.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Questions à explorer
+
+| Question                                                 | Modification à explorer                       |
+|----------------------------------------------------------|-----------------------------------------------|
+| 1. Et si tout le monde utilisait une moustiquaire ?      | Imposer l’utilisation dans toutes les maisons |
+| 2. Et si la chaleur n’agissait plus sur l’utilisation ?  | Annuler le coefficient de température         |
+| 3. Et si la nuisance n’agissait plus sur l’utilisation ? | Annuler le coefficient de pression            |
+| 4. Et si l’utilisation de référence changeait ?          | Faire varier `baseline_logit`                 |
+| 5. Et si davantage de moustiques entraient ?             | Faire varier `bed_net_entry_rate`             |
+| 6. Et si la température affectait la pression ?          | Ajouter un effet écologique direct            |
+
+Prédire d’abord ; modifier une seule hypothèse à la fois.
+
+> [!note]
+> Une intervention imposant l’utilisation universelle [Q1] diffère d’une augmentation de la constante d’utilisation [Q4].
+</div>
+
+<aside class="notes"><p>Descendre pour les réponses, puis aller à droite pour la question suivante.</p>
+<p>La question 1 compare une population fixe et des populations renouvelées ; les questions 2–6 utilisent uniquement la seconde approche.</p>
+<p>La question 6 apparie les régimes d’observation séparément pour chaque effet écologique.</p>
+<p>Pour les questions 2–5, chaque répétition génère une nouvelle population de 6 000 maisons-nuits, puis applique tous les scénarios à cette même population.</p>
+<p>Les variantes d’entrée conservent les maisons sélectionnées par le scénario de référence de cette répétition.</p>
+<p><strong>Les points sont les moyennes ; les barres sont les plages centrales à 95 % de Monte-Carlo sur 200 répétitions, et non des intervalles de confiance.</strong></p>
+</aside></script></section><section ><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 1. Et si tout le monde utilisait une moustiquaire ?
+
+Sous les hypothèses de cette simulation, que deviendrait la pente si toutes les maisons utilisaient une moustiquaire et étaient échantillonnées ? <!-- .element: class="lead" -->
+
+Faire une pause et prédire avant de révéler la réponse.
+</div>
+
+<aside class="notes"><p>Garder les modèles écologique et de mesure fixes.</p>
+<p><strong>L’utilisation universelle est ici une intervention imposée</strong> au modèle simplifié, <strong>pas une simple hausse de la constante</strong> ni une prédiction des effets réels d’une couverture universelle.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 1. Réponse : tous inclus, sans sélection
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-causal-figure" style="position: absolute; left: 4%; top: 20%; height: 54%; width: 49%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig06_discussion_universal.png" alt="Pente des comptages selon le scénario, avec intervalles de simulation" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-area" style="position: absolute; left: 56%; top: 20%; height: 54%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKVFtUZW1ww6lyYXR1cmUgZGUgbOKAmWFpcl0KTVtQcmVzc2lvbiBkZXMgbW91c3RpcXVlc10KVVtVdGlsaXNhdGlvbiBpbXBvc8OpZSA9IDFdIC0tPiBTW1RvdXRlcyBsZXMgbWFpc29ucyDDqWNoYW50aWxsb25uw6llc10Kc3R5bGUgVSBmaWxsOiNlMmYwZWQsc3Ryb2tlOiMwYjZiNjMsc3Ryb2tlLXdpZHRoOjNweApzdHlsZSBTIGZpbGw6I2UyZjBlZCxzdHJva2U6IzBiNmI2MyxzdHJva2Utd2lkdGg6M3B4CmBgYA==ECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 79%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Les deux flèches vers l’utilisation sont supprimées :** toutes les maisons sont échantillonnées.
+
+**La pente redevient proche de zéro** pour cette population *fixe*.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Le graphe représente l’intervention : imposer U = 1 supprime les deux flèches entrantes, T → U et M → U. L’échantillonnage égale l’utilisation et devient constant pour tous ; <strong>aucune restriction sélective n’ouvre donc de chemin entre T et M.</strong></p>
+<p>Les nœuds déconnectés préservent l’indépendance écologique supposée.</p>
+<p><strong>Le modèle inchangé de mesure pression–capture est omis pour la lisibilité.</strong></p>
+<p><strong>L’utilisation universelle supprime la sélection.</strong></p>
+<p>Pour cette population écologique finie et fixe, la pente attendue des comptages vaut 0,7 fois la petite pente réalisée des attaquants, soit environ 0,082, et non exactement zéro. <strong>L’intervalle de simulation n’a donc pas à contenir zéro : il représente l’aléa de capture conditionnel à cette population, pas des populations écologiques répétées.</strong></p>
+<p>Les points sont les moyennes ; les barres couvrent les 95 % centraux de 200 répétitions d’observation/capture, et ne sont ni des intervalles de confiance ni des tests.</p>
+<p>Cette première comparaison conserve la population ; la diapositive suivante la renouvelle. <code>R/04_discussion.R</code> régénère les simulations sans lire de données pré-calculées ; <code>R/05_make_french_plots.R</code> produit les graphiques français.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 1. Même intervention, deux répétitions possibles
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig06b_universal_replication.png" alt="1. Même intervention, deux répétitions possibles" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+*Population fixe :* aléa de capture autour de +0,082.
+
+*Population renouvelée :* aléas écologique et de capture, moyenne ≈ 0.
+
+**La covariance réalisée peut être non nulle par hasard.**
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p><strong>Les deux approches répondent à des questions différentes.</strong></p>
+<p>Avec une population <strong>fixe</strong>, <code>E(pente des comptages | T, N) = 0,7 × pente des attaquants ≈ 0,082</code> ; la plage vaut environ [0,056 ; 0,103].</p>
+<p>Avec de <strong>nouvelles</strong> populations, la moyenne simulée est ≈ 0 et la plage vaut [−0,143 ; 0,164].</p>
+<p>Les mécanismes et paramètres restent identiques : seules les réalisations changent.</p>
+<p>Ces répétitions indépendantes représentent de nouvelles études sous le modèle ; elles <strong>ne modélisent pas explicitement l’autocorrélation spatiale ou temporelle</strong>.</p>
+<p>Aucune des deux plages n’est un intervalle de confiance pour l’effet écologique.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 1. Reproduire et examiner la réponse
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCnN1YnNldChkaXNjdXNzaW9uX3N1bW1hcnksIHNjZW5hcmlvID09ICJ1bml2ZXJzYWwiKQpgYGA=ECODDECNEF
+
+| Scénario               | *n* moyen | Pente moyenne |  
+| ---------------------- | --------: | ------------: |  
+| Fixe : référence       |     1 960 |        +2,490 |  
+| Fixe : universelle     |     6 000 |        +0,081 |  
+| Nouvelle : référence   |     1 964 |        +2,415 |  
+| Nouvelle : universelle |     6 000 |        +0,006 |  
+
+200 répétitions par approche ; pentes en moustiques par °C. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>Le code affiche les deux approches pour la couverture universelle.</p>
+<p><strong>La population fixe isole l’aléa d’observation/capture ; les populations renouvelées incluent aussi l’aléa écologique.</strong></p>
+<p>Les tables proviennent de la même exécution reproductible.</p>
+</aside></script></section></section><section ><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 2. Et si la chaleur n’agissait plus sur l’utilisation ?
+
+Passer le coefficient de température de **−1,25 à 0**, sans changer la nuisance ni l’utilisation de référence.
+
+Les nuits chaudes sélectionneraient-elles encore les maisons où la pression est plus forte ? <!-- .element: class="lead" -->
+
+Prédire la pente comptage–température, puis relancer le processus d’observation.
+</div>
+
+<aside class="notes"><p>Remplacer le terme de température dans <code>logit_p_net</code> par <code>0 * tz</code>, en gardant <code>baseline_logit = -1</code> et le coefficient de nuisance à 1.75. Régénérer <code>prob_bednet_used</code>, <code>bednet_used</code>, <code>house_sampled</code>, <code>sampled</code> et les comptages sur une nouvelle population à chaque répétition.</p>
+<p><strong>La température ne cause plus la sélection, donc ce chemin de collisionneur disparaît.</strong> Avec les processus écologiques indépendants et une probabilité d’entrée constante, l’association est nulle dans la population sélectionnée par cette règle ; les simulations finies fluctuent autour de cette attente.</p>
+<p><strong>Les maisons à forte pression peuvent rester surreprésentées.</strong></p>
+<p>Comparer la composition autant que la pente.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 2. Réponse : sans chaleur, chemin supprimé
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-causal-figure" style="position: absolute; left: 4%; top: 20%; height: 54%; width: 49%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig07_discussion_no_heat.png" alt="Pente des comptages selon le scénario, avec intervalles de simulation" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-area" style="position: absolute; left: 56%; top: 20%; height: 54%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKVFtUZW1ww6lyYXR1cmUgZGUgbOKAmWFpcl0KTVtQcmVzc2lvbiBkZXMgbW91c3RpcXVlc10gLS0+fGZhdm9yaXNlIGzigJl1dGlsaXNhdGlvbnwgVVtVdGlsaXNhdGlvbiBkZSBsYSBtb3VzdGlxdWFpcmVdClUgLS0+IFNbU8OpbGVjdGlvbiA6IMOpY2hhbnRpbGxvbm7DqWUgPSBvdWldCnN0eWxlIFMgZmlsbDojZmZmMGQ2LHN0cm9rZTojOWE2MzFiLHN0cm9rZS13aWR0aDozcHgKYGBgECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 79%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Température → utilisation est supprimée :** la sélection ne relie plus température et pression.
+
+Les maisons à forte pression restent *surreprésentées*.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Comparer au collisionneur initial T → U ← M → (comptages), où U détermine l’échantillonnage. T → U est ici absent car son coefficient est nul.</p>
+<p>Le nœud surligné représente toujours la sélection, mais aucun chemin ne relie température et pression via U.</p>
+<p><strong>M → U subsiste et favorise les maisons à forte pression.</strong></p>
+<p><strong>Le modèle inchangé pression–capture est omis pour la lisibilité.</strong></p>
+<p>Température et pression sont indépendantes dans le modèle générateur ; sélectionner selon la pression seule ne les rend pas dépendantes.</p>
+<p><strong>La moyenne des attaquants sélectionnés passe d’environ 51,9 à 55,8</strong> ; l’absence de ce biais ne rend pas l’échantillon représentatif.</p>
+<p>Chaque répétition génère une nouvelle population de 6 000 maisons-nuits, puis applique tous les scénarios à cette même population. Les variantes d’entrée conservent les maisons sélectionnées par le scénario de référence de cette répétition.</p>
+<p>Les points sont les moyennes ; les barres sont les plages centrales à 95 % de Monte-Carlo sur 200 répétitions, et non des intervalles de confiance.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 2. Reproduire et examiner la réponse
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkKCm9ic2VydmVfZGlzY3Vzc2lvbih0ZW1wZXJhdHVyZV9jb2VmID0gMCwgcG9wdWxhdGlvbiA9IGQpCmBgYA==ECODDECNEF
+
+| Scénario              | *n* moyen | Pente moyenne |
+| --------------------- | --------: | ------------: |
+| Référence             |     1 964 |        +2,415 |
+| Sans effet de chaleur |     1 787 |        +0,026 |
+
+200 populations nouvelles ; scénarios appariés par répétition. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>Le tableau provient de l’exécution reproductible de <code>R/04_discussion.R</code> ; les commandes suivantes illustrent une réalisation supplémentaire, dont les valeurs peuvent différer. <code>generate_discussion_population()</code> renouvelle températures, attaquants, variables standardisées <code>tz</code> et <code>mz</code>, et sélection de référence, sans réinitialiser la graine.</p>
+<p>Réutiliser <code>d</code> pour comparer les scénarios au sein d’une répétition. Les résultats exportés portent les colonnes design et replicate.</p>
+<p>Chaque répétition génère une nouvelle population de 6 000 maisons-nuits, puis applique tous les scénarios à cette même population. Les variantes d’entrée conservent les maisons sélectionnées par le scénario de référence de cette répétition.</p>
+<p>Les points sont les moyennes ; les barres sont les plages centrales à 95 % de Monte-Carlo sur 200 répétitions, et non des intervalles de confiance.</p>
+</aside></script></section></section><section ><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 3. Et si la nuisance n’agissait plus sur l’utilisation ?
+
+Passer le coefficient de pression de **+1,75 à 0**, sans changer la température ni l’utilisation de référence.
+
+Sélectionner uniquement les nuits fraîches créerait-il une association température–moustiques ? <!-- .element: class="lead" -->
+
+Prédire la pente et la distribution des températures échantillonnées.
+</div>
+
+<aside class="notes"><p>Remplacer le terme de nuisance par <code>0 * mz</code>, en gardant <code>baseline_logit = -1</code> et le coefficient de température à -1.25. Régénérer le processus d’observation sur chaque population nouvellement générée.</p>
+<p><strong>La sélection dépend désormais de la température, mais plus de la pression.</strong> Sous les hypothèses d’indépendance et de probabilité de capture constante, <strong>cela supprime le mécanisme de collisionneur.</strong></p>
+<p><strong>Les nuits fraîches restent surreprésentées</strong>, mais <strong>l’association attendue est nulle.</strong></p>
+<p>Une plage de températures plus étroite peut modifier la précision. L’échantillon n’a pas besoin de représenter toutes les températures pour être exempt de ce biais particulier.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 3. Réponse : nuits fraîches, faible association
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-causal-figure" style="position: absolute; left: 4%; top: 20%; height: 54%; width: 49%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig08_discussion_no_nuisance.png" alt="Pente des comptages selon le scénario, avec intervalles de simulation" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-area" style="position: absolute; left: 56%; top: 20%; height: 54%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKTVtQcmVzc2lvbiBkZXMgbW91c3RpcXVlc10KVFtUZW1ww6lyYXR1cmUgZGUgbOKAmWFpcl0gLS0+fHLDqWR1aXQgbOKAmXV0aWxpc2F0aW9ufCBVW1V0aWxpc2F0aW9uIGRlIGxhIG1vdXN0aXF1YWlyZV0KVSAtLT4gU1tTw6lsZWN0aW9uIDogw6ljaGFudGlsbG9ubsOpZSA9IG91aV0Kc3R5bGUgUyBmaWxsOiNmZmYwZDYsc3Ryb2tlOiM5YTYzMWIsc3Ryb2tlLXdpZHRoOjNweApgYGA=ECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 79%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Pression → utilisation est supprimée :** la sélection ne relie plus pression et température.
+
+Les nuits fraîches restent *surreprésentées*.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Comparer au collisionneur initial T → U ← M, où U détermine l’échantillonnage. M → U disparaît car son coefficient est nul.</p>
+<p>Le nœud surligné représente toujours la sélection, mais U n’est plus un collisionneur sur un chemin T–M. T → U subsiste : les nuits fraîches sont plus souvent échantillonnées.</p>
+<p><strong>Le modèle inchangé pression–capture est omis pour la lisibilité.</strong></p>
+<p><strong>La température moyenne sélectionnée est d’environ 25,13 °C contre 27,00 °C dans la population. L’association attendue est nulle, même si la sélection modifie la couverture thermique et la précision.</strong></p>
+<p>Chaque répétition génère une nouvelle population de 6 000 maisons-nuits, puis applique tous les scénarios à cette même population. Les variantes d’entrée conservent les maisons sélectionnées par le scénario de référence de cette répétition.</p>
+<p>Les points sont les moyennes ; les barres sont les plages centrales à 95 % de Monte-Carlo sur 200 répétitions, et non des intervalles de confiance.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 3. Reproduire et examiner la réponse
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkKCm9ic2VydmVfZGlzY3Vzc2lvbihudWlzYW5jZV9jb2VmID0gMCwgcG9wdWxhdGlvbiA9IGQpCmBgYA==ECODDECNEF
+
+| Scénario               | *n* moyen | Pente moyenne |  
+| ---------------------- | --------: | ------------: |  
+| Référence              |     1 964 |        +2,415 |  
+| Sans effet de nuisance |     1 897 |        +0,010 |  
+
+200 populations nouvelles ; scénarios appariés par répétition. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>Le tableau provient de l’exécution reproductible de <code>R/04_discussion.R</code> ; les commandes suivantes illustrent une réalisation supplémentaire, dont les valeurs peuvent différer. <code>generate_discussion_population()</code> renouvelle températures, attaquants, variables standardisées tz et mz, et sélection de référence, sans réinitialiser la graine.</p>
+<p>Réutiliser <code>d</code> pour comparer les scénarios au sein d’une répétition. Les résultats exportés portent les colonnes design et replicate.</p>
+<p>Chaque répétition génère une nouvelle population de 6 000 maisons-nuits, puis applique tous les scénarios à cette même population. Les variantes d’entrée conservent les maisons sélectionnées par le scénario de référence de cette répétition.</p>
+<p>Les points sont les moyennes ; les barres sont les plages centrales à 95 % de Monte-Carlo sur 200 répétitions, et non des intervalles de confiance.</p>
+</aside></script></section></section><section ><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 4. Et si l’utilisation de référence changeait ?
+
+Comparer `baseline_logit` pour **−10, −5, −4, −3, −2, −1, 0 et +1**.
+
+À température et pression moyennes : **0,00454 % à −10**, **0,67 % à −5**, **26,9 % à −1**, **50 % à 0** et **73,1 % à +1**.
+
+> [!question]
+> Comment changent la taille de l’échantillon, sa composition et la pente ?
+</div>
+
+<aside class="notes"><p>Conserver les coefficients de température et de nuisance à −1,25 et +1,75, et <code>bed_net_entry_rate</code> à 0.7.</p>
+<p>Régénérer utilisation et capture pour chaque constante sur la même population au sein d’une répétition ; renouveler cette population à la répétition suivante.</p>
+<p>Les probabilités citées sont conditionnelles à <code>tz = mz = 0</code> et ne sont pas les fractions échantillonnées dans toute la population.</p>
+<p><strong>Augmenter la constante accroît la probabilité d’utilisation de chaque maison, mais change aussi la composition : pas seulement la taille.</strong></p>
+<p>Les deux parents agissent toujours, donc <strong>le chemin de collisionneur subsiste.</strong></p>
+<p>À l’approche d’une utilisation universelle, l’échantillon se rapproche de la population complète ; ne pas garantir une variation monotone de pente pour chaque réalisation ou sur toute plage de constantes.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 4. Réponse : moins de maisons, pentes plus variables
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-wide-causal-area" style="position: absolute; left: 4%; top: 18%; height: 62%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig09_discussion_intercept.png" alt="Pente des comptages selon le scénario, avec intervalles de simulation" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 83%; height: 12%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**À −10 : environ 22 maisons ; pente moyenne +5,801, plage à 95 % [−0,219 ; 13,857].**
+
+6 pentes sur 200 sont négatives ; toutes restent estimables. La moyenne ne s’inverse pas sur la plage testée.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Les huit constantes partagent une population dans chaque répétition. La référence est −1 ; la grille comprend −10, puis les entiers de −5 à +1. Les barres sont les plages centrales à 95 % de Monte-Carlo, pas des intervalles de confiance.</p>
+<p>À −10 : 14–32 maisons (moyenne 21,88), environ 181 attaquants par maison sélectionnée et 6 pentes négatives sur 200. La couverture moyenne est 0,365 %, contre 0,00454 % aux prédicteurs moyens.</p>
+<p>À −5, le plus petit échantillon contient 235 maisons ; les 200 pentes sont estimables à chaque constante. La forte pression favorise encore l’utilisation.</p>
+<p>La pente moyenne reste monotone sur les valeurs testées, sans garantie générale. Aucun point entre −10 et −5 n’a été simulé.</p>
+<p>Ces résultats sont régénérés après le passage de la référence à −1 ; la graine dédiée à Q4 implique de petites différences entre sa référence et celle des autres questions.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 4. Reproduire et examiner la réponse
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkKCm9ic2VydmVfZGlzY3Vzc2lvbihiYXNlbGluZV9sb2dpdCA9IC0xMCwgcG9wdWxhdGlvbiA9IGQpCmBgYA==ECODDECNEF
+
+| Constante | *n* moyen | Attaquants moyens | Pente moyenne |  
+| --------- | --------: | ----------------: | ------------: |  
+| -10       |        22 |             181,1 |        +5,801 |  
+| -5        |       268 |              94,6 |        +4,495 |  
+| -4        |       459 |              80,8 |        +4,010 |  
+| -3        |       774 |              69,4 |        +3,469 |  
+| -2        |     1 266 |              59,7 |        +2,918 |  
+| -1        |     1 964 |              52,0 |        +2,384 |  
+| 0         |     2 842 |              45,9 |        +1,816 |  
+| 1         |     3 774 |              41,6 |        +1,299 |  
+
+200 populations nouvelles ; scénarios appariés par répétition. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>Le tableau provient de <code>data/intercept_summary.csv</code> ; <code>data/intercept_replicates.csv</code> conserve les 1 600 résultats, y compris les éventuelles pentes manquantes. Les colonnes <code>valid_slopes</code> et <code>empty_samples</code> rendent explicites les problèmes d’estimabilité.</p>
+<p>Les huit valeurs utilisent une graine distincte : les autres questions restent inchangées. La référence à −1 diffère donc légèrement des autres tables par l’aléa de simulation.</p>
+<p>Le code montre une réalisation supplémentaire ; elle ne doit pas reproduire les moyennes.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 4. Une moindre utilisation de référence accentue les écarts d’inclusion
+
+À température moyenne ($T\_z=0$), comparons une pression moyenne ($M\_z=0$) à une pression très élevée ($M\_z=4$).
+
+$$ \\begin{gathered} \\Pr(U = 1 \\mid T\_z, M\_z) = \\operatorname{logit}^{-1} (\\alpha - 1{,}25T\_z + 1{,}75M\_z) \\\\ p\_0=\\operatorname{logit}^{-1}(\\alpha), \\qquad p\_4=\\operatorname{logit}^{-1}(\\alpha+7) \\end{gathered} $$
+
+| $\\alpha$ | Utilisation à $M\_z=0$ ($p\_0$) | Utilisation à $M\_z=4$ ($p\_4$) | Augmentation relative |
+|---:|---:|---:|---:|
+| −1  | 26,89 %   | 99,75 % | **+271 %** |
+| −5  | 0,669 %   | 88,08 % | **+13 060 %** |
+| −10 | 0,00454 % | 4,743 % | **+104 367 %** |
+
+Augmentation relative = $100(p\_4-p\_0)/p\_0$.
+Probabilités calculées à température fixée, et non moyennes de simulation.
+<!-- .element: class="caption" -->
+
+> [!evidence]
+> Une moindre utilisation de référence réduit la probabilité d’inclusion dans les deux groupes, mais accroît l’avantage relatif des maisons-nuits à forte pression pour entrer dans l’échantillon.
+</div>
+
+<aside class="notes"><p>Lire le tableau dans deux directions. En descendant dans chaque colonne de probabilités, la diminution de $\alpha$ rend l’utilisation moins probable aux deux niveaux de pression. Sur chaque ligne, une pression élevée rend l’utilisation plus probable. La dernière colonne montre que cet avantage relatif augmente fortement lorsque $\alpha$ diminue.</p>
+<p>L’augmentation relative vaut $100 \times (p_4-p_0)/p_0$ ; il ne s’agit pas de la différence entre deux pourcentages exprimée en points de pourcentage. Une augmentation de 271 % correspond à une probabilité multipliée par 3,71, et non par 2,71. Les rapports de probabilités correspondants sont approximativement 3,71, 131,60 et 1 044,67. Les calculer à partir des probabilités non arrondies.</p>
+<p>Le coefficient de nuisance reste fixé à 1,75. Une augmentation de pression de quatre écarts-types multiplie donc la cote d’utilisation de la moustiquaire par <code>exp(7)</code> dans chaque ligne. Toutefois, un rapport de cotes constant n’implique pas un rapport de probabilités constant. Lorsque l’utilisation est déjà probable, les probabilités se rapprochent de leur plafond de 1 ; lorsque l’utilisation de référence est très faible, une forte pression peut conférer un avantage relatif d’inclusion beaucoup plus important.</p>
+<p>Ces deux niveaux de pression illustrent le mécanisme ; ils ne sont pas les seuls présents dans la population. La composition effective de l’échantillon dépend aussi du nombre de maisons-nuits à chaque niveau de pression et de température. La simulation calcule des moyennes sur l’ensemble de cette distribution.</p>
+<p><strong>Un échantillon aléatoire plus petit ne présenterait pas systématiquement une pression moyenne plus élevée. Ici, la pression moyenne augmente parce que la réduction de l’échantillonnage est sélective, et non simplement parce qu’il reste moins d’observations.</strong></p>
+<p><strong>La population écologique reste la même.</strong></p>
+</aside></script></section></section><section ><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 5. Et si davantage de moustiques entraient ?
+
+1. Comparer `bed_net_entry_rate` pour **0,1 ; 0,3 ; 0,7 ; 0,9**.
+2. Dans chaque répétition, garder les mêmes maisons pour tous les taux d’entrée.
+3. Renouveler population et sélection à la répétition suivante.
+
+> [!question]
+> Une pente plus forte signifie-t-elle un effet écologique accru de la température ?
+</div>
+
+<aside class="notes"><p>La pente attendue des comptages vaut $p$ fois celle des attaquants sélectionnés, conditionnellement à chaque échantillon.</p>
+<p>Augmenter $p$ change l’échelle et la variabilité des comptages ; une pente brute n’est pas une mesure standardisée d’association.</p>
+<p>L’exercice complémentaire des notes conserve une population fixe ; la figure utilise des populations renouvelées. Chaque répétition génère une nouvelle population de 6 000 maisons-nuits, puis applique tous les scénarios à cette même population. Les variantes d’entrée conservent les maisons sélectionnées par le scénario de référence de cette répétition.</p>
+<p>Les points sont les moyennes ; les barres sont les plages centrales à 95 % de Monte-Carlo sur 200 répétitions, et non des intervalles de confiance.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 5. Réponse : davantage d’entrées, une pente accrue
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig10_discussion_entry.png" alt="Pente des comptages selon le scénario, avec intervalles de simulation" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+Mêmes maisons dans chaque répétition. Population renouvelée entre répétitions.
+
+**Pente attendue des comptages = probabilité d’entrée × pente des attaquants sélectionnés.**
+
+L’effet écologique reste nul.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+Lorsque `bed_net_entry_rate` tend vers zéro, la pente attendue des comptages tend vers zéro. À exactement zéro, tous les comptages — et leur pente ajustée — valent zéro : les captures n’apportent plus aucune information sur la relation entre moustiques attaquants et température.
+</div>
+
+
+
+</div>
+</div>
+
+<aside class="notes"><p>La pente attendue vaut $p$ fois celle des attaquants sélectionnés dans chaque répétition. La référence et le scénario d’entrée à 0,7 partagent les maisons mais ont des captures indépendantes ; leurs moyennes sont donc proches, sans être identiques.</p>
+<p>Chaque répétition génère une nouvelle population de 6 000 maisons-nuits, puis applique tous les scénarios à cette même population. Les variantes d’entrée conservent les maisons sélectionnées par le scénario de référence de cette répétition.</p>
+<p>Les points sont les moyennes ; les barres sont les plages centrales à 95 % de Monte-Carlo sur 200 répétitions, et non des intervalles de confiance.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 5. Reproduire et examiner la réponse
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZGlzY3Vzc2lvbl9wb3B1bGF0aW9uKCkKCm9ic2VydmVfZGlzY3Vzc2lvbihlbnRyeV9yYXRlID0gMC45LCBmaXhlZF9zYW1wbGUgPSBUUlVFLCBwb3B1bGF0aW9uID0gZCkKYGBgECODDECNEF
+
+| Scénario  | *n* moyen | Pente moyenne |  
+| --------- | --------: | ------------: |  
+| 0,1       |     1 964 |        +0,343 |  
+| 0,3       |     1 964 |        +1,034 |  
+| 0,7       |     1 964 |        +2,413 |  
+| 0,9       |     1 964 |        +3,106 |  
+
+200 populations nouvelles ; scénarios appariés par répétition. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p>Le tableau provient de l’exécution reproductible de <code>R/04_discussion.R</code> ; les commandes suivantes illustrent une réalisation supplémentaire, dont les valeurs peuvent différer. <code>generate_discussion_population()</code> renouvelle températures, attaquants, variables standardisées <code>tz</code> et <code>mz</code>, et sélection de référence, sans réinitialiser la graine.</p>
+<p>Réutiliser <code>d</code> pour comparer les scénarios au sein d’une répétition. Les résultats exportés portent les colonnes design et replicate.</p>
+<p>Chaque répétition génère une nouvelle population de 6 000 maisons-nuits, puis applique tous les scénarios à cette même population. Les variantes d’entrée conservent les maisons sélectionnées par le scénario de référence de cette répétition.</p>
+<p>Les points sont les moyennes ; les barres sont les plages centrales à 95 % de Monte-Carlo sur 200 répétitions, et non des intervalles de confiance.</p>
+</aside></script></section></section><section ><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 6. Et si la température affectait la pression ?
+
+Ajouter un **effet causal direct** de la température sur les moustiques attaquants, en conservant les deux influences sur l’utilisation des moustiquaires.
+
+> [!question]
+> La sélection des utilisateurs restitue-t-elle, amplifie-t-elle ou atténue-t-elle la relation écologique ?
+
+Explorer un effet **négatif, nul, puis positif**.
+</div>
+
+<aside class="notes"><p>Cette question change le modèle causal.</p>
+<p>Une dépendance pourrait aussi résulter de causes environnementales communes ; ici, nous choisissons explicitement T → M.</p>
+<p>L’utilisation ne modifie ni l’abondance des attaquants ni la probabilité d’entrée dans ce modèle simplifié ; elle détermine la disponibilité des comptages.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Effet de la température sur la pression
+
+FENCEDCODEr:1:YGBgcgp0ZW1wZXJhdHVyZV9lZmZlY3QgPC0gMC4zICAjIGJldGEKCm4gPC0gNjAwMEwKCmFpcl90ZW1wZXJhdHVyZV9jIDwtIHJub3JtKG4sIG1lYW4gPSAyNywgc2QgPSAyLjgpCgp0eiA8LSBhcy5udW1lcmljKHNjYWxlKGFpcl90ZW1wZXJhdHVyZV9jKSkKClogPC0gcm5vcm0obiwgbWVhbiA9IDAsIHNkID0gMC42NSkKbG9nX3ByZXNzdXJlIDwtIGxvZygyOCkgKyB0ZW1wZXJhdHVyZV9lZmZlY3QgKiB0eiArIFoKCnRydWVfYXR0YWNraW5nX21vc3F1aXRvZXMgPC0gcnBvaXMobiwgbGFtYmRhID0gZXhwKGxvZ19wcmVzc3VyZSkpCm16IDwtIGFzLm51bWVyaWMoc2NhbGUodHJ1ZV9hdHRhY2tpbmdfbW9zcXVpdG9lcykpCgpwcm9iX2JlZG5ldF91c2VkIDwtIHBsb2dpcygtMSAtIDEuMjUgKiB0eiArIDEuNzUgKiBteikKYGBgECODDECNEF
+
+$N\\mid T\_z,Z \\sim \\operatorname{Poisson}(\\lambda)$, donc $E[N\\mid T\_z,Z]=\\lambda$.
+
+$\\log(\\lambda)=\\log(28)+\\beta T\_z+Z$, $Z\\sim\\mathcal{N}(0,0.65^2)$, $Z\\perp T\_z$.
+
+$Z$ : hétérogénéité entre maisons-nuits du logarithme de la pression attendue, indépendante de la température.
+
+Une hausse d’un écart-type de température, soit une unité de `tz`, multiplie la pression attendue par $e^\\beta$ ; pour $\\beta=0{,}3$, cela donne environ **×1,35, soit une hausse de 35 %**.
+</div>
+
+<aside class="notes"><p>Cette diapositive ajoute un effet écologique direct tout en conservant le filtre comportemental. Générer la température, la standardiser sur la population complète, générer la pression attendue avec l’hétérogénéité indépendante, tirer les attaquants, standardiser ces comptages, puis calculer les probabilités d’utilisation.</p>
+<p>$N$ est le nombre réalisé de moustiques attaquants ; $\lambda$ est son espérance conditionnelle à $T_z$ et $Z$. Le tirage de Poisson fournit un comptage entier qui ne vaut pas nécessairement cette espérance.</p>
+<p><strong>$Z$ est un effet aléatoire de maison-nuit sur le logarithme de la pression attendue, pas un score standardisé.</strong> Un tirage normal de moyenne zéro et d’écart-type 0,65 est effectué par maison-nuit. <strong>Il représente l’hétérogénéité écologique non expliquée par la température.</strong> Son indépendance avec la température est une hypothèse du modèle simplifié, pas une propriété établie sur le terrain.</p>
+<p>L’équation s’écrit aussi $\lambda=28\times e^{\beta T_z}\times e^Z$. Les effets sont additifs sur le logarithme et multiplicatifs sur l’espérance. Le tirage normal fait varier les espérances ; le tirage de Poisson fait varier les comptages autour de ces espérances. Ces deux composantes sont écologiques, distinctes de l’entrée ultérieure dans une moustiquaire.</p>
+<p><strong>Interpréter $\beta$ sur la bonne échelle de réponse.</strong> Une hausse d’un écart-type dans la population complète multiplie l’espérance des attaquants par $e^\beta$, à $Z$ fixé. Pour $\beta=0{,}3$, la hausse est d’environ 35 %. Ce n’est ni une hausse de 1,35 écart-type de <code>mz</code>, ni une différence certaine de 35 % entre deux comptages individuels.</p>
+<p>Après intégration sur $Z$, $E[N\mid T_z]=28\exp(\beta T_z+0.65^2/2)$. À température moyenne, l’espérance est donc environ 34,6, pas 28. La valeur 28 est l’espérance conditionnelle lorsque $T_z=0$ et $Z=0$, ainsi que la médiane de la distribution de $\lambda$ à $T_z=0$, pas nécessairement celle des comptages réalisés.</p>
+<p><code>mz</code> est calculé après les attaquants pour le filtre comportemental ; il ne change pas l’échelle de réponse écologique. $\beta$ agit sur le logarithme de la pression attendue, alors que −1,25 agit sur le logit de la probabilité d’utilisation : leurs valeurs ne sont pas directement comparables.</p>
+<p>La dernière ligne calcule seulement les probabilités d’utilisation. L’utilisation effective, la sélection et les captures sont générées ensuite. La standardisation utilise la population complète avant sélection ; elle n’est pas recalculée parmi les utilisateurs.</p>
+<p><strong>La question est de savoir si l’observation sélective retrouve ou déforme une relation écologique réellement présente dans le monde simulé.</strong> $\beta$ n’est pas la pente linéaire comptage–température des comparaisons suivantes.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 6. Réponse : deux chemins contribuent
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-causal-figure" style="position: absolute; left: 4%; top: 20%; height: 54%; width: 49%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig11_ecological_selection.png" alt="6. Réponse : deux chemins contribuent" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-causal-area" style="position: absolute; left: 56%; top: 20%; height: 54%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKVFtUZW1ww6lyYXR1cmUgZGUgbOKAmWFpcl0gLS0+IE1bUHJlc3Npb24gZGVzIG1vdXN0aXF1ZXNdClQgLS0+fHLDqWR1aXQgbOKAmXV0aWxpc2F0aW9ufCBVW1V0aWxpc2F0aW9uIGRlIGxhIG1vdXN0aXF1YWlyZV0KTSAtLT58ZmF2b3Jpc2UgbOKAmXV0aWxpc2F0aW9ufCBVClUgLS0+IFNbU8OpbGVjdGlvbiA6IMOpY2hhbnRpbGxvbm7DqWUgPSBvdWldCnN0eWxlIFMgZmlsbDojZmZmMGQ2LHN0cm9rZTojOWE2MzFiLHN0cm9rZS13aWR0aDozcHgKYGBgECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 79%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Un chemin écologique existe désormais : T → M.**
+
+La sélection ouvre aussi le chemin par le collisionneur T → U ← M. La relation observée reflète les deux processus.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Un exemple avec temperature_effect = 0.3 : chaque hausse d’un écart-type de température dans la population complète multiplie l’abondance attendue par exp(0.3), soit environ 1,35.</p>
+<p>Les deux panneaux partagent population, captures et limites des axes. La sélection révèle un sous-ensemble des mêmes comptages potentiels. L’axe vertical affiche log(1 + comptage), avec les comptages originaux comme graduations, zéros inclus.</p>
+<p>Les courbes représentent les régressions linéaires sur les comptages bruts, transformées uniquement pour l’affichage ; les prédictions négatives sont omises. Les courbes sont descriptives, pas le modèle générateur exponentiel. Le graphe montre la sélection ; le modèle de capture inchangé est omis.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## 6. Faire varier l’effet écologique
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+<img src="figures/fr/fig12_ecological_sweep.png" alt="6. Faire varier l’effet écologique" style="object-fit: scale-down">
+
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Comparer à la couverture universelle au même effet écologique.**
+
+À −0,15, le signe est inversé ; à +0,30, la pente positive est amplifiée.
+
+Le coefficient générateur et la pente des comptages ont des unités différentes.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+
+</div>
+</div>
+
+<aside class="notes"><p>À chaque valeur de l’effet, 200 populations indépendantes de 6 000 maisons-nuits sont générées. Dans chaque répétition, couverture universelle et utilisateurs partagent les mêmes captures, avec une probabilité d’entrée de 0,7. Les barres sont des plages centrales à 95 % de Monte-Carlo, pas des intervalles de confiance.</p>
+<p>La ligne verticale à zéro correspond au modèle écologique initial.</p>
+<p>L’effet écologique $\beta$ agit sur le logarithme de l’abondance attendue par écart-type de température dans la population complète ; la pente ajustée décrit des moustiques par °C. Leur différence numérique n’est donc pas une mesure de biais. Comparer plutôt les deux pentes de comptages.</p>
+<p><code>tz</code> et <code>mz</code> sont recalculées dans chaque population complète avant sélection : <strong>les sensibilités restent constantes par écart-type réalisé, pas par degré ni par moustique.</strong></p>
+<p>Modifier l’effet change aussi la distribution marginale de pression ; la constante écologique maintient l’abondance attendue à <code>tz = 0</code>, la température moyenne de la population générée, pas sa moyenne marginale.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="compact-code drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## 6. Reproduire et comparer les pentes
+
+FENCEDCODEr:1:YGBgcgpzb3VyY2UoIlIvMDRfZGlzY3Vzc2lvbi5SIikKCmQgPC0gZ2VuZXJhdGVfZWNvbG9naWNhbF9wb3B1bGF0aW9uKHRlbXBlcmF0dXJlX2VmZmVjdCA9IDAuMykKCmVjb2xvZ2ljYWxfc2xvcGVzKGQpCgpzdWJzZXQoZWNvbG9naWNhbF9zdW1tYXJ5LCB0ZW1wZXJhdHVyZV9lZmZlY3QgJWluJSBjKC0wLjE1LCAwLCAwLjMpKQpgYGA=ECODDECNEF
+
+| Effet | Universelle | Utilisateurs | Écart  |  
+| ----- | ----------: | -----------: | -----: |  
+| -0,15 |      -1,307 |       +0,703 | +2,009 |  
+| +0,00 |      +0,006 |       +2,398 | +2,392 |  
+| +0,30 |      +2,717 |       +5,716 | +2,999 |  
+
+200 populations par effet ; pentes en moustiques par °C. <!-- .element: class="caption" -->
+</div>
+
+<aside class="notes"><p><code>R/04_discussion.R</code> génère tous les résultats sans données pré-calculées. <code>generate_ecological_population()</code> calcule <code>tz = as.numeric(scale(air_temperature_c))</code>, tire <code>Z = rnorm(n, 0, 0.65)</code>, et utilise <code>log_pressure = log(28) + temperature_effect * tz + Z</code>, puis une loi de Poisson et le modèle habituel d’utilisation. <code>mz</code> est calculée à partir des attaquants réalisés avant sélection.</p>
+<p>La première sortie illustre une réalisation supplémentaire ; le tableau résume les 200 répétitions à graine fixée.</p>
+<p>Écart = pente des utilisateurs − pente universelle dans la même répétition.</p>
+<p>Les résultats sont exportés dans <code>data/ecological_replicates.csv</code> et <code>data/ecological_summary.csv</code>. Le fichier des répétitions contient aussi <code>expected_universal</code>, la pente universelle attendue conditionnelle aux températures de la population, après intégration sur l’hétérogénéité écologique et la capture.</p>
+<p>Une pente universelle négative et une pente sélectionnée positive illustrent une inversion ; aucune nouvelle causalité ne peut être déduite de la seule régression sélectionnée.</p>
+</aside></script></section></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#132927" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="questions-slide" -->
+
+# CONCLUSIONS
+</div>
+
+<aside class="notes"><p>Message final à retenir, plan d’étude et améliorations du modèle.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#e2f0ed" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="takeaway-slide" -->
+
+MESSAGE À RETENIR <!-- .element: class="eyebrow" -->
+## Distinguer les processus écologique et observationnel
+
+1. Préciser la question écologique et ses hypothèses causales.
+2. Décrire le processus qui détermine les observations disponibles.
+3. Vérifier si la sélection dépend de l’exposition et de causes du résultat.
+
+> [!attention]
+> Un échantillon d’utilisateurs de moustiquaires ne représente pas automatiquement toutes les maisons.
+</div>
+
+<aside class="notes"><p>Relier ces messages aux exemples de terrain des participants.</p>
+<p>Les collisionneurs sont des propriétés des chemins d’un graphe causal ; une association seule n’identifie pas le mécanisme de sélection.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#e2f0ed" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="takeaway-slide" -->
+
+Concevoir une étude plus informative <!-- .element: class="eyebrow" -->
+## Comment mesurer la pression des moustiques indépendamment du choix d’utiliser une moustiquaire ?
+
+1. Envisager d’échantillonner les maisons-nuits quel que soit l’usage de la moustiquaire, avec une méthode de mesure applicable aux deux groupes.
+2. Consigner l’utilisation des moustiquaires et les raisons des observations manquantes.
+
+> [!evidence]
+> Observer l’utilisation aide à diagnostiquer la sélection, mais ne permet pas à elle seule de retrouver les comptages manquants ni de garantir une estimation causale sans biais.
+</div>
+
+<aside class="notes"><p>L’objectif est de rompre la dépendance de l’observation au collisionneur comportemental.</p>
+<p>Faire proposer et évaluer une méthode de mesure entomologique adaptée ; le diaporama ne valide aucun dispositif particulier.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="disclaimer-dag-slide drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Modèles simplifiés : confusion saisonnière
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKU1tTYWlzb25dIC0tPiBUW1RlbXDDqXJhdHVyZSBkZSBs4oCZYWlyXQpTIC0tPiBNW1ByZXNzaW9uIGRlcyBtb3VzdGlxdWVzXQpzdHlsZSBTIGZpbGw6I2ZmZjBkNixzdHJva2U6IzlhNjMxYixzdHJva2Utd2lkdGg6M3B4CmBgYA==ECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Une cause commune peut créer une association.**
+
+La saison peut agir sur la température et la pression, même sans effet direct de la température.
+
+Nos modèles omettent ce chemin.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+Une étude réaliste doit examiner les chemins saisonniers en plus de la sélection.
+</div>
+
+
+
+</div>
+</div>
+
+<aside class="notes"><p><strong>Ces modèles pédagogiques isolent certains mécanismes ; ils ne décrivent pas intégralement l’écologie des moustiques ni leur observation.</strong></p>
+<p><strong>La saison représente des processus saisonniers susceptibles d’influencer à la fois la température et la pression des moustiques. Ce chemin par une cause commune peut produire une association dans la population sans effet direct de la température sur la pression.</strong></p>
+<p><strong>La température peut aussi modifier le comportement des moustiques et leur probabilité d’entrée dans une moustiquaire.</strong> Si cette probabilité varie avec la température, les comptages peuvent dépendre de celle-ci même sous couverture universelle et sans effet sur l’abondance des attaquants.</p>
+<p><strong>Dans le modèle simplifié, la couverture universelle supprime la sélection liée à l’utilisation ; elle ne supprime ni la confusion saisonnière ni la capture dépendante de la température.</strong></p>
+<p>Une analyse réaliste doit préciser les processus saisonniers et les échelles temporelles, étudier l’efficacité de capture selon la température et examiner ces chemins à l’aide des connaissances de terrain, de données de calibration et d’analyses de sensibilité. La question 6 ajoute un effet écologique direct, mais omet encore ces deux chemins.</p>
+<p>Les simulations n’établissent ni leur présence ni leur ampleur sur le terrain.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="disclaimer-dag-slide drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Modèles simplifiés : capture et température
+</div>
+
+
+</div>
+
+<div class="fn-figure-area" style="position: absolute; left: 4%; top: 18%; height: 66%; width: 62%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgVEIKVFtUZW1ww6lyYXR1cmUgZGUgbOKAmWFpcl0gLS0+IFBbUHJvYmFiaWxpdMOpIGTigJllbnRyw6llXQpQIC0tPiBDW0NvbXB0YWdlcyBvYnNlcnbDqXNdCk1bUHJlc3Npb24gZGVzIG1vdXN0aXF1ZXNdIC0tPiBDCnN0eWxlIFAgZmlsbDojZmZmMGQ2LHN0cm9rZTojOWE2MzFiLHN0cm9rZS13aWR0aDozcHgKYGBgECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-interpretation" style="position: absolute; left: 69%; top: 18%; height: 66%; width: 27%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Les comptages reflètent abondance et capture.**
+
+La température peut modifier `bed_net_entry_rate`, même si l’abondance des attaquants reste constante.
+
+La couverture universelle ne supprime pas ce chemin.
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+Une association dans les comptages n’est pas nécessairement un effet écologique de la température.
+</div>
+
+
+
+</div>
+</div>
+
+<aside class="notes"><p>La probabilité d’entrée surlignée représente un mécanisme de mesure. La pression détermine aussi les comptages : ces deux causes sont donc représentées. Ce schéma isole le chemin de capture omis ; il ne remplace pas le graphe de sélection et ne suppose pas l’absence de tous les autres chemins.</p>
+<p>Tous les scénarios, y compris la question 6, fixent la probabilité d’entrée au sein d’un scénario. Une étude réaliste doit examiner la capture dépendante de la température, la confusion saisonnière et la sélection.</p>
+<p>La couverture universelle seule ne résout aucun de ces deux chemins omis.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Un modèle causal élargi à examiner
+</div>
+
+
+</div>
+
+<div class="fn-figure-area fn-wide-causal-area" style="position: absolute; left: 4%; top: 18%; height: 62%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+<div class="block">
+
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXtpbml0OiB7InRoZW1lVmFyaWFibGVzIjogeyJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogIjI0cHgifSwgImZsb3djaGFydCI6IHsiaHRtbExhYmVscyI6IGZhbHNlLCAidXNlTWF4V2lkdGgiOiBmYWxzZSwgInBhZGRpbmciOiAyNH0sICJodG1sTGFiZWxzIjogZmFsc2UsICJmb250RmFtaWx5IjogIkFyaWFsLCBzYW5zLXNlcmlmIiwgImZvbnRTaXplIjogMjQsICJ0aGVtZUNTUyI6ICIubGFiZWwsIHRleHQsIHRzcGFuIHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDI0cHg7IH0ifX0lJQpmbG93Y2hhcnQgTFIKWltTYWlzb25dIC0tPiBUW1RlbXDDqXJhdHVyZSBkZSBs4oCZYWlyXQpaIC0tPiBNW1ByZXNzaW9uIGRlcyBtb3VzdGlxdWVzXQpUIC0tPnxlZmZldCDDqWNvbG9naXF1ZSA/fCBNClQgLS0+fHLDqWR1aXQgbOKAmXV0aWxpc2F0aW9ufCBVW1V0aWxpc2F0aW9uIGRlIGxhIG1vdXN0aXF1YWlyZV0KTSAtLT58ZmF2b3Jpc2UgbOKAmXV0aWxpc2F0aW9ufCBVClUgLS0+IFNbU8OpbGVjdGlvbiA6IMOpY2hhbnRpbGxvbm7DqWUgPSBvdWldClQgLS0+IFBbUHJvYmFiaWxpdMOpIGTigJllbnRyw6llXQpNIC0tPiBDW0NvbXB0YWdlIG9ic2VydsOpXQpQIC0tPiBDClMgLS4tPnxkaXNwb25pYmxlIHNpIMOpY2hhbnRpbGxvbm7DqWV8IEMKc3R5bGUgWiBmaWxsOiNmZmYwZDYsc3Ryb2tlOiM5YTYzMWIsc3Ryb2tlLXdpZHRoOjNweApzdHlsZSBQIGZpbGw6I2ZmZjBkNixzdHJva2U6IzlhNjMxYixzdHJva2Utd2lkdGg6M3B4CnN0eWxlIFMgZmlsbDojZTJmMGVkLHN0cm9rZTojMGI2YjYzLHN0cm9rZS13aWR0aDozcHgKYGBgECODDECNEF
+</div>
+
+
+</div>
+
+<div class="fn-causal-conclusion" style="position: absolute; left: 4%; top: 83%; height: 12%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+**Écologie, confusion saisonnière, sélection et capture interviennent ensemble.**
+
+Le lien pointillé indique la disponibilité du comptage ; les effets causaux proposés restent à étudier.
+</div>
+
+
+</div>
+</div>
+
+<aside class="notes"><p>Ce schéma réunit les mécanismes examinés séparément dans la présentation.</p>
+<p>La saison est une cause commune de la température et de la pression.</p>
+<p>La flèche T → M représente l’effet écologique direct à étudier ; sa présence et son ampleur ne sont pas établies ici, et le modèle sans effet l’omet.</p>
+<p>T → U ← M reste le collisionneur comportemental, l’échantillonnage étant déterminé par l’utilisation.</p>
+<p>La température agit aussi sur la probabilité d’entrée ; pression et entrée déterminent les captures potentielles.</p>
+<p>Le lien pointillé entre sélection et comptage indique si le comptage est enregistré : c’est un lien de disponibilité, pas un effet écologique sur l’abondance ni une assimilation des comptages manquants à zéro. Le nœud de sélection surligné indique la restriction définissant les données disponibles.</p>
+<p><strong>Ce modèle causal et d’observation élargi n’inclut pas nécessairement tous les chemins pertinents</strong> : rétroactions, autres causes environnementales et hétérogénéité de mesure restent notamment à examiner. Les chemins saisonnier et d’entrée sont des extensions proposées, qui ne sont pas déjà ajustées ou simulées par les scripts actuels.</p>
+<p>Discuter des flèches soutenues par les connaissances de terrain et des données nécessaires pour identifier leurs effets. <strong>Un échantillonnage universel ne résoudrait à lui seul ni la confusion saisonnière ni la capture dépendante de la température.</strong></p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Avertissement
+
+> [!warning] _Nota Bene_
+> - Cette étude fictive et ses résultats simulés illustrent un biais de sélection.
+> - Ils n’établissent ni la présence ni l’absence d’effets réels de la température ou du changement climatique sur la transmission vectorielle.
+> - Les institutions citées apparaissent dans des dessins illustratifs. Les politiques, déclarations et financements représentés sont fictifs et n’impliquent aucune approbation.
+</div>
+
+<aside class="notes"><p>L’hypothèse d’indépendance écologique sert uniquement à isoler le mécanisme d’observation. Cette présentation n’évalue pas les preuves scientifiques qui fondent les politiques ou financements réels de l’OMS. Les questions climatiques et environnementales nécessitent des données adaptées aux processus écologiques et populations étudiés.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="#132927" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: class="questions-slide" -->
+
+# Travail personnel
+
+Quelle étape de votre propre travail entomologique pourrait sélectionner les observations selon l’exposition et la pression des moustiques ? <!-- .element: class="subtitle" -->
+</div>
+
+<aside class="notes"><p>Demander aux participants d’apporter leurs propres exemples à la prochaine réunion.</p>
+</aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="note:" data-markdown><script type="text/template"><!-- .slide: class="references-slide drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 720px; width: 1280px; min-height: 720px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fn-template-title" style="position: absolute; left: 4%; top: 3%; height: 13%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+## Sélection de références
+</div>
+
+
+</div>
+
+<div class="fn-reference-area" style="position: absolute; left: 4%; top: 18%; height: 72%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+1. Lindsay SW, Schellenberg JRMA, Zeiler HA, Daly, RJ, Salum, FM, Wilkins, HA Exposure of Gambian children to *Anopheles gambiae* malaria vectors in an irrigated rice production area. *Medical and Veterinary Entomology* **9**, 50–58 (1995). <a href="https://doi.org/10.1111/j.1365-2915.1995.tb00116.x" target="_blank" rel="noopener noreferrer">10.1111/j.1365-2915.1995.tb00116.x</a> **Échantillonnage passif des moustiques à l'aide de moustiquaires**
+2. Pulford J, Hetzel MW, Bryant M, Siba PM, Mueller I. Reported reasons for not using a mosquito net when one is available: a review of the published literature. _Malaria Journal_ **10**, 83 (2011). <a href="https://doi.org/10.1186/1475-2875-10-83" target="_blank" rel="noopener noreferrer">10.1186/1475-2875-10-83</a> **La chaleur comme une des raisons expliquant la moindre utilisation des moustiquaires**
+3. Moiroux N, Boussari O, Djénontin A, Damien G, Cottrell G, Henry M-C, *et al.* Dry season determinants of malaria disease and net use in Benin, West Africa. _PLoS One_ **7**, e30558 (2012). <a href="https://doi.org/10.1371/journal.pone.0030558" target="_blank" rel="noopener noreferrer">10.1371/journal.pone.0030558</a> **Augmentation de l'utilisation des moustiquaires associée à la nuisance causée par les moustiques**
+4. Briët, OJT, Yukich, JO, Pfeiffer, C _et al._ The effect of small solar powered ‘Bͻkͻͻ’ net fans on mosquito net use: results from a randomized controlled cross-over trial in southern Ghana. _Malaria Journal_ **16**, 12 (2017). <a href="https://doi.org/10.1186/s12936-016-1654-2" target="_blank" rel="noopener noreferrer">10.1186/s12936-016-1654-2</a> **Utilisation des moustiquaires quand les conditions thermiques sont plus agréables**
+</div>
+
+
+</div>
+
+<div class="fn-template-source" style="position: absolute; left: 4%; top: 93%; height: 5%; width: 92%; display: flex; flex-direction: column; align-items: start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+Études examinant certains facteurs discutés dans cette présentation.
+</div>
+
+
+
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+    <script src="plugin/chalkboard/plugin.js"></script>
+    <script src="plugin/reveal-pointer/pointer.js"></script>
+
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+                RevealPointer,
+                RevealChalkboard,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                    {
+                        icon: '<i class="fa fa-pen-square"></i>',
+                        title: 'Toggle chalkboard (B)',
+                        action: 'RevealChalkboard.toggleChalkboard();'
+                    },
+                    {
+                        icon: '<i class="fa fa-pen"></i>',
+                        title: 'Toggle notes canvas (C)',
+                        action: 'RevealChalkboard.toggleNotesCanvas();'
+                    },
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":"c/t","center":false,"transition":"fade","transitionSpeed":"fast","width":1280,"height":720,"margin":0.055,"mermaid":true}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
