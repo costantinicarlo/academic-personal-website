@@ -553,9 +553,15 @@ write_theme_fragment <- function(slug, definition) {
 
   } else {
 
-    body <- render_bibliography(
-      keys = keys,
-      slug = slug
+    # Preserve the HTML already formatted by citeproc. Re-parsing it as
+    # Markdown causes Pandoc to add duplicate bibliography accessibility roles.
+    body <- c(
+      "```{=html}",
+      render_bibliography(
+        keys = keys,
+        slug = slug
+      ),
+      "```"
     )
   }
 

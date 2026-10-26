@@ -9,6 +9,7 @@
 
 [Research theme →](/research/index.qmd#research-behaviour){.publication-theme-link}
 
+```{=html}
 <div id="refs-behaviour" class="references csl-bib-body hanging-indent"
 data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Ouedraogo_AJTMH2024a" class="csl-entry" role="listitem">
@@ -248,4 +249,5 @@ arabiensis</em> and <em><span>A</span>nopheles gambiae</em> in
 <em>38</em>, 100.
 </div>
 </div>
+```
 

@@ -9,6 +9,7 @@
 
 [Research theme →](/research/index.qmd#research-speciation){.publication-theme-link}
 
+```{=html}
 <div id="refs-speciation" class="references csl-bib-body hanging-indent"
 data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Small_PNASUSA2023a" class="csl-entry" role="listitem">
@@ -424,4 +425,5 @@ Boccolini, D., Sabatini, A., Sanogo, E., Sagnon, N., Coluzzi, M., &amp;
 <em>Parassitologia</em>, <em>36</em>(Suppl. 1), 20.
 </div>
 </div>
+```
 

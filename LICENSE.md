@@ -35,7 +35,7 @@ Except where otherwise stated, the following software and configuration files au
 - `.gitignore`
 - `academic-personal-website.code-workspace`
 
-The complete licence text is provided in `LICENSES/0BSD.txt`.
+The complete licence text is provided in [LICENSES/0BSD.txt](LICENSES/0BSD.txt).
 
 Executable code embedded in content documents is covered by this software licence only when it is explicitly identified as such.
 
@@ -49,6 +49,6 @@ No rights are claimed over such material beyond those lawfully held by the repos
 
 Third-party software, CSL styles, fonts, icons, logos, trademarks, institutional material and other externally sourced resources remain subject to their respective copyright, licence and trademark terms.
 
-See `THIRD_PARTY_NOTICES.md` for known third-party components.
+See [Third-party notices](THIRD_PARTY_NOTICES.md) for known third-party components.
 
 Nothing in this repository grants permission to use the names, logos or trademarks of Carlo Costantini, IRD, MIVEGEC, Institut Pasteur de Dakar or any other person or institution in a manner that implies sponsorship, affiliation or endorsement.
