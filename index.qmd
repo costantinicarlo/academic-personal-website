@@ -45,6 +45,17 @@ body-classes: homepage
 
 ## Nature ⇄ Mosquitoes ⇄ Data ⇄ Models ⇄ Science {.homepage-tagline}
 
+```{=html}
+<div class="homepage-banner">
+  <img
+    src="images/computational-biology-banner.webp"
+    width="2172"
+    height="724"
+    alt="Biological words and ideas transforming into numbers and mathematical symbols, illustrating the transition from verbal models to quantitative assessment."
+    decoding="async">
+</div>
+```
+
 I am a **naturalist and evolutionary ecologist** with a background in **medical entomology** and a lifelong interest in field biology and ornithology.
 
 Mosquitoes are my principal biological system for investigating how organisms interact with, adapt to, and evolve in heterogeneous and changing environments. My research spans adaptation, ecological divergence and speciation, behaviour and host choice, population dynamics, community ecology, and the evolutionary processes underlying vectorial traits.
