@@ -1,6 +1,12 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "**/*.{qmd,md,ipynb,Rmd}"
+    # Fragments are included by the Publications page, not rendered separately.
+    - "!publications/fragments/"
+    # Local worktree checkouts are ignored and should not become site pages.
+    - "!untracked/"
   # Preserve the tutorial's native HTML, CSS and scripts after Quarto processing.
   post-render:
     - python3 scripts/publish-colliders-tutorial.py
@@ -75,6 +81,9 @@ execute:
   freeze: auto
 
 lang: en-GB
+
+# Supply the shared footer date for every rendered page, including legal documents.
+date-modified: last-modified
 
 bibliography: bibliography/references.bib
 csl: bibliography/csl/apa.csl

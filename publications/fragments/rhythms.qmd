@@ -9,6 +9,7 @@
 
 [Research theme →](/research/index.qmd#research-rhythms){.publication-theme-link}
 
+```{=html}
 <div id="refs-rhythms" class="references csl-bib-body hanging-indent"
 data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Sangbakembi-Ngounou_PNASUSA2022a" class="csl-entry"
@@ -55,4 +56,5 @@ coluzzii</em></span>. <em>Parasites <span>&amp;</span> Vectors</em>,
 href="https://doi.org/10.1186/s13071-021-04967-0">https://doi.org/10.1186/s13071-021-04967-0</a>
 </div>
 </div>
+```
 

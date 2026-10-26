@@ -53,10 +53,10 @@ Except where otherwise stated, original code and configuration in the following 
 * `.gitignore`
 * `academic-personal-website.code-workspace`
 
-The complete scope statement and licence text are provided in the repository:
+The complete scope statement and licence text are available on this website:
 
-* [Copyright and licensing statement](https://github.com/costantinicarlo/academic-personal-website/blob/main/LICENSE.md)
-* [BSD Zero Clause License](https://github.com/costantinicarlo/academic-personal-website/blob/main/LICENSES/0BSD.txt)
+* [Copyright and licensing statement](/LICENSE.md)
+* [BSD Zero Clause License](/LICENSES/0BSD.txt)
 
 Executable code embedded within a content page is covered by the software licence only when it is explicitly identified as reusable code or otherwise marked as licensed under 0BSD.
 
@@ -74,7 +74,7 @@ Third-party software, Citation Style Language files, fonts, icons, logos, tradem
 
 Known third-party components and their applicable notices are documented in:
 
-* [Third-party notices](https://github.com/costantinicarlo/academic-personal-website/blob/main/THIRD_PARTY_NOTICES.md)
+* [Third-party notices](/THIRD_PARTY_NOTICES.md)
 
 Where a third-party resource contains its own copyright or licence notice, that notice takes precedence for the resource concerned.
 
