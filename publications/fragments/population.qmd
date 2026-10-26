@@ -9,6 +9,7 @@
 
 [Research theme →](/research/index.qmd#research-population){.publication-theme-link}
 
+```{=html}
 <div id="refs-population" class="references csl-bib-body hanging-indent"
 data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Kamdem_P2012b" class="csl-entry" role="listitem">
@@ -36,4 +37,5 @@ gambiae</em> complex mosquitoes in a <span>W</span>est
 href="https://doi.org/10.1111/j.1365-2915.1996.tb00733.x">https://doi.org/10.1111/j.1365-2915.1996.tb00733.x</a>
 </div>
 </div>
+```
 

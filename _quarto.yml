@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "**/*.{qmd,md,ipynb,Rmd}"
+    # Fragments are included by the Publications page, not rendered separately.
+    - "!publications/fragments/"
 
 website:
   title: "Carlo Costantini"
@@ -72,6 +76,9 @@ execute:
   freeze: auto
 
 lang: en-GB
+
+# Supply the shared footer date for every rendered page, including legal documents.
+date-modified: last-modified
 
 bibliography: bibliography/references.bib
 csl: bibliography/csl/apa.csl

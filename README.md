@@ -237,6 +237,10 @@ quarto preview
 
 The generated fragments are nevertheless retained in version control. This allows the website to be rendered directly from a repository checkout without requiring R merely to reconstruct the Publications page.
 
+The `project.render` configuration in `_quarto.yml` excludes `publications/fragments/` from standalone rendering. The fragments remain included in `publications/index.qmd`, so their content appears on the Publications page without creating separate pages or duplicate search results.
+
+The generator wraps each formatted bibliography in a raw HTML block to preserve citeproc's output and accessibility roles during website rendering. Section headings and research links remain Markdown. Change the generator and regenerate the fragments rather than editing these blocks manually.
+
 ## Publications maintenance workflow
 
 The normal maintenance cycle for the publication record is therefore:
@@ -425,3 +429,5 @@ Third-party publications, institutional material, logos, trademarks, bibliograph
 For the public-facing summary, see [Copyright and reuse](rights.qmd).
 
 For the complete repository licensing terms, see [LICENSE.md](LICENSE.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+Both documents are also rendered as website pages. The Copyright and reuse page links to these local pages and the complete [0BSD licence text](LICENSES/0BSD.txt), so visitors can read the terms without leaving the site. A shared `date-modified: last-modified` default supplies the footer date for all rendered pages. This uses file modification timestamps rather than Git history; a page can override it with an explicit editorial date.
